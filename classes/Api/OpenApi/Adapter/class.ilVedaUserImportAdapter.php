@@ -169,6 +169,13 @@ class ilVedaUserImportAdapter
                     [],
                     strtolower($participant_container->getTeilnehmer()->getGeschlecht())
                 );
+                $this->writer->xmlElement(
+                    'AuthMode',
+                    [
+                        'type' => self::AUTH_MODE
+                    ]
+                );
+
             }
             $this->writer->xmlElement(
                 'Email',
@@ -188,12 +195,6 @@ class ilVedaUserImportAdapter
                 }
             }
 
-            $this->writer->xmlElement(
-                'AuthMode',
-                [
-                    'type' => self::AUTH_MODE
-                ]
-            );
             $this->writer->xmlElement(
                 'Active',
                 [],
