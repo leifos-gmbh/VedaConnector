@@ -26,9 +26,9 @@ class ilVedaApiExceptionHandler
         $veda_logger->warning(ilVedaConnectorSettings::HEADER_TOKEN . ': ' . $this->access_token);
         $veda_logger->warning($this->api_call_name . ' failed with message: ' . $this->e->getMessage());
         if ($this->e instanceof ApiException) {
-            $veda_logger->dump($this->e->getResponseHeaders(), ilLogLevel::WARNING);
+            $veda_logger->dump($this->e->getResponseHeaders() ?? [], ilLogLevel::WARNING);
             $veda_logger->dump($this->e->getTraceAsString(), ilLogLevel::WARNING);
-            $veda_logger->warning($this->e->getResponseBody());
+            $veda_logger->warning($this->e->getResponseBody() ?? "");
         }
         if (!($this->e instanceof ApiException)) {
             $veda_logger->dump($this->e->getTraceAsString(), ilLogLevel::WARNING);
