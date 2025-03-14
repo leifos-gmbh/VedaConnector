@@ -21,7 +21,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $obj_id = ilObject::_lookupObjId($ref_id);
         $fields = $this->claiming_plugin->getFields();
         $query = 'select value from adv_md_values_ltext ' .
-            'where field_id = ' . $this->il_db->quote($fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANGABSCHNITT], ilDBConstants::T_INTEGER) . ' ' .
+            'where field_id = ' . $this->il_db->quote($fields[VedaMDClaimingFields::AUSBILDUNGSGANGABSCHNITT->value], ilDBConstants::T_INTEGER) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER) . ' ' .
             'and value != ' . $this->il_db->quote('', ilDBConstants::T_TEXT);
         $res = $this->il_db->query($query);
@@ -37,7 +37,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $fields = $this->claiming_plugin->getFields();
         $query = 'select value from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSGANG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -56,7 +56,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $fields = $this->claiming_plugin->getFields();
         $query = 'delete from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANGABSCHNITT],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSGANGABSCHNITT->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -69,7 +69,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $fields = $this->claiming_plugin->getFields();
         $query = 'delete from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUGABSCHNITT],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSZUGABSCHNITT->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -84,7 +84,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $query = 'insert into adv_md_values_ltext (obj_id, field_id, value_index, value, disabled) ' .
             'values ( ' .
             $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER) . ', ' .
-            $this->il_db->quote($fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUGABSCHNITT], ilDBConstants::T_TEXT) . ', ' .
+            $this->il_db->quote($fields[VedaMDClaimingFields::AUSBILDUNGSZUGABSCHNITT->value], ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote('', ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote($tc_oid, ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote(1, ilDBConstants::T_INTEGER) .
@@ -93,7 +93,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $query = 'insert into adv_md_values_ltext (obj_id, field_id, value_index, value, disabled) ' .
             'values ( ' .
             $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER) . ', ' .
-            $this->il_db->quote($fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUGABSCHNITT], ilDBConstants::T_TEXT) . ', ' .
+            $this->il_db->quote($fields[VedaMDClaimingFields::AUSBILDUNGSZUGABSCHNITT->value], ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote('de', ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote($tc_oid, ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote(1, ilDBConstants::T_INTEGER) .
@@ -107,7 +107,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $fields = $this->claiming_plugin->getFields();
         $query = 'delete from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSGANG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -121,7 +121,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $fields = $this->claiming_plugin->getFields();
         $query = 'delete from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSZUG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -136,7 +136,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $query = 'insert into adv_md_values_ltext (obj_id, field_id, value_index, value, disabled) ' .
             'values ( ' .
             $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER) . ', ' .
-            $this->il_db->quote($fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUG], ilDBConstants::T_TEXT) . ', ' .
+            $this->il_db->quote($fields[VedaMDClaimingFields::AUSBILDUNGSZUG->value], ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote('', ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote($tc_oid, ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote(1, ilDBConstants::T_INTEGER) .
@@ -146,7 +146,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
         $query = 'insert into adv_md_values_ltext (obj_id, field_id, value_index, value, disabled) ' .
             'values ( ' .
             $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER) . ', ' .
-            $this->il_db->quote($fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUG], ilDBConstants::T_TEXT) . ', ' .
+            $this->il_db->quote($fields[VedaMDClaimingFields::AUSBILDUNGSZUG->value], ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote('de', ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote($tc_oid, ilDBConstants::T_TEXT) . ', ' .
             $this->il_db->quote(1, ilDBConstants::T_INTEGER) .
@@ -163,7 +163,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
 
         $query = 'select value from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSGANG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote($obj_id, ilDBConstants::T_INTEGER);
@@ -186,7 +186,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
 
         $query = 'select value from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSZUG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and value != ' . $this->il_db->quote('', ilDBConstants::T_TEXT);
@@ -212,7 +212,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
 
         $query = 'select obj_id from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSZUG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and value = ' . $this->il_db->quote($oid, ilDBConstants::T_TEXT);
@@ -247,7 +247,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
 
         $query = 'select obj_id from adv_md_values_ltext ' . ' ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSGANG],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSGANG->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and value != ' . $this->il_db->quote('', ilDBConstants::T_TEXT);
@@ -287,7 +287,7 @@ class ilVedaMDClaimingPluginDBManager implements ilVedaMDClaimingPluginDBManager
 
         $query = 'select value from adv_md_values_ltext ' .
             'where field_id = ' . $this->il_db->quote(
-                $fields[ilVedaMDClaimingPlugin::FIELD_AUSBILDUNGSZUGABSCHNITT],
+                $fields[VedaMDClaimingFields::AUSBILDUNGSZUGABSCHNITT->value],
                 ilDBConstants::T_INTEGER
             ) . ' ' .
             'and obj_id = ' . $this->il_db->quote(

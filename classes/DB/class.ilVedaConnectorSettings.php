@@ -153,9 +153,9 @@ class ilVedaConnectorSettings
         $this->storage->set(self::SETTING_REST_USER, $a_user);
     }
 
-    public function getRestUser() : ?string
+    public function getRestUser() : string
     {
-        return $this->storage->get(self::SETTING_REST_USER);
+        return $this->storage->get(self::SETTING_REST_USER, '');
     }
 
     public function setRestUrl(?string $a_rest_url) : void
@@ -163,9 +163,9 @@ class ilVedaConnectorSettings
         $this->storage->set(self::SETTING_REST_URL, $a_rest_url);
     }
 
-    public function getRestUrl() : ?string
+    public function getRestUrl() : string
     {
-        return $this->storage->get(self::SETTING_REST_URL);
+        return $this->storage->get(self::SETTING_REST_URL, '');
     }
 
 
@@ -174,9 +174,9 @@ class ilVedaConnectorSettings
         $this->storage->set(self::SETTING_REST_PASSWORD, $a_pass);
     }
 
-    public function getRestPassword() : ?string
+    public function getRestPassword() : string
     {
-        return $this->storage->get(self::SETTING_REST_PASSWORD);
+        return $this->storage->get(self::SETTING_REST_PASSWORD, '');
     }
 
     public function setSoapUser(?string $a_user) : void
@@ -184,18 +184,18 @@ class ilVedaConnectorSettings
         $this->storage->set(self::SETTING_SOAP_USER, $a_user);
     }
 
-    public function getSoapUser() : ?string
+    public function getSoapUser() : string
     {
-        return $this->storage->get(self::SETTING_SOAP_USER);
+        return $this->storage->get(self::SETTING_SOAP_USER, '');
     }
     public function setSoapPassword(?string $a_pass) : void
     {
         $this->storage->set(self::SETTING_SOAP_PASS, $a_pass);
     }
 
-    public function getSoapPassword() : ?string
+    public function getSoapPassword() : string
     {
-        return $this->storage->get(self::SETTING_SOAP_PASS);
+        return $this->storage->get(self::SETTING_SOAP_PASS, '');
     }
 
     public function setAuthenticationToken(?string $token) : void
@@ -203,9 +203,9 @@ class ilVedaConnectorSettings
         $this->storage->set(self::SETTING_REST_TOKEN, $token);
     }
 
-    public function getAuthenticationToken() : ?string
+    public function getAuthenticationToken() : string
     {
-        return $this->storage->get(self::SETTING_REST_TOKEN);
+        return $this->storage->get(self::SETTING_REST_TOKEN, '');
     }
 
     public function setPlatformId(?string $id) : void

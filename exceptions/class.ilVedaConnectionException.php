@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 /**
@@ -13,7 +14,6 @@ class ilVedaConnectionException extends ilException
 {
 	public const ERR_LOGIN_FAILED = 1;
 	public const ERR_API = 2;
-
     public const ERR_SOAP_CONNECTION = 3;
 
 	private static $code_messages = [
@@ -22,33 +22,19 @@ class ilVedaConnectionException extends ilException
         self::ERR_SOAP_CONNECTION => 'exception_soap_connection'
 	];
 
-
-	/**
-	 * @return string
-	 */
 	public function exceptionCodeToString()
 	{
 		return self::$code_messages[$this->getCode()];
 	}
 
-	/**
-	 * @param int $code
-	 * @return string
-	 */
 	public static function getMessageForCode(int $code)
 	{
 		return self::$code_messages[$code];
 	}
 
-
-	/**
-	 * @param int $code
-	 * @return string
-	 */
 	public static function translateExceptionCode(int $code) : string
 	{
 		$plugin = ilVedaConnectorPlugin::getInstance();
 		return $plugin->txt(self::exceptionCodeToString($code));
 	}
-
 }

@@ -246,16 +246,16 @@ class ilVedaMemberStandardImportAdapter
             }
             $udf_data = $tutor->getUserDefinedData();
             $tutor_oid = '';
-            if (isset($udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_TUTOR_ID]])) {
-                $tutor_oid = $udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_TUTOR_ID]];
+            if (isset($udf_data['f_' . $udffields[VedaUDFClaimingFields::TUTOR_ID->value]])) {
+                $tutor_oid = $udf_data['f_' . $udffields[VedaUDFClaimingFields::TUTOR_ID->value]];
             }
             $companion_oid = '';
-            if (isset($udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_COMPANION_ID]])) {
-                $companion_oid = $udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_COMPANION_ID]];
+            if (isset($udf_data['f_' . $udffields[VedaUDFClaimingFields::COMPANION_ID->value]])) {
+                $companion_oid = $udf_data['f_' . $udffields[VedaUDFClaimingFields::COMPANION_ID->value]];
             }
             $supervisor_oid = '';
-            if (isset($udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_SUPERVISOR_ID]])) {
-                $supervisor_oid = $udf_data['f_' . $udffields[ilVedaUDFClaimingPlugin::FIELD_SUPERVISOR_ID]];
+            if (isset($udf_data['f_' . $udffields[VedaUDFClaimingFields::SUPERVISOR_ID->value]])) {
+                $supervisor_oid = $udf_data['f_' . $udffields[VedaUDFClaimingFields::SUPERVISOR_ID->value]];
             }
             if (!$tutor_oid && !$companion_oid && !$supervisor_oid) {
                 $this->logger->warning('Ignoring tutor without tutor_oid: ' . $tutor->getLogin());

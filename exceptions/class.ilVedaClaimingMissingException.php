@@ -1,4 +1,5 @@
 <?php
+
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 /**
@@ -30,33 +31,19 @@ class ilVedaClaimingMissingException extends ilException
 		parent::__construct($message, $a_code);
 	}
 
-
-	/**
-	 * @return string
-	 */
 	public function exceptionCodeToString()
 	{
 		return self::$code_messages[$this->getCode()];
 	}
 
-	/**
-	 * @param int $code
-	 * @return string
-	 */
 	public static function getMessageForCode(int $code)
 	{
 		return self::$code_messages[$code];
 	}
 
-
-	/**
-	 * @param int $code
-	 * @return string
-	 */
 	public static function translateExceptionCode(int $code) : string
 	{
 		$plugin = ilVedaConnectorPlugin::getInstance();
 		return $plugin->txt(self::getMessageForCode($code));
 	}
-
 }

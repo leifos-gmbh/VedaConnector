@@ -1,5 +1,7 @@
 <?php
 
+use ILIAS\Cron\Schedule\CronJobScheduleType;
+
 /**
  * @ilCtrl_isCalledBy ilVedaConnectorCronJob: ilObjComponentSettingsGUI
  * VEDA user importer plugin cron job class
@@ -34,9 +36,9 @@ class ilVedaConnectorCronJob extends ilCronJob
         return ilVedaConnectorPlugin::getInstance()->txt('cron_job_info');
     }
 
-    public function getDefaultScheduleType() : int
+    public function getDefaultScheduleType() : CronJobScheduleType
     {
-        return self::SCHEDULE_TYPE_IN_HOURS;
+        return CronJobScheduleType::SCHEDULE_TYPE_IN_HOURS;
     }
 
     public function getDefaultScheduleValue() : int

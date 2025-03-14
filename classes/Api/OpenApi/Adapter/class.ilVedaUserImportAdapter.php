@@ -511,17 +511,17 @@ class ilVedaUserImportAdapter
             $field_update_required = false;
             switch ($field_name) {
 
-                case ilVedaUDFClaimingPlugin::FIELD_SUPERVISOR:
+                case VedaUDFClaimingFields::SUPERVISOR->value:
                     $field_update_required = true;
                     $value = $org->getAufsichtspersonName();
                     break;
 
-                case ilVedaUDFClaimingPlugin::FIELD_SUPERVISOR_EMAIL:
+                case VedaUDFClaimingFields::SUPERVISOR_EMAIL->value:
                     $field_update_required = true;
                     $value = $org->getAufsichtspersonEMail();
                     break;
 
-                case ilVedaUDFClaimingPlugin::FIELD_MEMBER_ID:
+                case VedaUDFClaimingFields::MEMBER_ID->value:
                     $field_update_required = true;
                     $value = $org->getMitgliedsnummer();
                     break;

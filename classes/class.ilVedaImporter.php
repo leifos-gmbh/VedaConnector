@@ -1,42 +1,36 @@
 <?php
 
+/* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 class ilVedaImporter
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     public const IMPORT_TYPE_UNDEFINED = 0;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     public const IMPORT_TYPE_SIFA = 1;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     public const IMPORT_TYPE_STANDARD = 2;
 
+    /** @var string */
     public const IMPORT_USR_ALL = 'usr_all';
 
+    /** @var string */
     public const IMPORT_USR_INCREMENTAL = 'usr_incremental';
-    /**
-     * @var string
-     */
+
+    /** @var string */
     public const IMPORT_CRS = 'crs';
-    /**
-     * @var string
-     */
+
+    /*** @var string */
     public const IMPORT_MEM = 'mem';
-    /**
-     * @var int
-     */
+
+    /*** @var int */
     public const IMPORT_NONE = 0;
-    /**
-     * @var int
-     */
+
+    /*** @var int */
     public const IMPORT_ALL = 1;
-    /**
-     * @var int
-     */
+
+    /*** @var int */
     public const IMPORT_SELECTED = 2;
 
     protected static ?ilVedaImporter $instance = null;

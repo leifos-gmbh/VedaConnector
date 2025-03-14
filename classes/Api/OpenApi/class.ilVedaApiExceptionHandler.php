@@ -9,7 +9,6 @@ class ilVedaApiExceptionHandler
     protected string $api_call_name;
     protected string $access_token;
     protected Exception $e;
-    protected ilVedaMailSegmentBuilderFactoryInterface $mail_segment_builder_factory;
 
     public function __construct(
         string $api_call_name,
