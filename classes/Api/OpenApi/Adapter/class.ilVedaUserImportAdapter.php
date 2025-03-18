@@ -348,7 +348,7 @@ class ilVedaUserImportAdapter
         $login = $participant->getBenutzername();
         $generated_login = ilAuthUtils::_generateLogin($login);
 
-        if (strcmp($generated_login, $login) !== 0) {
+        if (strcasecmp($generated_login, $login) !== 0) {
             $message = 'User with login: ' . $login . ' already exists.';
             $this->logger->warning($message);
             $this->repo_content_builder_factory->getMailSegmentBuilder()->buildSegment()
@@ -391,7 +391,7 @@ class ilVedaUserImportAdapter
         }
 
         $generated_login = ilAuthUtils::_generateLogin($login);
-        if (strcmp($generated_login, $login) !== 0) {
+        if (strcasecmp($generated_login, $login) !== 0) {
             $message = 'User with login: ' . $login . ' already exists.';
             $this->logger->warning($message);
             $this->repo_content_builder_factory->getMailSegmentBuilder()->buildSegment()
