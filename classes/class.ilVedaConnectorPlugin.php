@@ -157,7 +157,9 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
 
         // format lines
         foreach ($this->logger->getLogger()->getHandlers() as $handler) {
-            $handler->setLevel($settings->getLogLevel());
+            if (!$handler instanceof \Monolog\Handler\NullHandler) {
+                $handler->setLevel($settings->getLogLevel());
+            }
         }
 
         $this->initVedaUdfClaimingPluginInstance();
