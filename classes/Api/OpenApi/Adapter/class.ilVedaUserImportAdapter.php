@@ -272,7 +272,7 @@ class ilVedaUserImportAdapter
             : $this->settings->getStandardParticipantRole();
         $this->logger->info('Starting user update');
         $importParser = new ilUserImportParser();
-        $importParser->setUserMappingMode(IL_USER_MAPPING_ID);
+        $importParser->setUserMappingMode(ilUserImportParser::IL_USER_MAPPING_ID);
         $importParser->setXMLContent($this->writer->xmlDumpMem(false));
         $importParser->setRoleAssignment(
             [
