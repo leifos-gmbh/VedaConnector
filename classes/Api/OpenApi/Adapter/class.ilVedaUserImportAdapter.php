@@ -525,16 +525,13 @@ class ilVedaUserImportAdapter
                     $field_update_required = true;
                     $value = $org->getMitgliedsnummer();
                     break;
-
-                default:
-                    $this->logger->error('Unknown field name given: ' . $field_name);
-                    break;
             }
             if ($field_update_required) {
                 $this->writer->xmlElement(
                     'UserDefinedField',
                     [
                         'Id' => 'il_' . IL_INST_ID . '_udf_' . $field_id,
+                        'Name' => 'unknown'
                     ],
                     $value
                 );
