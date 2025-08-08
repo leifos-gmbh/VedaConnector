@@ -46,6 +46,10 @@ class ilVedaCourseImportResultTableGUI extends ilTable2GUI
             'type'
         );
         $this->addColumn(
+            $this->lng->txt('create_date'),
+            'create_date'
+        );
+        $this->addColumn(
             $this->plugin->txt('tbl_crs_result_created'),
             'created'
         );
@@ -72,6 +76,7 @@ class ilVedaCourseImportResultTableGUI extends ilTable2GUI
                 'title' => ilObject::_lookupTitle($course->getObjId()),
                 'type' => $course->getType(),
                 'oid' => $course->getOid(),
+                'create_date' => $course->getModified(),
                 'created' => $course->getCreationStatus(),
                 'pswitch' => $course->getPermanentSwitchRole(),
                 'tswitch' => $course->getTemporarySwitchRole()
@@ -98,6 +103,7 @@ class ilVedaCourseImportResultTableGUI extends ilTable2GUI
             $this->tpl->setVariable('TXT_TITLE', ilObject::_lookupTitle($obj_id));
         }
         $this->tpl->parseCurrentBlock();
+        $this->tpl->setVariable('TXT_CREATED', ilDatePresentation::formatDate(new ilDateTime($a_set['create_date'], IL_CAL_UNIX)));
         $this->tpl->setVariable(
             'TXT_TYPE',
             $a_set['type'] ==
@@ -108,8 +114,8 @@ class ilVedaCourseImportResultTableGUI extends ilTable2GUI
         $this->tpl->setVariable(
             'CREATED_IMG',
             $a_set['created'] == ilVedaCourseStatus::SYNCHRONIZED ?
-                ilUtil::getImagePath('icon_ok.svg') :
-                ilUtil::getImagePath('icon_not_ok.svg')
+                ilUtil::getImagePath('standard/icon_ok.svg') :
+                ilUtil::getImagePath('standard/icon_not_ok.svg')
         );
 
         if (ilObject::_exists($a_set['tswitch'])) {
