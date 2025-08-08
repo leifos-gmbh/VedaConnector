@@ -81,14 +81,14 @@ class ilVedaUserImportResultTableGUI extends ilTable2GUI
         $this->tpl->setVariable(
             'CREATED_IMG',
             $a_set['created'] == ilVedaUserStatus::SYNCHRONIZED ?
-                ilUtil::getImagePath('icon_ok.svg') :
-                ilUtil::getImagePath('icon_not_ok.svg')
+                ilUtil::getImagePath('standard/icon_ok.svg') :
+                ilUtil::getImagePath('standard/icon_not_ok.svg')
         );
         $this->tpl->setVariable(
             'PWD_IMG',
             $a_set['pwd'] == ilVedaUserStatus::SYNCHRONIZED ?
-                ilUtil::getImagePath('icon_ok.svg') :
-                ilUtil::getImagePath('icon_not_ok.svg')
+                ilUtil::getImagePath('standard/icon_ok.svg') :
+                ilUtil::getImagePath('standard/icon_not_ok.svg')
         );
 
         if ($a_set['failure']) {
