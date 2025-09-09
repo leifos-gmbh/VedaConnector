@@ -427,8 +427,8 @@ class ilVedaCourseStandardImportAdapter
             $course_period_end = $appointment_collection[0]->getTerminBis();
         }
         $target->setCoursePeriod(
-            new ilDateTime($course_period_start->format(DateTimeInterface::RFC3339), IL_CAL_DATETIME),
-            new ilDateTime($course_period_end->format(DateTimeInterface::RFC3339), IL_CAL_DATETIME),
+            new ilDateTime($course_period_start?->format(DateTimeInterface::RFC3339), IL_CAL_DATETIME),
+            new ilDateTime($course_period_end?->format(DateTimeInterface::RFC3339), IL_CAL_DATETIME),
         );
         return $target;
     }
