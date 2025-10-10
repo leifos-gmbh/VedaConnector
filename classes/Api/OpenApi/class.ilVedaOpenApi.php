@@ -192,13 +192,13 @@ class ilVedaOpenApi implements ilVedaApiInterface
 
         $elearning_api = $this->veda_connector->getElearningPlattformApi();
         if ($status === ilLPStatus::LP_STATUS_FAILED_NUM) {
-            $this->veda_logger->debug('Send usr: ' . $usr_oid . ' failed crs: ' . $crs_oid);
+            $this->veda_logger->info('Send usr: ' . $usr_oid . ' failed crs: ' . $crs_oid);
             $elearning_api->sendCourseFailed($crs_oid, $usr_oid);
             return;
         }
 
         if ($status === ilLPStatus::LP_STATUS_COMPLETED_NUM) {
-            $this->veda_logger->debug('Send usr: ' . $usr_oid . ' passed crs: ' . $crs_oid);
+            $this->veda_logger->info('Send usr: ' . $usr_oid . ' passed crs: ' . $crs_oid);
             $elearning_api->sendCoursePassed($crs_oid, $usr_oid);
         }
     }
@@ -229,11 +229,11 @@ class ilVedaOpenApi implements ilVedaApiInterface
             return;
         }
         if (!$veda_crs->getDocumentSuccess()) {
-            $this->veda_logger->debug('Ignore course without document success flag');
+            $this->veda_logger->info('Ignore course without document success flag');
             return;
         }
 
-        $this->veda_logger->debug('Send usr:' . $veda_usr->getOid() . ' started working on crs:' . $veda_crs->getOid());
+        $this->veda_logger->info('Send usr:' . $veda_usr->getOid() . ' started working on crs:' . $veda_crs->getOid());
         $this->veda_connector->getElearningPlattformApi()->sendParticipantStartedCourseWork(
             $veda_crs->getOid(),
             $veda_usr->getOid()
