@@ -258,8 +258,9 @@ class ilVedaCourseImportAdapter
             if ($target instanceof ilObjCourse) {
                 $this->updateCourseCreatedStatus($train->getOid());
                 $this->copyAdminsFromSourceToTarget($source, $target);
-                $mail_manager = new ilVedaMailManager();
-                $mail_manager->sendSIFACourseCompleted();
+                // this breaks in cron context, since
+                //$mail_manager = new ilVedaMailManager();
+                //$mail_manager->sendSIFACourseCompleted();
             } else {
                 $this->logger->notice('Target should be course type: ' . $target_id);
             }
