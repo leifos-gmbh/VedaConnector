@@ -141,7 +141,7 @@ class ilVedaUserImportAdapter
                     $this->writer->xmlElement(
                         'Gender',
                         [],
-                        strtolower($participant_container->getTeilnehmer()->getGeschlecht() ? )
+                        strtolower($participant_container->getTeilnehmer()->getGeschlecht())
                     );
                 }
             } else {
