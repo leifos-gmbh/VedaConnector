@@ -480,14 +480,14 @@ class ilVedaUserImportAdapter
         $this->logger->dump($org, ilLogLevel::DEBUG);
 
         $org_parts = [];
-        if (strlen(trim($org->getOrganisationsname1()))) {
-            $org_parts[] = $org->getOrganisationsname1();
+        if (strlen(trim((string) $org->getOrganisationsname1()))) {
+            $org_parts[] = (string) $org->getOrganisationsname1();
         }
-        if (strlen(trim($org->getOrganisationsname2()))) {
-            $org_parts[] = $org->getOrganisationsname2();
+        if (strlen(trim((string) $org->getOrganisationsname2()))) {
+            $org_parts[] = (string) $org->getOrganisationsname2();
         }
-        if (strlen(trim($org->getOrganisationsname3()))) {
-            $org_parts[] = $org->getOrganisationsname3();
+        if (strlen(trim((string) $org->getOrganisationsname3()))) {
+            $org_parts[] = (string) $org->getOrganisationsname3();
         }
 
         if (count($org_parts)) {
