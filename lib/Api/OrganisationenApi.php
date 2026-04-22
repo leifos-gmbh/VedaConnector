@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * OrganisationenApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -131,9 +131,9 @@ class OrganisationenApi
      * @param  string $organisation_id ID der Organisation (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Organisation
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation
      */
     public function getOrganisationUsingGET($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
@@ -149,9 +149,9 @@ class OrganisationenApi
      * @param  string $organisation_id ID der Organisation (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Organisation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganisationUsingGETWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
@@ -194,23 +194,23 @@ class OrganisationenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Organisation' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Organisation' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Organisation', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Organisation';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -231,7 +231,7 @@ class OrganisationenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Organisation',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -275,7 +275,7 @@ class OrganisationenApi
      */
     public function getOrganisationUsingGETAsyncWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Organisation';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation';
         $request = $this->getOrganisationUsingGETRequest($organisation_id, $contentType);
 
         return $this->client

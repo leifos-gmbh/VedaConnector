@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Leifos\VedaConnector\I\Api\ELearningPlattform\Collections;
+
+use Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform;
+use Iterator;
+use Countable;
+
+interface ParticipantsInterface extends Iterator, Countable
+{
+    public function current() : TeilnehmerELearningPlattform;
+
+    public function key() : int;
+
+    public function next() : void;
+
+    public function rewind() : void;
+
+    public function valid() : bool;
+
+    public function count() : int;
+}

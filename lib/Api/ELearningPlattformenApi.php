@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * ELearningPlattformenApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -185,9 +185,9 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Elearningkurs[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]
      */
     public function getAktiveELearningKurseUsingGET($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
@@ -203,9 +203,9 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAktiveELearningKurseUsingGETWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
@@ -248,23 +248,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Elearningkurs[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Elearningkurs[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Elearningkurs[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Elearningkurs[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -285,7 +285,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Elearningkurs[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -329,7 +329,7 @@ class ELearningPlattformenApi
      */
     public function getAktiveELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Elearningkurs[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
         $request = $this->getAktiveELearningKurseUsingGETRequest($plattform_id, $contentType);
 
         return $this->client
@@ -469,9 +469,9 @@ class ELearningPlattformenApi
      * @param  \DateTime $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Elearningkurs[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]
      */
     public function getBeendeteELearningKurseUsingGET($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
@@ -488,9 +488,9 @@ class ELearningPlattformenApi
      * @param  \DateTime $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBeendeteELearningKurseUsingGETWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
@@ -533,23 +533,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Elearningkurs[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Elearningkurs[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Elearningkurs[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Elearningkurs[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -570,7 +570,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Elearningkurs[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -616,7 +616,7 @@ class ELearningPlattformenApi
      */
     public function getBeendeteELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Elearningkurs[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
         $request = $this->getBeendeteELearningKurseUsingGETRequest($plattform_id, $beendet_ab, $contentType);
 
         return $this->client
@@ -767,9 +767,9 @@ class ELearningPlattformenApi
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Ausbildungszug[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]
      */
     public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
@@ -786,9 +786,9 @@ class ELearningPlattformenApi
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Ausbildungszug[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
@@ -831,23 +831,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Ausbildungszug[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Ausbildungszug[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Ausbildungszug[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Ausbildungszug[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -868,7 +868,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Ausbildungszug[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -914,7 +914,7 @@ class ELearningPlattformenApi
      */
     public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsyncWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Ausbildungszug[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]';
         $request = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETRequest($plattform_id, $ausbildungsgang_id, $contentType);
 
         return $this->client
@@ -1068,16 +1068,15 @@ class ELearningPlattformenApi
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  bool $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerELearningPlattform[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]
      */
-    public function getTeilnehmerELearningPlattformUsingGET($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
+    public function getTeilnehmerELearningPlattformUsingGET($plattform_id, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        list($response) = $this->getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, $contentType);
         return $response;
     }
 
@@ -1087,16 +1086,15 @@ class ELearningPlattformenApi
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  bool $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerELearningPlattform[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
+    public function getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1135,23 +1133,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1172,7 +1170,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1188,15 +1186,14 @@ class ELearningPlattformenApi
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  bool $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerELearningPlattformUsingGETAsync($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
+    public function getTeilnehmerELearningPlattformUsingGETAsync($plattform_id, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        return $this->getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType)
+        return $this->getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1210,16 +1207,15 @@ class ELearningPlattformenApi
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  bool $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
+    public function getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerELearningPlattform[]';
-        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]';
+        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1261,13 +1257,12 @@ class ELearningPlattformenApi
      * Create request for operation 'getTeilnehmerELearningPlattformUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  bool $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
+    public function getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
@@ -1278,7 +1273,6 @@ class ELearningPlattformenApi
         }
 
 
-
         $resourcePath = '/v2/elearningplattformen/{plattformId}/teilnehmer';
         $formParams = [];
         $queryParams = [];
@@ -1286,15 +1280,6 @@ class ELearningPlattformenApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $nicht_extern_angelegte_teilnehmer,
-            'nichtExternAngelegteTeilnehmer', // param base name
-            'boolean', // openApiType
-            '', // style
-            false, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -1369,9 +1354,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Dozentenkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]
      */
     public function getVonDozentenDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -1388,9 +1373,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonDozentenDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -1433,23 +1418,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Dozentenkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Dozentenkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Dozentenkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Dozentenkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1470,7 +1455,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Dozentenkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1516,7 +1501,7 @@ class ELearningPlattformenApi
      */
     public function getVonDozentenDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Dozentenkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
         $request = $this->getVonDozentenDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -1667,9 +1652,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Dozentenkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]
      */
     public function getVonDozentenDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -1686,9 +1671,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonDozentenDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -1731,23 +1716,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Dozentenkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Dozentenkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Dozentenkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Dozentenkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1768,7 +1753,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Dozentenkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1814,7 +1799,7 @@ class ELearningPlattformenApi
      */
     public function getVonDozentenDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Dozentenkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
         $request = $this->getVonDozentenDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -1965,9 +1950,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]
      */
     public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -1984,9 +1969,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -2029,23 +2014,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2066,7 +2051,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2112,7 +2097,7 @@ class ELearningPlattformenApi
      */
     public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
         $request = $this->getVonLernbegleiternDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -2263,9 +2248,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]
      */
     public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -2282,9 +2267,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -2327,23 +2312,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2364,7 +2349,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2410,7 +2395,7 @@ class ELearningPlattformenApi
      */
     public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Lernbegleiterkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
         $request = $this->getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -2561,9 +2546,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmerkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]
      */
     public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -2580,9 +2565,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
@@ -2625,23 +2610,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2662,7 +2647,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2708,7 +2693,7 @@ class ELearningPlattformenApi
      */
     public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
         $request = $this->getVonTeilnehmernDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -2859,9 +2844,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmerkurszuordnung[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]
      */
     public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -2878,9 +2863,9 @@ class ELearningPlattformenApi
      * @param  string $kurs_id optionale ID des Kurses (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
@@ -2923,23 +2908,23 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2960,7 +2945,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3006,7 +2991,7 @@ class ELearningPlattformenApi
      */
     public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmerkurszuordnung[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
         $request = $this->getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
@@ -3156,12 +3141,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
     public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
@@ -3177,12 +3162,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
@@ -3225,38 +3210,38 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 201:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3277,7 +3262,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3285,7 +3270,7 @@ class ELearningPlattformenApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3303,7 +3288,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3327,7 +3312,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3335,7 +3320,7 @@ class ELearningPlattformenApi
      */
     public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
         $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
@@ -3380,7 +3365,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursbearbeitung_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3514,16 +3499,15 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\ElearningaccountExterneReferenzNrApiDto $elearningaccount_externe_referenz_nr_api_dto Optionale externe Refernznummer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningaccountAlsExternExistierendUsingPOST($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOST($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        $this->meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $this->meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $contentType);
     }
 
     /**
@@ -3533,16 +3517,15 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\ElearningaccountExterneReferenzNrApiDto $elearningaccount_externe_referenz_nr_api_dto Optionale externe Refernznummer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3595,15 +3578,14 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\ElearningaccountExterneReferenzNrApiDto $elearningaccount_externe_referenz_nr_api_dto Optionale externe Refernznummer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsync($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsync($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        return $this->meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType)
+        return $this->meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3618,16 +3600,15 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\ElearningaccountExterneReferenzNrApiDto $elearningaccount_externe_referenz_nr_api_dto Optionale externe Refernznummer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3657,13 +3638,12 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\ElearningaccountExterneReferenzNrApiDto $elearningaccount_externe_referenz_nr_api_dto Optionale externe Refernznummer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
@@ -3679,7 +3659,6 @@ class ELearningPlattformenApi
                 'Missing the required parameter $teilnehmer_id when calling meldeElearningaccountAlsExternExistierendUsingPOST'
             );
         }
-
 
 
         $resourcePath = '/v2/elearningplattformen/{plattformId}/teilnehmer/{teilnehmerId}/meldeexternexistierend';
@@ -3716,14 +3695,7 @@ class ELearningPlattformenApi
         );
 
         // for model (json/xml)
-        if (isset($elearningaccount_externe_referenz_nr_api_dto)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($elearningaccount_externe_referenz_nr_api_dto));
-            } else {
-                $httpBody = $elearningaccount_externe_referenz_nr_api_dto;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -3776,10 +3748,10 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3795,10 +3767,10 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3857,7 +3829,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3880,7 +3852,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3919,7 +3891,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4040,7 +4012,7 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4058,7 +4030,7 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4289,7 +4261,7 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4307,7 +4279,7 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4536,10 +4508,10 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4555,10 +4527,10 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4617,7 +4589,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4640,7 +4612,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4679,7 +4651,7 @@ class ELearningPlattformenApi
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4800,7 +4772,7 @@ class ELearningPlattformenApi
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4818,7 +4790,7 @@ class ELearningPlattformenApi
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5048,12 +5020,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
     public function meldeKursabschlussMitErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
@@ -5069,12 +5041,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
@@ -5117,38 +5089,38 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 201:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5169,7 +5141,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5177,7 +5149,7 @@ class ELearningPlattformenApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5195,7 +5167,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5219,7 +5191,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5227,7 +5199,7 @@ class ELearningPlattformenApi
      */
     public function meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
         $request = $this->meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto, $contentType);
 
         return $this->client
@@ -5272,7 +5244,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5407,12 +5379,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
     public function meldeKursabschlussOhneErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
@@ -5428,12 +5400,12 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\KursbearbeitungRetValsApiDto|\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
@@ -5476,38 +5448,38 @@ class ELearningPlattformenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 201:
-                    if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5528,7 +5500,7 @@ class ELearningPlattformenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5536,7 +5508,7 @@ class ELearningPlattformenApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5554,7 +5526,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5578,7 +5550,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5586,7 +5558,7 @@ class ELearningPlattformenApi
      */
     public function meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\KursbearbeitungRetValsApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
         $request = $this->meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursabschluss_dto, $contentType);
 
         return $this->client
@@ -5631,7 +5603,7 @@ class ELearningPlattformenApi
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto $kursabschluss_dto Optionaler Zeitstempel. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

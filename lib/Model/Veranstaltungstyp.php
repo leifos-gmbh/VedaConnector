@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Veranstaltungstyp Class Doc Comment
  *
  * @category Class
  * @description Ein Veranstaltungstyp mit seinen relevanten Daten.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,30 +60,28 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'oid' => 'string',
-        'alternative_veranstaltungstypen' => 'string[]',
         'anzahl_teilnehmertage' => 'float',
         'anzahl_ue' => 'float',
         'beschreibung' => 'string',
         'dauer_in_tagen' => 'float',
-        'fachlicher_ansprechpartner' => '\OpenAPI\Client\Model\Fachlicheransprechpartner',
+        'fachlicher_ansprechpartner' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner',
         'gueltig_ab' => '\DateTime',
         'gueltig_bis' => '\DateTime',
         'hinweise' => 'string',
         'inhalt' => 'string',
         'inhouse_durchfuehrbar' => 'bool',
-        'kategorien' => '\OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]',
+        'kategorien' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]',
         'kundenzitat' => 'string',
         'kurzbezeichnung' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'methodik' => 'string',
-        'plz_einschraenkung' => 'bool',
-        'preise_je_teilnehmergruppe' => '\OpenAPI\Client\Model\TeilnehmergruppePreis[]',
+        'preise_je_teilnehmergruppe' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]',
         'publizierung_aktiv' => 'bool',
         'regulaere_uhrzeit_bis' => 'string',
         'regulaere_uhrzeit_von' => 'string',
-        'sachbearbeiter' => '\OpenAPI\Client\Model\Sachbearbeiter',
-        'schlagwoerter' => '\OpenAPI\Client\Model\Schlagwort[]',
-        'standardzahlungsbedingung' => '\OpenAPI\Client\Model\Zahlungsbedingung',
+        'sachbearbeiter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter',
+        'schlagwoerter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]',
+        'standardzahlungsbedingung' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung',
         'teilnehmermaximum' => 'int',
         'teilnehmerminimum' => 'int',
         'thema' => 'string',
@@ -92,15 +90,15 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         'uhrzeit_von' => 'string',
         'veranstaltungs_nr' => 'string',
         'veranstaltungsart' => 'string',
-        'veranstaltungsform' => '\OpenAPI\Client\Model\Veranstaltungsform',
-        'veranstaltungskategorie' => '\OpenAPI\Client\Model\Veranstaltungskategorie',
-        'veranstaltungsunterkategorie' => '\OpenAPI\Client\Model\Veranstaltungsunterkategorie',
+        'veranstaltungsform' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform',
+        'veranstaltungskategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie',
+        'veranstaltungsunterkategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie',
         'voraussetzung' => 'string',
         'wbd_relevant' => 'bool',
         'wbd_thema' => 'string',
         'webcode' => 'string',
         'ziel' => 'string',
-        'zielgruppen' => '\OpenAPI\Client\Model\Zielgruppe[]'
+        'zielgruppen' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]'
     ];
 
     /**
@@ -112,7 +110,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'oid' => null,
-        'alternative_veranstaltungstypen' => null,
         'anzahl_teilnehmertage' => null,
         'anzahl_ue' => null,
         'beschreibung' => null,
@@ -128,7 +125,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         'kurzbezeichnung' => null,
         'links' => null,
         'methodik' => null,
-        'plz_einschraenkung' => null,
         'preise_je_teilnehmergruppe' => null,
         'publizierung_aktiv' => null,
         'regulaere_uhrzeit_bis' => null,
@@ -162,7 +158,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'oid' => false,
-		'alternative_veranstaltungstypen' => false,
 		'anzahl_teilnehmertage' => false,
 		'anzahl_ue' => false,
 		'beschreibung' => false,
@@ -178,7 +173,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
 		'kurzbezeichnung' => false,
 		'links' => false,
 		'methodik' => false,
-		'plz_einschraenkung' => false,
 		'preise_je_teilnehmergruppe' => false,
 		'publizierung_aktiv' => false,
 		'regulaere_uhrzeit_bis' => false,
@@ -292,7 +286,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'oid' => 'oid',
-        'alternative_veranstaltungstypen' => 'alternativeVeranstaltungstypen',
         'anzahl_teilnehmertage' => 'anzahlTeilnehmertage',
         'anzahl_ue' => 'anzahlUE',
         'beschreibung' => 'beschreibung',
@@ -308,7 +301,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         'kurzbezeichnung' => 'kurzbezeichnung',
         'links' => 'links',
         'methodik' => 'methodik',
-        'plz_einschraenkung' => 'plzEinschraenkung',
         'preise_je_teilnehmergruppe' => 'preiseJeTeilnehmergruppe',
         'publizierung_aktiv' => 'publizierungAktiv',
         'regulaere_uhrzeit_bis' => 'regulaereUhrzeitBis',
@@ -342,7 +334,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'oid' => 'setOid',
-        'alternative_veranstaltungstypen' => 'setAlternativeVeranstaltungstypen',
         'anzahl_teilnehmertage' => 'setAnzahlTeilnehmertage',
         'anzahl_ue' => 'setAnzahlUe',
         'beschreibung' => 'setBeschreibung',
@@ -358,7 +349,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         'kurzbezeichnung' => 'setKurzbezeichnung',
         'links' => 'setLinks',
         'methodik' => 'setMethodik',
-        'plz_einschraenkung' => 'setPlzEinschraenkung',
         'preise_je_teilnehmergruppe' => 'setPreiseJeTeilnehmergruppe',
         'publizierung_aktiv' => 'setPublizierungAktiv',
         'regulaere_uhrzeit_bis' => 'setRegulaereUhrzeitBis',
@@ -392,7 +382,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'oid' => 'getOid',
-        'alternative_veranstaltungstypen' => 'getAlternativeVeranstaltungstypen',
         'anzahl_teilnehmertage' => 'getAnzahlTeilnehmertage',
         'anzahl_ue' => 'getAnzahlUe',
         'beschreibung' => 'getBeschreibung',
@@ -408,7 +397,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         'kurzbezeichnung' => 'getKurzbezeichnung',
         'links' => 'getLinks',
         'methodik' => 'getMethodik',
-        'plz_einschraenkung' => 'getPlzEinschraenkung',
         'preise_je_teilnehmergruppe' => 'getPreiseJeTeilnehmergruppe',
         'publizierung_aktiv' => 'getPublizierungAktiv',
         'regulaere_uhrzeit_bis' => 'getRegulaereUhrzeitBis',
@@ -493,7 +481,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->setIfExists('oid', $data ?? [], null);
-        $this->setIfExists('alternative_veranstaltungstypen', $data ?? [], null);
         $this->setIfExists('anzahl_teilnehmertage', $data ?? [], null);
         $this->setIfExists('anzahl_ue', $data ?? [], null);
         $this->setIfExists('beschreibung', $data ?? [], null);
@@ -509,7 +496,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('kurzbezeichnung', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
         $this->setIfExists('methodik', $data ?? [], null);
-        $this->setIfExists('plz_einschraenkung', $data ?? [], null);
         $this->setIfExists('preise_je_teilnehmergruppe', $data ?? [], null);
         $this->setIfExists('publizierung_aktiv', $data ?? [], null);
         $this->setIfExists('regulaere_uhrzeit_bis', $data ?? [], null);
@@ -610,33 +596,6 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
         $this->container['oid'] = $oid;
-
-        return $this;
-    }
-
-    /**
-     * Gets alternative_veranstaltungstypen
-     *
-     * @return string[]|null
-     */
-    public function getAlternativeVeranstaltungstypen()
-    {
-        return $this->container['alternative_veranstaltungstypen'];
-    }
-
-    /**
-     * Sets alternative_veranstaltungstypen
-     *
-     * @param string[]|null $alternative_veranstaltungstypen Die Liste der der alternativen Veranstaltungstypen
-     *
-     * @return self
-     */
-    public function setAlternativeVeranstaltungstypen($alternative_veranstaltungstypen)
-    {
-        if (is_null($alternative_veranstaltungstypen)) {
-            throw new \InvalidArgumentException('non-nullable alternative_veranstaltungstypen cannot be null');
-        }
-        $this->container['alternative_veranstaltungstypen'] = $alternative_veranstaltungstypen;
 
         return $this;
     }
@@ -752,7 +711,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets fachlicher_ansprechpartner
      *
-     * @return \OpenAPI\Client\Model\Fachlicheransprechpartner|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner|null
      */
     public function getFachlicherAnsprechpartner()
     {
@@ -762,7 +721,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets fachlicher_ansprechpartner
      *
-     * @param \OpenAPI\Client\Model\Fachlicheransprechpartner|null $fachlicher_ansprechpartner fachlicher_ansprechpartner
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner|null $fachlicher_ansprechpartner fachlicher_ansprechpartner
      *
      * @return self
      */
@@ -914,7 +873,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets kategorien
      *
-     * @return \OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]|null
      */
     public function getKategorien()
     {
@@ -924,7 +883,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets kategorien
      *
-     * @param \OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]|null $kategorien Die Liste der Kategorien, die dem Veranstaltungstyp zugeordnet sind.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]|null $kategorien Die Liste der Kategorien, die dem Veranstaltungstyp zugeordnet sind.
      *
      * @return self
      */
@@ -995,7 +954,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -1005,7 +964,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
@@ -1047,36 +1006,9 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets plz_einschraenkung
-     *
-     * @return bool|null
-     */
-    public function getPlzEinschraenkung()
-    {
-        return $this->container['plz_einschraenkung'];
-    }
-
-    /**
-     * Sets plz_einschraenkung
-     *
-     * @param bool|null $plz_einschraenkung Gibt an, ob die PLZ-Einschränkung aktiv ist.
-     *
-     * @return self
-     */
-    public function setPlzEinschraenkung($plz_einschraenkung)
-    {
-        if (is_null($plz_einschraenkung)) {
-            throw new \InvalidArgumentException('non-nullable plz_einschraenkung cannot be null');
-        }
-        $this->container['plz_einschraenkung'] = $plz_einschraenkung;
-
-        return $this;
-    }
-
-    /**
      * Gets preise_je_teilnehmergruppe
      *
-     * @return \OpenAPI\Client\Model\TeilnehmergruppePreis[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]|null
      */
     public function getPreiseJeTeilnehmergruppe()
     {
@@ -1086,7 +1018,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets preise_je_teilnehmergruppe
      *
-     * @param \OpenAPI\Client\Model\TeilnehmergruppePreis[]|null $preise_je_teilnehmergruppe Die Preise je nach Teilnehmergruppe des Veranstaltungstyps.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]|null $preise_je_teilnehmergruppe Die Preise je nach Teilnehmergruppe des Veranstaltungstyps.
      *
      * @return self
      */
@@ -1184,7 +1116,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets sachbearbeiter
      *
-     * @return \OpenAPI\Client\Model\Sachbearbeiter|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null
      */
     public function getSachbearbeiter()
     {
@@ -1194,7 +1126,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets sachbearbeiter
      *
-     * @param \OpenAPI\Client\Model\Sachbearbeiter|null $sachbearbeiter sachbearbeiter
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null $sachbearbeiter sachbearbeiter
      *
      * @return self
      */
@@ -1211,7 +1143,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets schlagwoerter
      *
-     * @return \OpenAPI\Client\Model\Schlagwort[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]|null
      */
     public function getSchlagwoerter()
     {
@@ -1221,7 +1153,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets schlagwoerter
      *
-     * @param \OpenAPI\Client\Model\Schlagwort[]|null $schlagwoerter Die Schlagwörter für den Veranstaltungstyp.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]|null $schlagwoerter Die Schlagwörter für den Veranstaltungstyp.
      *
      * @return self
      */
@@ -1238,7 +1170,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets standardzahlungsbedingung
      *
-     * @return \OpenAPI\Client\Model\Zahlungsbedingung|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung|null
      */
     public function getStandardzahlungsbedingung()
     {
@@ -1248,7 +1180,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets standardzahlungsbedingung
      *
-     * @param \OpenAPI\Client\Model\Zahlungsbedingung|null $standardzahlungsbedingung standardzahlungsbedingung
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung|null $standardzahlungsbedingung standardzahlungsbedingung
      *
      * @return self
      */
@@ -1481,7 +1413,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets veranstaltungsform
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsform|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform|null
      */
     public function getVeranstaltungsform()
     {
@@ -1491,7 +1423,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets veranstaltungsform
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsform|null $veranstaltungsform veranstaltungsform
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform|null $veranstaltungsform veranstaltungsform
      *
      * @return self
      */
@@ -1508,7 +1440,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets veranstaltungskategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungskategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null
      */
     public function getVeranstaltungskategorie()
     {
@@ -1518,7 +1450,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets veranstaltungskategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
      *
      * @return self
      */
@@ -1535,7 +1467,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets veranstaltungsunterkategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null
      */
     public function getVeranstaltungsunterkategorie()
     {
@@ -1545,7 +1477,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets veranstaltungsunterkategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
      *
      * @return self
      */
@@ -1697,7 +1629,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets zielgruppen
      *
-     * @return \OpenAPI\Client\Model\Zielgruppe[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]|null
      */
     public function getZielgruppen()
     {
@@ -1707,7 +1639,7 @@ class Veranstaltungstyp implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets zielgruppen
      *
-     * @param \OpenAPI\Client\Model\Zielgruppe[]|null $zielgruppen Die Zielgruppen für den Veranstaltungstyp.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]|null $zielgruppen Die Zielgruppen für den Veranstaltungstyp.
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * WebBasedTrainingsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -144,12 +144,12 @@ class WebBasedTrainingsApi
      * Ermöglicht es, einen Teilnehmer auf ein Web Based Training zu buchen
      *
      * @param  string $wbt_id ID des Web Based Trainings (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingBuchungUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
     public function createWebBasedTrainingBuchungUsingPOST($wbt_id, $teilnehmerbuchung_create_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingBuchungUsingPOST'][0])
     {
@@ -163,12 +163,12 @@ class WebBasedTrainingsApi
      * Ermöglicht es, einen Teilnehmer auf ein Web Based Training zu buchen
      *
      * @param  string $wbt_id ID des Web Based Trainings (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingBuchungUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebBasedTrainingBuchungUsingPOSTWithHttpInfo($wbt_id, $teilnehmerbuchung_create_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingBuchungUsingPOST'][0])
     {
@@ -211,23 +211,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -248,7 +248,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class WebBasedTrainingsApi
      * Ermöglicht es, einen Teilnehmer auf ein Web Based Training zu buchen
      *
      * @param  string $wbt_id ID des Web Based Trainings (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -286,7 +286,7 @@ class WebBasedTrainingsApi
      * Ermöglicht es, einen Teilnehmer auf ein Web Based Training zu buchen
      *
      * @param  string $wbt_id ID des Web Based Trainings (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -294,7 +294,7 @@ class WebBasedTrainingsApi
      */
     public function createWebBasedTrainingBuchungUsingPOSTAsyncWithHttpInfo($wbt_id, $teilnehmerbuchung_create_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingBuchungUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
         $request = $this->createWebBasedTrainingBuchungUsingPOSTRequest($wbt_id, $teilnehmerbuchung_create_api_dto, $contentType);
 
         return $this->client
@@ -337,7 +337,7 @@ class WebBasedTrainingsApi
      * Create request for operation 'createWebBasedTrainingBuchungUsingPOST'
      *
      * @param  string $wbt_id ID des Web Based Trainings (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmerbuchung_create_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -439,12 +439,12 @@ class WebBasedTrainingsApi
      *
      * Legt ein Web Based Training an
      *
-     * @param  \OpenAPI\Client\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebBasedTraining
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining
      */
     public function createWebBasedTrainingUsingPOST($create_web_based_training_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingUsingPOST'][0])
     {
@@ -457,12 +457,12 @@ class WebBasedTrainingsApi
      *
      * Legt ein Web Based Training an
      *
-     * @param  \OpenAPI\Client\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebBasedTrainingUsingPOSTWithHttpInfo($create_web_based_training_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingUsingPOST'][0])
     {
@@ -505,23 +505,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebBasedTraining' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebBasedTraining' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebBasedTraining', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -542,7 +542,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebBasedTraining',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +557,7 @@ class WebBasedTrainingsApi
      *
      * Legt ein Web Based Training an
      *
-     * @param  \OpenAPI\Client\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -578,7 +578,7 @@ class WebBasedTrainingsApi
      *
      * Legt ein Web Based Training an
      *
-     * @param  \OpenAPI\Client\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -586,7 +586,7 @@ class WebBasedTrainingsApi
      */
     public function createWebBasedTrainingUsingPOSTAsyncWithHttpInfo($create_web_based_training_api_dto = null, string $contentType = self::contentTypes['createWebBasedTrainingUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
         $request = $this->createWebBasedTrainingUsingPOSTRequest($create_web_based_training_api_dto, $contentType);
 
         return $this->client
@@ -628,7 +628,7 @@ class WebBasedTrainingsApi
     /**
      * Create request for operation 'createWebBasedTrainingUsingPOST'
      *
-     * @param  \OpenAPI\Client\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training_api_dto Definition eines Web Bases Training, das angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -718,9 +718,9 @@ class WebBasedTrainingsApi
      * @param  string $id ID des Web Based Trainings, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuWebBasedTrainingUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
     public function getTeilnehmerbuchungenZuWebBasedTrainingUsingGET($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuWebBasedTrainingUsingGET'][0])
     {
@@ -736,9 +736,9 @@ class WebBasedTrainingsApi
      * @param  string $id ID des Web Based Trainings, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuWebBasedTrainingUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerbuchungenZuWebBasedTrainingUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuWebBasedTrainingUsingGET'][0])
     {
@@ -781,23 +781,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -818,7 +818,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -862,7 +862,7 @@ class WebBasedTrainingsApi
      */
     public function getTeilnehmerbuchungenZuWebBasedTrainingUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuWebBasedTrainingUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
         $request = $this->getTeilnehmerbuchungenZuWebBasedTrainingUsingGETRequest($id, $contentType);
 
         return $this->client
@@ -1001,9 +1001,9 @@ class WebBasedTrainingsApi
      * @param  string $id ID des Web Based Trainings (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebBasedTraining
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining
      */
     public function getWebBasedTrainingUsingGET($id, string $contentType = self::contentTypes['getWebBasedTrainingUsingGET'][0])
     {
@@ -1019,9 +1019,9 @@ class WebBasedTrainingsApi
      * @param  string $id ID des Web Based Trainings (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebBasedTrainingUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getWebBasedTrainingUsingGET'][0])
     {
@@ -1064,23 +1064,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebBasedTraining' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebBasedTraining' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebBasedTraining', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1101,7 +1101,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebBasedTraining',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1145,7 +1145,7 @@ class WebBasedTrainingsApi
      */
     public function getWebBasedTrainingUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getWebBasedTrainingUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
         $request = $this->getWebBasedTrainingUsingGETRequest($id, $contentType);
 
         return $this->client
@@ -1283,16 +1283,15 @@ class WebBasedTrainingsApi
      *
      * @param  \DateTime $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Web Based Trainings geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Web-Based Trainings / Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingsUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebBasedTraining[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]
      */
-    public function getWebBasedTrainingsUsingGET($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
+    public function getWebBasedTrainingsUsingGET($modifiziert_ab = null, $teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
     {
-        list($response) = $this->getWebBasedTrainingsUsingGETWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        list($response) = $this->getWebBasedTrainingsUsingGETWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $contentType);
         return $response;
     }
 
@@ -1303,16 +1302,15 @@ class WebBasedTrainingsApi
      *
      * @param  \DateTime $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Web Based Trainings geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Web-Based Trainings / Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingsUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebBasedTraining[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWebBasedTrainingsUsingGETWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
+    public function getWebBasedTrainingsUsingGETWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
     {
-        $request = $this->getWebBasedTrainingsUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        $request = $this->getWebBasedTrainingsUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1351,23 +1349,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebBasedTraining[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebBasedTraining[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebBasedTraining[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebBasedTraining[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1388,7 +1386,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebBasedTraining[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1405,15 +1403,14 @@ class WebBasedTrainingsApi
      *
      * @param  \DateTime $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Web Based Trainings geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Web-Based Trainings / Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingsUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebBasedTrainingsUsingGETAsync($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
+    public function getWebBasedTrainingsUsingGETAsync($modifiziert_ab = null, $teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
     {
-        return $this->getWebBasedTrainingsUsingGETAsyncWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType)
+        return $this->getWebBasedTrainingsUsingGETAsyncWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1428,16 +1425,15 @@ class WebBasedTrainingsApi
      *
      * @param  \DateTime $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Web Based Trainings geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Web-Based Trainings / Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingsUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebBasedTrainingsUsingGETAsyncWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
+    public function getWebBasedTrainingsUsingGETAsyncWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebBasedTraining[]';
-        $request = $this->getWebBasedTrainingsUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining[]';
+        $request = $this->getWebBasedTrainingsUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1480,15 +1476,13 @@ class WebBasedTrainingsApi
      *
      * @param  \DateTime $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Web Based Trainings geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Web-Based Trainings / Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebBasedTrainingsUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getWebBasedTrainingsUsingGETRequest($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
+    public function getWebBasedTrainingsUsingGETRequest($modifiziert_ab = null, $teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getWebBasedTrainingsUsingGET'][0])
     {
-
 
 
 
@@ -1513,15 +1507,6 @@ class WebBasedTrainingsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $teilnehmergruppekuerzel,
             'teilnehmergruppekuerzel', // param base name
-            'string', // openApiType
-            '', // style
-            false, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $veranstaltungstyp_id,
-            'veranstaltungstypId', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -1589,12 +1574,12 @@ class WebBasedTrainingsApi
      *
      * Modifiziert ein bestehendes Web Based Training
      *
-     * @param  \OpenAPI\Client\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebBasedTrainingUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebBasedTraining
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining
      */
     public function updateWebBasedTrainingUsingPUT($update_wbtflg_api_dto = null, string $contentType = self::contentTypes['updateWebBasedTrainingUsingPUT'][0])
     {
@@ -1607,12 +1592,12 @@ class WebBasedTrainingsApi
      *
      * Modifiziert ein bestehendes Web Based Training
      *
-     * @param  \OpenAPI\Client\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebBasedTrainingUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebBasedTrainingUsingPUTWithHttpInfo($update_wbtflg_api_dto = null, string $contentType = self::contentTypes['updateWebBasedTrainingUsingPUT'][0])
     {
@@ -1655,23 +1640,23 @@ class WebBasedTrainingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebBasedTraining' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebBasedTraining' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebBasedTraining', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1692,7 +1677,7 @@ class WebBasedTrainingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebBasedTraining',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1707,7 +1692,7 @@ class WebBasedTrainingsApi
      *
      * Modifiziert ein bestehendes Web Based Training
      *
-     * @param  \OpenAPI\Client\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebBasedTrainingUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1728,7 +1713,7 @@ class WebBasedTrainingsApi
      *
      * Modifiziert ein bestehendes Web Based Training
      *
-     * @param  \OpenAPI\Client\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebBasedTrainingUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1736,7 +1721,7 @@ class WebBasedTrainingsApi
      */
     public function updateWebBasedTrainingUsingPUTAsyncWithHttpInfo($update_wbtflg_api_dto = null, string $contentType = self::contentTypes['updateWebBasedTrainingUsingPUT'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebBasedTraining';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining';
         $request = $this->updateWebBasedTrainingUsingPUTRequest($update_wbtflg_api_dto, $contentType);
 
         return $this->client
@@ -1778,7 +1763,7 @@ class WebBasedTrainingsApi
     /**
      * Create request for operation 'updateWebBasedTrainingUsingPUT'
      *
-     * @param  \OpenAPI\Client\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WebBasedTraining $update_wbtflg_api_dto Definition eines Web Bases Training, das aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebBasedTrainingUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

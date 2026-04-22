@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * TeilnehmerApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -140,12 +140,12 @@ class TeilnehmerApi
      *
      * Legt einen Teilnehmer an
      *
-     * @param  \OpenAPI\Client\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmer
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
     public function createTeilnehmerUsingPOST($create_teilnehmer_api_dto = null, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
@@ -158,12 +158,12 @@ class TeilnehmerApi
      *
      * Legt einen Teilnehmer an
      *
-     * @param  \OpenAPI\Client\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTeilnehmerUsingPOSTWithHttpInfo($create_teilnehmer_api_dto = null, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
@@ -206,23 +206,23 @@ class TeilnehmerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmer' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmer' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmer', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -243,7 +243,7 @@ class TeilnehmerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmer',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,7 +258,7 @@ class TeilnehmerApi
      *
      * Legt einen Teilnehmer an
      *
-     * @param  \OpenAPI\Client\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -279,7 +279,7 @@ class TeilnehmerApi
      *
      * Legt einen Teilnehmer an
      *
-     * @param  \OpenAPI\Client\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -287,7 +287,7 @@ class TeilnehmerApi
      */
     public function createTeilnehmerUsingPOSTAsyncWithHttpInfo($create_teilnehmer_api_dto = null, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
         $request = $this->createTeilnehmerUsingPOSTRequest($create_teilnehmer_api_dto, $contentType);
 
         return $this->client
@@ -329,7 +329,7 @@ class TeilnehmerApi
     /**
      * Create request for operation 'createTeilnehmerUsingPOST'
      *
-     * @param  \OpenAPI\Client\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $create_teilnehmer_api_dto Definition eines Teilnehmers, der angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -418,9 +418,9 @@ class TeilnehmerApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmer[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]
      */
     public function getAktiveTeilnehmerUsingGET(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
@@ -435,9 +435,9 @@ class TeilnehmerApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmer[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAktiveTeilnehmerUsingGETWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
@@ -480,23 +480,23 @@ class TeilnehmerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmer[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmer[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmer[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmer[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -517,7 +517,7 @@ class TeilnehmerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmer[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -559,7 +559,7 @@ class TeilnehmerApi
      */
     public function getAktiveTeilnehmerUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmer[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]';
         $request = $this->getAktiveTeilnehmerUsingGETRequest($contentType);
 
         return $this->client
@@ -682,9 +682,9 @@ class TeilnehmerApi
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmer
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
     public function getTeilnehmerUsingGET($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
@@ -700,9 +700,9 @@ class TeilnehmerApi
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerUsingGETWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
@@ -745,23 +745,23 @@ class TeilnehmerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmer' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmer' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmer', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -782,7 +782,7 @@ class TeilnehmerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmer',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -826,7 +826,7 @@ class TeilnehmerApi
      */
     public function getTeilnehmerUsingGETAsyncWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
         $request = $this->getTeilnehmerUsingGETRequest($personen_nr, $contentType);
 
         return $this->client
@@ -965,9 +965,9 @@ class TeilnehmerApi
      * @param  string $id ID des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmer
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
     public function getTeilnehmerUsingGET1($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
@@ -983,9 +983,9 @@ class TeilnehmerApi
      * @param  string $id ID des Teilnehmers (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
@@ -1028,23 +1028,23 @@ class TeilnehmerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmer' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmer' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmer', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1065,7 +1065,7 @@ class TeilnehmerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmer',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1109,7 +1109,7 @@ class TeilnehmerApi
      */
     public function getTeilnehmerUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
         $request = $this->getTeilnehmerUsingGET1Request($id, $contentType);
 
         return $this->client
@@ -1245,12 +1245,12 @@ class TeilnehmerApi
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
-     * @param  \OpenAPI\Client\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Teilnehmer
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
     public function updateTeilnehmerUsingPUT($update_teilnehmer_api_dto = null, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
@@ -1263,12 +1263,12 @@ class TeilnehmerApi
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
-     * @param  \OpenAPI\Client\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTeilnehmerUsingPUTWithHttpInfo($update_teilnehmer_api_dto = null, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
@@ -1311,23 +1311,23 @@ class TeilnehmerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Teilnehmer' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Teilnehmer' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Teilnehmer', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1348,7 +1348,7 @@ class TeilnehmerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Teilnehmer',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1363,7 +1363,7 @@ class TeilnehmerApi
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
-     * @param  \OpenAPI\Client\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1384,7 +1384,7 @@ class TeilnehmerApi
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
-     * @param  \OpenAPI\Client\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1392,7 +1392,7 @@ class TeilnehmerApi
      */
     public function updateTeilnehmerUsingPUTAsyncWithHttpInfo($update_teilnehmer_api_dto = null, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Teilnehmer';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
         $request = $this->updateTeilnehmerUsingPUTRequest($update_teilnehmer_api_dto, $contentType);
 
         return $this->client
@@ -1434,7 +1434,7 @@ class TeilnehmerApi
     /**
      * Create request for operation 'updateTeilnehmerUsingPUT'
      *
-     * @param  \OpenAPI\Client\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $update_teilnehmer_api_dto Definition eines Teilnehmers, der aktualisiert werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

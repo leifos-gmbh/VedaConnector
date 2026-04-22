@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * VeranstaltungstypenApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -146,9 +146,9 @@ class VeranstaltungstypenApi
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstyp[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
@@ -164,9 +164,9 @@ class VeranstaltungstypenApi
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
@@ -209,23 +209,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstyp[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstyp[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstyp[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -246,7 +246,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstyp[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class VeranstaltungstypenApi
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
         $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGETRequest($teilnehmergruppekuerzel, $contentType);
 
         return $this->client
@@ -424,9 +424,9 @@ class VeranstaltungstypenApi
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\VeranstaltungstypSIGUV[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
@@ -442,9 +442,9 @@ class VeranstaltungstypenApi
      * @param  string $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\VeranstaltungstypSIGUV[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1WithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
@@ -487,23 +487,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -524,7 +524,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class VeranstaltungstypenApi
      */
     public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VeranstaltungstypSIGUV[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]';
         $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Request($teilnehmergruppekuerzel, $contentType);
 
         return $this->client
@@ -702,9 +702,9 @@ class VeranstaltungstypenApi
      * @param  string $id ID des Veranstaltungstypen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstyp
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGET($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
@@ -720,9 +720,9 @@ class VeranstaltungstypenApi
      * @param  string $id ID des Veranstaltungstypen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstyp, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
@@ -765,23 +765,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstyp' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstyp' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstyp', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -802,7 +802,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstyp',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -846,7 +846,7 @@ class VeranstaltungstypenApi
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp';
         $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGETRequest($id, $contentType);
 
         return $this->client
@@ -985,9 +985,9 @@ class VeranstaltungstypenApi
      * @param  string $id ID des Veranstaltungstypen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\VeranstaltungstypSIGUV
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGET1($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
@@ -1003,9 +1003,9 @@ class VeranstaltungstypenApi
      * @param  string $id ID des Veranstaltungstypen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\VeranstaltungstypSIGUV, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
@@ -1048,23 +1048,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VeranstaltungstypSIGUV' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VeranstaltungstypSIGUV' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VeranstaltungstypSIGUV', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VeranstaltungstypSIGUV';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1085,7 +1085,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VeranstaltungstypSIGUV',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1129,7 +1129,7 @@ class VeranstaltungstypenApi
      */
     public function getPraesenzVirtuellVeranstaltungstypUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VeranstaltungstypSIGUV';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV';
         $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGET1Request($id, $contentType);
 
         return $this->client
@@ -1270,9 +1270,9 @@ class VeranstaltungstypenApi
      * @param  string $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]
      */
     public function getVeranstaltungstypPlzBereicheUsingGET1($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
@@ -1290,9 +1290,9 @@ class VeranstaltungstypenApi
      * @param  string $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstypPlzBereicheUsingGET1WithHttpInfo($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
@@ -1335,23 +1335,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1372,7 +1372,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1420,7 +1420,7 @@ class VeranstaltungstypenApi
      */
     public function getVeranstaltungstypPlzBereicheUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\PLZBereichVeranstaltungstyp[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]';
         $request = $this->getVeranstaltungstypPlzBereicheUsingGET1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
 
         return $this->client
@@ -1573,12 +1573,12 @@ class VeranstaltungstypenApi
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstyp[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]
      */
     public function getVeranstaltungsytpenUsingGET($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
@@ -1591,12 +1591,12 @@ class VeranstaltungstypenApi
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungsytpenUsingGETWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
@@ -1639,23 +1639,23 @@ class VeranstaltungstypenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstyp[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstyp[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstyp[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1676,7 +1676,7 @@ class VeranstaltungstypenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstyp[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1691,7 +1691,7 @@ class VeranstaltungstypenApi
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1712,7 +1712,7 @@ class VeranstaltungstypenApi
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1720,7 +1720,7 @@ class VeranstaltungstypenApi
      */
     public function getVeranstaltungsytpenUsingGETAsyncWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstyp[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
         $request = $this->getVeranstaltungsytpenUsingGETRequest($veranstaltungstyp_suche_api_dto, $contentType);
 
         return $this->client
@@ -1762,7 +1762,7 @@ class VeranstaltungstypenApi
     /**
      * Create request for operation 'getVeranstaltungsytpenUsingGET'
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstypSucheApiDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

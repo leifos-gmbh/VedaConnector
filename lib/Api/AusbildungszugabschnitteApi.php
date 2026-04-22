@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * AusbildungszugabschnitteApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,10 +136,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -155,10 +155,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -217,7 +217,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -240,7 +240,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -279,7 +279,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $lernerfolg_melden_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -398,10 +398,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -417,10 +417,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -479,7 +479,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -502,7 +502,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -541,7 +541,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -660,10 +660,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -679,10 +679,10 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -741,7 +741,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -764,7 +764,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -803,7 +803,7 @@ class AusbildungszugabschnitteApi
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  \OpenAPI\Client\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_eingegangen_api_dto Details zum Lernerfolg. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

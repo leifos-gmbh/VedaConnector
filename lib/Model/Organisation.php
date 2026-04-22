@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Organisation Class Doc Comment
  *
  * @category Class
  * @description Beschreibt eine Organisation
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,10 +60,10 @@ class Organisation implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'oid' => 'string',
-        'adresse' => '\OpenAPI\Client\Model\Adresse',
+        'adresse' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Adresse',
         'aufsichtsperson_e_mail' => 'string',
         'aufsichtsperson_name' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'mitgliedsnummer' => 'string',
         'organisationsart_kurzbezeichnung' => 'string',
         'organisationsname1' => 'string',
@@ -394,7 +394,7 @@ class Organisation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adresse
      *
-     * @return \OpenAPI\Client\Model\Adresse|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Adresse|null
      */
     public function getAdresse()
     {
@@ -404,7 +404,7 @@ class Organisation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adresse
      *
-     * @param \OpenAPI\Client\Model\Adresse|null $adresse adresse
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Adresse|null $adresse adresse
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class Organisation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -485,7 +485,7 @@ class Organisation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */

@@ -1,13 +1,11 @@
 <?php
 
-use Monolog\Handler\StreamHandler;
+use Leifos\VedaConnector\I\PluginInterface;
 
 /**
- * VEDA connector plugin base class
- *
  * @author Stefan Meyer <smeyer.ilias@gmx.de>
  */
-class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListener
+class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListener, PluginInterface
 {
     protected const COURSE_SERVICE = 'Modules/Course';
     protected const USER_SERVICE = 'Services/User';
@@ -22,9 +20,6 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
     protected const EVENT_PASSED_COURSE = 'participantHasPassedCourse';
     protected const EVENT_ADD_PARTICIPANT = 'addParticipant';
     protected const EVENT_ASSIGN_USER = 'assignUser';
-    public const PNAME = 'VedaConnector';
-
-    public const PLUGIN_ID = 'vedaimp';
     public const PLUGIN_ID_VEDA_MD_CLAIMING = "vedaclaiming";
     public const PLUGIN_ID_VEDA_UDF_CLAIMING = "vedaudfclaiming";
 
@@ -55,13 +50,13 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
         /** @var ilComponentFactory $component_factory */
         $component_factory = $DIC["component.factory"];
         /** @var ilVedaConnectorPlugin $plugin */
-        $plugin = $component_factory->getPlugin(self::PLUGIN_ID);
+        $plugin = $component_factory->getPlugin(PluginInterface::PLUGIN_ID);
         return $plugin;
     }
 
     public function getPluginName() : string
     {
-        return self::PNAME;
+        return PluginInterface::PNAME;
     }
 
     /**
@@ -89,37 +84,6 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
         return $this->logger;
     }
 
-    protected function loadApiClasses() : void
-    {
-        /**
-         * @var string[] $files
-         * @var string[] $paths
-         */
-        $lib_path = __DIR__ . '/../' . 'lib';
-        if (!scandir($lib_path)) {
-            $this->logger->info('lib folder does not exist');
-            return;
-        }
-        $files = array_diff(scandir($lib_path), ['.', '..']);
-        $this->logger->info('start loading api classes');
-        $paths = array_fill(0, count($files), $lib_path);
-        while (count($files) > 0) {
-            $current_file = array_shift($files);
-            $current_path = array_shift($paths);
-            $file_path = $current_path . '/' . $current_file;
-            if (is_dir($file_path)) {
-                $additional_files = array_diff(scandir($file_path), ['.', '..']);
-                $additional_paths = array_fill(0, count($additional_files), $file_path);
-                array_push($files, ...$additional_files);
-                array_push($paths, ...$additional_paths);
-                continue;
-            }
-            if (is_file($file_path) && str_ends_with($current_file, '.php')) {
-                include_once $file_path;
-            }
-        }
-    }
-
     protected function initVedaUdfClaimingPluginInstance(): void
     {
         /** @var ilVedaUDFClaimingPlugin $plugin */
@@ -136,32 +100,6 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
 
     protected function init() : void
     {
-        $this->loadApiClasses();
-        $settings = ilVedaConnectorSettings::getInstance();
-        $this->logger->debug('Set log level to: ' . $settings->getLogLevel());
-
-        if (
-            $settings->getLogLevel() != ilLogLevel::OFF &&
-            $settings->getLogFile() != ''
-        ) {
-            $stream_handler = new StreamHandler(
-                $settings->getLogFile(),
-                $settings->getLogLevel(),
-                true
-            );
-            $default_format = "[%suid%] [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n";
-            $line_formatter = new ilLineFormatter($default_format, 'Y-m-d H:i:s.u', true, true);
-            $stream_handler->setFormatter($line_formatter);
-            $this->logger->getLogger()->pushHandler($stream_handler);
-        }
-
-        // format lines
-        foreach ($this->logger->getLogger()->getHandlers() as $handler) {
-            if (!$handler instanceof \Monolog\Handler\NullHandler) {
-                $handler->setLevel($settings->getLogLevel());
-            }
-        }
-
         $this->initVedaUdfClaimingPluginInstance();
         $this->initVedaMDClaimingPluginInstance();
     }

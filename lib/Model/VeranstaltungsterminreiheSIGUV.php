@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * VeranstaltungsterminreiheSIGUV Class Doc Comment
  *
  * @category Class
  * @description Eine Veranstaltungsterminreihe mit ihren relevanten Daten
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,44 +65,42 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         'anzahl_teilnehmerbuchungen' => 'int',
         'anzahl_wartelistenbuchungen' => 'int',
         'auslastungsstatus' => 'string',
-        'beginn_des_anmeldezeitraums' => '\DateTime',
         'beschreibung' => 'string',
-        'ende_des_anmeldezeitraums' => '\DateTime',
-        'fachlicher_ansprechpartner' => '\OpenAPI\Client\Model\Fachlicheransprechpartner',
+        'fachlicher_ansprechpartner' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner',
         'geschlossen' => 'bool',
         'hinweise' => 'string',
         'inhalt' => 'string',
-        'kategorien' => '\OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'kategorien' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'methodik' => 'string',
         'mitzubringen_durch_teilnehmer' => 'string',
         'preis' => 'float',
-        'preise_je_teilnehmergruppe' => '\OpenAPI\Client\Model\TeilnehmergruppePreis[]',
-        'sachbearbeiter' => '\OpenAPI\Client\Model\Sachbearbeiter',
-        'sachbearbeiter_tn' => '\OpenAPI\Client\Model\Sachbearbeiter',
-        'schlagwoerter' => '\OpenAPI\Client\Model\Schlagwort[]',
+        'preise_je_teilnehmergruppe' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]',
+        'sachbearbeiter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter',
+        'sachbearbeiter_tn' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter',
+        'schlagwoerter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]',
         'sprache' => 'string',
-        'standardzahlungsbedingung' => '\OpenAPI\Client\Model\Zahlungsbedingung',
+        'standardzahlungsbedingung' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung',
         'teilnehmermaximum' => 'int',
         'teilnehmerminimum' => 'int',
         'termin_bis' => '\DateTime',
         'termin_von' => '\DateTime',
-        'termine' => '\OpenAPI\Client\Model\VeranstaltungsterminDerReiheApiDto[]',
+        'termine' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminDerReiheApiDto[]',
         'thema' => 'string',
         'thema2' => 'string',
-        'veranstalter' => '\OpenAPI\Client\Model\Veranstalter',
+        'veranstalter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstalter',
         'veranstaltungs_nr' => 'string',
-        'veranstaltungsanbieter' => '\OpenAPI\Client\Model\Veranstaltungsanbieter',
-        'veranstaltungsform' => '\OpenAPI\Client\Model\Veranstaltungsform',
-        'veranstaltungskategorie' => '\OpenAPI\Client\Model\Veranstaltungskategorie',
-        'veranstaltungsort' => '\OpenAPI\Client\Model\Veranstaltungsort',
+        'veranstaltungsanbieter' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsanbieter',
+        'veranstaltungsform' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform',
+        'veranstaltungskategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie',
+        'veranstaltungsort' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort',
         'veranstaltungsterminreihen_nr' => 'string',
         'veranstaltungstyp_id' => 'string',
-        'veranstaltungsunterkategorie' => '\OpenAPI\Client\Model\Veranstaltungsunterkategorie',
+        'veranstaltungsunterkategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie',
         'voraussetzung' => 'string',
         'wartelistenmaximum' => 'int',
         'ziel' => 'string',
-        'zielgruppen' => '\OpenAPI\Client\Model\Zielgruppe[]',
+        'zielgruppen' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]',
         'zielgruppen_details' => 'string',
         'zusatzinformationen' => 'string'
     ];
@@ -121,9 +119,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         'anzahl_teilnehmerbuchungen' => null,
         'anzahl_wartelistenbuchungen' => null,
         'auslastungsstatus' => null,
-        'beginn_des_anmeldezeitraums' => 'date-time',
         'beschreibung' => null,
-        'ende_des_anmeldezeitraums' => 'date-time',
         'fachlicher_ansprechpartner' => null,
         'geschlossen' => null,
         'hinweise' => null,
@@ -175,9 +171,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
 		'anzahl_teilnehmerbuchungen' => false,
 		'anzahl_wartelistenbuchungen' => false,
 		'auslastungsstatus' => false,
-		'beginn_des_anmeldezeitraums' => false,
 		'beschreibung' => false,
-		'ende_des_anmeldezeitraums' => false,
 		'fachlicher_ansprechpartner' => false,
 		'geschlossen' => false,
 		'hinweise' => false,
@@ -309,9 +303,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         'anzahl_teilnehmerbuchungen' => 'anzahlTeilnehmerbuchungen',
         'anzahl_wartelistenbuchungen' => 'anzahlWartelistenbuchungen',
         'auslastungsstatus' => 'auslastungsstatus',
-        'beginn_des_anmeldezeitraums' => 'beginnDesAnmeldezeitraums',
         'beschreibung' => 'beschreibung',
-        'ende_des_anmeldezeitraums' => 'endeDesAnmeldezeitraums',
         'fachlicher_ansprechpartner' => 'fachlicherAnsprechpartner',
         'geschlossen' => 'geschlossen',
         'hinweise' => 'hinweise',
@@ -363,9 +355,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         'anzahl_teilnehmerbuchungen' => 'setAnzahlTeilnehmerbuchungen',
         'anzahl_wartelistenbuchungen' => 'setAnzahlWartelistenbuchungen',
         'auslastungsstatus' => 'setAuslastungsstatus',
-        'beginn_des_anmeldezeitraums' => 'setBeginnDesAnmeldezeitraums',
         'beschreibung' => 'setBeschreibung',
-        'ende_des_anmeldezeitraums' => 'setEndeDesAnmeldezeitraums',
         'fachlicher_ansprechpartner' => 'setFachlicherAnsprechpartner',
         'geschlossen' => 'setGeschlossen',
         'hinweise' => 'setHinweise',
@@ -417,9 +407,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         'anzahl_teilnehmerbuchungen' => 'getAnzahlTeilnehmerbuchungen',
         'anzahl_wartelistenbuchungen' => 'getAnzahlWartelistenbuchungen',
         'auslastungsstatus' => 'getAuslastungsstatus',
-        'beginn_des_anmeldezeitraums' => 'getBeginnDesAnmeldezeitraums',
         'beschreibung' => 'getBeschreibung',
-        'ende_des_anmeldezeitraums' => 'getEndeDesAnmeldezeitraums',
         'fachlicher_ansprechpartner' => 'getFachlicherAnsprechpartner',
         'geschlossen' => 'getGeschlossen',
         'hinweise' => 'getHinweise',
@@ -522,9 +510,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('anzahl_teilnehmerbuchungen', $data ?? [], null);
         $this->setIfExists('anzahl_wartelistenbuchungen', $data ?? [], null);
         $this->setIfExists('auslastungsstatus', $data ?? [], null);
-        $this->setIfExists('beginn_des_anmeldezeitraums', $data ?? [], null);
         $this->setIfExists('beschreibung', $data ?? [], null);
-        $this->setIfExists('ende_des_anmeldezeitraums', $data ?? [], null);
         $this->setIfExists('fachlicher_ansprechpartner', $data ?? [], null);
         $this->setIfExists('geschlossen', $data ?? [], null);
         $this->setIfExists('hinweise', $data ?? [], null);
@@ -772,33 +758,6 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets beginn_des_anmeldezeitraums
-     *
-     * @return \DateTime|null
-     */
-    public function getBeginnDesAnmeldezeitraums()
-    {
-        return $this->container['beginn_des_anmeldezeitraums'];
-    }
-
-    /**
-     * Sets beginn_des_anmeldezeitraums
-     *
-     * @param \DateTime|null $beginn_des_anmeldezeitraums Das Datum, an dem der Anmeldezeitraum beginnt.
-     *
-     * @return self
-     */
-    public function setBeginnDesAnmeldezeitraums($beginn_des_anmeldezeitraums)
-    {
-        if (is_null($beginn_des_anmeldezeitraums)) {
-            throw new \InvalidArgumentException('non-nullable beginn_des_anmeldezeitraums cannot be null');
-        }
-        $this->container['beginn_des_anmeldezeitraums'] = $beginn_des_anmeldezeitraums;
-
-        return $this;
-    }
-
-    /**
      * Gets beschreibung
      *
      * @return string|null
@@ -826,36 +785,9 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets ende_des_anmeldezeitraums
-     *
-     * @return \DateTime|null
-     */
-    public function getEndeDesAnmeldezeitraums()
-    {
-        return $this->container['ende_des_anmeldezeitraums'];
-    }
-
-    /**
-     * Sets ende_des_anmeldezeitraums
-     *
-     * @param \DateTime|null $ende_des_anmeldezeitraums Das Datum, an dem der Anmeldezeitraum endet.
-     *
-     * @return self
-     */
-    public function setEndeDesAnmeldezeitraums($ende_des_anmeldezeitraums)
-    {
-        if (is_null($ende_des_anmeldezeitraums)) {
-            throw new \InvalidArgumentException('non-nullable ende_des_anmeldezeitraums cannot be null');
-        }
-        $this->container['ende_des_anmeldezeitraums'] = $ende_des_anmeldezeitraums;
-
-        return $this;
-    }
-
-    /**
      * Gets fachlicher_ansprechpartner
      *
-     * @return \OpenAPI\Client\Model\Fachlicheransprechpartner|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner|null
      */
     public function getFachlicherAnsprechpartner()
     {
@@ -865,7 +797,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets fachlicher_ansprechpartner
      *
-     * @param \OpenAPI\Client\Model\Fachlicheransprechpartner|null $fachlicher_ansprechpartner fachlicher_ansprechpartner
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Fachlicheransprechpartner|null $fachlicher_ansprechpartner fachlicher_ansprechpartner
      *
      * @return self
      */
@@ -963,7 +895,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets kategorien
      *
-     * @return \OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]|null
      */
     public function getKategorien()
     {
@@ -973,7 +905,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets kategorien
      *
-     * @param \OpenAPI\Client\Model\KategorieUndUnterkategorieApiDto[]|null $kategorien Die Liste der Kategorien, die der Veranstaltungsterminreihe zugeordnet sind.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]|null $kategorien Die Liste der Kategorien, die der Veranstaltungsterminreihe zugeordnet sind.
      *
      * @return self
      */
@@ -990,7 +922,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -1000,7 +932,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
@@ -1098,7 +1030,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets preise_je_teilnehmergruppe
      *
-     * @return \OpenAPI\Client\Model\TeilnehmergruppePreis[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]|null
      */
     public function getPreiseJeTeilnehmergruppe()
     {
@@ -1108,7 +1040,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets preise_je_teilnehmergruppe
      *
-     * @param \OpenAPI\Client\Model\TeilnehmergruppePreis[]|null $preise_je_teilnehmergruppe Die Preise je nach Teilnehmergruppe der Veranstaltungsterminreihe.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmergruppePreis[]|null $preise_je_teilnehmergruppe Die Preise je nach Teilnehmergruppe der Veranstaltungsterminreihe.
      *
      * @return self
      */
@@ -1125,7 +1057,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets sachbearbeiter
      *
-     * @return \OpenAPI\Client\Model\Sachbearbeiter|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null
      */
     public function getSachbearbeiter()
     {
@@ -1135,7 +1067,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets sachbearbeiter
      *
-     * @param \OpenAPI\Client\Model\Sachbearbeiter|null $sachbearbeiter sachbearbeiter
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null $sachbearbeiter sachbearbeiter
      *
      * @return self
      */
@@ -1152,7 +1084,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets sachbearbeiter_tn
      *
-     * @return \OpenAPI\Client\Model\Sachbearbeiter|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null
      */
     public function getSachbearbeiterTn()
     {
@@ -1162,7 +1094,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets sachbearbeiter_tn
      *
-     * @param \OpenAPI\Client\Model\Sachbearbeiter|null $sachbearbeiter_tn sachbearbeiter_tn
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null $sachbearbeiter_tn sachbearbeiter_tn
      *
      * @return self
      */
@@ -1179,7 +1111,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets schlagwoerter
      *
-     * @return \OpenAPI\Client\Model\Schlagwort[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]|null
      */
     public function getSchlagwoerter()
     {
@@ -1189,7 +1121,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets schlagwoerter
      *
-     * @param \OpenAPI\Client\Model\Schlagwort[]|null $schlagwoerter Die Schlagwörter für die Veranstaltungsterminreihe.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]|null $schlagwoerter Die Schlagwörter für die Veranstaltungsterminreihe.
      *
      * @return self
      */
@@ -1233,7 +1165,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets standardzahlungsbedingung
      *
-     * @return \OpenAPI\Client\Model\Zahlungsbedingung|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung|null
      */
     public function getStandardzahlungsbedingung()
     {
@@ -1243,7 +1175,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets standardzahlungsbedingung
      *
-     * @param \OpenAPI\Client\Model\Zahlungsbedingung|null $standardzahlungsbedingung standardzahlungsbedingung
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Zahlungsbedingung|null $standardzahlungsbedingung standardzahlungsbedingung
      *
      * @return self
      */
@@ -1368,7 +1300,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets termine
      *
-     * @return \OpenAPI\Client\Model\VeranstaltungsterminDerReiheApiDto[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminDerReiheApiDto[]|null
      */
     public function getTermine()
     {
@@ -1378,7 +1310,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets termine
      *
-     * @param \OpenAPI\Client\Model\VeranstaltungsterminDerReiheApiDto[]|null $termine Die einzelnen Termine der Reihe.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminDerReiheApiDto[]|null $termine Die einzelnen Termine der Reihe.
      *
      * @return self
      */
@@ -1449,7 +1381,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstalter
      *
-     * @return \OpenAPI\Client\Model\Veranstalter|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstalter|null
      */
     public function getVeranstalter()
     {
@@ -1459,7 +1391,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstalter
      *
-     * @param \OpenAPI\Client\Model\Veranstalter|null $veranstalter veranstalter
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstalter|null $veranstalter veranstalter
      *
      * @return self
      */
@@ -1503,7 +1435,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstaltungsanbieter
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsanbieter|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsanbieter|null
      */
     public function getVeranstaltungsanbieter()
     {
@@ -1513,7 +1445,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstaltungsanbieter
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsanbieter|null $veranstaltungsanbieter veranstaltungsanbieter
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsanbieter|null $veranstaltungsanbieter veranstaltungsanbieter
      *
      * @return self
      */
@@ -1530,7 +1462,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstaltungsform
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsform|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform|null
      */
     public function getVeranstaltungsform()
     {
@@ -1540,7 +1472,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstaltungsform
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsform|null $veranstaltungsform veranstaltungsform
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsform|null $veranstaltungsform veranstaltungsform
      *
      * @return self
      */
@@ -1557,7 +1489,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstaltungskategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungskategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null
      */
     public function getVeranstaltungskategorie()
     {
@@ -1567,7 +1499,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstaltungskategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
      *
      * @return self
      */
@@ -1584,7 +1516,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstaltungsort
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsort|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort|null
      */
     public function getVeranstaltungsort()
     {
@@ -1594,7 +1526,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstaltungsort
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsort|null $veranstaltungsort veranstaltungsort
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort|null $veranstaltungsort veranstaltungsort
      *
      * @return self
      */
@@ -1665,7 +1597,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets veranstaltungsunterkategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null
      */
     public function getVeranstaltungsunterkategorie()
     {
@@ -1675,7 +1607,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets veranstaltungsunterkategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
      *
      * @return self
      */
@@ -1773,7 +1705,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets zielgruppen
      *
-     * @return \OpenAPI\Client\Model\Zielgruppe[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]|null
      */
     public function getZielgruppen()
     {
@@ -1783,7 +1715,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets zielgruppen
      *
-     * @param \OpenAPI\Client\Model\Zielgruppe[]|null $zielgruppen Die Zielgruppen für die Veranstaltungsterminreihe.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]|null $zielgruppen Die Zielgruppen für die Veranstaltungsterminreihe.
      *
      * @return self
      */

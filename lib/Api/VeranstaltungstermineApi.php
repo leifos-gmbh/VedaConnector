@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * VeranstaltungstermineApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -159,12 +159,12 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
     public function createVeranstaltungsterminBuchungUsingPOST($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
@@ -178,12 +178,12 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function createVeranstaltungsterminBuchungUsingPOSTWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
@@ -226,23 +226,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -263,7 +263,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -279,7 +279,7 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -301,7 +301,7 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -309,7 +309,7 @@ class VeranstaltungstermineApi
      */
     public function createVeranstaltungsterminBuchungUsingPOSTAsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
         $request = $this->createVeranstaltungsterminBuchungUsingPOSTRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
@@ -352,7 +352,7 @@ class VeranstaltungstermineApi
      * Create request for operation 'createVeranstaltungsterminBuchungUsingPOST'
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -455,12 +455,12 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungApiDto
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
     public function createVeranstaltungsterminBuchungUsingPOST1($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
@@ -474,12 +474,12 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function createVeranstaltungsterminBuchungUsingPOST1WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
@@ -522,23 +522,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungApiDto' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -559,7 +559,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -575,7 +575,7 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -597,7 +597,7 @@ class VeranstaltungstermineApi
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -605,7 +605,7 @@ class VeranstaltungstermineApi
      */
     public function createVeranstaltungsterminBuchungUsingPOST1AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto = null, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungApiDto';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
         $request = $this->createVeranstaltungsterminBuchungUsingPOST1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
@@ -648,7 +648,7 @@ class VeranstaltungstermineApi
      * Create request for operation 'createVeranstaltungsterminBuchungUsingPOST1'
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
-     * @param  \OpenAPI\Client\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto Informationen zu einer Teilnehmerbuchung, die angelegt werden soll. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -753,9 +753,9 @@ class VeranstaltungstermineApi
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
@@ -771,9 +771,9 @@ class VeranstaltungstermineApi
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
@@ -816,23 +816,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -853,7 +853,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -897,7 +897,7 @@ class VeranstaltungstermineApi
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
         $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETRequest($id, $contentType);
 
         return $this->client
@@ -1036,9 +1036,9 @@ class VeranstaltungstermineApi
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
@@ -1054,9 +1054,9 @@ class VeranstaltungstermineApi
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
@@ -1099,23 +1099,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1136,7 +1136,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1180,7 +1180,7 @@ class VeranstaltungstermineApi
      */
     public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TeilnehmerbuchungAbrufenApiDto[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
         $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Request($id, $contentType);
 
         return $this->client
@@ -1320,9 +1320,9 @@ class VeranstaltungstermineApi
      * @param  bool $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstermin
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin
      */
     public function getVeranstaltungsterminUsingGET($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
@@ -1339,9 +1339,9 @@ class VeranstaltungstermineApi
      * @param  bool $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstermin, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungsterminUsingGETWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
@@ -1384,23 +1384,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstermin' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstermin' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstermin', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1421,7 +1421,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstermin',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1467,7 +1467,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin';
         $request = $this->getVeranstaltungsterminUsingGETRequest($id, $stornierten_termin_abrufen, $contentType);
 
         return $this->client
@@ -1618,9 +1618,9 @@ class VeranstaltungstermineApi
      * @param  bool $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\VeranstaltungsterminSIGUV
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV
      */
     public function getVeranstaltungsterminUsingGET1($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
@@ -1637,9 +1637,9 @@ class VeranstaltungstermineApi
      * @param  bool $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\VeranstaltungsterminSIGUV, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungsterminUsingGET1WithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
@@ -1682,23 +1682,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VeranstaltungsterminSIGUV' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VeranstaltungsterminSIGUV' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1719,7 +1719,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1765,7 +1765,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV';
         $request = $this->getVeranstaltungsterminUsingGET1Request($id, $stornierten_termin_abrufen, $contentType);
 
         return $this->client
@@ -1912,12 +1912,12 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstermin[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
     public function getVeranstaltungstermineUsingGET($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
@@ -1930,12 +1930,12 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstermineUsingGETWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
@@ -1978,23 +1978,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstermin[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2015,7 +2015,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstermin[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2030,7 +2030,7 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2051,7 +2051,7 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2059,7 +2059,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungstermineUsingGETAsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
         $request = $this->getVeranstaltungstermineUsingGETRequest($termin_suche_dto, $contentType);
 
         return $this->client
@@ -2101,7 +2101,7 @@ class VeranstaltungstermineApi
     /**
      * Create request for operation 'getVeranstaltungstermineUsingGET'
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2202,9 +2202,9 @@ class VeranstaltungstermineApi
      * @param  string $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstermin[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
     public function getVeranstaltungstermineUsingGET1($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
@@ -2225,9 +2225,9 @@ class VeranstaltungstermineApi
      * @param  string $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstermineUsingGET1WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
@@ -2270,23 +2270,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstermin[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2307,7 +2307,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstermin[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2361,7 +2361,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungstermineUsingGET1AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
         $request = $this->getVeranstaltungstermineUsingGET1Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         return $this->client
@@ -2547,12 +2547,12 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungstermin[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
     public function getVeranstaltungstermineUsingGET2($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
@@ -2565,12 +2565,12 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstermineUsingGET2WithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
@@ -2613,23 +2613,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungstermin[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungstermin[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2650,7 +2650,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungstermin[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2665,7 +2665,7 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2686,7 +2686,7 @@ class VeranstaltungstermineApi
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2694,7 +2694,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungstermineUsingGET2AsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungstermin[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
         $request = $this->getVeranstaltungstermineUsingGET2Request($termin_suche_dto, $contentType);
 
         return $this->client
@@ -2736,7 +2736,7 @@ class VeranstaltungstermineApi
     /**
      * Create request for operation 'getVeranstaltungstermineUsingGET2'
      *
-     * @param  \OpenAPI\Client\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto terminSucheDto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2837,9 +2837,9 @@ class VeranstaltungstermineApi
      * @param  string $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]
      */
     public function getVeranstaltungstermineUsingGET3($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
@@ -2860,9 +2860,9 @@ class VeranstaltungstermineApi
      * @param  string $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\VeranstaltungsterminSIGUV[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstermineUsingGET3WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
@@ -2905,23 +2905,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2942,7 +2942,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2996,7 +2996,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungstermineUsingGET3AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\VeranstaltungsterminSIGUV[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]';
         $request = $this->getVeranstaltungstermineUsingGET3Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         return $this->client
@@ -3188,9 +3188,9 @@ class VeranstaltungstermineApi
      * @param  string $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]
      */
     public function getVeranstaltungstypPlzBereicheUsingGET($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
@@ -3209,9 +3209,9 @@ class VeranstaltungstermineApi
      * @param  string $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungstypPlzBereicheUsingGETWithHttpInfo($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
@@ -3254,23 +3254,23 @@ class VeranstaltungstermineApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3291,7 +3291,7 @@ class VeranstaltungstermineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3341,7 +3341,7 @@ class VeranstaltungstermineApi
      */
     public function getVeranstaltungstypPlzBereicheUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel = null, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\PLZBereichVeranstaltungstermin[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]';
         $request = $this->getVeranstaltungstypPlzBereicheUsingGETRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
 
         return $this->client

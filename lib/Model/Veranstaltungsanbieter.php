@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Veranstaltungsanbieter Class Doc Comment
  *
  * @category Class
  * @description Die Informationen eines Veranstaltungsanbieters einer Veranstaltung.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,9 +61,9 @@ class Veranstaltungsanbieter implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'oid' => 'string',
         'admin_e_mail' => 'string',
-        'agb_api_dto' => '\OpenAPI\Client\Model\AGB',
+        'agb_api_dto' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\AGB',
         'bezeichnung' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'name1' => 'string',
         'name2' => 'string',
         'name3' => 'string',
@@ -407,7 +407,7 @@ class Veranstaltungsanbieter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets agb_api_dto
      *
-     * @return \OpenAPI\Client\Model\AGB|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AGB|null
      */
     public function getAgbApiDto()
     {
@@ -417,7 +417,7 @@ class Veranstaltungsanbieter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets agb_api_dto
      *
-     * @param \OpenAPI\Client\Model\AGB|null $agb_api_dto agb_api_dto
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\AGB|null $agb_api_dto agb_api_dto
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class Veranstaltungsanbieter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -471,7 +471,7 @@ class Veranstaltungsanbieter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */

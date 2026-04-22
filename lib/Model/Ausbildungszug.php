@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Ausbildungszug Class Doc Comment
  *
  * @category Class
  * @description Ein Ausbildungszug mit den relevanten Daten.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,8 +61,8 @@ class Ausbildungszug implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'oid' => 'string',
         'ausbildungsgang_id' => 'string',
-        'ausbildungszugabschnitte' => '\OpenAPI\Client\Model\Ausbildungszugabschnitt[]',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'ausbildungszugabschnitte' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszugabschnitt[]',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'name' => 'string',
         'planungsstatus' => 'string'
     ];
@@ -422,7 +422,7 @@ class Ausbildungszug implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ausbildungszugabschnitte
      *
-     * @return \OpenAPI\Client\Model\Ausbildungszugabschnitt[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszugabschnitt[]
      */
     public function getAusbildungszugabschnitte()
     {
@@ -432,7 +432,7 @@ class Ausbildungszug implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ausbildungszugabschnitte
      *
-     * @param \OpenAPI\Client\Model\Ausbildungszugabschnitt[] $ausbildungszugabschnitte Abschnitte des Ausbildungszugs
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszugabschnitt[] $ausbildungszugabschnitte Abschnitte des Ausbildungszugs
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class Ausbildungszug implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -459,7 +459,7 @@ class Ausbildungszug implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
