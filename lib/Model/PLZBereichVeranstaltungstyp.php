@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * PLZBereichVeranstaltungstyp Class Doc Comment
  *
  * @category Class
  * @description Ein PLZ-Bereich, der dem Veranstaltungstyp zugeordnet ist.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,10 +60,10 @@ class PLZBereichVeranstaltungstyp implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'oid' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'plz_bis' => 'string',
         'plz_von' => 'string',
-        'veranstaltungsort' => '\OpenAPI\Client\Model\Veranstaltungsort',
+        'veranstaltungsort' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort',
         'veranstaltungstyp_id' => 'string'
     ];
 
@@ -368,7 +368,7 @@ class PLZBereichVeranstaltungstyp implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -378,7 +378,7 @@ class PLZBereichVeranstaltungstyp implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class PLZBereichVeranstaltungstyp implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets veranstaltungsort
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsort|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort|null
      */
     public function getVeranstaltungsort()
     {
@@ -459,7 +459,7 @@ class PLZBereichVeranstaltungstyp implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets veranstaltungsort
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsort|null $veranstaltungsort veranstaltungsort
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsort|null $veranstaltungsort veranstaltungsort
      *
      * @return self
      */

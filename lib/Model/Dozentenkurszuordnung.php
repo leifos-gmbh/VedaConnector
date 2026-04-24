@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Dozentenkurszuordnung Class Doc Comment
  *
  * @category Class
  * @description Eine Zuordnung eines Dozenten zu einem Kurs.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,7 +65,7 @@ class Dozentenkurszuordnung implements ModelInterface, ArrayAccess, \JsonSeriali
         'kurs_id' => 'string',
         'kurs_zugriff_ab' => '\DateTime',
         'kurs_zugriff_bis' => '\DateTime',
-        'links' => '\OpenAPI\Client\Model\Links'
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
     /**
@@ -513,7 +513,7 @@ class Dozentenkurszuordnung implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -523,7 +523,7 @@ class Dozentenkurszuordnung implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */

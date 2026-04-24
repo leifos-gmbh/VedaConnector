@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * ElearningkursZugeordneterTerminReihe Class Doc Comment
  *
  * @category Class
  * @description Gibt Informationen zu den des Elearningkurses zugeordneten Terminen und Reihen an.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'oid' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'termin_bis' => '\DateTime',
         'termin_von' => '\DateTime'
     ];
@@ -75,8 +75,8 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'oid' => null,
         'links' => null,
-        'termin_bis' => 'date-time',
-        'termin_von' => 'date-time'
+        'termin_bis' => 'date',
+        'termin_von' => 'date'
     ];
 
     /**
@@ -351,7 +351,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -361,7 +361,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * AusbildungszgeApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,9 +149,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AufsichtspersonKurszugriff[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]
      */
     public function getAufsichtspersonenVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
@@ -167,9 +167,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AufsichtspersonKurszugriff[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAufsichtspersonenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
@@ -212,23 +212,23 @@ class AusbildungszgeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -249,7 +249,7 @@ class AusbildungszgeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -293,7 +293,7 @@ class AusbildungszgeApi
      */
     public function getAufsichtspersonenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AufsichtspersonKurszugriff[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]';
         $request = $this->getAufsichtspersonenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
@@ -432,9 +432,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AusbildungszugDozent[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]
      */
     public function getBeteiligteDozentenVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
@@ -450,9 +450,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AusbildungszugDozent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBeteiligteDozentenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
@@ -495,23 +495,23 @@ class AusbildungszgeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AusbildungszugDozent[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AusbildungszugDozent[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AusbildungszugDozent[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AusbildungszugDozent[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -532,7 +532,7 @@ class AusbildungszgeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AusbildungszugDozent[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -576,7 +576,7 @@ class AusbildungszgeApi
      */
     public function getBeteiligteDozentenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AusbildungszugDozent[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]';
         $request = $this->getBeteiligteDozentenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
@@ -715,9 +715,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AusbildungszugLernbegleiter[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]
      */
     public function getLernbegleiterVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
@@ -733,9 +733,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AusbildungszugLernbegleiter[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLernbegleiterVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
@@ -778,23 +778,23 @@ class AusbildungszgeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -815,7 +815,7 @@ class AusbildungszgeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -859,7 +859,7 @@ class AusbildungszgeApi
      */
     public function getLernbegleiterVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AusbildungszugLernbegleiter[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]';
         $request = $this->getLernbegleiterVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
@@ -998,9 +998,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AusbildungszugTeilnehmer[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]
      */
     public function getTeilnehmerVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
@@ -1016,9 +1016,9 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AusbildungszugTeilnehmer[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTeilnehmerVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
@@ -1061,23 +1061,23 @@ class AusbildungszgeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1098,7 +1098,7 @@ class AusbildungszgeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1142,7 +1142,7 @@ class AusbildungszgeApi
      */
     public function getTeilnehmerVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AusbildungszugTeilnehmer[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]';
         $request = $this->getTeilnehmerVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
@@ -1281,7 +1281,7 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1298,7 +1298,7 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1508,10 +1508,10 @@ class AusbildungszgeApi
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1526,10 +1526,10 @@ class AusbildungszgeApi
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1587,7 +1587,7 @@ class AusbildungszgeApi
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1609,7 +1609,7 @@ class AusbildungszgeApi
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1647,7 +1647,7 @@ class AusbildungszgeApi
      * Create request for operation 'meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  \OpenAPI\Client\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto Der Text der Fehlermeldung (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1752,7 +1752,7 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1769,7 +1769,7 @@ class AusbildungszgeApi
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

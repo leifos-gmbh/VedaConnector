@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * TeilnehmerELearningPlattform Class Doc Comment
  *
  * @category Class
  * @description Teilnehmer einer E-Learning-Plattform mit relevanten Informationen.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,12 +62,11 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => 'string',
         'elearning_plattform_id' => 'string',
         'email' => 'string',
-        'externe_referenz_nr' => 'string',
         'gueltig_ab' => '\DateTime',
         'gueltig_bis' => '\DateTime',
         'initiales_passwort' => 'string',
-        'links' => '\OpenAPI\Client\Model\Links',
-        'teilnehmer' => '\OpenAPI\Client\Model\Teilnehmer'
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
+        'teilnehmer' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer'
     ];
 
     /**
@@ -81,7 +80,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => null,
         'elearning_plattform_id' => null,
         'email' => null,
-        'externe_referenz_nr' => null,
         'gueltig_ab' => 'date',
         'gueltig_bis' => 'date',
         'initiales_passwort' => null,
@@ -98,7 +96,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => false,
 		'elearning_plattform_id' => false,
 		'email' => false,
-		'externe_referenz_nr' => false,
 		'gueltig_ab' => false,
 		'gueltig_bis' => false,
 		'initiales_passwort' => false,
@@ -195,7 +192,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => 'benutzername',
         'elearning_plattform_id' => 'elearningPlattformId',
         'email' => 'email',
-        'externe_referenz_nr' => 'externeReferenzNr',
         'gueltig_ab' => 'gueltigAb',
         'gueltig_bis' => 'gueltigBis',
         'initiales_passwort' => 'initialesPasswort',
@@ -212,7 +208,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => 'setBenutzername',
         'elearning_plattform_id' => 'setElearningPlattformId',
         'email' => 'setEmail',
-        'externe_referenz_nr' => 'setExterneReferenzNr',
         'gueltig_ab' => 'setGueltigAb',
         'gueltig_bis' => 'setGueltigBis',
         'initiales_passwort' => 'setInitialesPasswort',
@@ -229,7 +224,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'benutzername' => 'getBenutzername',
         'elearning_plattform_id' => 'getElearningPlattformId',
         'email' => 'getEmail',
-        'externe_referenz_nr' => 'getExterneReferenzNr',
         'gueltig_ab' => 'getGueltigAb',
         'gueltig_bis' => 'getGueltigBis',
         'initiales_passwort' => 'getInitialesPasswort',
@@ -297,7 +291,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('benutzername', $data ?? [], null);
         $this->setIfExists('elearning_plattform_id', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('externe_referenz_nr', $data ?? [], null);
         $this->setIfExists('gueltig_ab', $data ?? [], null);
         $this->setIfExists('gueltig_bis', $data ?? [], null);
         $this->setIfExists('initiales_passwort', $data ?? [], null);
@@ -435,33 +428,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets externe_referenz_nr
-     *
-     * @return string|null
-     */
-    public function getExterneReferenzNr()
-    {
-        return $this->container['externe_referenz_nr'];
-    }
-
-    /**
-     * Sets externe_referenz_nr
-     *
-     * @param string|null $externe_referenz_nr Die Nummer aus dem externen Partnersystem
-     *
-     * @return self
-     */
-    public function setExterneReferenzNr($externe_referenz_nr)
-    {
-        if (is_null($externe_referenz_nr)) {
-            throw new \InvalidArgumentException('non-nullable externe_referenz_nr cannot be null');
-        }
-        $this->container['externe_referenz_nr'] = $externe_referenz_nr;
-
-        return $this;
-    }
-
-    /**
      * Gets gueltig_ab
      *
      * @return \DateTime
@@ -545,7 +511,7 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -555,7 +521,7 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
@@ -572,7 +538,7 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets teilnehmer
      *
-     * @return \OpenAPI\Client\Model\Teilnehmer
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
     public function getTeilnehmer()
     {
@@ -582,7 +548,7 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets teilnehmer
      *
-     * @param \OpenAPI\Client\Model\Teilnehmer $teilnehmer teilnehmer
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer teilnehmer
      *
      * @return self
      */

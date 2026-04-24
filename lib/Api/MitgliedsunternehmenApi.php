@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * MitgliedsunternehmenApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -146,7 +146,7 @@ class MitgliedsunternehmenApi
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
@@ -164,7 +164,7 @@ class MitgliedsunternehmenApi
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
@@ -429,7 +429,7 @@ class MitgliedsunternehmenApi
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
@@ -447,7 +447,7 @@ class MitgliedsunternehmenApi
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
@@ -713,7 +713,7 @@ class MitgliedsunternehmenApi
      * @param  string $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
@@ -732,7 +732,7 @@ class MitgliedsunternehmenApi
      * @param  string $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1012,9 +1012,9 @@ class MitgliedsunternehmenApi
      * @param  string $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Mitgliedsunternehmen[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]
      */
     public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
@@ -1031,9 +1031,9 @@ class MitgliedsunternehmenApi
      * @param  string $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
@@ -1076,23 +1076,23 @@ class MitgliedsunternehmenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Mitgliedsunternehmen[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Mitgliedsunternehmen[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Mitgliedsunternehmen[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1113,7 +1113,7 @@ class MitgliedsunternehmenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Mitgliedsunternehmen[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1159,7 +1159,7 @@ class MitgliedsunternehmenApi
      */
     public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
         $request = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz, $contentType);
 
         return $this->client
@@ -1310,9 +1310,9 @@ class MitgliedsunternehmenApi
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Mitgliedsunternehmen
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen
      */
     public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGET($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
@@ -1328,9 +1328,9 @@ class MitgliedsunternehmenApi
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Mitgliedsunternehmen, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
@@ -1373,23 +1373,23 @@ class MitgliedsunternehmenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Mitgliedsunternehmen' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Mitgliedsunternehmen' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Mitgliedsunternehmen', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1410,7 +1410,7 @@ class MitgliedsunternehmenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Mitgliedsunternehmen',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1454,7 +1454,7 @@ class MitgliedsunternehmenApi
      */
     public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsyncWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen';
         $request = $this->getMitgliedsunternehmenByBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, $contentType);
 
         return $this->client
@@ -1593,9 +1593,9 @@ class MitgliedsunternehmenApi
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Mitgliedsunternehmen[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]
      */
     public function getMitgliedsunternehmenByMitgliedsnummerUsingGET($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
@@ -1611,9 +1611,9 @@ class MitgliedsunternehmenApi
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMitgliedsunternehmenByMitgliedsnummerUsingGETWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
@@ -1656,23 +1656,23 @@ class MitgliedsunternehmenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Mitgliedsunternehmen[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Mitgliedsunternehmen[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Mitgliedsunternehmen[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1693,7 +1693,7 @@ class MitgliedsunternehmenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Mitgliedsunternehmen[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1737,7 +1737,7 @@ class MitgliedsunternehmenApi
      */
     public function getMitgliedsunternehmenByMitgliedsnummerUsingGETAsyncWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Mitgliedsunternehmen[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
         $request = $this->getMitgliedsunternehmenByMitgliedsnummerUsingGETRequest($mitgliedsnummer, $contentType);
 
         return $this->client

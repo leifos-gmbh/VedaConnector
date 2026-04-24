@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Elearningkurs Class Doc Comment
  *
  * @category Class
  * @description Beschreibt einen E-Learning-Kurs zur Verwendung auf einer externen E-Learning-Plattform
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,10 +66,10 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
         'ende' => '\DateTime',
         'kapazitaet' => 'int',
         'kursabschluss_als_erfolg_dokumentieren' => 'bool',
-        'links' => '\OpenAPI\Client\Model\Links',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]',
         'masterkurs' => 'string',
-        'termine' => '\OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]',
-        'terminreihen' => '\OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]'
+        'termine' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]',
+        'terminreihen' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]'
     ];
 
     /**
@@ -568,7 +568,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -578,7 +578,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */
@@ -622,7 +622,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets termine
      *
-     * @return \OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]|null
      */
     public function getTermine()
     {
@@ -632,7 +632,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets termine
      *
-     * @param \OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]|null $termine Gibt Informationen zu den zugeordneten Terminen an.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]|null $termine Gibt Informationen zu den zugeordneten Terminen an.
      *
      * @return self
      */
@@ -649,7 +649,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets terminreihen
      *
-     * @return \OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]|null
      */
     public function getTerminreihen()
     {
@@ -659,7 +659,7 @@ class Elearningkurs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets terminreihen
      *
-     * @param \OpenAPI\Client\Model\ElearningkursZugeordneterTerminReihe[]|null $terminreihen Gibt Informationen zu den zugeordneten Terminreihen an.
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningkursZugeordneterTerminReihe[]|null $terminreihen Gibt Informationen zu den zugeordneten Terminreihen an.
      *
      * @return self
      */

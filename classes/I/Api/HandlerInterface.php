@@ -1,0 +1,94 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Leifos\VedaConnector\I\Api;
+
+interface HandlerInterface
+{
+    public function handleAfterCloningDependenciesSIFAEvent(
+        int $source_id,
+        int $target_id,
+        int $copy_id
+    ) : void;
+
+    public function handleAfterCloningDependenciesStandardEvent(
+        int $source_id,
+        int $target_id,
+        int $copy_id
+    ) : void;
+
+    public function handleAfterCloningSIFAEvent(
+        int $a_source_id,
+        int $a_target_id,
+        int $a_copy_id
+    ) : void;
+
+    public function handleAfterCloningStandardEvent(
+        int $a_source_id,
+        int $a_target_id,
+        int $a_copy_id
+    ) : void;
+
+    public function handleTrackingEvent(
+        int $obj_id,
+        int $usr_id,
+        int $status
+    ) : void;
+
+    public function handlePasswordChanged(
+        int $usr_id
+    ) : void;
+
+    public function handleCloningFailed() : void;
+
+    public function deleteDeprecatedILIASUsers() : void;
+
+    public function importILIASUsersStandard(
+        bool $a_incremental = false
+    ) : void;
+
+    public function importILIASUsersSIFA(
+        bool $a_incremental = false
+    ) : void;
+
+    public function importStandardCourses() : void;
+
+    public function importSIFACourses() : void;
+
+    public function importSIFAMembers() : void;
+
+    public function importStandardMembers() : void;
+
+    public function isTrainingCourseValid(
+        string $course_oid
+    ) : bool;
+
+    /**
+     * @return string[]
+     */
+    public function validateRemoteExercises(
+        array $exercises,
+        string $course_oid
+    ) : array;
+
+    public function validateLocalExercises(
+        array $exercises,
+        string $course_oid
+    ) : array;
+
+    public function validateLocalSessions(
+        array $sessions,
+        string $course_oid
+    ) : array;
+
+    /**
+     * @return string[]
+     */
+    public function validateRemoteSessions(
+        array $sessions,
+        string $course_oid
+    ) : array;
+
+    public function testConnection() : bool;
+}

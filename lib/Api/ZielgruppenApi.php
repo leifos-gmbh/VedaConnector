@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * ZielgruppenApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -134,9 +134,9 @@ class ZielgruppenApi
      * @param  string $id ID der Zeilgruppe (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Zielgruppe
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe
      */
     public function getZielgruppeUsingGET($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
@@ -152,9 +152,9 @@ class ZielgruppenApi
      * @param  string $id ID der Zeilgruppe (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Zielgruppe, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe, HTTP status code, HTTP response headers (array of strings)
      */
     public function getZielgruppeUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
@@ -197,23 +197,23 @@ class ZielgruppenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Zielgruppe' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Zielgruppe' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Zielgruppe', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Zielgruppe';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -234,7 +234,7 @@ class ZielgruppenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Zielgruppe',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -278,7 +278,7 @@ class ZielgruppenApi
      */
     public function getZielgruppeUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Zielgruppe';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe';
         $request = $this->getZielgruppeUsingGETRequest($id, $contentType);
 
         return $this->client
@@ -416,9 +416,9 @@ class ZielgruppenApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Zielgruppe[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]
      */
     public function getZielgruppenUsingGET(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
@@ -433,9 +433,9 @@ class ZielgruppenApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Zielgruppe[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getZielgruppenUsingGETWithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
@@ -478,23 +478,23 @@ class ZielgruppenApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Zielgruppe[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Zielgruppe[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Zielgruppe[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Zielgruppe[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -515,7 +515,7 @@ class ZielgruppenApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Zielgruppe[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +557,7 @@ class ZielgruppenApi
      */
     public function getZielgruppenUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Zielgruppe[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]';
         $request = $this->getZielgruppenUsingGETRequest($contentType);
 
         return $this->client

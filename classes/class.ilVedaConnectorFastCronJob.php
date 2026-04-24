@@ -1,40 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 use ILIAS\Cron\Schedule\CronJobScheduleType as CronJobScheduleType;
+use Leifos\VedaConnector\Exception\ImporterLocked as ImporterLockedException;
+use Leifos\VedaConnector\Factory as VedaFactory;
+use Leifos\VedaConnector\I\FactoryInterface as VedaFactoryInterface;
+use Leifos\VedaConnector\I\ImporterInterface as ilVedaImporterInterface;
+use Leifos\VedaConnector\I\PluginInterface;
+use Leifos\VedaConnector\I\Settings\Name;
 
 /**
  * @ilCtrl_isCalledBy ilVedaConnectorCronJob: ilObjComponentSettingsGUI
- * VEDA user importer plugin cron job class
- * @author Stefan Meyer <smeyer.ilias@gmx.de>
  */
 class ilVedaConnectorFastCronJob extends ilCronJob
 {
-    private const CRONJOB_ID_POSTFIX = '_fast';
-    private ?ilVedaConnectorSettings $settings;
-    private ?ilLogger $logger;
+    protected const CRONJOB_ID_POSTFIX = '_fast';
+    protected VedaFactoryInterface $veda_factory;
 
-    /**
-     * ilVedaConnectorCronJob constructor.
-     */
     public function __construct()
     {
-        $this->settings = ilVedaConnectorSettings::getInstance();
-        $this->logger = ilVedaConnectorPlugin::getInstance()->getLogger();
+        $this->veda_factory = VedaFactory::getInstance();
     }
 
     public function getId() : string
     {
-        return ilVedaConnectorPlugin::getInstance()->getId()  . self::CRONJOB_ID_POSTFIX;
+        return $this->veda_factory->plugin()->getId()  . self::CRONJOB_ID_POSTFIX;
     }
 
     public function getTitle() : string
     {
-        return ilVedaConnectorPlugin::PNAME;
+        return PluginInterface::PNAME;
     }
 
     public function getDescription() : string
     {
-        return ilVedaConnectorPlugin::getInstance()->txt('cron_job_fast_info');
+        return $this->veda_factory->plugin()->txt('cron_job_fast_info');
     }
 
     public function getDefaultScheduleType() : CronJobScheduleType
@@ -44,7 +45,7 @@ class ilVedaConnectorFastCronJob extends ilCronJob
 
     public function getDefaultScheduleValue() : int
     {
-        return $this->settings->getCronInterval();
+        return $this->veda_factory->settings()->handler()->readAsInt(Name::CRON_INTERVAL);
     }
 
     public function hasAutoActivation() : bool
@@ -65,30 +66,27 @@ class ilVedaConnectorFastCronJob extends ilCronJob
     public function run() : ilCronJobResult
     {
         $result = new ilCronJobResult();
-
         try {
-            $importer = new ilVedaImporter();
-            $importer->import(
-                ilVedaImporter::IMPORT_TYPE_UNDEFINED,
+            $this->veda_factory->importer()->import(
+                ilVedaImporterInterface::IMPORT_TYPE_UNDEFINED,
                 false,
                 [
-                    ilVedaImporter::IMPORT_USR_INCREMENTAL,
-                    ilVedaImporter::IMPORT_MEM
+                    ilVedaImporterInterface::IMPORT_USR_INCREMENTAL,
+                    ilVedaImporterInterface::IMPORT_MEM
                 ]
             );
-            $this->settings->updateLastCronExecution();
-            $mail_manager = new ilVedaMailManager();
-            $mail_manager->sendStatus();
+            $this->veda_factory->settings()->handler()->writeInt(Name::CRON_LAST_EXECUTION, time());
+            $this->veda_factory->mail()->handler()->sendStatus();
             $result->setStatus(ilCronJobResult::STATUS_OK);
-        } catch (ilVedaImporterLockedException $e) {
+        } catch (ImporterLockedException $e) {
             // Ignore this lock exception, since the main cron job might be running.
             $result->setStatus(ilCronJobResult::STATUS_NO_ACTION);
             $result->setMessage('Cronjob locked');
-            return $result;
+            $this->veda_factory->logger()->handler()->info('Cronjob locked');
         } catch (Exception $e) {
             $result->setStatus(ilCronJobResult::STATUS_CRASHED);
             $result->setMessage($e->getMessage());
-            $this->logger->warning('Cron update failed with message: ' . $e->getMessage());
+            $this->veda_factory->logger()->handler()->warning('Cron update failed with message: ' . $e->getMessage());
         }
         return $result;
     }

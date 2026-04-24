@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * AusbildungszugDozent Class Doc Comment
  *
  * @category Class
  * @description An einem Ausbildungszug beteiligte Dozenten.
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class AusbildungszugDozent implements ModelInterface, ArrayAccess, \JsonSerializ
         'dozent_id' => 'string',
         'kurs_zugriff_ab' => '\DateTime',
         'kurs_zugriff_bis' => '\DateTime',
-        'links' => '\OpenAPI\Client\Model\Links'
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
     /**
@@ -399,7 +399,7 @@ class AusbildungszugDozent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets links
      *
-     * @return \OpenAPI\Client\Model\Links|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
      */
     public function getLinks()
     {
@@ -409,7 +409,7 @@ class AusbildungszugDozent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets links
      *
-     * @param \OpenAPI\Client\Model\Links|null $links links
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
      *
      * @return self
      */

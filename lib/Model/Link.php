@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * Link Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,17 +58,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'deprecation' => 'string',
         'href' => 'string',
-        'hreflang' => 'string',
-        'media' => 'string',
-        'name' => 'string',
-        'profile' => 'string',
-        'rel' => 'object',
-        'template' => '\OpenAPI\Client\Model\UriTemplate',
-        'templated' => 'bool',
-        'title' => 'string',
-        'type' => 'string'
+        'rel' => 'string',
+        'templated' => 'bool'
     ];
 
     /**
@@ -79,17 +71,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'deprecation' => null,
         'href' => null,
-        'hreflang' => null,
-        'media' => null,
-        'name' => null,
-        'profile' => null,
         'rel' => null,
-        'template' => null,
-        'templated' => null,
-        'title' => null,
-        'type' => null
+        'templated' => null
     ];
 
     /**
@@ -98,17 +82,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'deprecation' => false,
-		'href' => false,
-		'hreflang' => false,
-		'media' => false,
-		'name' => false,
-		'profile' => false,
+        'href' => false,
 		'rel' => false,
-		'template' => false,
-		'templated' => false,
-		'title' => false,
-		'type' => false
+		'templated' => false
     ];
 
     /**
@@ -197,17 +173,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'deprecation' => 'deprecation',
         'href' => 'href',
-        'hreflang' => 'hreflang',
-        'media' => 'media',
-        'name' => 'name',
-        'profile' => 'profile',
         'rel' => 'rel',
-        'template' => 'template',
-        'templated' => 'templated',
-        'title' => 'title',
-        'type' => 'type'
+        'templated' => 'templated'
     ];
 
     /**
@@ -216,17 +184,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'deprecation' => 'setDeprecation',
         'href' => 'setHref',
-        'hreflang' => 'setHreflang',
-        'media' => 'setMedia',
-        'name' => 'setName',
-        'profile' => 'setProfile',
         'rel' => 'setRel',
-        'template' => 'setTemplate',
-        'templated' => 'setTemplated',
-        'title' => 'setTitle',
-        'type' => 'setType'
+        'templated' => 'setTemplated'
     ];
 
     /**
@@ -235,17 +195,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'deprecation' => 'getDeprecation',
         'href' => 'getHref',
-        'hreflang' => 'getHreflang',
-        'media' => 'getMedia',
-        'name' => 'getName',
-        'profile' => 'getProfile',
         'rel' => 'getRel',
-        'template' => 'getTemplate',
-        'templated' => 'getTemplated',
-        'title' => 'getTitle',
-        'type' => 'getType'
+        'templated' => 'getTemplated'
     ];
 
     /**
@@ -305,17 +257,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('deprecation', $data ?? [], null);
         $this->setIfExists('href', $data ?? [], null);
-        $this->setIfExists('hreflang', $data ?? [], null);
-        $this->setIfExists('media', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('profile', $data ?? [], null);
         $this->setIfExists('rel', $data ?? [], null);
-        $this->setIfExists('template', $data ?? [], null);
         $this->setIfExists('templated', $data ?? [], null);
-        $this->setIfExists('title', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -361,33 +305,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets deprecation
-     *
-     * @return string|null
-     */
-    public function getDeprecation()
-    {
-        return $this->container['deprecation'];
-    }
-
-    /**
-     * Sets deprecation
-     *
-     * @param string|null $deprecation deprecation
-     *
-     * @return self
-     */
-    public function setDeprecation($deprecation)
-    {
-        if (is_null($deprecation)) {
-            throw new \InvalidArgumentException('non-nullable deprecation cannot be null');
-        }
-        $this->container['deprecation'] = $deprecation;
-
-        return $this;
-    }
-
-    /**
      * Gets href
      *
      * @return string|null
@@ -415,117 +332,9 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets hreflang
-     *
-     * @return string|null
-     */
-    public function getHreflang()
-    {
-        return $this->container['hreflang'];
-    }
-
-    /**
-     * Sets hreflang
-     *
-     * @param string|null $hreflang hreflang
-     *
-     * @return self
-     */
-    public function setHreflang($hreflang)
-    {
-        if (is_null($hreflang)) {
-            throw new \InvalidArgumentException('non-nullable hreflang cannot be null');
-        }
-        $this->container['hreflang'] = $hreflang;
-
-        return $this;
-    }
-
-    /**
-     * Gets media
-     *
-     * @return string|null
-     */
-    public function getMedia()
-    {
-        return $this->container['media'];
-    }
-
-    /**
-     * Sets media
-     *
-     * @param string|null $media media
-     *
-     * @return self
-     */
-    public function setMedia($media)
-    {
-        if (is_null($media)) {
-            throw new \InvalidArgumentException('non-nullable media cannot be null');
-        }
-        $this->container['media'] = $media;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets profile
-     *
-     * @return string|null
-     */
-    public function getProfile()
-    {
-        return $this->container['profile'];
-    }
-
-    /**
-     * Sets profile
-     *
-     * @param string|null $profile profile
-     *
-     * @return self
-     */
-    public function setProfile($profile)
-    {
-        if (is_null($profile)) {
-            throw new \InvalidArgumentException('non-nullable profile cannot be null');
-        }
-        $this->container['profile'] = $profile;
-
-        return $this;
-    }
-
-    /**
      * Gets rel
      *
-     * @return object|null
+     * @return string|null
      */
     public function getRel()
     {
@@ -535,7 +344,7 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rel
      *
-     * @param object|null $rel rel
+     * @param string|null $rel rel
      *
      * @return self
      */
@@ -545,33 +354,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable rel cannot be null');
         }
         $this->container['rel'] = $rel;
-
-        return $this;
-    }
-
-    /**
-     * Gets template
-     *
-     * @return \OpenAPI\Client\Model\UriTemplate|null
-     */
-    public function getTemplate()
-    {
-        return $this->container['template'];
-    }
-
-    /**
-     * Sets template
-     *
-     * @param \OpenAPI\Client\Model\UriTemplate|null $template template
-     *
-     * @return self
-     */
-    public function setTemplate($template)
-    {
-        if (is_null($template)) {
-            throw new \InvalidArgumentException('non-nullable template cannot be null');
-        }
-        $this->container['template'] = $template;
 
         return $this;
     }
@@ -599,60 +381,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable templated cannot be null');
         }
         $this->container['templated'] = $templated;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        if (is_null($title)) {
-            throw new \InvalidArgumentException('non-nullable title cannot be null');
-        }
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $this->container['type'] = $type;
 
         return $this;
     }

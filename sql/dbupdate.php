@@ -251,3 +251,300 @@ if ($ilDB->tableColumnExists('cron_crnhk_vedaimp_ml', 'msg')) {
     );
 }
 ?>
+<#13>
+<?php
+$query = "SELECT value FROM settings WHERE module = 'vedaudfclaiming' AND settings.keyword = 'fields'";
+$result = $ilDB->query($query);
+$remaining_udf_field_names = [];
+
+# migration udf field values
+if (!is_null($row = $result->fetchAssoc())) {
+    $map = unserialize($row['value']);
+    foreach (['supervisor', 'supervisor_mail', 'member_id', 'tutor_id', 'companion_id', 'supervisor_id'] as $field_name) {
+        if (isset($map[$field_name])) {
+            $ilDB->insert('settings', [
+                    'module' => ['text', 'vedaimp'],
+                    'keyword' => ['text', $field_name],
+                    'value' => ['text', '' . $map[$field_name]]
+            ]);
+        } else {
+            $remaining_udf_field_names[] = $field_name;
+        }
+    }
+} else {
+    $remaining_udf_field_names = ['supervisor', 'supervisor_mail', 'member_id', 'tutor_id', 'companion_id', 'supervisor_id'];
+}
+
+# Create udf fields that do not exist
+foreach ($remaining_udf_field_names as $field_name) {
+    $next_id = null;
+    switch ($field_name) {
+        case 'supervisor':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Aufsichtsperson'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 1],
+                    'export' => ['integer', 1],
+                    'course_export' => ['integer', 1],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 1],
+                    'changeable_lua' => ['integer', 1],
+                    'group_export' => ['integer', 1],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+        case 'supervisor_mail':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Aufsichtsperson e-Mail'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 1],
+                    'export' => ['integer', 1],
+                    'course_export' => ['integer', 1],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 1],
+                    'changeable_lua' => ['integer', 1],
+                    'group_export' => ['integer', 1],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+        case 'member_id':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Mitgliedsnummer'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 1],
+                    'export' => ['integer', 1],
+                    'course_export' => ['integer', 1],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 1],
+                    'changeable_lua' => ['integer', 1],
+                    'group_export' => ['integer', 1],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+        case 'tutor_id':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Dozenten-ID'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 0],
+                    'export' => ['integer', 0],
+                    'course_export' => ['integer', 0],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 0],
+                    'changeable_lua' => ['integer', 0],
+                    'group_export' => ['integer', 0],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+        case 'companion_id':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Lernbegleiter-ID'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 0],
+                    'export' => ['integer', 0],
+                    'course_export' => ['integer', 0],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 0],
+                    'changeable_lua' => ['integer', 0],
+                    'group_export' => ['integer', 0],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+        case 'supervisor_id':
+            $next_id = $ilDB->nextId('udf_definition');
+            $ilDB->insert('udf_definition', [
+                    'field_id' => ['integer', $next_id],
+                    'field_name' => ['text', 'Aufsichtsperson-ID'],
+                    'field_type' => ['integer', 1],
+                    'field_values' => ['clob',  'a:0:{}'],
+                    'visible' => ['integer', 1],
+                    'changeable' => ['integer', 0],
+                    'required' => ['integer', 0],
+                    'searchable' => ['integer', 0],
+                    'export' => ['integer', 0],
+                    'course_export' => ['integer', 0],
+                    'registration_visible' => ['integer', 0],
+                    'visible_lua' => ['integer', 0],
+                    'changeable_lua' => ['integer', 0],
+                    'group_export' => ['integer', 0],
+                    'certificate' => ['integer', 0],
+                    'prg_export' => ['integer', 0]
+            ]);
+            break;
+    }
+    if (is_null($next_id)) {
+        continue;
+    }
+    $ilDB->insert('settings', [
+            'module' => ['text', 'vedaimp'],
+            'keyword' => ['text', $field_name],
+            'value' => ['text', '' . $next_id]
+    ]);
+}
+?>
+<#14>
+<?php
+$query = "SELECT value FROM settings WHERE module = 'vedaclaiming' AND settings.keyword = 'records'";
+$result = $ilDB->query($query);
+$remaining_md_records = [];
+
+# migration if md records
+if (!is_null($row = $result->fetchAssoc())) {
+    $map = unserialize($row['value']);
+    foreach (['Sifa-Ausbildung', 'Sifa-Abschnitt'] as $field_name) {
+        if (isset($map[$field_name])) {
+            $ilDB->insert('settings', [
+                    'module' => ['text', 'vedaimp'],
+                    'keyword' => ['text', $field_name],
+                    'value' => ['text', '' . $map[$field_name]]
+            ]);
+        } else {
+            $remaining_md_records[] = $field_name;
+        }
+    }
+} else {
+    $remaining_md_records = ['Sifa-Ausbildung', 'Sifa-Abschnitt'];
+}
+
+# create md records that do not exist
+foreach ($remaining_md_records as $field_name) {
+    $next_id = null;
+    switch ($field_name) {
+        case 'Sifa-Ausbildung':
+            $next_id = ilAdvancedMDClaimingPlugin::createDBRecord(
+                $field_name,
+               '',
+                true,
+                ['crs']
+            );
+            break;
+        case 'Sifa-Abschnitt':
+            $next_id = ilAdvancedMDClaimingPlugin::createDBRecord(
+                $field_name,
+                '',
+                true,
+                ['exc','sess']
+            );
+            break;
+    }
+    if (is_null($next_id)) {
+        continue;
+    }
+    $ilDB->insert('settings', [
+            'module' => ['text', 'vedaimp'],
+            'keyword' => ['text', $field_name],
+            'value' => ['text', '' . $next_id]
+    ]);
+}
+
+?>
+<#15>
+<?php
+$query = "SELECT value FROM settings WHERE module = 'vedaclaiming' AND settings.keyword = 'fields'";
+$result = $ilDB->query($query);
+$remaining_md_field_names = [];
+
+# migration of md field values
+if (!is_null($row = $result->fetchAssoc())) {
+    $map = unserialize($row['value']);
+    foreach (['Ausbildungsgang-ID', 'Ausbildungszug-ID', 'Ausbildungsgangabschitt-ID', 'Ausbildungszugabschnitt-ID'] as $field_name) {
+        if (isset($map[$field_name])) {
+            $ilDB->insert('settings', [
+                    'module' => ['text', 'vedaimp'],
+                    'keyword' => ['text', $field_name],
+                    'value' => ['text', '' . $map[$field_name]]
+            ]);
+        } else {
+            $remaining_md_field_names[] = $field_name;
+        }
+    }
+} else {
+    $remaining_md_field_names = ['Ausbildungsgang-ID', 'Ausbildungszug-ID', 'Ausbildungsgangabschitt-ID', 'Ausbildungszugabschnitt-ID'];
+}
+
+$record_ausbildung = null;
+$query = "SELECT value FROM settings WHERE module = 'vedaimp' AND keyword = 'Sifa-Ausbildung'";
+$result = $ilDB->query($query);
+while ($row = $result->fetchAssoc()) {
+    $record_ausbildung = (int) $row['value'];
+}
+
+$record_abschnitt = null;
+$query = "SELECT value FROM settings WHERE module = 'vedaimp' AND keyword = 'Sifa-Abschnitt'";
+$result = $ilDB->query($query);
+while ($row = $result->fetchAssoc()) {
+    $record_abschnitt = (int) $row['value'];
+}
+
+if (is_null($record_ausbildung) || is_null($record_abschnitt)) {
+    throw new Exception("Sifa-Ausbildung, or Sifa-Abschnitt metadate record is missing.");
+}
+
+foreach ($remaining_md_field_names as $field_name) {
+    $next_id = null;
+    switch ($field_name) {
+        case 'Ausbildungsgang-ID':
+        case 'Ausbildungszug-ID':
+            $next_id = ilAdvancedMDClaimingPlugin::createDBField(
+                    $record_ausbildung,
+                    ilAdvancedMDFieldDefinition::TYPE_TEXT,
+                    $field_name,
+                    null,
+                    true
+            );
+            break;
+        case 'Ausbildungsgangabschitt-ID':
+        case 'Ausbildungszugabschnitt-ID':
+            $next_id = ilAdvancedMDClaimingPlugin::createDBField(
+                    $record_abschnitt,
+                    ilAdvancedMDFieldDefinition::TYPE_TEXT,
+                    $field_name,
+                    null,
+                    true
+            );
+            break;
+    }
+    if (is_null($next_id)) {
+        continue;
+    }
+    $ilDB->insert('settings', [
+            'module' => ['text', 'vedaimp'],
+            'keyword' => ['text', $field_name],
+            'value' => ['text', '' . $next_id]
+    ]);
+}
+?>

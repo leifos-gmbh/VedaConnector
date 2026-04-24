@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Leifos\VedaConnector\GeneratedOpenApi\ApiException;
+use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
+use Leifos\VedaConnector\GeneratedOpenApi\HeaderSelector;
+use Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * VeranstaltungskategorienApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -133,9 +133,9 @@ class VeranstaltungskategorienApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungskategorie[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]
      */
     public function getAlleVeranstaltungskategorienUsingGET(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
@@ -150,9 +150,9 @@ class VeranstaltungskategorienApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungskategorie[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAlleVeranstaltungskategorienUsingGETWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
@@ -195,23 +195,23 @@ class VeranstaltungskategorienApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungskategorie[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungskategorie[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungskategorie[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungskategorie[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -232,7 +232,7 @@ class VeranstaltungskategorienApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungskategorie[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class VeranstaltungskategorienApi
      */
     public function getAlleVeranstaltungskategorienUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungskategorie[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]';
         $request = $this->getAlleVeranstaltungskategorienUsingGETRequest($contentType);
 
         return $this->client
@@ -397,9 +397,9 @@ class VeranstaltungskategorienApi
      * @param  string $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Veranstaltungsunterkategorie[]
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]
      */
     public function getVeranstaltungsunterkategorienUsingGET($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
@@ -415,9 +415,9 @@ class VeranstaltungskategorienApi
      * @param  string $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Veranstaltungsunterkategorie[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getVeranstaltungsunterkategorienUsingGETWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
@@ -460,23 +460,23 @@ class VeranstaltungskategorienApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]' === '\SplFileObject') {
+                    if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]' !== 'string') {
+                        if ('\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]', []),
+                        ObjectSerializer::deserialize($content, '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]';
+            $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -497,7 +497,7 @@ class VeranstaltungskategorienApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]',
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -541,7 +541,7 @@ class VeranstaltungskategorienApi
      */
     public function getVeranstaltungsunterkategorienUsingGETAsyncWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Veranstaltungsunterkategorie[]';
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]';
         $request = $this->getVeranstaltungsunterkategorienUsingGETRequest($veranstaltungskategorie_id, $contentType);
 
         return $this->client

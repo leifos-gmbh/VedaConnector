@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Leifos\VedaConnector\GeneratedOpenApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Leifos\VedaConnector\GeneratedOpenApi\ObjectSerializer;
 
 /**
  * KategorieUndUnterkategorieApiDto Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Leifos\VedaConnector\GeneratedOpenApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class KategorieUndUnterkategorieApiDto implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'veranstaltungskategorie' => '\OpenAPI\Client\Model\Veranstaltungskategorie',
-        'veranstaltungsunterkategorie' => '\OpenAPI\Client\Model\Veranstaltungsunterkategorie'
+        'veranstaltungskategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie',
+        'veranstaltungsunterkategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie'
     ];
 
     /**
@@ -300,7 +300,7 @@ class KategorieUndUnterkategorieApiDto implements ModelInterface, ArrayAccess, \
     /**
      * Gets veranstaltungskategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungskategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null
      */
     public function getVeranstaltungskategorie()
     {
@@ -310,7 +310,7 @@ class KategorieUndUnterkategorieApiDto implements ModelInterface, ArrayAccess, \
     /**
      * Sets veranstaltungskategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie|null $veranstaltungskategorie veranstaltungskategorie
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class KategorieUndUnterkategorieApiDto implements ModelInterface, ArrayAccess, \
     /**
      * Gets veranstaltungsunterkategorie
      *
-     * @return \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null
      */
     public function getVeranstaltungsunterkategorie()
     {
@@ -337,7 +337,7 @@ class KategorieUndUnterkategorieApiDto implements ModelInterface, ArrayAccess, \
     /**
      * Sets veranstaltungsunterkategorie
      *
-     * @param \OpenAPI\Client\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie|null $veranstaltungsunterkategorie veranstaltungsunterkategorie
      *
      * @return self
      */
