@@ -275,6 +275,13 @@ if (!is_null($row = $result->fetchAssoc())) {
     $remaining_udf_field_names = ['supervisor', 'supervisor_mail', 'member_id', 'tutor_id', 'companion_id', 'supervisor_id'];
 }
 
+
+$query = "SELECT * FROM settings WHERE  module = 'vedaimp' AND " . $ilDB->in('keyword', $remaining_udf_field_names, false, ilDBConstants::T_TEXT);
+$result = $ilDB->query($query);
+while ($row = $result->fetchAssoc()) {
+    $remaining_udf_field_names = array_diff($remaining_udf_field_names, [$row['keyword']]);
+}
+
 # Create udf fields that do not exist
 foreach ($remaining_udf_field_names as $field_name) {
     $next_id = null;
@@ -440,6 +447,12 @@ if (!is_null($row = $result->fetchAssoc())) {
     $remaining_md_records = ['Sifa-Ausbildung', 'Sifa-Abschnitt'];
 }
 
+$query = "SELECT * FROM settings WHERE module = 'vedaimp' AND " . $ilDB->in('keyword', $remaining_md_records, false, ilDBConstants::T_TEXT);
+$result = $ilDB->query($query);
+while ($row = $result->fetchAssoc()) {
+    $remaining_md_records = array_diff($remaining_md_records, [$row['keyword']]);
+}
+
 # create md records that do not exist
 foreach ($remaining_md_records as $field_name) {
     $next_id = null;
@@ -494,6 +507,12 @@ if (!is_null($row = $result->fetchAssoc())) {
     }
 } else {
     $remaining_md_field_names = ['Ausbildungsgang-ID', 'Ausbildungszug-ID', 'Ausbildungsgangabschitt-ID', 'Ausbildungszugabschnitt-ID'];
+}
+
+$query = "SELECT * FROM settings WHERE  module = 'vedaimp' AND " . $ilDB->in('keyword', $remaining_md_field_names, false, ilDBConstants::T_TEXT);
+$result = $ilDB->query($query);
+while ($row = $result->fetchAssoc()) {
+    $remaining_md_field_names = array_diff($remaining_md_field_names, [$row['keyword']]);
 }
 
 $record_ausbildung = null;
