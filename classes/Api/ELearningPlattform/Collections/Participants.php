@@ -15,7 +15,7 @@ class Participants implements ParticipantsInterface
     protected array $elearning_participants;
     protected int $index;
 
-    public function __construct(ParticipantsInterface ...$elearning_participants)
+    public function __construct(TeilnehmerELearningPlattform ...$elearning_participants)
     {
         $this->elearning_participants = $elearning_participants;
         $this->index = 0;
