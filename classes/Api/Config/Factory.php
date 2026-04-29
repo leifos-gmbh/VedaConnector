@@ -20,7 +20,7 @@ class Factory implements FactoryInterface
 
     public function openApi(): Configuration
     {
-        if (!is_null(self::$open_api_config)) {
+        if (!isset(self::$open_api_config)) {
             self::$open_api_config = new Configuration();
             self::$open_api_config->setApiKey(
                 SettingNames::HEADER_TOKEN->value,
