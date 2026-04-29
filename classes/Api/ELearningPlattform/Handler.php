@@ -23,7 +23,6 @@ use Leifos\VedaConnector\I\Settings\Name as SettingsName;
 
 class Handler implements HandlerInterface
 {
-    protected ELearningPlattformenApi $api_elearning;
     protected string $plattform_id;
 
     public function __construct(
@@ -40,15 +39,15 @@ class Handler implements HandlerInterface
         string $api_call_name,
         Exception $e
     ): void {
-        $this->exception_factory->handler()->writeToLog($e, $api_call_name, $this->api_elearning->getConfig()->getAccessToken());
-        $this->exception_factory->handler()->storeAsMailSegment($e, $api_call_name, $this->api_elearning->getConfig()->getAccessToken());
+        $this->exception_factory->handler()->writeToLog($e, $api_call_name, $this->api->getConfig()->getAccessToken());
+        $this->exception_factory->handler()->storeAsMailSegment($e, $api_call_name, $this->api->getConfig()->getAccessToken());
     }
 
     public function requestCourseMembers(
         string $crs_oid
     ) : ?CourseMembersInterface {
         try {
-            $result = $this->api_elearning->getVonTeilnehmernDieAktivenKurszuordnungenUsingGET(
+            $result = $this->api->getVonTeilnehmernDieAktivenKurszuordnungenUsingGET(
                 $this->plattform_id,
                 $crs_oid
             );
@@ -65,7 +64,7 @@ class Handler implements HandlerInterface
         string $crs_oid
     ) : ?CourseCompanionsInterface {
         try {
-            $result = $this->api_elearning->getVonLernbegleiternDieAktivenKurszuordnungenUsingGET(
+            $result = $this->api->getVonLernbegleiternDieAktivenKurszuordnungenUsingGET(
                 $this->plattform_id,
                 $crs_oid
             );
@@ -82,7 +81,7 @@ class Handler implements HandlerInterface
         string $crs_oid
     ) : ?CourseTutorsInterface {
         try {
-            $result = $this->api_elearning->getVonDozentenDieAktivenKurszuordnungenUsingGET(
+            $result = $this->api->getVonDozentenDieAktivenKurszuordnungenUsingGET(
                 $this->plattform_id,
                 $crs_oid
             );
@@ -98,7 +97,7 @@ class Handler implements HandlerInterface
     public function requestCourses() : ?CoursesInterface
     {
         try {
-            $result = $this->api_elearning->getAktiveELearningKurseUsingGET(
+            $result = $this->api->getAktiveELearningKurseUsingGET(
                 $this->plattform_id
             );
             $this->logger->debug('Received e-learning courses.');
@@ -114,7 +113,7 @@ class Handler implements HandlerInterface
         string $training_course_id
     ) : ?TrainingProgramCoursesInterface {
         try {
-            $result = $this->api_elearning->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET(
+            $result = $this->api->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET(
                 $this->plattform_id,
                 $training_course_id
             );
@@ -131,7 +130,7 @@ class Handler implements HandlerInterface
         bool $a_incremental = false
     ) : ?ParticipantsInterface {
         try {
-            $result = $this->api_elearning->getTeilnehmerELearningPlattformUsingGET($this->plattform_id);#, $a_incremental);
+            $result = $this->api->getTeilnehmerELearningPlattformUsingGET($this->plattform_id);#, $a_incremental);
             if ($a_incremental) {
                 $this->logger->info('Received new participants.');
             } else {
@@ -149,7 +148,7 @@ class Handler implements HandlerInterface
         string $crs_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeElearningkursExterneAnlageAngestossenUsingPOST(
+            $this->api->meldeElearningkursExterneAnlageAngestossenUsingPOST(
                 $this->plattform_id,
                 $crs_oid
             );
@@ -167,7 +166,7 @@ class Handler implements HandlerInterface
         try {
             $error_message = new FehlermeldungApiDto();
             $error_message->setFehlermeldung($message);
-            $this->api_elearning->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST(
+            $this->api->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST(
                 $this->plattform_id,
                 $crs_oid,
                 $error_message
@@ -183,7 +182,7 @@ class Handler implements HandlerInterface
         string $crs_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeElearningkursExternExistierendUsingPOST(
+            $this->api->meldeElearningkursExternExistierendUsingPOST(
                 $this->plattform_id,
                 $crs_oid
             );
@@ -199,7 +198,7 @@ class Handler implements HandlerInterface
         string $usr_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST(
+            $this->api->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST(
                 $this->plattform_id,
                 $crs_oid,
                 $usr_oid
@@ -215,7 +214,7 @@ class Handler implements HandlerInterface
         string $participant_id
     ) : bool {
         try {
-            $this->api_elearning->meldeElearningaccountAlsExternExistierendUsingPOST(
+            $this->api->meldeElearningaccountAlsExternExistierendUsingPOST(
                 $this->plattform_id,
                 $participant_id
             );
@@ -233,7 +232,7 @@ class Handler implements HandlerInterface
         try {
             $error_message = new FehlermeldungApiDto();
             $error_message->setFehlermeldung($message);
-            $this->api_elearning->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST(
+            $this->api->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST(
                 $this->plattform_id,
                 $usr_oid,
                 $error_message
@@ -251,7 +250,7 @@ class Handler implements HandlerInterface
         string $usr_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeKursabschlussMitErfolgUsingPOST(
+            $this->api->meldeKursabschlussMitErfolgUsingPOST(
                 $this->plattform_id,
                 $crs_oid,
                 $usr_oid,
@@ -268,7 +267,7 @@ class Handler implements HandlerInterface
         string $usr_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeKursabschlussOhneErfolgUsingPOST(
+            $this->api->meldeKursabschlussOhneErfolgUsingPOST(
                 $this->plattform_id,
                 $crs_oid,
                 $usr_oid
@@ -284,7 +283,7 @@ class Handler implements HandlerInterface
         string $usr_oid
     ) : bool {
         try {
-            $this->api_elearning->meldeErstmaligErfolgreichEingeloggtUsingPOST(
+            $this->api->meldeErstmaligErfolgreichEingeloggtUsingPOST(
                 $this->plattform_id,
                 $usr_oid
             );
