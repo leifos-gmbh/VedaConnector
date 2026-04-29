@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector\Api\ElearningPlattform;
+namespace Leifos\VedaConnector\Api\ELearningPlattform;
 
 use Exception;
 use ilLogLevel;
@@ -12,10 +12,10 @@ use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseCompanionsIn
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseMembersInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CoursesInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseTutorsInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\Collections\FactoryInterface as ELearningPlattformCollectionsFactoryInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\FactoryInterface as ELearningPlattformCollectionsFactoryInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\ParticipantsInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\TrainingProgramCoursesInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\HandlerInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\HandlerInterface;
 use Leifos\VedaConnector\I\Api\Exception\FactoryInterface as ApiExceptionFactoryInterface;
 use Leifos\VedaConnector\I\Logger\HandlerInterface as LoggerInterface;
 use Leifos\VedaConnector\I\Settings\HandlerInterface as SettingsHandler;

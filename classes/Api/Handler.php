@@ -13,7 +13,7 @@ use Leifos\VedaConnector\I\Api\Adapter\CourseStandardImportInterface as CourseSt
 use Leifos\VedaConnector\I\Api\Adapter\MemberImportInterface as MemberImportAdapterInterface;
 use Leifos\VedaConnector\I\Api\Adapter\MemberStandardImportInterface as MemberStandardImportAdapterInterface;
 use Leifos\VedaConnector\I\Api\Adapter\UserImportInterface as UserImportAdapterInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\HandlerInterface as ElearningPlattformApiInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\HandlerInterface as ELearningPlattformApiInterface;
 use Leifos\VedaConnector\I\Api\HandlerInterface;
 use Leifos\VedaConnector\I\Api\TrainingCourse\HandlerInterface as TrainingCourseApiInterface;
 use Leifos\VedaConnector\I\Api\TrainingProgram\HandlerInterface as TrainingProgramApiInterface;
@@ -44,7 +44,7 @@ class Handler implements HandlerInterface
         protected MDClaimingDBInterface $md_claiming_db,
         protected UserStatusDBInterface $user_status_db,
         protected CourseStatusDBInterface $course_status_db,
-        protected ElearningPlattformApiInterface $elearning_plattform_api,
+        protected ELearningPlattformApiInterface $elearning_plattform_api,
         protected TrainingProgramApiInterface $training_program_api,
         protected TrainingCourseApiInterface $training_course_api,
         protected UtilsInterface $utils

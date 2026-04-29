@@ -11,7 +11,7 @@ use ilRbacReview;
 use Leifos\VedaConnector\Api\Adapter\Factory as ApiAdapterFactory;
 use Leifos\VedaConnector\Api\Client\Factory as ApiClientFactory;
 use Leifos\VedaConnector\Api\Config\Factory as ApiConfigurationFactory;
-use Leifos\VedaConnector\Api\ElearningPlattform\Factory as ApiElearningPlattformFactory;
+use Leifos\VedaConnector\Api\ELearningPlattform\Factory as ApiELearningPlattformFactory;
 use Leifos\VedaConnector\Api\Exception\Factory as ApiExceptionFactory;
 use Leifos\VedaConnector\Api\Header\Factory as ApiHeaderFactory;
 use Leifos\VedaConnector\Api\Organisation\Factory as ApiOrganisationFactory;
@@ -22,7 +22,7 @@ use Leifos\VedaConnector\GeneratedOpenApi\Configuration;
 use Leifos\VedaConnector\I\Api\Adapter\FactoryInterface as ApiAdapterFactoryInterface;
 use Leifos\VedaConnector\I\Api\Client\FactoryInterface as ApiClientFactoryInterface;
 use Leifos\VedaConnector\I\Api\Config\FactoryInterface as ApiConfigurationFactoryInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\FactoryInterface as ApiElearningPlattformFactoryInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\FactoryInterface as ApiELearningPlattformFactoryInterface;
 use Leifos\VedaConnector\I\Api\Exception\FactoryInterface as ApiExceptionFactoryInterface;
 use Leifos\VedaConnector\I\Api\FactoryInterface;
 use Leifos\VedaConnector\I\Api\HandlerInterface;
@@ -135,9 +135,9 @@ class Factory implements FactoryInterface
         );
     }
 
-    public function eLearningPlattform(): ApiElearningPlattformFactoryInterface
+    public function eLearningPlattform(): ApiELearningPlattformFactoryInterface
     {
-        return new ApiElearningPlattformFactory(
+        return new ApiELearningPlattformFactory(
             $this->logger_factory,
             $this->settings_factory,
             $this->exception(),

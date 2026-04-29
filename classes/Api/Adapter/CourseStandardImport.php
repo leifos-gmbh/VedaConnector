@@ -25,7 +25,7 @@ use ilSoapClient;
 use ilXmlWriter;
 use Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs;
 use Leifos\VedaConnector\I\Api\Adapter\CourseStandardImportInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\HandlerInterface as ApiElearningPlattformInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\HandlerInterface as ApiELearningPlattformInterface;
 use Leifos\VedaConnector\I\Builder\FactoryInterface as BuilderFactoryInterface;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Status as CourseStatus;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Type as CourseType;
@@ -52,7 +52,7 @@ class CourseStandardImport implements CourseStandardImportInterface
         protected LoggerInterface $logger,
         protected SettingsInterface $settings,
         protected BuilderFactoryInterface $builder_factory,
-        protected ApiElearningPlattformInterface $api_elearning_plattform,
+        protected ApiELearningPlattformInterface $api_elearning_plattform,
         protected ExceptionFactoryInterface $exception_factory
     ) {
     }

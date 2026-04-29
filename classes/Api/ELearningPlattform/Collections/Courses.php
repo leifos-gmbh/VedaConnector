@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector\Api\ElearningPlattform\Collections;
+namespace Leifos\VedaConnector\Api\ELearningPlattform\Collections;
 
 use Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CoursesInterface;

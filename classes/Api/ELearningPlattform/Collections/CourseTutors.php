@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector\Api\ElearningPlattform\Collections;
+namespace Leifos\VedaConnector\Api\ELearningPlattform\Collections;
 
 use ilLogLevel;
 use Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\Collections\CourseTutorsInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseTutorsInterface;
 use Leifos\VedaConnector\I\Logger\HandlerInterface as LoggerInterface;
 use Leifos\VedaConnector\I\Utils\HandlerInterface as UtilsInterface;
 

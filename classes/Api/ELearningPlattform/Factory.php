@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector\Api\ElearningPlattform;
+namespace Leifos\VedaConnector\Api\ELearningPlattform;
 
-use Leifos\VedaConnector\Api\ElearningPlattform\Collections\Factory as CollectionsFactory;
+use Leifos\VedaConnector\Api\ELearningPlattform\Collections\Factory as CollectionsFactory;
 use Leifos\VedaConnector\GeneratedOpenApi\Api\ELearningPlattformenApi;
 use Leifos\VedaConnector\I\Api\Client\FactoryInterface as ApiClientFactoryInterface;
 use Leifos\VedaConnector\I\Api\Config\FactoryInterface as ConfigFactoryInterface;

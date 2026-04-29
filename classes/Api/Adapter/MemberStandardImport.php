@@ -20,7 +20,7 @@ use Leifos\VedaConnector\I\Api\Adapter\MemberStandardImportInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseCompanionsInterface as CourseCompanionsInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseMembersInterface as CourseMembersInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseTutorsInterface as CourseTutorsInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\HandlerInterface as ApiElearningPlattformInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\HandlerInterface as ApiELearningPlattformInterface;
 use Leifos\VedaConnector\I\Builder\FactoryInterface as BuilderFactoryInterface;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Status as CourseStatusStatus;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Type as CourseStatusType;
@@ -49,7 +49,7 @@ class MemberStandardImport implements MemberStandardImportInterface
         protected CourseStatusDBInterface $course_status_db,
         protected BuilderFactoryInterface $builder_factory,
         protected SettingsInterface $settings,
-        protected ApiElearningPlattformInterface $elearning_api,
+        protected ApiELearningPlattformInterface $elearning_api,
         protected UtilsInterface $utils,
     ) {
         $this->new_assignments = [];

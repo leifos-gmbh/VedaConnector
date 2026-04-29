@@ -14,7 +14,7 @@ use Leifos\VedaConnector\I\Api\Adapter\FactoryInterface;
 use Leifos\VedaConnector\I\Api\Adapter\MemberImportInterface;
 use Leifos\VedaConnector\I\Api\Adapter\MemberStandardImportInterface;
 use Leifos\VedaConnector\I\Api\Adapter\UserImportInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\FactoryInterface as ApiElearningPlattformFactoryInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\FactoryInterface as ApiELearningPlattformFactoryInterface;
 use Leifos\VedaConnector\I\Api\Organisation\FactoryInterface as ApiOrganisationFactoryInterface;
 use Leifos\VedaConnector\I\Api\TrainingCourse\FactoryInterface as ApiTrainingCourseFactoryInterface;
 use Leifos\VedaConnector\I\Api\TrainingProgram\FactoryInterface as ApiTrainingProgramFactoryInterface;
@@ -43,7 +43,7 @@ class Factory implements FactoryInterface
         protected CourseStatusDBFactoryInterface $course_status_db_factory,
         protected MDClaimingDBFactoryInterface $md_db_factory,
         protected UDFDBFactoryInterface $udf_db_factory,
-        protected ApiElearningPlattformFactoryInterface $api_elearning_plattform_factory,
+        protected ApiELearningPlattformFactoryInterface $api_elearning_plattform_factory,
         protected ApiOrganisationFactoryInterface $api_organisation_factory,
         protected ApiTrainingProgramFactoryInterface $api_training_program_factory,
         protected ApiTrainingCourseFactoryInterface $api_training_course_factory,

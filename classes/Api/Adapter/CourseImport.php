@@ -30,7 +30,7 @@ use ilSoapClient;
 use ilXmlWriter;
 use Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug;
 use Leifos\VedaConnector\I\Api\Adapter\CourseImportInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\HandlerInterface as ApiElearningPlattformInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\HandlerInterface as ApiELearningPlattformInterface;
 use Leifos\VedaConnector\I\Api\TrainingCourse\HandlerInterface as ApiTrainingCourseInterface;
 use Leifos\VedaConnector\I\Api\TrainingProgram\HandlerInterface as ApiTrainingProgramInterface;
 use Leifos\VedaConnector\I\Builder\FactoryInterface as BuilderFactoryInterface;
@@ -63,7 +63,7 @@ class CourseImport implements CourseImportInterface
         protected MDClaimingDBInterface $md_db_manager,
         protected SettingsInterface $settings,
         protected BuilderFactoryInterface $builder_factory,
-        protected ApiElearningPlattformInterface $api_elearning_plattform,
+        protected ApiELearningPlattformInterface $api_elearning_plattform,
         protected ApiTrainingProgramInterface $api_training_program,
         protected ApiTrainingCourseInterface $api_training_course,
         protected UtilsInterface $utils,

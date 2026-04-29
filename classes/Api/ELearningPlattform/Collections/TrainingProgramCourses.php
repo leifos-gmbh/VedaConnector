@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector\Api\ElearningPlattform\Collections;
+namespace Leifos\VedaConnector\Api\ELearningPlattform\Collections;
 
 use Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\Collections\TrainingProgramCoursesInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\TrainingProgramCoursesInterface;
 use Leifos\VedaConnector\I\Utils\HandlerInterface as UtilsHandler;
 
 class TrainingProgramCourses implements TrainingProgramCoursesInterface

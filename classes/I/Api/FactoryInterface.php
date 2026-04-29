@@ -7,7 +7,7 @@ namespace Leifos\VedaConnector\I\Api;
 use Leifos\VedaConnector\I\Api\Adapter\FactoryInterface as ApiAdapterFactoryInterface;
 use Leifos\VedaConnector\I\Api\Client\FactoryInterface as ApiClientFactoryInterface;
 use Leifos\VedaConnector\I\Api\Config\FactoryInterface as ApiConfigurationFactoryInterface;
-use Leifos\VedaConnector\I\Api\ElearningPlattform\FactoryInterface as ApiElearningPlattformFactoryInterface;
+use Leifos\VedaConnector\I\Api\ELearningPlattform\FactoryInterface as ApiELearningPlattformFactoryInterface;
 use Leifos\VedaConnector\I\Api\Exception\FactoryInterface as ApiExceptionFactoryInterface;
 use Leifos\VedaConnector\I\Api\Header\FactoryInterface as ApiHeaderFactoryInterface;
 use Leifos\VedaConnector\I\Api\Organisation\FactoryInterface as ApiOrganisationFactoryInterface;
@@ -29,7 +29,7 @@ interface FactoryInterface
 
     public function trainingProgram(): ApiTrainingProgramFactoryInterface;
 
-    public function eLearningPlattform(): ApiElearningPlattformFactoryInterface;
+    public function eLearningPlattform(): ApiELearningPlattformFactoryInterface;
 
     public function header(): ApiHeaderFactoryInterface;
 
