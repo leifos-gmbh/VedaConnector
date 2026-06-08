@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Leifos\VedaConnector\UserStatus;
 
 use ilDBInterface;
-use ilVedaConnectorPlugin;
+use Leifos\VedaConnector\I\Lang\FactoryInterface as LangFactoryInterface;
 use Leifos\VedaConnector\I\Logger\FactoryInterface as LoggerFactoryInterface;
 use Leifos\VedaConnector\I\UserStatus\DB\FactoryInterface as UserDBFactoryInterface;
 use Leifos\VedaConnector\I\UserStatus\FactoryInterface;
@@ -16,9 +16,10 @@ use Leifos\VedaConnector\UserStatus\Table\Factory as UserTableFactory;
 class Factory implements FactoryInterface
 {
     public function __construct(
+        protected string $import_result_table_row_template_directory,
         protected ilDBInterface $db,
         protected LoggerFactoryInterface $logger_factory,
-        protected ilVedaConnectorPlugin $plugin
+        protected LangFactoryInterface $lang_factory
     ) {
     }
 
@@ -33,8 +34,9 @@ class Factory implements FactoryInterface
     public function table(): UserTableFactoryInterface
     {
         return new UserTableFactory(
-            $this->plugin,
-            $this->db()
+            $this->import_result_table_row_template_directory,
+            $this->db(),
+            $this->lang_factory
         );
     }
 }

@@ -7,25 +7,23 @@ namespace Leifos\VedaConnector;
 use ilTemplate;
 use ilTemplateException;
 use ilTree;
-use ilVedaConnectorPlugin;
 use Leifos\VedaConnector\I\Api\HandlerInterface;
 use Leifos\VedaConnector\I\IdValidatorInterface;
+use Leifos\VedaConnector\I\Lang\HandlerInterface as LangInterface;
 use Leifos\VedaConnector\I\Logger\HandlerInterface as LoggerHandlerInterface;
 use Leifos\VedaConnector\I\MDClaiming\DB\HandlerInterface as MDClaimingDBInterface;
 
 class IdValidator implements IdValidatorInterface
 {
-    protected ilTemplate $err_template;
-
     public function __construct(
         protected int $ref_id,
         protected ilTree $il_tree,
-        protected ilVedaConnectorPlugin $plugin,
+        protected ilTemplate $err_template,
+        protected LangInterface $lang,
         protected MDClaimingDBInterface $claiming_db_manager,
         protected LoggerHandlerInterface $logger,
         protected HandlerInterface $my_api
     ) {
-        $this->err_template = $this->plugin->getTemplate('tpl.validation_error.html');
     }
 
     /**
@@ -94,7 +92,7 @@ class IdValidator implements IdValidatorInterface
                 $this->err_template->parseCurrentBlock();
             }
             $this->err_template->setCurrentBlock('sess_remote');
-            $this->err_template->setVariable('SESS_INFO_REMOTE', $this->plugin->txt('err_val_sess_remote_info'));
+            $this->err_template->setVariable('SESS_INFO_REMOTE', $this->lang->pluginTxt('err_val_sess_remote_info'));
             $this->err_template->parseCurrentBlock();
             return false;
         }
@@ -115,7 +113,7 @@ class IdValidator implements IdValidatorInterface
                 $this->err_template->parseCurrentBlock();
             }
             $this->err_template->setCurrentBlock('exc_remote');
-            $this->err_template->setVariable('EXC_INFO_REMOTE', $this->plugin->txt('err_val_exc_remote_info'));
+            $this->err_template->setVariable('EXC_INFO_REMOTE', $this->lang->pluginTxt('err_val_exc_remote_info'));
             $this->err_template->parseCurrentBlock();
             return false;
         }
@@ -136,7 +134,7 @@ class IdValidator implements IdValidatorInterface
                 $this->err_template->parseCurrentBlock();
             }
             $this->err_template->setCurrentBlock('sess_local');
-            $this->err_template->setVariable('SESS_INFO_LOCAL', $this->plugin->txt('err_val_sess_local_info'));
+            $this->err_template->setVariable('SESS_INFO_LOCAL', $this->lang->pluginTxt('err_val_sess_local_info'));
             $this->err_template->parseCurrentBlock();
             return false;
         }
@@ -157,7 +155,7 @@ class IdValidator implements IdValidatorInterface
                 $this->err_template->parseCurrentBlock();
             }
             $this->err_template->setCurrentBlock('exc_local');
-            $this->err_template->setVariable('EXC_INFO_LOCAL', $this->plugin->txt('err_val_exc_local_info'));
+            $this->err_template->setVariable('EXC_INFO_LOCAL', $this->lang->pluginTxt('err_val_exc_local_info'));
             $this->err_template->parseCurrentBlock();
             return false;
         }
@@ -174,19 +172,19 @@ class IdValidator implements IdValidatorInterface
 
     public function getSuccessMessage() : string
     {
-        return $this->plugin->txt('success_validation');
+        return $this->lang->pluginTxt('success_validation');
     }
 
     protected function validateTrainingCourseId(string $course_id) : bool
     {
         if (!$course_id) {
-            $this->err_template->setVariable('SIMPLE_FAILURE', $this->plugin->txt('err_val_no_tc_id'));
+            $this->err_template->setVariable('SIMPLE_FAILURE', $this->lang->pluginTxt('err_val_no_tc_id'));
             return false;
         }
         if ($this->my_api->isTrainingCourseValid($course_id)) {
             return true;
         }
-        $this->err_template->setVariable('SIMPLE_FAILURE', $this->plugin->txt('err_val_wrong_tc'));
+        $this->err_template->setVariable('SIMPLE_FAILURE', $this->lang->pluginTxt('err_val_wrong_tc'));
         return false;
     }
 }

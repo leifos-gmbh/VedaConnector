@@ -7,12 +7,12 @@ namespace Leifos\VedaConnector\InputFields;
 use ilNumberInputGUI;
 use ilObject;
 use Leifos\VedaConnector\I\InputFields\RefIdNumberInterface;
-use Leifos\VedaConnector\I\PluginInterface;
+use Leifos\VedaConnector\I\Lang\HandlerInterface as LangInterface;
 
 class RefIdNumber extends ilNumberInputGUI implements RefIdNumberInterface
 {
     public function __construct(
-        protected PluginInterface $plugin,
+        protected LangInterface $lang,
         string $a_title = "",
         string $a_postvar = ""
     ) {
@@ -26,7 +26,7 @@ class RefIdNumber extends ilNumberInputGUI implements RefIdNumberInterface
             $parent_input_check &&
             !$this->inputIsCategoryRefId()
         ) {
-            $this->setAlert($this->plugin->txt('tbl_settings_course_import_category_error'));
+            $this->setAlert($this->lang->pluginTxt('tbl_settings_course_import_category_error'));
             return false;
         }
         return $parent_input_check;

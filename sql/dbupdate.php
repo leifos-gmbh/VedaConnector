@@ -567,3 +567,60 @@ foreach ($remaining_md_field_names as $field_name) {
     ]);
 }
 ?>
+<#16>
+<?php
+if (!$ilDB->tableExists('cron_crnhk_vedaimp_snd')) {
+    $ilDB->createTable('cron_crnhk_vedaimp_snd',
+            [
+                    'seq_id' =>
+                            [
+                                    'type'		=> ilDBConstants::T_INTEGER,
+                                    'length'	=> 8,
+                                    'notnull'	=> true
+                            ],
+                    'crs_oid'	=>
+                            [
+                                    'type'		=> ilDBConstants::T_TEXT,
+                                    'length'	=> 64,
+                                    'notnull'	=> true
+                            ],
+                    'participant_oid'	=>
+                            [
+                                    'type'		=> ilDBConstants::T_TEXT,
+                                    'length'	=> 64,
+                                    'notnull'	=> true
+                            ],
+                    'status_passed'	=>
+                            [
+                                    'type'		=> ilDBConstants::T_INTEGER,
+                                    'length'	=> 4,
+                                    'notnull'	=> true
+                            ],
+                    'timestamp_passed' =>
+                            [
+                                    "type" => ilDBConstants::T_TIMESTAMP,
+                                    "notnull" => false
+                            ],
+                    'status_send'	=>
+                            [
+                                    'type'		=> ilDBConstants::T_INTEGER,
+                                    'length'	=> 4,
+                                    'notnull'	=> true
+                            ],
+                    'timestamp_send' =>
+                            [
+                                    "type" => ilDBConstants::T_TIMESTAMP,
+                                    "notnull" => false
+                            ],
+                    'error_code'	=>
+                            [
+                                    'type'		=> ilDBConstants::T_INTEGER,
+                                    'length'	=> 4,
+                                    'notnull'	=> true
+                            ]
+            ]
+    );
+    $ilDB->addPrimaryKey('cron_crnhk_vedaimp_snd',['seq_id']);
+    $ilDB->createSequence('cron_crnhk_vedaimp_snd');
+}
+?>

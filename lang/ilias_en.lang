@@ -86,3 +86,12 @@ credential_section_soap#:#ILIAS Connection Data - Soap
 credentials_soap_user#:#Soap User
 credentials_soap_user_info#:#Please enter the username of an ILIAS account that should be used to establish the connection to the ILIAS web service. The account should be assigned to the global administrator role.
 credentials_soap_pass#:#Soap Password
+subtab_pdfsend_status#:#Send
+tr_crs_oid#:#Course OId
+tr_participant_oid#:#Participant Oid
+tr_passed_status#:#Passed Status
+tr_passed_date#:#Passed Date
+tr_send_status#:#Send Status
+tr_send_date#:#Send Date
+tr_error_code#:#Errorcode
+send_status_table_name#:#Send Status

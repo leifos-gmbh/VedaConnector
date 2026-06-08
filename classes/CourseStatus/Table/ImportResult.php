@@ -14,19 +14,20 @@ use ilTable2GUI;
 use ilTemplateException;
 use ilTree;
 use ilUtil;
-use ilVedaConnectorPlugin;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Status;
 use Leifos\VedaConnector\I\CourseStatus\DB\Element\Type;
 use Leifos\VedaConnector\I\CourseStatus\DB\HandlerInterface as CourseDBInterface;
 use Leifos\VedaConnector\I\CourseStatus\Table\ImportResultInterface;
+use Leifos\VedaConnector\I\Lang\HandlerInterface as LangHandlerInterface;
 
 class ImportResult extends ilTable2GUI implements ImportResultInterface
 {
     public function __construct(
         object $class,
         string $method,
+        protected string $row_template_directory,
         protected ilTree $repository_tree,
-        protected ilVedaConnectorPlugin $plugin,
+        protected LangHandlerInterface $lang,
         protected CourseDBInterface $course_db,
     ) {
         $this->setId('vedaimp_res_crs');
@@ -35,36 +36,36 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
 
     public function init(): void
     {
-        $this->setTitle($this->plugin->txt('tbl_import_result_crs'));
+        $this->setTitle($this->lang->pluginTxt('tbl_import_result_crs'));
         $this->setFormAction($this->getFormAction());
 
         $this->setRowTemplate(
             'tpl.crs_result_row.html',
-            $this->plugin->getDirectory()
+            $this->row_template_directory
         );
 
         $this->addColumn(
-            $this->lng->txt('title'),
+            $this->lang->iliasTxt('title'),
             'title'
         );
         $this->addColumn(
-            $this->lng->txt('type'),
+            $this->lang->iliasTxt('type'),
             'type'
         );
         $this->addColumn(
-            $this->lng->txt('create_date'),
+            $this->lang->iliasTxt('create_date'),
             'create_date'
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_crs_result_created'),
+            $this->lang->pluginTxt('tbl_crs_result_created'),
             'created'
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_crs_result_pswitch'),
+            $this->lang->pluginTxt('tbl_crs_result_pswitch'),
             'pswitch'
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_crs_result_tswitch'),
+            $this->lang->pluginTxt('tbl_crs_result_tswitch'),
             'tswitch'
         );
     }
@@ -110,8 +111,8 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
         $this->tpl->setVariable(
             'TXT_TYPE',
             $a_set['type'] == Type::SIFA ?
-                $this->plugin->txt('type_sifa') :
-                $this->plugin->txt('type_standard')
+                $this->lang->pluginTxt('type_sifa') :
+                $this->lang->pluginTxt('type_standard')
         );
         $this->tpl->setVariable(
             'CREATED_IMG',
@@ -121,14 +122,14 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
         );
 
         if (ilObject::_exists($a_set['tswitch'])) {
-            $this->tpl->setVariable('TXT_TAVAILABLE', $this->plugin->txt('role_available'));
+            $this->tpl->setVariable('TXT_TAVAILABLE', $this->lang->pluginTxt('role_available'));
         } else {
-            $this->tpl->setVariable('TXT_TAVAILABLE', $this->plugin->txt('role_unavailable'));
+            $this->tpl->setVariable('TXT_TAVAILABLE', $this->lang->pluginTxt('role_unavailable'));
         }
         if (ilObject::_exists($a_set['pswitch'])) {
-            $this->tpl->setVariable('TXT_PAVAILABLE', $this->plugin->txt('role_available'));
+            $this->tpl->setVariable('TXT_PAVAILABLE', $this->lang->pluginTxt('role_available'));
         } else {
-            $this->tpl->setVariable('TXT_PAVAILABLE', $this->plugin->txt('role_unavailable'));
+            $this->tpl->setVariable('TXT_PAVAILABLE', $this->lang->pluginTxt('role_unavailable'));
         }
         $this->tpl->setVariable('OID', $a_set['oid']);
     }

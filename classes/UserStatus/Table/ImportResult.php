@@ -10,6 +10,7 @@ use ilAdvancedSelectionListGUI;
 use ilTable2GUI;
 use ilUtil;
 use ilVedaConnectorPlugin;
+use Leifos\VedaConnector\I\Lang\HandlerInterface as LangInterface;
 use Leifos\VedaConnector\I\UserStatus\DB\Element\Status;
 use Leifos\VedaConnector\I\UserStatus\DB\HandlerInterface as UserDBInterface;
 use Leifos\VedaConnector\I\UserStatus\Table\ImportResultInterface;
@@ -19,7 +20,8 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
     public function __construct(
         object $class,
         string $method,
-        protected ilVedaConnectorPlugin $plugin,
+        protected string $row_template_directory,
+        protected LangInterface $lang,
         protected UserDBInterface $user_db,
     ) {
         $this->setId('vedaimp_res_usr');
@@ -28,12 +30,12 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
 
     public function init() : void
     {
-        $this->setTitle($this->plugin->txt('tbl_import_result_usr'));
+        $this->setTitle($this->lang->pluginTxt('tbl_import_result_usr'));
         $this->setFormAction($this->getFormAction());
 
         $this->setRowTemplate(
             'tpl.usr_result_row.html',
-            $this->plugin->getDirectory()
+            $this->row_template_directory
         );
 
         $this->addColumn(
@@ -41,18 +43,18 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
             'login', '40%'
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_usr_result_created'),
+            $this->lang->pluginTxt('tbl_usr_result_created'),
             'created', "7%"
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_usr_result_pwd_changed'),
+            $this->lang->pluginTxt('tbl_usr_result_pwd_changed'),
             'pwd', "7%"
         );
         $this->addColumn(
-            $this->plugin->txt('tbl_usr_result_import_failure'),
+            $this->lang->pluginTxt('tbl_usr_result_import_failure'),
             'failure', "36%"
         );
-        $this->addColumn($this->lng->txt('actions'), "", '10%');
+        $this->addColumn($this->lang->iliasTxt('actions'), "", '10%');
     }
 
     public function parse() : void
@@ -89,7 +91,7 @@ class ImportResult extends ilTable2GUI implements ImportResultInterface
         );
 
         if ($a_set['failure']) {
-            $this->tpl->setVariable('FAILURE_TXT', $this->plugin->txt('err_import_usr_duplicate'));
+            $this->tpl->setVariable('FAILURE_TXT', $this->lang->pluginTxt('err_import_usr_duplicate'));
             $list = new ilAdvancedSelectionListGUI();
             $list->setId('veda_oid_' . $a_set['login'] . '_' . $a_set['oid']);
             $list->setListTitle($this->lng->txt('actions'));

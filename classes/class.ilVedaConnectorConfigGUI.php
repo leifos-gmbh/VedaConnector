@@ -38,6 +38,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     protected const SUBTAB_IMPORT = 'import';
     protected const SUBTAB_IMPORT_USR = 'import_usr';
     protected const SUBTAB_IMPORT_CRS = 'import_crs';
+    protected const SUBTAB_PDFSEND_STATUS = 'pdfsend_status';
 
     private ilToolbarGUI $toolbar;
     private ilLanguage $lng;
@@ -84,20 +85,34 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     {
         $this->il_tabs->addTab(
             self::TAB_CREDENTIALS,
-            ilVedaConnectorPlugin::getInstance()->txt('tab_credentials'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tab_credentials'),
             $this->ctrl->getLinkTarget($this, 'credentials')
         );
         $this->il_tabs->addTab(
             self::TAB_SETTINGS,
-            ilVedaConnectorPlugin::getInstance()->txt('tab_settings'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tab_settings'),
             $this->ctrl->getLinkTarget($this, 'configure')
         );
         $this->il_tabs->addTab(
             self::TAB_IMPORT,
-            ilVedaConnectorPlugin::getInstance()->txt('tab_import'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tab_import'),
             $this->ctrl->getLinkTarget($this, 'import')
         );
-        $this->$cmd();
+        switch ($cmd) {
+            case 'configure':
+            case 'credentials':
+            case 'import':
+            case 'doImport':
+            case 'save':
+            case 'saveCredentials':
+            case 'importResultUser':
+            case 'importResultCourse':
+            case 'pdfSendStatus':
+            case 'testConnection':
+            case 'testConnectionSoap':
+            case 'addTestRecord':
+                $this->$cmd();
+        }
     }
 
     /**
@@ -120,89 +135,89 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $settings = $this->veda_factory->settings()->handler();
 
         $form = new ilPropertyFormGUI();
-        $form->setTitle($this->getPluginObject()->txt('tbl_settings'));
+        $form->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings'));
         $form->setFormAction($this->ctrl->getFormAction($this));
-        $form->addCommandButton('save', $this->lng->txt('save'));
+        $form->addCommandButton('save', $this->veda_factory->lang()->handler()->iliasTxt('save'));
         $form->setShowTopButtons(false);
 
-        $lock = new ilCheckboxInputGUI($this->getPluginObject()->txt('tbl_veda_settings_active'), 'active');
+        $lock = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_active'), 'active');
         $lock->setValue('1');
         $lock->setChecked($settings->readAsBool(Name::ACTIVE));
         $form->addItem($lock);
 
-        $lock = new ilCheckboxInputGUI($this->getPluginObject()->txt('tbl_veda_settings_lock'), 'lock');
+        $lock = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_lock'), 'lock');
         $lock->setValue('1');
         $lock->setDisabled(!$settings->readAsBool(Name::LOCK));
         $lock->setChecked($settings->readAsBool(Name::LOCK));
-        $lock->setInfo($this->getPluginObject()->txt('tbl_veda_settings_lock_info'));
+        $lock->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_lock_info'));
         $form->addItem($lock);
 
         $this->lng->loadLanguageModule('log');
-        $level = new ilSelectInputGUI($this->getPluginObject()->txt('tbl_veda_settings_loglevel'), 'log_level');
+        $level = new ilSelectInputGUI($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_loglevel'), 'log_level');
         $level->setHideSubForm($settings->readAsInt(Name::LOGLEVEL) == ilLogLevel::OFF, '< 1000');
         $level->setOptions(ilLogLevel::getLevelOptions());
         $level->setValue($settings->readAsInt(Name::LOGLEVEL));
         $form->addItem($level);
 
-        $log_file = new ilTextInputGUI($this->getPluginObject()->txt('tbl_veda_settings_logfile'), 'log_file');
+        $log_file = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_logfile'), 'log_file');
         $log_file->setValue($settings->read(Name::LOGFILE));
-        $log_file->setInfo($this->getPluginObject()->txt('tbl_veda_settings_logfile_info'));
+        $log_file->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_veda_settings_logfile_info'));
         $level->addSubItem($log_file);
 
         // cron interval
-        $cron_i = new ilNumberInputGUI($this->getPluginObject()->txt('cron'), 'cron_interval');
+        $cron_i = new ilNumberInputGUI($this->veda_factory->lang()->handler()->pluginTxt('cron'), 'cron_interval');
         $cron_i->setMinValue(1);
         $cron_i->setSize(2);
         $cron_i->setMaxLength(3);
         $cron_i->setRequired(true);
         $cron_i->setValue($settings->read(Name::CRON_INTERVAL));
-        $cron_i->setInfo($this->getPluginObject()->txt('cron_interval'));
+        $cron_i->setInfo($this->veda_factory->lang()->handler()->pluginTxt('cron_interval'));
 
         $mail_settings_header = new ilFormSectionHeaderGUI();
-        $mail_settings_header->setTitle($this->getPluginObject()->txt('tbl_settings_section_mail'));
+        $mail_settings_header->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_section_mail'));
         $form->addItem($mail_settings_header);
 
         $mail_active = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_mail_active'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_mail_active'),
             'mail_active'
         );
         $mail_active->setChecked($settings->readAsBool(Name::MAIL_ACTIVE));
         $form->addItem($mail_active);
 
-        $mail_targets = new ilTextInputGUI($this->getPluginObject()->txt('tbl_mail_targets'), 'mail_targets');
+        $mail_targets = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('tbl_mail_targets'), 'mail_targets');
         $mail_targets->setValue($settings->read(Name::MAIL_TARGETS));
-        $mail_targets->setInfo($this->getPluginObject()->txt('tbl_mail_targets_info'));
+        $mail_targets->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_mail_targets_info'));
         $mail_targets->setRequired(true);
         $mail_active->addSubItem($mail_targets);
 
         $sifa_sync = new ilFormSectionHeaderGUI();
-        $sifa_sync->setTitle($this->getPluginObject()->txt('tbl_settings_section_sifa_sync'));
+        $sifa_sync->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_section_sifa_sync'));
         $form->addItem($sifa_sync);
 
         $sifa_active = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_sifa_active'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_sifa_active'),
             'sifa_active'
         );
         $sifa_active->setChecked($settings->readAsBool(Name::SIFA_ACTIVE));
         $form->addItem($sifa_active);
 
         $roles = new ilSelectInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_participant_role'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_participant_role'),
             'sifa_participant_role'
         );
         $roles->setValue($settings->readAsInt(Name::PART_ROLE));
-        $roles->setInfo($this->getPluginObject()->txt('tbl_settings_participant_role_info'));
+        $roles->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_participant_role_info'));
         $roles->setOptions($this->prepareRoleSelection());
         $roles->setRequired(true);
         $sifa_active->addSubItem($roles);
 
         $import_dir = new RefIdNumber(
-            $this->veda_factory->plugin(),
-            $this->getPluginObject()->txt('tbl_settings_course_import'),
+            $this->veda_factory->lang()->handler(),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import'),
             'sifa_crs_import'
         );
         $import_dir->setRequired(true);
-        $import_dir->setInfo($this->getPluginObject()->txt('tbl_settings_course_import_info'));
+        $import_dir->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import_info'));
         $import_dir->setValue($settings->read(Name::SIFA_IMPORT_REF_ID));
         $import_dir->addSubItem($this->buildImportDirectoryInfoElement(
             $settings->readAsInt(Name::SIFA_IMPORT_REF_ID),
@@ -211,7 +226,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $sifa_active->addSubItem($import_dir);
 
         $switch = new ilNumberInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_switch_permanent_role'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_switch_permanent_role'),
             'switch_permanent'
         );
         $switch->setRequired(true);
@@ -219,11 +234,11 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
             $switch->setValue($settings->read(NAME::PERMANENT_SWITCH_ROLE));
             $switch->setSuffix(ilObject::_lookupTitle($settings->readAsInt(NAME::PERMANENT_SWITCH_ROLE)));
         }
-        $switch->setInfo($this->getPluginObject()->txt('tbl_settings_switch_permanent_role_info'));
+        $switch->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_switch_permanent_role_info'));
         $sifa_active->addSubItem($switch);
 
         $switcht = new ilNumberInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_switch_temp_role'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_switch_temp_role'),
             'switch_temp'
         );
         $switcht->setRequired(true);
@@ -231,36 +246,36 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
             $switcht->setValue($settings->read(NAME::TEMPORARY_SWITCH_ROLE));
             $switcht->setSuffix(ilObject::_lookupTitle($settings->readAsInt(NAME::TEMPORARY_SWITCH_ROLE)));
         }
-        $switcht->setInfo($this->getPluginObject()->txt('tbl_settings_switch_temp_role_info'));
+        $switcht->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_switch_temp_role_info'));
         $sifa_active->addSubItem($switcht);
 
         $standard_sync = new ilFormSectionHeaderGUI();
-        $standard_sync->setTitle($this->getPluginObject()->txt('tbl_settings_section_standard_sync'));
+        $standard_sync->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_section_standard_sync'));
         $form->addItem($standard_sync);
 
         $standard_active = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_standard_active'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_standard_active'),
             'standard_active'
         );
         $standard_active->setChecked($settings->readAsBool(Name::STANDARD_ACTIVE));
         $form->addItem($standard_active);
 
         $roles = new ilSelectInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_participant_role'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_participant_role'),
             'standard_participant_role'
         );
         $roles->setValue($settings->readAsInt(Name::STANDARD_PART_ROLE));
-        $roles->setInfo($this->getPluginObject()->txt('tbl_settings_participant_role_info'));
+        $roles->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_participant_role_info'));
         $roles->setOptions($this->prepareRoleSelection());
         $roles->setRequired(true);
         $standard_active->addSubItem($roles);
 
         $import_dir = $this->veda_factory->inputFields()->refIdNumber(
-            $this->getPluginObject()->txt('tbl_settings_course_import'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import'),
             'standard_crs_import'
         );
         $import_dir->setRequired(true);
-        $import_dir->setInfo($this->getPluginObject()->txt('tbl_settings_course_import_info'));
+        $import_dir->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import_info'));
         $import_dir->setValue($settings->read(Name::STANDARD_IMPORT_REF_ID));
         $standard_active->addSubItem($import_dir);
         $import_dir->addSubItem($this->buildImportDirectoryInfoElement(
@@ -274,12 +289,12 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     {
         $import_dir_name = $this->getImportDirectoryName($ref_id);
         $info_text = new ilTextInputGUI(
-            $this->getPluginObject()->txt('tbl_settings_course_import_category_title'),
+            $this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import_category_title'),
             $post_var
         );
         $info_text->setValue($import_dir_name ?? '');
         $info_text->setDisabled(true);
-        $info_text->setInfo($this->getPluginObject()->txt('tbl_settings_course_import_category_info'));
+        $info_text->setInfo($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings_course_import_category_info'));
         return $info_text;
     }
 
@@ -321,12 +336,12 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
                 $settings->write(Name::MAIL_TARGETS, (string) $form->getInput('mail_targets'));
                 $this->tpl->setOnScreenMessage(
                     ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-                    $this->lng->txt('settings_saved'),
+                    $this->veda_factory->lang()->handler()->iliasTxt('settings_saved'),
                     true
                 );
                 $this->ctrl->redirect($this, 'configure');
             }
-            $error = $this->lng->txt('err_check_input');
+            $error = $this->veda_factory->lang()->handler()->iliasTxt('err_check_input');
         } catch (ilException $e) {
             $error = $e->getMessage();
             $this->veda_factory->logger()->handler()->error('Configuration error: ' . $error);
@@ -344,11 +359,11 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $this->il_tabs->activateTab(self::TAB_CREDENTIALS);
         if ($this->veda_factory->settings()->handler()->hasSettingsForConnectionTest()) {
             $button = ilLinkButton::getInstance();
-            $button->setCaption($this->getPluginObject()->txt('connection_test_rest'), false);
+            $button->setCaption($this->veda_factory->lang()->handler()->pluginTxt('connection_test_rest'), false);
             $button->setUrl($this->ctrl->getLinkTarget($this, 'testConnection'));
             $this->toolbar->addButtonInstance($button);
             $button = ilLinkButton::getInstance();
-            $button->setCaption($this->getPluginObject()->txt('connection_test_soap'), false);
+            $button->setCaption($this->veda_factory->lang()->handler()->pluginTxt('connection_test_soap'), false);
             $button->setUrl($this->ctrl->getLinkTarget($this, 'testConnectionSoap'));
             $this->toolbar->addButtonInstance($button);
         }
@@ -366,62 +381,62 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $settings = $this->veda_factory->settings()->handler();
 
         $form = new ilPropertyFormGUI();
-        $form->setTitle($this->getPluginObject()->txt('tbl_settings'));
+        $form->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_settings'));
         $form->setFormAction($this->ctrl->getFormAction($this));
 
-        $form->addCommandButton('saveCredentials', $this->lng->txt('save'));
+        $form->addCommandButton('saveCredentials', $this->veda_factory->lang()->handler()->iliasTxt('save'));
         $form->setShowTopButtons(false);
 
-        $url = new ilTextInputGUI($this->getPluginObject()->txt('credentials_url'), 'resturl');
+        $url = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('credentials_url'), 'resturl');
         $url->setRequired(true);
         $url->setSize(120);
         $url->setMaxLength(512);
         $url->setValue($settings->read(Name::REST_URL));
         $form->addItem($url);
 
-        $authentication_id = new ilTextInputGUI($this->getPluginObject()->txt('authentication_id'), 'authentication_id');
+        $authentication_id = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('authentication_id'), 'authentication_id');
         $authentication_id->setRequired(true);
         $authentication_id->setValue($settings->read(Name::REST_TOKEN));
-        $authentication_id->setInfo($this->getPluginObject()->txt('authentication_id_info'));
+        $authentication_id->setInfo($this->veda_factory->lang()->handler()->pluginTxt('authentication_id_info'));
         $form->addItem($authentication_id);
 
-        $platform_id = new ilTextInputGUI($this->getPluginObject()->txt('platform_id'), 'platform_id');
+        $platform_id = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('platform_id'), 'platform_id');
         $platform_id->setRequired(true);
         $platform_id->setValue($settings->read(Name::PLATTFORM_ID));
-        $platform_id->setInfo($this->getPluginObject()->txt('platform_id_info'));
+        $platform_id->setInfo($this->veda_factory->lang()->handler()->pluginTxt('platform_id_info'));
         $form->addItem($platform_id);
 
-        $add_header_auth = new ilCheckboxInputGUI($this->getPluginObject()->txt('additional_header_authentication'), 'add_header_auth');
+        $add_header_auth = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->pluginTxt('additional_header_authentication'), 'add_header_auth');
         $add_header_auth->setChecked($settings->readAsBool(Name::ADD_HEADER_AUTH));
 
-        $add_header_name = new ilTextInputGUI($this->getPluginObject()->txt('additional_header_name'), 'add_header_name');
+        $add_header_name = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('additional_header_name'), 'add_header_name');
         $add_header_name->setValue($settings->read(Name::ADD_HEADER_NAME));
 
         $add_header_auth->addSubItem($add_header_name);
 
-        $add_header_value = new ilTextInputGUI($this->getPluginObject()->txt('additional_header_value'), 'add_header_value');
+        $add_header_value = new ilTextInputGUI($this->veda_factory->lang()->handler()->pluginTxt('additional_header_value'), 'add_header_value');
         $add_header_value->setValue($settings->read(Name::ADD_HEADER_VALUE));
 
         $add_header_auth->addSubItem($add_header_value);
         $form->addItem($add_header_auth);
 
         $section_soap = new ilFormSectionHeaderGUI();
-        $section_soap->setTitle($this->getPluginObject()->txt('credential_section_soap'));
+        $section_soap->setTitle($this->veda_factory->lang()->handler()->pluginTxt('credential_section_soap'));
         $form->addItem($section_soap);
 
         $soap_user = new ilTextInputGUI(
-            $this->getPluginObject()->txt('credentials_soap_user'),
+            $this->veda_factory->lang()->handler()->pluginTxt('credentials_soap_user'),
             'soap_user'
         );
         $soap_user->setInfo(
-            $this->getPluginObject()->txt('credentials_soap_user_info')
+            $this->veda_factory->lang()->handler()->pluginTxt('credentials_soap_user_info')
         );
         $soap_user->setRequired(true);
         $soap_user->setValue($settings->read(Name::SOAP_USER));
         $form->addItem($soap_user);
 
         $soap_pass = new ilPasswordInputGUI(
-            $this->getPluginObject()->txt('credentials_soap_pass'),
+            $this->veda_factory->lang()->handler()->pluginTxt('credentials_soap_pass'),
             'soap_pass'
         );
         $soap_pass->setRetype(false);
@@ -451,12 +466,12 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
                 $settings->write(Name::ADD_HEADER_VALUE, (string) $form->getInput('add_header_value'));
                 $this->tpl->setOnScreenMessage(
                     ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-                    $this->lng->txt('settings_saved'),
+                    $this->veda_factory->lang()->handler()->pluginTxt('settings_saved'),
                     true
                 );
                 $this->ctrl->redirect($this, 'credentials');
             }
-            $error = $this->lng->txt('err_check_input');
+            $error = $this->veda_factory->lang()->handler()->pluginTxt('err_check_input');
         } catch (ilException $e) {
             $error = $e->getMessage();
             $this->veda_factory->logger()->handler()->error('Error saving credentials: ' . $error);
@@ -486,87 +501,87 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     protected function initImportForm() : ilPropertyFormGUI
     {
         $form = new ilPropertyFormGUI();
-        $form->setTitle($this->getPluginObject()->txt('tbl_import'));
+        $form->setTitle($this->veda_factory->lang()->handler()->pluginTxt('tbl_import'));
         $form->setFormAction($this->ctrl->getFormAction($this));
-        $form->addCommandButton('doImport', $this->getPluginObject()->txt('btn_import'));
+        $form->addCommandButton('doImport', $this->veda_factory->lang()->handler()->pluginTxt('btn_import'));
 
         $sifa = new ilFormSectionHeaderGUI();
-        $sifa->setTitle($this->getPluginObject()->txt('section_import_sifa'));
+        $sifa->setTitle($this->veda_factory->lang()->handler()->pluginTxt('section_import_sifa'));
         $form->addItem($sifa);
 
         // selection all or single elements
-        $imp_type = new ilRadioGroupInputGUI($this->getPluginObject()->txt('import_selection'), 'selection_' . ImporterInterface::IMPORT_TYPE_SIFA);
+        $imp_type = new ilRadioGroupInputGUI($this->veda_factory->lang()->handler()->pluginTxt('import_selection'), 'selection_' . ImporterInterface::IMPORT_TYPE_SIFA);
         $imp_type->setValue('' . ImporterInterface::IMPORT_NONE);
         $form->addItem($imp_type);
 
-        $none = new ilRadioOption($this->getPluginObject()->txt('import_selection_none'), '' . ImporterInterface::IMPORT_NONE);
+        $none = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_none'), '' . ImporterInterface::IMPORT_NONE);
         $imp_type->addOption($none);
 
-        $all = new ilRadioOption($this->getPluginObject()->txt('import_selection_all'), '' . ImporterInterface::IMPORT_ALL);
+        $all = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_all'), '' . ImporterInterface::IMPORT_ALL);
         $imp_type->addOption($all);
 
-        $sel = new ilRadioOption($this->getPluginObject()->txt('import_selection_selected'), '' . ImporterInterface::IMPORT_SELECTED);
+        $sel = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_selected'), '' . ImporterInterface::IMPORT_SELECTED);
         $imp_type->addOption($sel);
 
         $usr_all = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('import_type_all'),
+            $this->veda_factory->lang()->handler()->pluginTxt('import_type_all'),
             ImporterInterface::IMPORT_USR_ALL . '_' . ImporterInterface::IMPORT_TYPE_SIFA
         );
         $usr_all->setValue(ImporterInterface::IMPORT_USR_ALL);
         $sel->addSubItem($usr_all);
 
         $usr_incremental = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('import_type_incremental'),
+            $this->veda_factory->lang()->handler()->pluginTxt('import_type_incremental'),
             ImporterInterface::IMPORT_USR_INCREMENTAL . '_' . ImporterInterface::IMPORT_TYPE_SIFA
         );
         $usr_incremental->setValue(ImporterInterface::IMPORT_USR_INCREMENTAL);
         $sel->addSubItem($usr_incremental);
 
-        $crs = new ilCheckboxInputGUI($this->lng->txt('objs_crs'), 'crs_' . ImporterInterface::IMPORT_TYPE_SIFA);
+        $crs = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->iliasTxt('objs_crs'), 'crs_' . ImporterInterface::IMPORT_TYPE_SIFA);
         $crs->setValue(ImporterInterface::IMPORT_CRS);
         $sel->addSubItem($crs);
 
-        $mem = new ilCheckboxInputGUI($this->getPluginObject()->txt('type_membership'), 'mem_' . ImporterInterface::IMPORT_TYPE_SIFA);
+        $mem = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->pluginTxt('type_membership'), 'mem_' . ImporterInterface::IMPORT_TYPE_SIFA);
         $mem->setValue(ImporterInterface::IMPORT_MEM);
         $sel->addSubItem($mem);
 
         $standard = new ilFormSectionHeaderGUI();
-        $standard->setTitle($this->getPluginObject()->txt('section_import_standard'));
+        $standard->setTitle($this->veda_factory->lang()->handler()->pluginTxt('section_import_standard'));
         $form->addItem($standard);
 
         // selection all or single elements
-        $imp_type = new ilRadioGroupInputGUI($this->getPluginObject()->txt('import_selection'), 'selection_' . ImporterInterface::IMPORT_TYPE_STANDARD);
+        $imp_type = new ilRadioGroupInputGUI($this->veda_factory->lang()->handler()->pluginTxt('import_selection'), 'selection_' . ImporterInterface::IMPORT_TYPE_STANDARD);
         $imp_type->setValue('' . ImporterInterface::IMPORT_NONE);
         $form->addItem($imp_type);
 
-        $none = new ilRadioOption($this->getPluginObject()->txt('import_selection_none'), '' . ImporterInterface::IMPORT_NONE);
+        $none = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_none'), '' . ImporterInterface::IMPORT_NONE);
         $imp_type->addOption($none);
 
-        $all = new ilRadioOption($this->getPluginObject()->txt('import_selection_all'), '' . ImporterInterface::IMPORT_ALL);
+        $all = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_all'), '' . ImporterInterface::IMPORT_ALL);
         $imp_type->addOption($all);
 
-        $sel = new ilRadioOption($this->getPluginObject()->txt('import_selection_selected'), '' . ImporterInterface::IMPORT_SELECTED);
+        $sel = new ilRadioOption($this->veda_factory->lang()->handler()->pluginTxt('import_selection_selected'), '' . ImporterInterface::IMPORT_SELECTED);
         $imp_type->addOption($sel);
 
         $usr_all = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('import_type_all'),
+            $this->veda_factory->lang()->handler()->pluginTxt('import_type_all'),
             ImporterInterface::IMPORT_USR_ALL . '_' . ImporterInterface::IMPORT_TYPE_STANDARD
         );
         $usr_all->setValue(ImporterInterface::IMPORT_USR_ALL);
         $sel->addSubItem($usr_all);
 
         $usr_incremental = new ilCheckboxInputGUI(
-            $this->getPluginObject()->txt('import_type_incremental'),
+            $this->veda_factory->lang()->handler()->pluginTxt('import_type_incremental'),
             ImporterInterface::IMPORT_USR_INCREMENTAL . '_' . ImporterInterface::IMPORT_TYPE_STANDARD,
         );
         $usr_incremental->setValue(ImporterInterface::IMPORT_USR_INCREMENTAL);
         $sel->addSubItem($usr_incremental);
 
-        $crs = new ilCheckboxInputGUI($this->lng->txt('objs_crs'), 'crs_' . ImporterInterface::IMPORT_TYPE_STANDARD);
+        $crs = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->iliasTxt('objs_crs'), 'crs_' . ImporterInterface::IMPORT_TYPE_STANDARD);
         $crs->setValue(ImporterInterface::IMPORT_CRS);
         $sel->addSubItem($crs);
 
-        $mem = new ilCheckboxInputGUI($this->getPluginObject()->txt('type_membership'), 'mem_' . ImporterInterface::IMPORT_TYPE_STANDARD);
+        $mem = new ilCheckboxInputGUI($this->veda_factory->lang()->handler()->pluginTxt('type_membership'), 'mem_' . ImporterInterface::IMPORT_TYPE_STANDARD);
         $mem->setValue(ImporterInterface::IMPORT_MEM);
         $sel->addSubItem($mem);
 
@@ -581,7 +596,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         if (!$form->checkInput()) {
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_FAILURE,
-                $this->lng->txt('err_check_input')
+                $this->veda_factory->lang()->handler()->iliasTxt('err_check_input')
             );
             $this->import($form);
         }
@@ -626,7 +641,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         }
         $this->tpl->setOnScreenMessage(
             ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-            $this->getPluginObject()->txt('success_import')
+            $this->veda_factory->lang()->handler()->pluginTxt('success_import')
         );
         $form->setValuesByPost();
         $this->import($form);
@@ -646,10 +661,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $this->tpl->setContent($table->getHTML());
     }
 
-    /**
-     * @throws ilException
-     */
-    protected function importResultCourse()
+    protected function importResultCourse(): void
     {
         $this->setSubTabs();
         $this->il_tabs->activateTab(self::TAB_IMPORT);
@@ -660,34 +672,64 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $this->tpl->setContent($table->getHTML());
     }
 
-    /**
-     * @throws ilCtrlException
-     */
-    protected function setSubTabs()
+    protected function pdfSendStatus() : void
+    {
+        $this->setSubTabs();
+        $this->il_tabs->activateTab(self::TAB_IMPORT);
+        $this->il_tabs->activateSubTab(self::SUBTAB_PDFSEND_STATUS);
+        global $DIC;
+        $this->tpl->setContent(
+            $this->veda_factory->pdfSendStatus()->table()->handler()->getHTML()
+            . $DIC->ui()->renderer()->render($DIC->ui()->factory()->button()->standard("addTestRecord", $this->ctrl->getLinkTarget($this, 'addTestRecord')))
+        );
+
+    }
+
+    protected function setSubTabs(): void
     {
         $this->il_tabs->addSubTab(
             self::SUBTAB_IMPORT,
-            $this->getPluginObject()->txt('subtab_import'),
+            $this->veda_factory->lang()->handler()->pluginTxt('subtab_import'),
             $this->ctrl->getLinkTarget($this, 'import')
         );
         $this->il_tabs->addSubTab(
             self::SUBTAB_IMPORT_USR,
-            $this->getPluginObject()->txt('subtab_import_usr'),
+            $this->veda_factory->lang()->handler()->pluginTxt('subtab_import_usr'),
             $this->ctrl->getLinkTarget($this, 'importResultUser')
         );
         $this->il_tabs->addSubTab(
             self::SUBTAB_IMPORT_CRS,
-            $this->getPluginObject()->txt('subtab_import_crs'),
+            $this->veda_factory->lang()->handler()->pluginTxt('subtab_import_crs'),
             $this->ctrl->getLinkTarget($this, 'importResultCourse')
+        );
+        $this->il_tabs->addSubTab(
+            self::SUBTAB_PDFSEND_STATUS,
+            $this->veda_factory->lang()->handler()->pluginTxt('subtab_pdfsend_status'),
+            $this->ctrl->getLinkTarget($this, 'pdfSendStatus')
         );
     }
 
-    protected function testConnection()
+    protected function addTestRecord(): void
+    {
+        $element = $this->veda_factory->pdfSendStatus()->db()->handler()->createElement()
+            ->withCourseId(bin2hex(random_bytes(10)))
+            ->withParticipantId(bin2hex(random_bytes(10)))
+            ->withSendStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus::from(random_int(0, 1)))
+            ->withPassedStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\PassedStatus::from(random_int(0, 1)))
+            ->withPassedDate((new DateTimeImmutable())->add(new DateInterval('P' . random_int(0, 300) . 'D')))
+            ->withSendDate((new DateTimeImmutable())->add(new DateInterval('P' . random_int(0, 300) . 'D')))
+            ->withErrorCode(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\ErrorCode::NULL);
+        $this->veda_factory->pdfSendStatus()->db()->handler()->updateByElement($element);
+        $this->veda_factory->logger()->handler()->debug("AAAAAAAAAAAAAAAA");
+        $this->ctrl->redirect($this, 'pdfSendStatus');
+    }
+
+    protected function testConnection(): void
     {
         if ($this->veda_factory->api()->handler()->testConnection()) {
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-                $this->getPluginObject()->txt('success_api_connect')
+                $this->veda_factory->lang()->handler()->pluginTxt('success_api_connect')
             );
         } else {
             $this->tpl->setOnScreenMessage(
@@ -715,19 +757,19 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
             if (stristr($session_token, '::') === false) {
                 $this->tpl->setOnScreenMessage(
                     ilGlobalTemplateInterface::MESSAGE_TYPE_FAILURE,
-                    $this->getPluginObject()->txt('connection_failure_soap')
+                    $this->veda_factory->lang()->handler()->pluginTxt('connection_failure_soap')
                 );
                 $this->credentials();
                 return;
             }
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-                $this->getPluginObject()->txt('connection_success_soap') . ' session_token: ' . $session_token
+                $this->veda_factory->lang()->handler()->pluginTxt('connection_success_soap') . ' session_token: ' . $session_token
             );
         } else {
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_FAILURE,
-                $this->getPluginObject()->txt('connection_failure_soap')
+                $this->veda_factory->lang()->handler()->pluginTxt('connection_failure_soap')
             );
         }
         $this->credentials();
@@ -746,7 +788,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         );
         $select = [];
         if ($a_with_select_option) {
-            $select[0] = $this->lng->txt('links_select_one');
+            $select[0] = $this->veda_factory->lang()->handler()->iliasTxt('links_select_one');
         }
         foreach ($global_roles as $role_id) {
             if ($role_id == ANONYMOUS_ROLE_ID) {
@@ -757,10 +799,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         return $select;
     }
 
-    /**
-     * @throws ilCtrlException
-     */
-    protected function migrateUser()
+    protected function migrateUser(): void
     {
         $oid = $this->http->wrapper()->query()->retrieve('oid', $this->refinery->kindlyTo()->string()) ?? '';
         $login = urldecode($this->http->wrapper()->query()->retrieve('login', $this->refinery->kindlyTo()->string()) ?? '');
@@ -771,7 +810,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         if ($oid === '' || $login === '') {
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_FAILURE,
-                $this->lng->txt('err_check_input'),
+                $this->veda_factory->lang()->handler()->iliasTxt('err_check_input'),
                 true
             );
             $this->ctrl->redirect($this, 'importResultUser');
@@ -789,7 +828,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
             $this->veda_factory->logger()->handler()->warning($msg);
             $this->tpl->setOnScreenMessage(
                 ilGlobalTemplateInterface::MESSAGE_TYPE_FAILURE,
-                $this->lng->txt('err_check_input'),
+                $this->veda_factory->lang()->handler()->iliasTxt('err_check_input'),
                 true
             );
             $this->ctrl->redirect($this, 'importResultUser');
@@ -802,7 +841,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $user_repo->update($status);
         $this->tpl->setOnScreenMessage(
             ilGlobalTemplateInterface::MESSAGE_TYPE_SUCCESS,
-            ilVedaConnectorPlugin::getInstance()->txt('migrated_account'),
+            $this->veda_factory->lang()->handler()->pluginTxt('migrated_account'),
             true
         );
         $this->ctrl->redirect($this, 'importResultUser');

@@ -6,12 +6,12 @@ namespace Leifos\VedaConnector\InputFields;
 
 use Leifos\VedaConnector\I\InputFields\FactoryInterface;
 use Leifos\VedaConnector\I\InputFields\RefIdNumberInterface;
-use Leifos\VedaConnector\I\PluginInterface;
+use Leifos\VedaConnector\I\Lang\FactoryInterface as LangFactoryInterface;
 
 class Factory implements FactoryInterface
 {
     public function __construct(
-        protected PluginInterface $plugin
+        protected LangFactoryInterface $lang_factory
     ) {
     }
 
@@ -21,7 +21,7 @@ class Factory implements FactoryInterface
     ): RefIdNumberInterface
     {
         return new RefIdNumber(
-            $this->plugin,
+            $this->lang_factory->handler(),
             $title,
             $post_var
         );

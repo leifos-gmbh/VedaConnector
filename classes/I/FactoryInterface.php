@@ -9,9 +9,11 @@ use Leifos\VedaConnector\I\Builder\FactoryInterface as BuilderFactoryInterface;
 use Leifos\VedaConnector\I\CourseStatus\FactoryInterface as CourseFactoryInterface;
 use Leifos\VedaConnector\I\Exception\FactoryInterface as ExceptionFactoryInterface;
 use Leifos\VedaConnector\I\InputFields\FactoryInterface as InputFieldsFactoryInterface;
+use Leifos\VedaConnector\I\Lang\FactoryInterface as LangFactoryInterface;
 use Leifos\VedaConnector\I\Logger\FactoryInterface as LoggerFactoryInterface;
 use Leifos\VedaConnector\I\Mail\FactoryInterface as MailFactoryInterface;
 use Leifos\VedaConnector\I\MDClaiming\FactoryInterface as MDClaimingFactoryInterface;
+use Leifos\VedaConnector\I\PDFSendStatus\FactoryInterface as PDFSendStatusFactoryInterface;
 use Leifos\VedaConnector\I\Settings\FactoryInterface as SettingsFactoryInterface;
 use Leifos\VedaConnector\I\TrainingProgramModules\FactoryInterface as TrainingProgramModulesFactoryInterface;
 use Leifos\VedaConnector\I\UDF\FactoryInterface as UDFFactoryInterface;
@@ -55,4 +57,8 @@ interface FactoryInterface
     public function udf(): UDFFactoryInterface;
 
     public function exception(): ExceptionFactoryInterface;
+
+    public function pdfSendStatus(): PDFSendStatusFactoryInterface;
+
+    public function lang(): LangFactoryInterface;
 }
