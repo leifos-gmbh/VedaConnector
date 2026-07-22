@@ -13,6 +13,7 @@ use Leifos\VedaConnector\I\Mail\DB\Element\CollectionInterface as MailDBElementC
 use Leifos\VedaConnector\I\Mail\DB\Element\FactoryInterface as MailDBElementFactoryInterface;
 use Leifos\VedaConnector\I\Mail\DB\Element\HandlerInterface as MailDBElementInterface;
 use Leifos\VedaConnector\I\Mail\DB\HandlerInterface as MailDBInterface;
+use Leifos\VedaConnector\I\Mail\DB\Element\Type;
 
 class Handler implements MailDBInterface
 {
@@ -31,8 +32,8 @@ class Handler implements MailDBInterface
         $elements = [];
         while ($row = $this->db->fetchAssoc($results)) {
             $elements[] = $this->mail_db_element_factory->handler((int) $row['id'])
-                ->withType($row['msg'])
-                ->withMessage($row['type'])
+                ->withType(Type::from($row['type']))
+                ->withMessage($row['msg'])
                 ->withLastModified(new DateTimeImmutable($row['modified'], new DateTimeZone('Utc')));
         }
         return $this->mail_db_element_factory->collection(...$elements);
@@ -52,8 +53,8 @@ class Handler implements MailDBInterface
                 $element->getMessage()
             ],
             'type' => [
-                ilDBConstants::T_TEXT,
-                $element->getType()
+                ilDBConstants::T_INTEGER,
+                $element->getType()->value
             ],
             'modified' => [
                 ilDBConstants::T_TIMESTAMP,
