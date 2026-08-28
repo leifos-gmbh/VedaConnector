@@ -6,12 +6,13 @@ use Leifos\VedaConnector\I\PluginInterface;
 
 class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListener, PluginInterface
 {
-    protected const COURSE_SERVICE = 'Modules/Course';
-    protected const USER_SERVICE = 'Services/User';
-    protected const OBJECT_SERVICE = 'Services/Object';
-    protected const ACCESS_CONTROL_SERVICE = 'Services/AccessControl';
-    protected const TRACKING_SERVICE = 'Services/Tracking';
+    protected const COURSE_SERVICE = 'components/ILIAS/Course';
+    protected const USER_SERVICE = 'components/ILIAS/User';
+    protected const OBJECT_SERVICE = 'components/ILIAS/Object';
+    protected const TRACKING_SERVICE = 'components/ILIAS/Tracking';
+    protected const CERTIFICATE_SERVICE = 'components/ILIAS/Certificate';
     protected const EVENT_UPDATE_PASSWORD = 'passwordChanged';
+    protected const EVENT_CERTIFICATE_ISSUED = 'certificateIssued';
     protected const EVENT_DELETE_USER = 'deleteUser';
     protected const EVENT_AFTER_CLONING = 'afterCloning';
     protected const EVENT_AFTER_CLONING_DEPENDENCIES = 'afterCloningDependencies';
@@ -127,6 +128,14 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
                 (int) $a_parameter['obj_id'],
                 (int) $a_parameter['usr_id'],
                 (int) $a_parameter['status']
+            );
+        }
+        if (
+            $a_component == self::CERTIFICATE_SERVICE &&
+            $a_event == self::EVENT_CERTIFICATE_ISSUED
+        ) {
+            $api->handleCertificateIssuedEvent(
+                $a_parameter['certificate']
             );
         }
         if (

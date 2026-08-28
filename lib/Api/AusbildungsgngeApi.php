@@ -74,7 +74,7 @@ class AusbildungsgngeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAusbildungsgang' => [
+        'getAusbildungsgangUsingGET' => [
             'application/json',
         ],
     ];
@@ -126,38 +126,38 @@ class AusbildungsgngeApi
     }
 
     /**
-     * Operation getAusbildungsgang
+     * Operation getAusbildungsgangUsingGET
      *
      * Ruft die Informationen zu einem Ausbildungsgang ab
      *
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungsgang
      */
-    public function getAusbildungsgang($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgang'][0])
+    public function getAusbildungsgangUsingGET($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgangUsingGET'][0])
     {
-        list($response) = $this->getAusbildungsgangWithHttpInfo($ausbildungsgang_id, $contentType);
+        list($response) = $this->getAusbildungsgangUsingGETWithHttpInfo($ausbildungsgang_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAusbildungsgangWithHttpInfo
+     * Operation getAusbildungsgangUsingGETWithHttpInfo
      *
      * Ruft die Informationen zu einem Ausbildungsgang ab
      *
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungsgang, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAusbildungsgangWithHttpInfo($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgang'][0])
+    public function getAusbildungsgangUsingGETWithHttpInfo($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgangUsingGET'][0])
     {
-        $request = $this->getAusbildungsgangRequest($ausbildungsgang_id, $contentType);
+        $request = $this->getAusbildungsgangUsingGETRequest($ausbildungsgang_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -229,19 +229,19 @@ class AusbildungsgngeApi
     }
 
     /**
-     * Operation getAusbildungsgangAsync
+     * Operation getAusbildungsgangUsingGETAsync
      *
      * Ruft die Informationen zu einem Ausbildungsgang ab
      *
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAusbildungsgangAsync($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgang'][0])
+    public function getAusbildungsgangUsingGETAsync($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgangUsingGET'][0])
     {
-        return $this->getAusbildungsgangAsyncWithHttpInfo($ausbildungsgang_id, $contentType)
+        return $this->getAusbildungsgangUsingGETAsyncWithHttpInfo($ausbildungsgang_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,20 +250,20 @@ class AusbildungsgngeApi
     }
 
     /**
-     * Operation getAusbildungsgangAsyncWithHttpInfo
+     * Operation getAusbildungsgangUsingGETAsyncWithHttpInfo
      *
      * Ruft die Informationen zu einem Ausbildungsgang ab
      *
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAusbildungsgangAsyncWithHttpInfo($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgang'][0])
+    public function getAusbildungsgangUsingGETAsyncWithHttpInfo($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgangUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungsgang';
-        $request = $this->getAusbildungsgangRequest($ausbildungsgang_id, $contentType);
+        $request = $this->getAusbildungsgangUsingGETRequest($ausbildungsgang_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -302,21 +302,21 @@ class AusbildungsgngeApi
     }
 
     /**
-     * Create request for operation 'getAusbildungsgang'
+     * Create request for operation 'getAusbildungsgangUsingGET'
      *
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAusbildungsgangRequest($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgang'][0])
+    public function getAusbildungsgangUsingGETRequest($ausbildungsgang_id, string $contentType = self::contentTypes['getAusbildungsgangUsingGET'][0])
     {
 
         // verify the required parameter 'ausbildungsgang_id' is set
         if ($ausbildungsgang_id === null || (is_array($ausbildungsgang_id) && count($ausbildungsgang_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungsgang_id when calling getAusbildungsgang'
+                'Missing the required parameter $ausbildungsgang_id when calling getAusbildungsgangUsingGET'
             );
         }
 

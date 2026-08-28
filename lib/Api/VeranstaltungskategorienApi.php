@@ -74,10 +74,10 @@ class VeranstaltungskategorienApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAlleVeranstaltungskategorien' => [
+        'getAlleVeranstaltungskategorienUsingGET' => [
             'application/json',
         ],
-        'getVeranstaltungsunterkategorien' => [
+        'getVeranstaltungsunterkategorienUsingGET' => [
             'application/json',
         ],
     ];
@@ -129,36 +129,36 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getAlleVeranstaltungskategorien
+     * Operation getAlleVeranstaltungskategorienUsingGET
      *
      * Ruft Veranstaltungskategorien ab.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]
      */
-    public function getAlleVeranstaltungskategorien(string $contentType = self::contentTypes['getAlleVeranstaltungskategorien'][0])
+    public function getAlleVeranstaltungskategorienUsingGET(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
-        list($response) = $this->getAlleVeranstaltungskategorienWithHttpInfo($contentType);
+        list($response) = $this->getAlleVeranstaltungskategorienUsingGETWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getAlleVeranstaltungskategorienWithHttpInfo
+     * Operation getAlleVeranstaltungskategorienUsingGETWithHttpInfo
      *
      * Ruft Veranstaltungskategorien ab.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAlleVeranstaltungskategorienWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorien'][0])
+    public function getAlleVeranstaltungskategorienUsingGETWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
-        $request = $this->getAlleVeranstaltungskategorienRequest($contentType);
+        $request = $this->getAlleVeranstaltungskategorienUsingGETRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -230,18 +230,18 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getAlleVeranstaltungskategorienAsync
+     * Operation getAlleVeranstaltungskategorienUsingGETAsync
      *
      * Ruft Veranstaltungskategorien ab.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleVeranstaltungskategorienAsync(string $contentType = self::contentTypes['getAlleVeranstaltungskategorien'][0])
+    public function getAlleVeranstaltungskategorienUsingGETAsync(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
-        return $this->getAlleVeranstaltungskategorienAsyncWithHttpInfo($contentType)
+        return $this->getAlleVeranstaltungskategorienUsingGETAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,19 +250,19 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getAlleVeranstaltungskategorienAsyncWithHttpInfo
+     * Operation getAlleVeranstaltungskategorienUsingGETAsyncWithHttpInfo
      *
      * Ruft Veranstaltungskategorien ab.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleVeranstaltungskategorienAsyncWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorien'][0])
+    public function getAlleVeranstaltungskategorienUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie[]';
-        $request = $this->getAlleVeranstaltungskategorienRequest($contentType);
+        $request = $this->getAlleVeranstaltungskategorienUsingGETRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -301,14 +301,14 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Create request for operation 'getAlleVeranstaltungskategorien'
+     * Create request for operation 'getAlleVeranstaltungskategorienUsingGET'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleVeranstaltungskategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAlleVeranstaltungskategorienRequest(string $contentType = self::contentTypes['getAlleVeranstaltungskategorien'][0])
+    public function getAlleVeranstaltungskategorienUsingGETRequest(string $contentType = self::contentTypes['getAlleVeranstaltungskategorienUsingGET'][0])
     {
 
 
@@ -382,38 +382,38 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getVeranstaltungsunterkategorien
+     * Operation getVeranstaltungsunterkategorienUsingGET
      *
      * Ruft alle Veranstaltungsunterkategorien ab.
      *
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]
      */
-    public function getVeranstaltungsunterkategorien($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorien'][0])
+    public function getVeranstaltungsunterkategorienUsingGET($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
-        list($response) = $this->getVeranstaltungsunterkategorienWithHttpInfo($veranstaltungskategorie_id, $contentType);
+        list($response) = $this->getVeranstaltungsunterkategorienUsingGETWithHttpInfo($veranstaltungskategorie_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungsunterkategorienWithHttpInfo
+     * Operation getVeranstaltungsunterkategorienUsingGETWithHttpInfo
      *
      * Ruft alle Veranstaltungsunterkategorien ab.
      *
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungsunterkategorienWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorien'][0])
+    public function getVeranstaltungsunterkategorienUsingGETWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
-        $request = $this->getVeranstaltungsunterkategorienRequest($veranstaltungskategorie_id, $contentType);
+        $request = $this->getVeranstaltungsunterkategorienUsingGETRequest($veranstaltungskategorie_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -485,19 +485,19 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getVeranstaltungsunterkategorienAsync
+     * Operation getVeranstaltungsunterkategorienUsingGETAsync
      *
      * Ruft alle Veranstaltungsunterkategorien ab.
      *
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsunterkategorienAsync($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorien'][0])
+    public function getVeranstaltungsunterkategorienUsingGETAsync($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
-        return $this->getVeranstaltungsunterkategorienAsyncWithHttpInfo($veranstaltungskategorie_id, $contentType)
+        return $this->getVeranstaltungsunterkategorienUsingGETAsyncWithHttpInfo($veranstaltungskategorie_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -506,20 +506,20 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Operation getVeranstaltungsunterkategorienAsyncWithHttpInfo
+     * Operation getVeranstaltungsunterkategorienUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Veranstaltungsunterkategorien ab.
      *
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsunterkategorienAsyncWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorien'][0])
+    public function getVeranstaltungsunterkategorienUsingGETAsyncWithHttpInfo($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie[]';
-        $request = $this->getVeranstaltungsunterkategorienRequest($veranstaltungskategorie_id, $contentType);
+        $request = $this->getVeranstaltungsunterkategorienUsingGETRequest($veranstaltungskategorie_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -558,15 +558,15 @@ class VeranstaltungskategorienApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungsunterkategorien'
+     * Create request for operation 'getVeranstaltungsunterkategorienUsingGET'
      *
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um nur auf dieVeranstaltungsunterkategorien zu filtern die zu dieser Veranstaltungskategorie gehören. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorien'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsunterkategorienUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungsunterkategorienRequest($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorien'][0])
+    public function getVeranstaltungsunterkategorienUsingGETRequest($veranstaltungskategorie_id = null, string $contentType = self::contentTypes['getVeranstaltungsunterkategorienUsingGET'][0])
     {
 
 

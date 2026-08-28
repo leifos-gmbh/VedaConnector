@@ -712,7 +712,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     protected function addTestRecord(): void
     {
         $element = $this->veda_factory->pdfSendStatus()->db()->handler()->createElement()
-            ->withCourseId(bin2hex(random_bytes(10)))
+            ->withCourseOId(bin2hex(random_bytes(10)))
             ->withParticipantId(bin2hex(random_bytes(10)))
             ->withSendStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus::from(random_int(0, 1)))
             ->withPassedStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\PassedStatus::from(random_int(0, 1)))

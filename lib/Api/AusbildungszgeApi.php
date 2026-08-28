@@ -74,25 +74,25 @@ class AusbildungszgeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAufsichtspersonenVonAusbildungszug' => [
+        'getAufsichtspersonenVonAusbildungszugUsingGET' => [
             'application/json',
         ],
-        'getBeteiligteDozentenVonAusbildungszug' => [
+        'getBeteiligteDozentenVonAusbildungszugUsingGET' => [
             'application/json',
         ],
-        'getLernbegleiterVonAusbildungszug' => [
+        'getLernbegleiterVonAusbildungszugUsingGET' => [
             'application/json',
         ],
-        'getTeilnehmerVonAusbildungszug' => [
+        'getTeilnehmerVonAusbildungszugUsingGET' => [
             'application/json',
         ],
-        'meldeAusbildungszugAlsExternExistierend' => [
+        'meldeAusbildungszugAlsExternExistierendUsingPOST' => [
             'application/json',
         ],
-        'meldeAusbildungszugAnlageFehlgeschlagen' => [
+        'meldeAusbildungszugAnlageFehlgeschlagenUsingPOST' => [
             'application/json',
         ],
-        'meldeExterneAnlageAngestossen' => [
+        'meldeExterneAnlageAngestossenUsingPOST' => [
             'application/json',
         ],
     ];
@@ -144,38 +144,38 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getAufsichtspersonenVonAusbildungszug
+     * Operation getAufsichtspersonenVonAusbildungszugUsingGET
      *
      * Ruft alle beteiligten Aufsichtspersonen eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]
      */
-    public function getAufsichtspersonenVonAusbildungszug($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszug'][0])
+    public function getAufsichtspersonenVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
-        list($response) = $this->getAufsichtspersonenVonAusbildungszugWithHttpInfo($ausbildungszug_id, $contentType);
+        list($response) = $this->getAufsichtspersonenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAufsichtspersonenVonAusbildungszugWithHttpInfo
+     * Operation getAufsichtspersonenVonAusbildungszugUsingGETWithHttpInfo
      *
      * Ruft alle beteiligten Aufsichtspersonen eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAufsichtspersonenVonAusbildungszugWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszug'][0])
+    public function getAufsichtspersonenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
-        $request = $this->getAufsichtspersonenVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getAufsichtspersonenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -247,19 +247,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getAufsichtspersonenVonAusbildungszugAsync
+     * Operation getAufsichtspersonenVonAusbildungszugUsingGETAsync
      *
      * Ruft alle beteiligten Aufsichtspersonen eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAufsichtspersonenVonAusbildungszugAsync($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszug'][0])
+    public function getAufsichtspersonenVonAusbildungszugUsingGETAsync($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
-        return $this->getAufsichtspersonenVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->getAufsichtspersonenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -268,20 +268,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getAufsichtspersonenVonAusbildungszugAsyncWithHttpInfo
+     * Operation getAufsichtspersonenVonAusbildungszugUsingGETAsyncWithHttpInfo
      *
      * Ruft alle beteiligten Aufsichtspersonen eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAufsichtspersonenVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszug'][0])
+    public function getAufsichtspersonenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AufsichtspersonKurszugriff[]';
-        $request = $this->getAufsichtspersonenVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getAufsichtspersonenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -320,21 +320,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'getAufsichtspersonenVonAusbildungszug'
+     * Create request for operation 'getAufsichtspersonenVonAusbildungszugUsingGET'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAufsichtspersonenVonAusbildungszugRequest($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszug'][0])
+    public function getAufsichtspersonenVonAusbildungszugUsingGETRequest($ausbildungszug_id, string $contentType = self::contentTypes['getAufsichtspersonenVonAusbildungszugUsingGET'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling getAufsichtspersonenVonAusbildungszug'
+                'Missing the required parameter $ausbildungszug_id when calling getAufsichtspersonenVonAusbildungszugUsingGET'
             );
         }
 
@@ -417,38 +417,38 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getBeteiligteDozentenVonAusbildungszug
+     * Operation getBeteiligteDozentenVonAusbildungszugUsingGET
      *
      * Ruft alle beteiligten Dozenten eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]
      */
-    public function getBeteiligteDozentenVonAusbildungszug($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszug'][0])
+    public function getBeteiligteDozentenVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
-        list($response) = $this->getBeteiligteDozentenVonAusbildungszugWithHttpInfo($ausbildungszug_id, $contentType);
+        list($response) = $this->getBeteiligteDozentenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getBeteiligteDozentenVonAusbildungszugWithHttpInfo
+     * Operation getBeteiligteDozentenVonAusbildungszugUsingGETWithHttpInfo
      *
      * Ruft alle beteiligten Dozenten eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBeteiligteDozentenVonAusbildungszugWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszug'][0])
+    public function getBeteiligteDozentenVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
-        $request = $this->getBeteiligteDozentenVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getBeteiligteDozentenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -520,19 +520,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getBeteiligteDozentenVonAusbildungszugAsync
+     * Operation getBeteiligteDozentenVonAusbildungszugUsingGETAsync
      *
      * Ruft alle beteiligten Dozenten eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBeteiligteDozentenVonAusbildungszugAsync($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszug'][0])
+    public function getBeteiligteDozentenVonAusbildungszugUsingGETAsync($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
-        return $this->getBeteiligteDozentenVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->getBeteiligteDozentenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -541,20 +541,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getBeteiligteDozentenVonAusbildungszugAsyncWithHttpInfo
+     * Operation getBeteiligteDozentenVonAusbildungszugUsingGETAsyncWithHttpInfo
      *
      * Ruft alle beteiligten Dozenten eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBeteiligteDozentenVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszug'][0])
+    public function getBeteiligteDozentenVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugDozent[]';
-        $request = $this->getBeteiligteDozentenVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getBeteiligteDozentenVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -593,21 +593,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'getBeteiligteDozentenVonAusbildungszug'
+     * Create request for operation 'getBeteiligteDozentenVonAusbildungszugUsingGET'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBeteiligteDozentenVonAusbildungszugRequest($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszug'][0])
+    public function getBeteiligteDozentenVonAusbildungszugUsingGETRequest($ausbildungszug_id, string $contentType = self::contentTypes['getBeteiligteDozentenVonAusbildungszugUsingGET'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling getBeteiligteDozentenVonAusbildungszug'
+                'Missing the required parameter $ausbildungszug_id when calling getBeteiligteDozentenVonAusbildungszugUsingGET'
             );
         }
 
@@ -690,38 +690,38 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getLernbegleiterVonAusbildungszug
+     * Operation getLernbegleiterVonAusbildungszugUsingGET
      *
      * Ruft alle zuständigen Lernbegleiter eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]
      */
-    public function getLernbegleiterVonAusbildungszug($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszug'][0])
+    public function getLernbegleiterVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
-        list($response) = $this->getLernbegleiterVonAusbildungszugWithHttpInfo($ausbildungszug_id, $contentType);
+        list($response) = $this->getLernbegleiterVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getLernbegleiterVonAusbildungszugWithHttpInfo
+     * Operation getLernbegleiterVonAusbildungszugUsingGETWithHttpInfo
      *
      * Ruft alle zuständigen Lernbegleiter eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLernbegleiterVonAusbildungszugWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszug'][0])
+    public function getLernbegleiterVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
-        $request = $this->getLernbegleiterVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getLernbegleiterVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -793,19 +793,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getLernbegleiterVonAusbildungszugAsync
+     * Operation getLernbegleiterVonAusbildungszugUsingGETAsync
      *
      * Ruft alle zuständigen Lernbegleiter eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLernbegleiterVonAusbildungszugAsync($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszug'][0])
+    public function getLernbegleiterVonAusbildungszugUsingGETAsync($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
-        return $this->getLernbegleiterVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->getLernbegleiterVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -814,20 +814,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getLernbegleiterVonAusbildungszugAsyncWithHttpInfo
+     * Operation getLernbegleiterVonAusbildungszugUsingGETAsyncWithHttpInfo
      *
      * Ruft alle zuständigen Lernbegleiter eines Ausbildungszugs ab
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLernbegleiterVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszug'][0])
+    public function getLernbegleiterVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugLernbegleiter[]';
-        $request = $this->getLernbegleiterVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getLernbegleiterVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -866,21 +866,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'getLernbegleiterVonAusbildungszug'
+     * Create request for operation 'getLernbegleiterVonAusbildungszugUsingGET'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLernbegleiterVonAusbildungszugRequest($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszug'][0])
+    public function getLernbegleiterVonAusbildungszugUsingGETRequest($ausbildungszug_id, string $contentType = self::contentTypes['getLernbegleiterVonAusbildungszugUsingGET'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling getLernbegleiterVonAusbildungszug'
+                'Missing the required parameter $ausbildungszug_id when calling getLernbegleiterVonAusbildungszugUsingGET'
             );
         }
 
@@ -963,38 +963,38 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getTeilnehmerVonAusbildungszug
+     * Operation getTeilnehmerVonAusbildungszugUsingGET
      *
      * Ruft alle Teilnehmer ab, die auf den Ausbildungszug gebucht sind.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]
      */
-    public function getTeilnehmerVonAusbildungszug($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszug'][0])
+    public function getTeilnehmerVonAusbildungszugUsingGET($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerVonAusbildungszugWithHttpInfo($ausbildungszug_id, $contentType);
+        list($response) = $this->getTeilnehmerVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerVonAusbildungszugWithHttpInfo
+     * Operation getTeilnehmerVonAusbildungszugUsingGETWithHttpInfo
      *
      * Ruft alle Teilnehmer ab, die auf den Ausbildungszug gebucht sind.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerVonAusbildungszugWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszug'][0])
+    public function getTeilnehmerVonAusbildungszugUsingGETWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
-        $request = $this->getTeilnehmerVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getTeilnehmerVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1066,19 +1066,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getTeilnehmerVonAusbildungszugAsync
+     * Operation getTeilnehmerVonAusbildungszugUsingGETAsync
      *
      * Ruft alle Teilnehmer ab, die auf den Ausbildungszug gebucht sind.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerVonAusbildungszugAsync($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszug'][0])
+    public function getTeilnehmerVonAusbildungszugUsingGETAsync($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
-        return $this->getTeilnehmerVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->getTeilnehmerVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1087,20 +1087,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation getTeilnehmerVonAusbildungszugAsyncWithHttpInfo
+     * Operation getTeilnehmerVonAusbildungszugUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Teilnehmer ab, die auf den Ausbildungszug gebucht sind.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerVonAusbildungszugAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszug'][0])
+    public function getTeilnehmerVonAusbildungszugUsingGETAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AusbildungszugTeilnehmer[]';
-        $request = $this->getTeilnehmerVonAusbildungszugRequest($ausbildungszug_id, $contentType);
+        $request = $this->getTeilnehmerVonAusbildungszugUsingGETRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1139,21 +1139,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerVonAusbildungszug'
+     * Create request for operation 'getTeilnehmerVonAusbildungszugUsingGET'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszug'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerVonAusbildungszugRequest($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszug'][0])
+    public function getTeilnehmerVonAusbildungszugUsingGETRequest($ausbildungszug_id, string $contentType = self::contentTypes['getTeilnehmerVonAusbildungszugUsingGET'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling getTeilnehmerVonAusbildungszug'
+                'Missing the required parameter $ausbildungszug_id when calling getTeilnehmerVonAusbildungszugUsingGET'
             );
         }
 
@@ -1236,37 +1236,37 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAlsExternExistierend
+     * Operation meldeAusbildungszugAlsExternExistierendUsingPOST
      *
      * Meldet den Ausbildungszug als extern existierend
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeAusbildungszugAlsExternExistierend($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierend'][0])
+    public function meldeAusbildungszugAlsExternExistierendUsingPOST($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'][0])
     {
-        $this->meldeAusbildungszugAlsExternExistierendWithHttpInfo($ausbildungszug_id, $contentType);
+        $this->meldeAusbildungszugAlsExternExistierendUsingPOSTWithHttpInfo($ausbildungszug_id, $contentType);
     }
 
     /**
-     * Operation meldeAusbildungszugAlsExternExistierendWithHttpInfo
+     * Operation meldeAusbildungszugAlsExternExistierendUsingPOSTWithHttpInfo
      *
      * Meldet den Ausbildungszug als extern existierend
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeAusbildungszugAlsExternExistierendWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierend'][0])
+    public function meldeAusbildungszugAlsExternExistierendUsingPOSTWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'][0])
     {
-        $request = $this->meldeAusbildungszugAlsExternExistierendRequest($ausbildungszug_id, $contentType);
+        $request = $this->meldeAusbildungszugAlsExternExistierendUsingPOSTRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1302,19 +1302,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAlsExternExistierendAsync
+     * Operation meldeAusbildungszugAlsExternExistierendUsingPOSTAsync
      *
      * Meldet den Ausbildungszug als extern existierend
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeAusbildungszugAlsExternExistierendAsync($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierend'][0])
+    public function meldeAusbildungszugAlsExternExistierendUsingPOSTAsync($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'][0])
     {
-        return $this->meldeAusbildungszugAlsExternExistierendAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->meldeAusbildungszugAlsExternExistierendUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1323,20 +1323,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAlsExternExistierendAsyncWithHttpInfo
+     * Operation meldeAusbildungszugAlsExternExistierendUsingPOSTAsyncWithHttpInfo
      *
      * Meldet den Ausbildungszug als extern existierend
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeAusbildungszugAlsExternExistierendAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierend'][0])
+    public function meldeAusbildungszugAlsExternExistierendUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeAusbildungszugAlsExternExistierendRequest($ausbildungszug_id, $contentType);
+        $request = $this->meldeAusbildungszugAlsExternExistierendUsingPOSTRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1362,21 +1362,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'meldeAusbildungszugAlsExternExistierend'
+     * Create request for operation 'meldeAusbildungszugAlsExternExistierendUsingPOST'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeAusbildungszugAlsExternExistierendRequest($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierend'][0])
+    public function meldeAusbildungszugAlsExternExistierendUsingPOSTRequest($ausbildungszug_id, string $contentType = self::contentTypes['meldeAusbildungszugAlsExternExistierendUsingPOST'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling meldeAusbildungszugAlsExternExistierend'
+                'Missing the required parameter $ausbildungszug_id when calling meldeAusbildungszugAlsExternExistierendUsingPOST'
             );
         }
 
@@ -1459,39 +1459,39 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAnlageFehlgeschlagen
+     * Operation meldeAusbildungszugAnlageFehlgeschlagenUsingPOST
      *
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeAusbildungszugAnlageFehlgeschlagen($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'][0])
+    public function meldeAusbildungszugAnlageFehlgeschlagenUsingPOST($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'][0])
     {
-        $this->meldeAusbildungszugAnlageFehlgeschlagenWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
+        $this->meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
     }
 
     /**
-     * Operation meldeAusbildungszugAnlageFehlgeschlagenWithHttpInfo
+     * Operation meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTWithHttpInfo
      *
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeAusbildungszugAnlageFehlgeschlagenWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'][0])
+    public function meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'][0])
     {
-        $request = $this->meldeAusbildungszugAnlageFehlgeschlagenRequest($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTRequest($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1527,20 +1527,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAnlageFehlgeschlagenAsync
+     * Operation meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTAsync
      *
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeAusbildungszugAnlageFehlgeschlagenAsync($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'][0])
+    public function meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTAsync($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'][0])
     {
-        return $this->meldeAusbildungszugAnlageFehlgeschlagenAsyncWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, $contentType)
+        return $this->meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1549,21 +1549,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeAusbildungszugAnlageFehlgeschlagenAsyncWithHttpInfo
+     * Operation meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, dass die externe Anlage des Ausbildungszugs fehlgeschlagen ist
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeAusbildungszugAnlageFehlgeschlagenAsyncWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'][0])
+    public function meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeAusbildungszugAnlageFehlgeschlagenRequest($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTRequest($ausbildungszug_id, $fehlermeldung_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1589,29 +1589,29 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'meldeAusbildungszugAnlageFehlgeschlagen'
+     * Create request for operation 'meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeAusbildungszugAnlageFehlgeschlagenRequest($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagen'][0])
+    public function meldeAusbildungszugAnlageFehlgeschlagenUsingPOSTRequest($ausbildungszug_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling meldeAusbildungszugAnlageFehlgeschlagen'
+                'Missing the required parameter $ausbildungszug_id when calling meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'
             );
         }
 
         // verify the required parameter 'fehlermeldung_api_dto' is set
         if ($fehlermeldung_api_dto === null || (is_array($fehlermeldung_api_dto) && count($fehlermeldung_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $fehlermeldung_api_dto when calling meldeAusbildungszugAnlageFehlgeschlagen'
+                'Missing the required parameter $fehlermeldung_api_dto when calling meldeAusbildungszugAnlageFehlgeschlagenUsingPOST'
             );
         }
 
@@ -1701,37 +1701,37 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeExterneAnlageAngestossen
+     * Operation meldeExterneAnlageAngestossenUsingPOST
      *
      * Meldet das die Anlage des Ausbildungszugs auf dem externen System angestoßen wurde.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeExterneAnlageAngestossen($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossen'][0])
+    public function meldeExterneAnlageAngestossenUsingPOST($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'][0])
     {
-        $this->meldeExterneAnlageAngestossenWithHttpInfo($ausbildungszug_id, $contentType);
+        $this->meldeExterneAnlageAngestossenUsingPOSTWithHttpInfo($ausbildungszug_id, $contentType);
     }
 
     /**
-     * Operation meldeExterneAnlageAngestossenWithHttpInfo
+     * Operation meldeExterneAnlageAngestossenUsingPOSTWithHttpInfo
      *
      * Meldet das die Anlage des Ausbildungszugs auf dem externen System angestoßen wurde.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeExterneAnlageAngestossenWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossen'][0])
+    public function meldeExterneAnlageAngestossenUsingPOSTWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'][0])
     {
-        $request = $this->meldeExterneAnlageAngestossenRequest($ausbildungszug_id, $contentType);
+        $request = $this->meldeExterneAnlageAngestossenUsingPOSTRequest($ausbildungszug_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1767,19 +1767,19 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeExterneAnlageAngestossenAsync
+     * Operation meldeExterneAnlageAngestossenUsingPOSTAsync
      *
      * Meldet das die Anlage des Ausbildungszugs auf dem externen System angestoßen wurde.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeExterneAnlageAngestossenAsync($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossen'][0])
+    public function meldeExterneAnlageAngestossenUsingPOSTAsync($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'][0])
     {
-        return $this->meldeExterneAnlageAngestossenAsyncWithHttpInfo($ausbildungszug_id, $contentType)
+        return $this->meldeExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1788,20 +1788,20 @@ class AusbildungszgeApi
     }
 
     /**
-     * Operation meldeExterneAnlageAngestossenAsyncWithHttpInfo
+     * Operation meldeExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo
      *
      * Meldet das die Anlage des Ausbildungszugs auf dem externen System angestoßen wurde.
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeExterneAnlageAngestossenAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossen'][0])
+    public function meldeExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeExterneAnlageAngestossenRequest($ausbildungszug_id, $contentType);
+        $request = $this->meldeExterneAnlageAngestossenUsingPOSTRequest($ausbildungszug_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1827,21 +1827,21 @@ class AusbildungszgeApi
     }
 
     /**
-     * Create request for operation 'meldeExterneAnlageAngestossen'
+     * Create request for operation 'meldeExterneAnlageAngestossenUsingPOST'
      *
      * @param  string $ausbildungszug_id ID des Ausbildungszugs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeExterneAnlageAngestossenRequest($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossen'][0])
+    public function meldeExterneAnlageAngestossenUsingPOSTRequest($ausbildungszug_id, string $contentType = self::contentTypes['meldeExterneAnlageAngestossenUsingPOST'][0])
     {
 
         // verify the required parameter 'ausbildungszug_id' is set
         if ($ausbildungszug_id === null || (is_array($ausbildungszug_id) && count($ausbildungszug_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszug_id when calling meldeExterneAnlageAngestossen'
+                'Missing the required parameter $ausbildungszug_id when calling meldeExterneAnlageAngestossenUsingPOST'
             );
         }
 

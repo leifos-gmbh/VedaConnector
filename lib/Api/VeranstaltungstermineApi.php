@@ -74,49 +74,49 @@ class VeranstaltungstermineApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'createVeranstaltungsterminBuchung' => [
+        'createVeranstaltungsterminBuchungUsingPOST' => [
             'application/json',
         ],
-        'createVeranstaltungsterminBuchung1' => [
+        'createVeranstaltungsterminBuchungUsingPOST1' => [
             'application/json',
         ],
-        'createVeranstaltungsterminBuchung2' => [
+        'createVeranstaltungsterminBuchungUsingPOST2' => [
             'application/json',
         ],
-        'getTeilnehmerbuchungenZuVeranstaltungstermin' => [
+        'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET' => [
             'application/json',
         ],
-        'getTeilnehmerbuchungenZuVeranstaltungstermin1' => [
+        'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1' => [
             'application/json',
         ],
-        'getTeilnehmerbuchungenZuVeranstaltungstermin2' => [
+        'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2' => [
             'application/json',
         ],
-        'getVeranstaltungstermin' => [
+        'getVeranstaltungsterminUsingGET' => [
             'application/json',
         ],
-        'getVeranstaltungstermin1' => [
+        'getVeranstaltungsterminUsingGET1' => [
             'application/json',
         ],
-        'getVeranstaltungstermin2' => [
+        'getVeranstaltungsterminUsingGET2' => [
             'application/json',
         ],
-        'getVeranstaltungstermine' => [
+        'getVeranstaltungstermineUsingGET' => [
             'application/json',
         ],
-        'getVeranstaltungstermine1' => [
+        'getVeranstaltungstermineUsingGET1' => [
             'application/json',
         ],
-        'getVeranstaltungstermine2' => [
+        'getVeranstaltungstermineUsingGET2' => [
             'application/json',
         ],
-        'getVeranstaltungstermine3' => [
+        'getVeranstaltungstermineUsingGET3' => [
             'application/json',
         ],
-        'getVeranstaltungstermine4' => [
+        'getVeranstaltungstermineUsingGET4' => [
             'application/json',
         ],
-        'getVeranstaltungstypPlzBereiche1' => [
+        'getVeranstaltungstypPlzBereicheUsingGET1' => [
             'application/json',
         ],
     ];
@@ -168,40 +168,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung
+     * Operation createVeranstaltungsterminBuchungUsingPOST
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
-    public function createVeranstaltungsterminBuchung($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
-        list($response) = $this->createVeranstaltungsterminBuchungWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        list($response) = $this->createVeranstaltungsterminBuchungUsingPOSTWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchungWithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOSTWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createVeranstaltungsterminBuchungWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung'][0])
+    public function createVeranstaltungsterminBuchungUsingPOSTWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
-        $request = $this->createVeranstaltungsterminBuchungRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOSTRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -273,20 +273,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchungAsync
+     * Operation createVeranstaltungsterminBuchungUsingPOSTAsync
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchungAsync($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung'][0])
+    public function createVeranstaltungsterminBuchungUsingPOSTAsync($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
-        return $this->createVeranstaltungsterminBuchungAsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
+        return $this->createVeranstaltungsterminBuchungUsingPOSTAsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -295,21 +295,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchungAsyncWithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOSTAsyncWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchungAsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung'][0])
+    public function createVeranstaltungsterminBuchungUsingPOSTAsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
-        $request = $this->createVeranstaltungsterminBuchungRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOSTRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -348,29 +348,29 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'createVeranstaltungsterminBuchung'
+     * Create request for operation 'createVeranstaltungsterminBuchungUsingPOST'
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createVeranstaltungsterminBuchungRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung'][0])
+    public function createVeranstaltungsterminBuchungUsingPOSTRequest($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST'][0])
     {
 
         // verify the required parameter 'termin_id' is set
         if ($termin_id === null || (is_array($termin_id) && count($termin_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchung'
+                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchungUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_buchen_api_dto' is set
         if ($teilnehmer_aktion_buchen_api_dto === null || (is_array($teilnehmer_aktion_buchen_api_dto) && count($teilnehmer_aktion_buchen_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchung'
+                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchungUsingPOST'
             );
         }
 
@@ -460,40 +460,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung1
+     * Operation createVeranstaltungsterminBuchungUsingPOST1
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
-    public function createVeranstaltungsterminBuchung1($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung1'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST1($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
-        list($response) = $this->createVeranstaltungsterminBuchung1WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        list($response) = $this->createVeranstaltungsterminBuchungUsingPOST1WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung1WithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOST1WithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createVeranstaltungsterminBuchung1WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung1'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST1WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
-        $request = $this->createVeranstaltungsterminBuchung1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOST1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -565,20 +565,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung1Async
+     * Operation createVeranstaltungsterminBuchungUsingPOST1Async
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchung1Async($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung1'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST1Async($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
-        return $this->createVeranstaltungsterminBuchung1AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
+        return $this->createVeranstaltungsterminBuchungUsingPOST1AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -587,21 +587,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung1AsyncWithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOST1AsyncWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchung1AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung1'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST1AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
-        $request = $this->createVeranstaltungsterminBuchung1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOST1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -640,29 +640,29 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'createVeranstaltungsterminBuchung1'
+     * Create request for operation 'createVeranstaltungsterminBuchungUsingPOST1'
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createVeranstaltungsterminBuchung1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung1'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST1Request($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST1'][0])
     {
 
         // verify the required parameter 'termin_id' is set
         if ($termin_id === null || (is_array($termin_id) && count($termin_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchung1'
+                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchungUsingPOST1'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_buchen_api_dto' is set
         if ($teilnehmer_aktion_buchen_api_dto === null || (is_array($teilnehmer_aktion_buchen_api_dto) && count($teilnehmer_aktion_buchen_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchung1'
+                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchungUsingPOST1'
             );
         }
 
@@ -752,40 +752,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung2
+     * Operation createVeranstaltungsterminBuchungUsingPOST2
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
-    public function createVeranstaltungsterminBuchung2($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung2'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST2($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'][0])
     {
-        list($response) = $this->createVeranstaltungsterminBuchung2WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        list($response) = $this->createVeranstaltungsterminBuchungUsingPOST2WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung2WithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOST2WithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createVeranstaltungsterminBuchung2WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung2'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST2WithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'][0])
     {
-        $request = $this->createVeranstaltungsterminBuchung2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOST2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -857,20 +857,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung2Async
+     * Operation createVeranstaltungsterminBuchungUsingPOST2Async
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchung2Async($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung2'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST2Async($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'][0])
     {
-        return $this->createVeranstaltungsterminBuchung2AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
+        return $this->createVeranstaltungsterminBuchungUsingPOST2AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -879,21 +879,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation createVeranstaltungsterminBuchung2AsyncWithHttpInfo
+     * Operation createVeranstaltungsterminBuchungUsingPOST2AsyncWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Veranstaltungstermin zu buchen.
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVeranstaltungsterminBuchung2AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung2'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST2AsyncWithHttpInfo($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
-        $request = $this->createVeranstaltungsterminBuchung2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createVeranstaltungsterminBuchungUsingPOST2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -932,29 +932,29 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'createVeranstaltungsterminBuchung2'
+     * Create request for operation 'createVeranstaltungsterminBuchungUsingPOST2'
      *
      * @param  string $termin_id ID des Veranstaltungstermins (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchung2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createVeranstaltungsterminBuchung2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchung2'][0])
+    public function createVeranstaltungsterminBuchungUsingPOST2Request($termin_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createVeranstaltungsterminBuchungUsingPOST2'][0])
     {
 
         // verify the required parameter 'termin_id' is set
         if ($termin_id === null || (is_array($termin_id) && count($termin_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchung2'
+                'Missing the required parameter $termin_id when calling createVeranstaltungsterminBuchungUsingPOST2'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_buchen_api_dto' is set
         if ($teilnehmer_aktion_buchen_api_dto === null || (is_array($teilnehmer_aktion_buchen_api_dto) && count($teilnehmer_aktion_buchen_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchung2'
+                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createVeranstaltungsterminBuchungUsingPOST2'
             );
         }
 
@@ -1044,38 +1044,38 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungsterminWithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungsterminWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminRequest($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1147,19 +1147,19 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminAsync
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsync
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungsterminAsync($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsync($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
-        return $this->getTeilnehmerbuchungenZuVeranstaltungsterminAsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1168,20 +1168,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminAsyncWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsyncWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungsterminAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminRequest($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1220,21 +1220,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungstermin'
+     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungsterminRequest($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGETRequest($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungstermin'
+                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET'
             );
         }
 
@@ -1317,38 +1317,38 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin1
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin1($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
-        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungstermin1WithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin1WithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1WithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin1WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungstermin1Request($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1420,19 +1420,19 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin1Async
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Async
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin1Async($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Async($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
-        return $this->getTeilnehmerbuchungenZuVeranstaltungstermin1AsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1441,20 +1441,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin1AsyncWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1AsyncWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungstermin1Request($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1493,21 +1493,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungstermin1'
+     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin1Request($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin1'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1Request($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungstermin1'
+                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET1'
             );
         }
 
@@ -1590,38 +1590,38 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin2
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin2($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'][0])
     {
-        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungstermin2WithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin2WithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2WithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin2WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'][0])
     {
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungstermin2Request($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1693,19 +1693,19 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin2Async
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2Async
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin2Async($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2Async($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'][0])
     {
-        return $this->getTeilnehmerbuchungenZuVeranstaltungstermin2AsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1714,20 +1714,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuVeranstaltungstermin2AsyncWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2AsyncWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für einen Veranstaltungstermin abzurufen.
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
-        $request = $this->getTeilnehmerbuchungenZuVeranstaltungstermin2Request($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1766,21 +1766,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungstermin2'
+     * Create request for operation 'getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'
      *
      * @param  string $id ID des Veranstaltungstermins, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerbuchungenZuVeranstaltungstermin2Request($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungstermin2'][0])
+    public function getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2Request($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungstermin2'
+                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuVeranstaltungsterminUsingGET2'
             );
         }
 
@@ -1863,40 +1863,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin
+     * Operation getVeranstaltungsterminUsingGET
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin
      */
-    public function getVeranstaltungstermin($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin'][0])
+    public function getVeranstaltungsterminUsingGET($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
-        list($response) = $this->getVeranstaltungsterminWithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
+        list($response) = $this->getVeranstaltungsterminUsingGETWithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungsterminWithHttpInfo
+     * Operation getVeranstaltungsterminUsingGETWithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungsterminWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin'][0])
+    public function getVeranstaltungsterminUsingGETWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
-        $request = $this->getVeranstaltungsterminRequest($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGETRequest($id, $stornierten_termin_abrufen, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1968,20 +1968,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungsterminAsync
+     * Operation getVeranstaltungsterminUsingGETAsync
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsterminAsync($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin'][0])
+    public function getVeranstaltungsterminUsingGETAsync($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
-        return $this->getVeranstaltungsterminAsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
+        return $this->getVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1990,21 +1990,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungsterminAsyncWithHttpInfo
+     * Operation getVeranstaltungsterminUsingGETAsyncWithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsterminAsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin'][0])
+    public function getVeranstaltungsterminUsingGETAsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin';
-        $request = $this->getVeranstaltungsterminRequest($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGETRequest($id, $stornierten_termin_abrufen, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2043,22 +2043,22 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermin'
+     * Create request for operation 'getVeranstaltungsterminUsingGET'
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungsterminRequest($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin'][0])
+    public function getVeranstaltungsterminUsingGETRequest($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getVeranstaltungstermin'
+                'Missing the required parameter $id when calling getVeranstaltungsterminUsingGET'
             );
         }
 
@@ -2151,40 +2151,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin1
+     * Operation getVeranstaltungsterminUsingGET1
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV
      */
-    public function getVeranstaltungstermin1($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin1'][0])
+    public function getVeranstaltungsterminUsingGET1($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
-        list($response) = $this->getVeranstaltungstermin1WithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
+        list($response) = $this->getVeranstaltungsterminUsingGET1WithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermin1WithHttpInfo
+     * Operation getVeranstaltungsterminUsingGET1WithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermin1WithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin1'][0])
+    public function getVeranstaltungsterminUsingGET1WithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
-        $request = $this->getVeranstaltungstermin1Request($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGET1Request($id, $stornierten_termin_abrufen, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2256,20 +2256,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin1Async
+     * Operation getVeranstaltungsterminUsingGET1Async
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermin1Async($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin1'][0])
+    public function getVeranstaltungsterminUsingGET1Async($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
-        return $this->getVeranstaltungstermin1AsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
+        return $this->getVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2278,21 +2278,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin1AsyncWithHttpInfo
+     * Operation getVeranstaltungsterminUsingGET1AsyncWithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (entweder nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermin1AsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin1'][0])
+    public function getVeranstaltungsterminUsingGET1AsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV';
-        $request = $this->getVeranstaltungstermin1Request($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGET1Request($id, $stornierten_termin_abrufen, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2331,22 +2331,22 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermin1'
+     * Create request for operation 'getVeranstaltungsterminUsingGET1'
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermin1Request($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin1'][0])
+    public function getVeranstaltungsterminUsingGET1Request($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET1'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getVeranstaltungstermin1'
+                'Missing the required parameter $id when calling getVeranstaltungsterminUsingGET1'
             );
         }
 
@@ -2439,40 +2439,40 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin2
+     * Operation getVeranstaltungsterminUsingGET2
      *
      * Ruft einen Veranstaltungstermin ab (nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin
      */
-    public function getVeranstaltungstermin2($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin2'][0])
+    public function getVeranstaltungsterminUsingGET2($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET2'][0])
     {
-        list($response) = $this->getVeranstaltungstermin2WithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
+        list($response) = $this->getVeranstaltungsterminUsingGET2WithHttpInfo($id, $stornierten_termin_abrufen, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermin2WithHttpInfo
+     * Operation getVeranstaltungsterminUsingGET2WithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermin2WithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin2'][0])
+    public function getVeranstaltungsterminUsingGET2WithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET2'][0])
     {
-        $request = $this->getVeranstaltungstermin2Request($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGET2Request($id, $stornierten_termin_abrufen, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2544,20 +2544,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin2Async
+     * Operation getVeranstaltungsterminUsingGET2Async
      *
      * Ruft einen Veranstaltungstermin ab (nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermin2Async($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin2'][0])
+    public function getVeranstaltungsterminUsingGET2Async($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET2'][0])
     {
-        return $this->getVeranstaltungstermin2AsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
+        return $this->getVeranstaltungsterminUsingGET2AsyncWithHttpInfo($id, $stornierten_termin_abrufen, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2566,21 +2566,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermin2AsyncWithHttpInfo
+     * Operation getVeranstaltungsterminUsingGET2AsyncWithHttpInfo
      *
      * Ruft einen Veranstaltungstermin ab (nicht storniert oder storniert)
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermin2AsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin2'][0])
+    public function getVeranstaltungsterminUsingGET2AsyncWithHttpInfo($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin';
-        $request = $this->getVeranstaltungstermin2Request($id, $stornierten_termin_abrufen, $contentType);
+        $request = $this->getVeranstaltungsterminUsingGET2Request($id, $stornierten_termin_abrufen, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2619,22 +2619,22 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermin2'
+     * Create request for operation 'getVeranstaltungsterminUsingGET2'
      *
      * @param  string $id ID des Veranstaltungstermins (required)
      * @param  bool|null $stornierten_termin_abrufen Optionaler Parameter, um zu steuern, ob ein stornierter oder ein nicht stornierter Veranstaltungstermin abgerufen werden soll. Der Default ist false. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermin2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsterminUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermin2Request($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungstermin2'][0])
+    public function getVeranstaltungsterminUsingGET2Request($id, $stornierten_termin_abrufen = null, string $contentType = self::contentTypes['getVeranstaltungsterminUsingGET2'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getVeranstaltungstermin2'
+                'Missing the required parameter $id when calling getVeranstaltungsterminUsingGET2'
             );
         }
 
@@ -2727,7 +2727,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine
+     * Operation getVeranstaltungstermineUsingGET
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -2737,20 +2737,20 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin
      */
-    public function getVeranstaltungstermine($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine'][0])
+    public function getVeranstaltungstermineUsingGET($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
-        list($response) = $this->getVeranstaltungstermineWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        list($response) = $this->getVeranstaltungstermineUsingGETWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermineWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGETWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -2760,15 +2760,15 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermineWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine'][0])
+    public function getVeranstaltungstermineUsingGETWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
-        $request = $this->getVeranstaltungstermineRequest($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGETRequest($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2840,7 +2840,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermineAsync
+     * Operation getVeranstaltungstermineUsingGETAsync
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -2850,14 +2850,14 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermineAsync($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine'][0])
+    public function getVeranstaltungstermineUsingGETAsync($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
-        return $this->getVeranstaltungstermineAsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType)
+        return $this->getVeranstaltungstermineUsingGETAsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2866,7 +2866,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermineAsyncWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGETAsyncWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -2876,15 +2876,15 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermineAsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine'][0])
+    public function getVeranstaltungstermineUsingGETAsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin';
-        $request = $this->getVeranstaltungstermineRequest($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGETRequest($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2923,7 +2923,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermine'
+     * Create request for operation 'getVeranstaltungstermineUsingGET'
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.SSS (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
@@ -2931,12 +2931,12 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) passende Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermineRequest($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine'][0])
+    public function getVeranstaltungstermineUsingGETRequest($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET'][0])
     {
 
 
@@ -3070,38 +3070,38 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine1
+     * Operation getVeranstaltungstermineUsingGET1
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
-    public function getVeranstaltungstermine1($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine1'][0])
+    public function getVeranstaltungstermineUsingGET1($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
-        list($response) = $this->getVeranstaltungstermine1WithHttpInfo($termin_suche_dto, $contentType);
+        list($response) = $this->getVeranstaltungstermineUsingGET1WithHttpInfo($termin_suche_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermine1WithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET1WithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermine1WithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine1'][0])
+    public function getVeranstaltungstermineUsingGET1WithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
-        $request = $this->getVeranstaltungstermine1Request($termin_suche_dto, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET1Request($termin_suche_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3173,19 +3173,19 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine1Async
+     * Operation getVeranstaltungstermineUsingGET1Async
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine1Async($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine1'][0])
+    public function getVeranstaltungstermineUsingGET1Async($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
-        return $this->getVeranstaltungstermine1AsyncWithHttpInfo($termin_suche_dto, $contentType)
+        return $this->getVeranstaltungstermineUsingGET1AsyncWithHttpInfo($termin_suche_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3194,20 +3194,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine1AsyncWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET1AsyncWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine1AsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine1'][0])
+    public function getVeranstaltungstermineUsingGET1AsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
-        $request = $this->getVeranstaltungstermine1Request($termin_suche_dto, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET1Request($termin_suche_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3246,21 +3246,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermine1'
+     * Create request for operation 'getVeranstaltungstermineUsingGET1'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermine1Request($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine1'][0])
+    public function getVeranstaltungstermineUsingGET1Request($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET1'][0])
     {
 
         // verify the required parameter 'termin_suche_dto' is set
         if ($termin_suche_dto === null || (is_array($termin_suche_dto) && count($termin_suche_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $termin_suche_dto when calling getVeranstaltungstermine1'
+                'Missing the required parameter $termin_suche_dto when calling getVeranstaltungstermineUsingGET1'
             );
         }
 
@@ -3344,7 +3344,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine2
+     * Operation getVeranstaltungstermineUsingGET2
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -3354,20 +3354,20 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]
      */
-    public function getVeranstaltungstermine2($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine2'][0])
+    public function getVeranstaltungstermineUsingGET2($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
-        list($response) = $this->getVeranstaltungstermine2WithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        list($response) = $this->getVeranstaltungstermineUsingGET2WithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermine2WithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET2WithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -3377,15 +3377,15 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermine2WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine2'][0])
+    public function getVeranstaltungstermineUsingGET2WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
-        $request = $this->getVeranstaltungstermine2Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET2Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3457,7 +3457,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine2Async
+     * Operation getVeranstaltungstermineUsingGET2Async
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -3467,14 +3467,14 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine2Async($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine2'][0])
+    public function getVeranstaltungstermineUsingGET2Async($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
-        return $this->getVeranstaltungstermine2AsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType)
+        return $this->getVeranstaltungstermineUsingGET2AsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3483,7 +3483,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine2AsyncWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET2AsyncWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (entweder nicht stornierte oder stornierte)
      *
@@ -3493,15 +3493,15 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine2AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine2'][0])
+    public function getVeranstaltungstermineUsingGET2AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSIGUV[]';
-        $request = $this->getVeranstaltungstermine2Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET2Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $teilnehmergruppekuerzel, $veranstaltungskategorie_id, $teilnehmer_plz, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3540,7 +3540,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermine2'
+     * Create request for operation 'getVeranstaltungstermineUsingGET2'
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.SSS (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
@@ -3548,12 +3548,12 @@ class VeranstaltungstermineApi
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungstermine abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle in der Zukunft liegenden und publizierten Veranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungskategorie_id Optionaler Parameter, um Veranstaltungstermine nach einer Veranstaltungskategorie zu filtern. (optional)
      * @param  string|null $teilnehmer_plz Optionaler Parameter, um zu steuern, für welche PLZ (des Anmelders/Teilnehmers) die Veranstaltungstermine abgerufen werden sollen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermine2Request($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermine2'][0])
+    public function getVeranstaltungstermineUsingGET2Request($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, $teilnehmergruppekuerzel = null, $veranstaltungskategorie_id = null, $teilnehmer_plz = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET2'][0])
     {
 
 
@@ -3687,38 +3687,38 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine3
+     * Operation getVeranstaltungstermineUsingGET3
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
-    public function getVeranstaltungstermine3($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine3'][0])
+    public function getVeranstaltungstermineUsingGET3($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
-        list($response) = $this->getVeranstaltungstermine3WithHttpInfo($termin_suche_dto, $contentType);
+        list($response) = $this->getVeranstaltungstermineUsingGET3WithHttpInfo($termin_suche_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermine3WithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET3WithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermine3WithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine3'][0])
+    public function getVeranstaltungstermineUsingGET3WithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
-        $request = $this->getVeranstaltungstermine3Request($termin_suche_dto, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET3Request($termin_suche_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3790,19 +3790,19 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine3Async
+     * Operation getVeranstaltungstermineUsingGET3Async
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine3Async($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine3'][0])
+    public function getVeranstaltungstermineUsingGET3Async($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
-        return $this->getVeranstaltungstermine3AsyncWithHttpInfo($termin_suche_dto, $contentType)
+        return $this->getVeranstaltungstermineUsingGET3AsyncWithHttpInfo($termin_suche_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3811,20 +3811,20 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine3AsyncWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET3AsyncWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine3AsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine3'][0])
+    public function getVeranstaltungstermineUsingGET3AsyncWithHttpInfo($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
-        $request = $this->getVeranstaltungstermine3Request($termin_suche_dto, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET3Request($termin_suche_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3863,21 +3863,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermine3'
+     * Create request for operation 'getVeranstaltungstermineUsingGET3'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminSuche $termin_suche_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermine3Request($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermine3'][0])
+    public function getVeranstaltungstermineUsingGET3Request($termin_suche_dto, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET3'][0])
     {
 
         // verify the required parameter 'termin_suche_dto' is set
         if ($termin_suche_dto === null || (is_array($termin_suche_dto) && count($termin_suche_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $termin_suche_dto when calling getVeranstaltungstermine3'
+                'Missing the required parameter $termin_suche_dto when calling getVeranstaltungstermineUsingGET3'
             );
         }
 
@@ -3961,42 +3961,42 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine4
+     * Operation getVeranstaltungstermineUsingGET4
      *
      * Ruft Veranstaltungstermine ab (nicht stornierte oder stornierte)
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, um nur Veranstaltungstermine eines bestimmten Veranstaltungstyps abzurufen. Beispiel-ID: cfa1403a-13c6-4681-8ee3-e30127554845 (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine4'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET4'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]
      */
-    public function getVeranstaltungstermine4($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermine4'][0])
+    public function getVeranstaltungstermineUsingGET4($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET4'][0])
     {
-        list($response) = $this->getVeranstaltungstermine4WithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
+        list($response) = $this->getVeranstaltungstermineUsingGET4WithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstermine4WithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET4WithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (nicht stornierte oder stornierte)
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, um nur Veranstaltungstermine eines bestimmten Veranstaltungstyps abzurufen. Beispiel-ID: cfa1403a-13c6-4681-8ee3-e30127554845 (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine4'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET4'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstermine4WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermine4'][0])
+    public function getVeranstaltungstermineUsingGET4WithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET4'][0])
     {
-        $request = $this->getVeranstaltungstermine4Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET4Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4068,21 +4068,21 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine4Async
+     * Operation getVeranstaltungstermineUsingGET4Async
      *
      * Ruft Veranstaltungstermine ab (nicht stornierte oder stornierte)
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, um nur Veranstaltungstermine eines bestimmten Veranstaltungstyps abzurufen. Beispiel-ID: cfa1403a-13c6-4681-8ee3-e30127554845 (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine4'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine4Async($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermine4'][0])
+    public function getVeranstaltungstermineUsingGET4Async($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET4'][0])
     {
-        return $this->getVeranstaltungstermine4AsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType)
+        return $this->getVeranstaltungstermineUsingGET4AsyncWithHttpInfo($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4091,22 +4091,22 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstermine4AsyncWithHttpInfo
+     * Operation getVeranstaltungstermineUsingGET4AsyncWithHttpInfo
      *
      * Ruft Veranstaltungstermine ab (nicht stornierte oder stornierte)
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, um nur Veranstaltungstermine eines bestimmten Veranstaltungstyps abzurufen. Beispiel-ID: cfa1403a-13c6-4681-8ee3-e30127554845 (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine4'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstermine4AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermine4'][0])
+    public function getVeranstaltungstermineUsingGET4AsyncWithHttpInfo($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET4'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstermin[]';
-        $request = $this->getVeranstaltungstermine4Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
+        $request = $this->getVeranstaltungstermineUsingGET4Request($modifiziert_ab, $stornierte_termine_abrufen, $veranstaltungstyp_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4145,17 +4145,17 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstermine4'
+     * Create request for operation 'getVeranstaltungstermineUsingGET4'
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Veranstaltungstermine geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  bool|null $stornierte_termine_abrufen Optionaler Parameter, um zu steuern, ob stornierte oder nicht stornierte Veranstaltungstermine abgerufen werden sollen. Der Default ist false. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, um nur Veranstaltungstermine eines bestimmten Veranstaltungstyps abzurufen. Beispiel-ID: cfa1403a-13c6-4681-8ee3-e30127554845 (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermine4'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstermineUsingGET4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstermine4Request($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermine4'][0])
+    public function getVeranstaltungstermineUsingGET4Request($modifiziert_ab = null, $stornierte_termine_abrufen = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstermineUsingGET4'][0])
     {
 
 
@@ -4259,7 +4259,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereiche1
+     * Operation getVeranstaltungstypPlzBereicheUsingGET1
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstermine ab
      *
@@ -4267,20 +4267,20 @@ class VeranstaltungstermineApi
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]
      */
-    public function getVeranstaltungstypPlzBereiche1($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche1'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET1($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
-        list($response) = $this->getVeranstaltungstypPlzBereiche1WithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
+        list($response) = $this->getVeranstaltungstypPlzBereicheUsingGET1WithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereiche1WithHttpInfo
+     * Operation getVeranstaltungstypPlzBereicheUsingGET1WithHttpInfo
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstermine ab
      *
@@ -4288,15 +4288,15 @@ class VeranstaltungstermineApi
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstypPlzBereiche1WithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche1'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET1WithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
-        $request = $this->getVeranstaltungstypPlzBereiche1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
+        $request = $this->getVeranstaltungstypPlzBereicheUsingGET1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4368,7 +4368,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereiche1Async
+     * Operation getVeranstaltungstypPlzBereicheUsingGET1Async
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstermine ab
      *
@@ -4376,14 +4376,14 @@ class VeranstaltungstermineApi
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstypPlzBereiche1Async($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche1'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET1Async($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
-        return $this->getVeranstaltungstypPlzBereiche1AsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType)
+        return $this->getVeranstaltungstypPlzBereicheUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4392,7 +4392,7 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereiche1AsyncWithHttpInfo
+     * Operation getVeranstaltungstypPlzBereicheUsingGET1AsyncWithHttpInfo
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstermine ab
      *
@@ -4400,15 +4400,15 @@ class VeranstaltungstermineApi
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstypPlzBereiche1AsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche1'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstermin[]';
-        $request = $this->getVeranstaltungstypPlzBereiche1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
+        $request = $this->getVeranstaltungstypPlzBereicheUsingGET1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $veranstaltungstermin_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4447,24 +4447,24 @@ class VeranstaltungstermineApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstypPlzBereiche1'
+     * Create request for operation 'getVeranstaltungstypPlzBereicheUsingGET1'
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstermine zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstermin_id Optionaler Parameter für die ID des Veranstaltungstermins. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstypPlzBereiche1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche1'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET1Request($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, $veranstaltungstermin_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET1'][0])
     {
 
         // verify the required parameter 'teilnehmergruppekuerzel' is set
         if ($teilnehmergruppekuerzel === null || (is_array($teilnehmergruppekuerzel) && count($teilnehmergruppekuerzel) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmergruppekuerzel when calling getVeranstaltungstypPlzBereiche1'
+                'Missing the required parameter $teilnehmergruppekuerzel when calling getVeranstaltungstypPlzBereicheUsingGET1'
             );
         }
 

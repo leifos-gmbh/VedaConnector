@@ -18,7 +18,7 @@ use Leifos\VedaConnector\I\PDFSendStatus\DB\HandlerInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Key\FactoryInterface as KeyFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Key\HandlerInterface as KeyHandlerInterface;
 
-class Handler implements HandlerInterface
+readonly class Handler implements HandlerInterface
 {
     public function __construct(
         protected ilDBInterface $db,
@@ -46,7 +46,7 @@ class Handler implements HandlerInterface
         while ($row = $this->db->fetchAssoc($res)) {
             $element = $this->element_factory->handler()
                 ->withDBSequenceId((int) ($row['seq_id'] ?? -1))
-                ->withCourseId((string) ($row['crs_oid'] ?? ""))
+                ->withCourseOId((string) ($row['crs_oid'] ?? ""))
                 ->withParticipantId((string) ($row['participant_oid'] ?? ""))
                 ->withSendStatus(SendStatus::from((int) ($row['status_send'] ?? SendStatus::NULL)))
                 ->withPassedStatus(PassedStatus::from((int) ($row['status_passed'] ?? PassedStatus::NULL)))

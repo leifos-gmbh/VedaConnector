@@ -74,7 +74,7 @@ class SchlagworteApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAlleSchlagworte' => [
+        'getAlleSchlagworteUsingGET' => [
             'application/json',
         ],
     ];
@@ -126,36 +126,36 @@ class SchlagworteApi
     }
 
     /**
-     * Operation getAlleSchlagworte
+     * Operation getAlleSchlagworteUsingGET
      *
      * Ruft alle Schlagworte ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworte'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworteUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]
      */
-    public function getAlleSchlagworte(string $contentType = self::contentTypes['getAlleSchlagworte'][0])
+    public function getAlleSchlagworteUsingGET(string $contentType = self::contentTypes['getAlleSchlagworteUsingGET'][0])
     {
-        list($response) = $this->getAlleSchlagworteWithHttpInfo($contentType);
+        list($response) = $this->getAlleSchlagworteUsingGETWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getAlleSchlagworteWithHttpInfo
+     * Operation getAlleSchlagworteUsingGETWithHttpInfo
      *
      * Ruft alle Schlagworte ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworte'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworteUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAlleSchlagworteWithHttpInfo(string $contentType = self::contentTypes['getAlleSchlagworte'][0])
+    public function getAlleSchlagworteUsingGETWithHttpInfo(string $contentType = self::contentTypes['getAlleSchlagworteUsingGET'][0])
     {
-        $request = $this->getAlleSchlagworteRequest($contentType);
+        $request = $this->getAlleSchlagworteUsingGETRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -227,18 +227,18 @@ class SchlagworteApi
     }
 
     /**
-     * Operation getAlleSchlagworteAsync
+     * Operation getAlleSchlagworteUsingGETAsync
      *
      * Ruft alle Schlagworte ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworte'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworteUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleSchlagworteAsync(string $contentType = self::contentTypes['getAlleSchlagworte'][0])
+    public function getAlleSchlagworteUsingGETAsync(string $contentType = self::contentTypes['getAlleSchlagworteUsingGET'][0])
     {
-        return $this->getAlleSchlagworteAsyncWithHttpInfo($contentType)
+        return $this->getAlleSchlagworteUsingGETAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -247,19 +247,19 @@ class SchlagworteApi
     }
 
     /**
-     * Operation getAlleSchlagworteAsyncWithHttpInfo
+     * Operation getAlleSchlagworteUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Schlagworte ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworte'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworteUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleSchlagworteAsyncWithHttpInfo(string $contentType = self::contentTypes['getAlleSchlagworte'][0])
+    public function getAlleSchlagworteUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getAlleSchlagworteUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Schlagwort[]';
-        $request = $this->getAlleSchlagworteRequest($contentType);
+        $request = $this->getAlleSchlagworteUsingGETRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -298,14 +298,14 @@ class SchlagworteApi
     }
 
     /**
-     * Create request for operation 'getAlleSchlagworte'
+     * Create request for operation 'getAlleSchlagworteUsingGET'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworte'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleSchlagworteUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAlleSchlagworteRequest(string $contentType = self::contentTypes['getAlleSchlagworte'][0])
+    public function getAlleSchlagworteUsingGETRequest(string $contentType = self::contentTypes['getAlleSchlagworteUsingGET'][0])
     {
 
 

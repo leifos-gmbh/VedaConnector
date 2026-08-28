@@ -74,7 +74,7 @@ class OrganisationenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getOrganisation' => [
+        'getOrganisationUsingGET' => [
             'application/json',
         ],
     ];
@@ -126,38 +126,38 @@ class OrganisationenApi
     }
 
     /**
-     * Operation getOrganisation
+     * Operation getOrganisationUsingGET
      *
      * Ruft eine Organisation ab
      *
      * @param  string $organisation_id ID der Organisation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation
      */
-    public function getOrganisation($organisation_id, string $contentType = self::contentTypes['getOrganisation'][0])
+    public function getOrganisationUsingGET($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
-        list($response) = $this->getOrganisationWithHttpInfo($organisation_id, $contentType);
+        list($response) = $this->getOrganisationUsingGETWithHttpInfo($organisation_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getOrganisationWithHttpInfo
+     * Operation getOrganisationUsingGETWithHttpInfo
      *
      * Ruft eine Organisation ab
      *
      * @param  string $organisation_id ID der Organisation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganisationWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisation'][0])
+    public function getOrganisationUsingGETWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
-        $request = $this->getOrganisationRequest($organisation_id, $contentType);
+        $request = $this->getOrganisationUsingGETRequest($organisation_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -229,19 +229,19 @@ class OrganisationenApi
     }
 
     /**
-     * Operation getOrganisationAsync
+     * Operation getOrganisationUsingGETAsync
      *
      * Ruft eine Organisation ab
      *
      * @param  string $organisation_id ID der Organisation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganisationAsync($organisation_id, string $contentType = self::contentTypes['getOrganisation'][0])
+    public function getOrganisationUsingGETAsync($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
-        return $this->getOrganisationAsyncWithHttpInfo($organisation_id, $contentType)
+        return $this->getOrganisationUsingGETAsyncWithHttpInfo($organisation_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,20 +250,20 @@ class OrganisationenApi
     }
 
     /**
-     * Operation getOrganisationAsyncWithHttpInfo
+     * Operation getOrganisationUsingGETAsyncWithHttpInfo
      *
      * Ruft eine Organisation ab
      *
      * @param  string $organisation_id ID der Organisation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganisationAsyncWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisation'][0])
+    public function getOrganisationUsingGETAsyncWithHttpInfo($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Organisation';
-        $request = $this->getOrganisationRequest($organisation_id, $contentType);
+        $request = $this->getOrganisationUsingGETRequest($organisation_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -302,21 +302,21 @@ class OrganisationenApi
     }
 
     /**
-     * Create request for operation 'getOrganisation'
+     * Create request for operation 'getOrganisationUsingGET'
      *
      * @param  string $organisation_id ID der Organisation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganisationUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrganisationRequest($organisation_id, string $contentType = self::contentTypes['getOrganisation'][0])
+    public function getOrganisationUsingGETRequest($organisation_id, string $contentType = self::contentTypes['getOrganisationUsingGET'][0])
     {
 
         // verify the required parameter 'organisation_id' is set
         if ($organisation_id === null || (is_array($organisation_id) && count($organisation_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organisation_id when calling getOrganisation'
+                'Missing the required parameter $organisation_id when calling getOrganisationUsingGET'
             );
         }
 

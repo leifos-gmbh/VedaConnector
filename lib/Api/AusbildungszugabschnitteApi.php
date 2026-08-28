@@ -74,13 +74,13 @@ class AusbildungszugabschnitteApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'meldeLernerfolg' => [
+        'meldeLernerfolgUsingPUT' => [
             'application/json',
         ],
-        'meldePraktikumsberichtEingegangen' => [
+        'meldePraktikumsberichtEingegangenUsingPUT' => [
             'application/json',
         ],
-        'meldePraktikumsberichtKorrigiert' => [
+        'meldePraktikumsberichtKorrigiertUsingPUT' => [
             'application/json',
         ],
     ];
@@ -132,41 +132,41 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldeLernerfolg
+     * Operation meldeLernerfolgUsingPUT
      *
      * Ermöglicht es, den Lernerfolg eines Ausbildungszugabschnitts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $melde_lernerfolg_api_dto melde_lernerfolg_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeLernerfolg($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolg'][0])
+    public function meldeLernerfolgUsingPUT($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolgUsingPUT'][0])
     {
-        $this->meldeLernerfolgWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
+        $this->meldeLernerfolgUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
     }
 
     /**
-     * Operation meldeLernerfolgWithHttpInfo
+     * Operation meldeLernerfolgUsingPUTWithHttpInfo
      *
      * Ermöglicht es, den Lernerfolg eines Ausbildungszugabschnitts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $melde_lernerfolg_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeLernerfolgWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolg'][0])
+    public function meldeLernerfolgUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolgUsingPUT'][0])
     {
-        $request = $this->meldeLernerfolgRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
+        $request = $this->meldeLernerfolgUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,21 +202,21 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldeLernerfolgAsync
+     * Operation meldeLernerfolgUsingPUTAsync
      *
      * Ermöglicht es, den Lernerfolg eines Ausbildungszugabschnitts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $melde_lernerfolg_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeLernerfolgAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolg'][0])
+    public function meldeLernerfolgUsingPUTAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolgUsingPUT'][0])
     {
-        return $this->meldeLernerfolgAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType)
+        return $this->meldeLernerfolgUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -225,22 +225,22 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldeLernerfolgAsyncWithHttpInfo
+     * Operation meldeLernerfolgUsingPUTAsyncWithHttpInfo
      *
      * Ermöglicht es, den Lernerfolg eines Ausbildungszugabschnitts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $melde_lernerfolg_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeLernerfolgAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolg'][0])
+    public function meldeLernerfolgUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolgUsingPUT'][0])
     {
         $returnType = '';
-        $request = $this->meldeLernerfolgRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
+        $request = $this->meldeLernerfolgUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -266,37 +266,37 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Create request for operation 'meldeLernerfolg'
+     * Create request for operation 'meldeLernerfolgUsingPUT'
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\MeldeLernerfolgApiDto $melde_lernerfolg_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeLernerfolgUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeLernerfolgRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolg'][0])
+    public function meldeLernerfolgUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $melde_lernerfolg_api_dto, string $contentType = self::contentTypes['meldeLernerfolgUsingPUT'][0])
     {
 
         // verify the required parameter 'ausbildungszugabschnitt_id' is set
         if ($ausbildungszugabschnitt_id === null || (is_array($ausbildungszugabschnitt_id) && count($ausbildungszugabschnitt_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldeLernerfolg'
+                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldeLernerfolgUsingPUT'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeLernerfolg'
+                'Missing the required parameter $teilnehmer_id when calling meldeLernerfolgUsingPUT'
             );
         }
 
         // verify the required parameter 'melde_lernerfolg_api_dto' is set
         if ($melde_lernerfolg_api_dto === null || (is_array($melde_lernerfolg_api_dto) && count($melde_lernerfolg_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $melde_lernerfolg_api_dto when calling meldeLernerfolg'
+                'Missing the required parameter $melde_lernerfolg_api_dto when calling meldeLernerfolgUsingPUT'
             );
         }
 
@@ -394,41 +394,41 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtEingegangen
+     * Operation meldePraktikumsberichtEingegangenUsingPUT
      *
      * Ermöglicht es, den Eingang eines Praktikumsberichts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto praktikumsbericht_eingegangen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldePraktikumsberichtEingegangen($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangen'][0])
+    public function meldePraktikumsberichtEingegangenUsingPUT($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'][0])
     {
-        $this->meldePraktikumsberichtEingegangenWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
+        $this->meldePraktikumsberichtEingegangenUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
     }
 
     /**
-     * Operation meldePraktikumsberichtEingegangenWithHttpInfo
+     * Operation meldePraktikumsberichtEingegangenUsingPUTWithHttpInfo
      *
      * Ermöglicht es, den Eingang eines Praktikumsberichts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldePraktikumsberichtEingegangenWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangen'][0])
+    public function meldePraktikumsberichtEingegangenUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'][0])
     {
-        $request = $this->meldePraktikumsberichtEingegangenRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
+        $request = $this->meldePraktikumsberichtEingegangenUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -464,21 +464,21 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtEingegangenAsync
+     * Operation meldePraktikumsberichtEingegangenUsingPUTAsync
      *
      * Ermöglicht es, den Eingang eines Praktikumsberichts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldePraktikumsberichtEingegangenAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangen'][0])
+    public function meldePraktikumsberichtEingegangenUsingPUTAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'][0])
     {
-        return $this->meldePraktikumsberichtEingegangenAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType)
+        return $this->meldePraktikumsberichtEingegangenUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -487,22 +487,22 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtEingegangenAsyncWithHttpInfo
+     * Operation meldePraktikumsberichtEingegangenUsingPUTAsyncWithHttpInfo
      *
      * Ermöglicht es, den Eingang eines Praktikumsberichts für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldePraktikumsberichtEingegangenAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangen'][0])
+    public function meldePraktikumsberichtEingegangenUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'][0])
     {
         $returnType = '';
-        $request = $this->meldePraktikumsberichtEingegangenRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
+        $request = $this->meldePraktikumsberichtEingegangenUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -528,37 +528,37 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Create request for operation 'meldePraktikumsberichtEingegangen'
+     * Create request for operation 'meldePraktikumsberichtEingegangenUsingPUT'
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtEingegangenApiDto $praktikumsbericht_eingegangen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldePraktikumsberichtEingegangenRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangen'][0])
+    public function meldePraktikumsberichtEingegangenUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_eingegangen_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtEingegangenUsingPUT'][0])
     {
 
         // verify the required parameter 'ausbildungszugabschnitt_id' is set
         if ($ausbildungszugabschnitt_id === null || (is_array($ausbildungszugabschnitt_id) && count($ausbildungszugabschnitt_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldePraktikumsberichtEingegangen'
+                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldePraktikumsberichtEingegangenUsingPUT'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldePraktikumsberichtEingegangen'
+                'Missing the required parameter $teilnehmer_id when calling meldePraktikumsberichtEingegangenUsingPUT'
             );
         }
 
         // verify the required parameter 'praktikumsbericht_eingegangen_api_dto' is set
         if ($praktikumsbericht_eingegangen_api_dto === null || (is_array($praktikumsbericht_eingegangen_api_dto) && count($praktikumsbericht_eingegangen_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $praktikumsbericht_eingegangen_api_dto when calling meldePraktikumsberichtEingegangen'
+                'Missing the required parameter $praktikumsbericht_eingegangen_api_dto when calling meldePraktikumsberichtEingegangenUsingPUT'
             );
         }
 
@@ -656,41 +656,41 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtKorrigiert
+     * Operation meldePraktikumsberichtKorrigiertUsingPUT
      *
      * Ermöglicht es, den korrigierten Praktikumsbericht für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_korrigiert_api_dto praktikumsbericht_korrigiert_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiert'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldePraktikumsberichtKorrigiert($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiert'][0])
+    public function meldePraktikumsberichtKorrigiertUsingPUT($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'][0])
     {
-        $this->meldePraktikumsberichtKorrigiertWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
+        $this->meldePraktikumsberichtKorrigiertUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
     }
 
     /**
-     * Operation meldePraktikumsberichtKorrigiertWithHttpInfo
+     * Operation meldePraktikumsberichtKorrigiertUsingPUTWithHttpInfo
      *
      * Ermöglicht es, den korrigierten Praktikumsbericht für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_korrigiert_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiert'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldePraktikumsberichtKorrigiertWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiert'][0])
+    public function meldePraktikumsberichtKorrigiertUsingPUTWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'][0])
     {
-        $request = $this->meldePraktikumsberichtKorrigiertRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
+        $request = $this->meldePraktikumsberichtKorrigiertUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -726,21 +726,21 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtKorrigiertAsync
+     * Operation meldePraktikumsberichtKorrigiertUsingPUTAsync
      *
      * Ermöglicht es, den korrigierten Praktikumsbericht für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_korrigiert_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiert'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldePraktikumsberichtKorrigiertAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiert'][0])
+    public function meldePraktikumsberichtKorrigiertUsingPUTAsync($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'][0])
     {
-        return $this->meldePraktikumsberichtKorrigiertAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType)
+        return $this->meldePraktikumsberichtKorrigiertUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -749,22 +749,22 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Operation meldePraktikumsberichtKorrigiertAsyncWithHttpInfo
+     * Operation meldePraktikumsberichtKorrigiertUsingPUTAsyncWithHttpInfo
      *
      * Ermöglicht es, den korrigierten Praktikumsbericht für den angegebenen Teilnehmer zu melden
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_korrigiert_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiert'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldePraktikumsberichtKorrigiertAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiert'][0])
+    public function meldePraktikumsberichtKorrigiertUsingPUTAsyncWithHttpInfo($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'][0])
     {
         $returnType = '';
-        $request = $this->meldePraktikumsberichtKorrigiertRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
+        $request = $this->meldePraktikumsberichtKorrigiertUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -790,37 +790,37 @@ class AusbildungszugabschnitteApi
     }
 
     /**
-     * Create request for operation 'meldePraktikumsberichtKorrigiert'
+     * Create request for operation 'meldePraktikumsberichtKorrigiertUsingPUT'
      *
      * @param  string $ausbildungszugabschnitt_id ID des Ausbildungszugabschnitts (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\PraktikumsberichtKorrigiertApiDto $praktikumsbericht_korrigiert_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiert'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldePraktikumsberichtKorrigiertRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiert'][0])
+    public function meldePraktikumsberichtKorrigiertUsingPUTRequest($ausbildungszugabschnitt_id, $teilnehmer_id, $praktikumsbericht_korrigiert_api_dto, string $contentType = self::contentTypes['meldePraktikumsberichtKorrigiertUsingPUT'][0])
     {
 
         // verify the required parameter 'ausbildungszugabschnitt_id' is set
         if ($ausbildungszugabschnitt_id === null || (is_array($ausbildungszugabschnitt_id) && count($ausbildungszugabschnitt_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldePraktikumsberichtKorrigiert'
+                'Missing the required parameter $ausbildungszugabschnitt_id when calling meldePraktikumsberichtKorrigiertUsingPUT'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldePraktikumsberichtKorrigiert'
+                'Missing the required parameter $teilnehmer_id when calling meldePraktikumsberichtKorrigiertUsingPUT'
             );
         }
 
         // verify the required parameter 'praktikumsbericht_korrigiert_api_dto' is set
         if ($praktikumsbericht_korrigiert_api_dto === null || (is_array($praktikumsbericht_korrigiert_api_dto) && count($praktikumsbericht_korrigiert_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $praktikumsbericht_korrigiert_api_dto when calling meldePraktikumsberichtKorrigiert'
+                'Missing the required parameter $praktikumsbericht_korrigiert_api_dto when calling meldePraktikumsberichtKorrigiertUsingPUT'
             );
         }
 

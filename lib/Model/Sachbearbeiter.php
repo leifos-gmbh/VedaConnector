@@ -64,7 +64,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => 'string',
         'nachname' => 'string',
         'geschaeftliche_telefonnummer' => 'string',
-        'geschaeftliche_e_mail_adresse' => 'string'
+        'geschaeftliche_e_mail_adresse' => 'string',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
     /**
@@ -81,7 +82,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => null,
         'nachname' => null,
         'geschaeftliche_telefonnummer' => null,
-        'geschaeftliche_e_mail_adresse' => null
+        'geschaeftliche_e_mail_adresse' => null,
+        'links' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => false,
         'nachname' => false,
         'geschaeftliche_telefonnummer' => false,
-        'geschaeftliche_e_mail_adresse' => false
+        'geschaeftliche_e_mail_adresse' => false,
+        'links' => false
     ];
 
     /**
@@ -191,7 +194,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => 'vorname',
         'nachname' => 'nachname',
         'geschaeftliche_telefonnummer' => 'geschaeftlicheTelefonnummer',
-        'geschaeftliche_e_mail_adresse' => 'geschaeftlicheEMailAdresse'
+        'geschaeftliche_e_mail_adresse' => 'geschaeftlicheEMailAdresse',
+        'links' => 'links'
     ];
 
     /**
@@ -206,7 +210,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => 'setVorname',
         'nachname' => 'setNachname',
         'geschaeftliche_telefonnummer' => 'setGeschaeftlicheTelefonnummer',
-        'geschaeftliche_e_mail_adresse' => 'setGeschaeftlicheEMailAdresse'
+        'geschaeftliche_e_mail_adresse' => 'setGeschaeftlicheEMailAdresse',
+        'links' => 'setLinks'
     ];
 
     /**
@@ -221,7 +226,8 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         'vorname' => 'getVorname',
         'nachname' => 'getNachname',
         'geschaeftliche_telefonnummer' => 'getGeschaeftlicheTelefonnummer',
-        'geschaeftliche_e_mail_adresse' => 'getGeschaeftlicheEMailAdresse'
+        'geschaeftliche_e_mail_adresse' => 'getGeschaeftlicheEMailAdresse',
+        'links' => 'getLinks'
     ];
 
     /**
@@ -288,6 +294,7 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('nachname', $data ?? [], null);
         $this->setIfExists('geschaeftliche_telefonnummer', $data ?? [], null);
         $this->setIfExists('geschaeftliche_e_mail_adresse', $data ?? [], null);
+        $this->setIfExists('links', $data ?? [], null);
     }
 
     /**
@@ -317,6 +324,9 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -335,7 +345,7 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -345,7 +355,7 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID des Sachbearbeiters
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
@@ -517,6 +527,33 @@ class Sachbearbeiter implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable geschaeftliche_e_mail_adresse cannot be null');
         }
         $this->container['geschaeftliche_e_mail_adresse'] = $geschaeftliche_e_mail_adresse;
+
+        return $this;
+    }
+
+    /**
+     * Gets links
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /**
+     * Sets links
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
+     *
+     * @return self
+     */
+    public function setLinks($links)
+    {
+        if (is_null($links)) {
+            throw new \InvalidArgumentException('non-nullable links cannot be null');
+        }
+        $this->container['links'] = $links;
 
         return $this;
     }

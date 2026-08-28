@@ -8,7 +8,7 @@ use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\CollectionInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\FactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\HandlerInterface;
 
-class Factory implements FactoryInterface
+readonly class Factory implements FactoryInterface
 {
 
     public function handler(): HandlerInterface

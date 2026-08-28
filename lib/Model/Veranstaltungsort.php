@@ -65,7 +65,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => 'string',
         'hausnr' => 'string',
         'plz' => 'string',
-        'ort' => 'string'
+        'ort' => 'string',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
     /**
@@ -83,7 +84,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => null,
         'hausnr' => null,
         'plz' => null,
-        'ort' => null
+        'ort' => null,
+        'links' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => false,
         'hausnr' => false,
         'plz' => false,
-        'ort' => false
+        'ort' => false,
+        'links' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => 'strasse',
         'hausnr' => 'hausnr',
         'plz' => 'plz',
-        'ort' => 'ort'
+        'ort' => 'ort',
+        'links' => 'links'
     ];
 
     /**
@@ -211,7 +215,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => 'setStrasse',
         'hausnr' => 'setHausnr',
         'plz' => 'setPlz',
-        'ort' => 'setOrt'
+        'ort' => 'setOrt',
+        'links' => 'setLinks'
     ];
 
     /**
@@ -227,7 +232,8 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         'strasse' => 'getStrasse',
         'hausnr' => 'getHausnr',
         'plz' => 'getPlz',
-        'ort' => 'getOrt'
+        'ort' => 'getOrt',
+        'links' => 'getLinks'
     ];
 
     /**
@@ -295,6 +301,7 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('hausnr', $data ?? [], null);
         $this->setIfExists('plz', $data ?? [], null);
         $this->setIfExists('ort', $data ?? [], null);
+        $this->setIfExists('links', $data ?? [], null);
     }
 
     /**
@@ -324,6 +331,9 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -342,7 +352,7 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -352,7 +362,7 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID des Veranstaltungsorts
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
@@ -551,6 +561,33 @@ class Veranstaltungsort implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable ort cannot be null');
         }
         $this->container['ort'] = $ort;
+
+        return $this;
+    }
+
+    /**
+     * Gets links
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /**
+     * Sets links
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
+     *
+     * @return self
+     */
+    public function setLinks($links)
+    {
+        if (is_null($links)) {
+            throw new \InvalidArgumentException('non-nullable links cannot be null');
+        }
+        $this->container['links'] = $links;
 
         return $this;
     }

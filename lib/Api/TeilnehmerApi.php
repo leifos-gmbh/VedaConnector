@@ -74,34 +74,34 @@ class TeilnehmerApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'createTeilnehmer' => [
+        'createTeilnehmerUsingPOST' => [
             'application/json',
         ],
-        'createTeilnehmer1' => [
+        'createTeilnehmerUsingPOST1' => [
             'application/json',
         ],
-        'getAktiveTeilnehmer' => [
+        'getAktiveTeilnehmerUsingGET' => [
             'application/json',
         ],
-        'getAktiveTeilnehmer1' => [
+        'getAktiveTeilnehmerUsingGET1' => [
             'application/json',
         ],
-        'getTeilnehmer' => [
+        'getTeilnehmerUsingGET' => [
             'application/json',
         ],
-        'getTeilnehmer1' => [
+        'getTeilnehmerUsingGET1' => [
             'application/json',
         ],
-        'getTeilnehmer2' => [
+        'getTeilnehmerUsingGET2' => [
             'application/json',
         ],
-        'getTeilnehmer3' => [
+        'getTeilnehmerUsingGET3' => [
             'application/json',
         ],
-        'updateTeilnehmer' => [
+        'updateTeilnehmerUsingPUT' => [
             'application/json',
         ],
-        'updateTeilnehmer1' => [
+        'updateTeilnehmerUsingPUT1' => [
             'application/json',
         ],
     ];
@@ -153,38 +153,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmer
+     * Operation createTeilnehmerUsingPOST
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function createTeilnehmer($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer'][0])
+    public function createTeilnehmerUsingPOST($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
-        list($response) = $this->createTeilnehmerWithHttpInfo($teilnehmer_create_api_dto, $contentType);
+        list($response) = $this->createTeilnehmerUsingPOSTWithHttpInfo($teilnehmer_create_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createTeilnehmerWithHttpInfo
+     * Operation createTeilnehmerUsingPOSTWithHttpInfo
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTeilnehmerWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer'][0])
+    public function createTeilnehmerUsingPOSTWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
-        $request = $this->createTeilnehmerRequest($teilnehmer_create_api_dto, $contentType);
+        $request = $this->createTeilnehmerUsingPOSTRequest($teilnehmer_create_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -256,19 +256,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmerAsync
+     * Operation createTeilnehmerUsingPOSTAsync
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTeilnehmerAsync($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer'][0])
+    public function createTeilnehmerUsingPOSTAsync($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
-        return $this->createTeilnehmerAsyncWithHttpInfo($teilnehmer_create_api_dto, $contentType)
+        return $this->createTeilnehmerUsingPOSTAsyncWithHttpInfo($teilnehmer_create_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,20 +277,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmerAsyncWithHttpInfo
+     * Operation createTeilnehmerUsingPOSTAsyncWithHttpInfo
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTeilnehmerAsyncWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer'][0])
+    public function createTeilnehmerUsingPOSTAsyncWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->createTeilnehmerRequest($teilnehmer_create_api_dto, $contentType);
+        $request = $this->createTeilnehmerUsingPOSTRequest($teilnehmer_create_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,21 +329,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'createTeilnehmer'
+     * Create request for operation 'createTeilnehmerUsingPOST'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createTeilnehmerRequest($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer'][0])
+    public function createTeilnehmerUsingPOSTRequest($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST'][0])
     {
 
         // verify the required parameter 'teilnehmer_create_api_dto' is set
         if ($teilnehmer_create_api_dto === null || (is_array($teilnehmer_create_api_dto) && count($teilnehmer_create_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_create_api_dto when calling createTeilnehmer'
+                'Missing the required parameter $teilnehmer_create_api_dto when calling createTeilnehmerUsingPOST'
             );
         }
 
@@ -425,38 +425,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmer1
+     * Operation createTeilnehmerUsingPOST1
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function createTeilnehmer1($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer1'][0])
+    public function createTeilnehmerUsingPOST1($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST1'][0])
     {
-        list($response) = $this->createTeilnehmer1WithHttpInfo($teilnehmer_create_api_dto, $contentType);
+        list($response) = $this->createTeilnehmerUsingPOST1WithHttpInfo($teilnehmer_create_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createTeilnehmer1WithHttpInfo
+     * Operation createTeilnehmerUsingPOST1WithHttpInfo
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTeilnehmer1WithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer1'][0])
+    public function createTeilnehmerUsingPOST1WithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST1'][0])
     {
-        $request = $this->createTeilnehmer1Request($teilnehmer_create_api_dto, $contentType);
+        $request = $this->createTeilnehmerUsingPOST1Request($teilnehmer_create_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -528,19 +528,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmer1Async
+     * Operation createTeilnehmerUsingPOST1Async
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTeilnehmer1Async($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer1'][0])
+    public function createTeilnehmerUsingPOST1Async($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST1'][0])
     {
-        return $this->createTeilnehmer1AsyncWithHttpInfo($teilnehmer_create_api_dto, $contentType)
+        return $this->createTeilnehmerUsingPOST1AsyncWithHttpInfo($teilnehmer_create_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -549,20 +549,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation createTeilnehmer1AsyncWithHttpInfo
+     * Operation createTeilnehmerUsingPOST1AsyncWithHttpInfo
      *
      * Legt einen Teilnehmer an
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTeilnehmer1AsyncWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer1'][0])
+    public function createTeilnehmerUsingPOST1AsyncWithHttpInfo($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->createTeilnehmer1Request($teilnehmer_create_api_dto, $contentType);
+        $request = $this->createTeilnehmerUsingPOST1Request($teilnehmer_create_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -601,21 +601,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'createTeilnehmer1'
+     * Create request for operation 'createTeilnehmerUsingPOST1'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerCreateApiDto $teilnehmer_create_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTeilnehmerUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createTeilnehmer1Request($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmer1'][0])
+    public function createTeilnehmerUsingPOST1Request($teilnehmer_create_api_dto, string $contentType = self::contentTypes['createTeilnehmerUsingPOST1'][0])
     {
 
         // verify the required parameter 'teilnehmer_create_api_dto' is set
         if ($teilnehmer_create_api_dto === null || (is_array($teilnehmer_create_api_dto) && count($teilnehmer_create_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_create_api_dto when calling createTeilnehmer1'
+                'Missing the required parameter $teilnehmer_create_api_dto when calling createTeilnehmerUsingPOST1'
             );
         }
 
@@ -697,36 +697,36 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmer
+     * Operation getAktiveTeilnehmerUsingGET
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]
      */
-    public function getAktiveTeilnehmer(string $contentType = self::contentTypes['getAktiveTeilnehmer'][0])
+    public function getAktiveTeilnehmerUsingGET(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
-        list($response) = $this->getAktiveTeilnehmerWithHttpInfo($contentType);
+        list($response) = $this->getAktiveTeilnehmerUsingGETWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getAktiveTeilnehmerWithHttpInfo
+     * Operation getAktiveTeilnehmerUsingGETWithHttpInfo
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAktiveTeilnehmerWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmer'][0])
+    public function getAktiveTeilnehmerUsingGETWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
-        $request = $this->getAktiveTeilnehmerRequest($contentType);
+        $request = $this->getAktiveTeilnehmerUsingGETRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,18 +798,18 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmerAsync
+     * Operation getAktiveTeilnehmerUsingGETAsync
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveTeilnehmerAsync(string $contentType = self::contentTypes['getAktiveTeilnehmer'][0])
+    public function getAktiveTeilnehmerUsingGETAsync(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
-        return $this->getAktiveTeilnehmerAsyncWithHttpInfo($contentType)
+        return $this->getAktiveTeilnehmerUsingGETAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -818,19 +818,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmerAsyncWithHttpInfo
+     * Operation getAktiveTeilnehmerUsingGETAsyncWithHttpInfo
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveTeilnehmerAsyncWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmer'][0])
+    public function getAktiveTeilnehmerUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]';
-        $request = $this->getAktiveTeilnehmerRequest($contentType);
+        $request = $this->getAktiveTeilnehmerUsingGETRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -869,14 +869,14 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getAktiveTeilnehmer'
+     * Create request for operation 'getAktiveTeilnehmerUsingGET'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAktiveTeilnehmerRequest(string $contentType = self::contentTypes['getAktiveTeilnehmer'][0])
+    public function getAktiveTeilnehmerUsingGETRequest(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET'][0])
     {
 
 
@@ -950,36 +950,36 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmer1
+     * Operation getAktiveTeilnehmerUsingGET1
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]
      */
-    public function getAktiveTeilnehmer1(string $contentType = self::contentTypes['getAktiveTeilnehmer1'][0])
+    public function getAktiveTeilnehmerUsingGET1(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET1'][0])
     {
-        list($response) = $this->getAktiveTeilnehmer1WithHttpInfo($contentType);
+        list($response) = $this->getAktiveTeilnehmerUsingGET1WithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getAktiveTeilnehmer1WithHttpInfo
+     * Operation getAktiveTeilnehmerUsingGET1WithHttpInfo
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAktiveTeilnehmer1WithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmer1'][0])
+    public function getAktiveTeilnehmerUsingGET1WithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET1'][0])
     {
-        $request = $this->getAktiveTeilnehmer1Request($contentType);
+        $request = $this->getAktiveTeilnehmerUsingGET1Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1051,18 +1051,18 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmer1Async
+     * Operation getAktiveTeilnehmerUsingGET1Async
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveTeilnehmer1Async(string $contentType = self::contentTypes['getAktiveTeilnehmer1'][0])
+    public function getAktiveTeilnehmerUsingGET1Async(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET1'][0])
     {
-        return $this->getAktiveTeilnehmer1AsyncWithHttpInfo($contentType)
+        return $this->getAktiveTeilnehmerUsingGET1AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1071,19 +1071,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getAktiveTeilnehmer1AsyncWithHttpInfo
+     * Operation getAktiveTeilnehmerUsingGET1AsyncWithHttpInfo
      *
      * Ruft alle aktiven Teilnehmer ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveTeilnehmer1AsyncWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmer1'][0])
+    public function getAktiveTeilnehmerUsingGET1AsyncWithHttpInfo(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer[]';
-        $request = $this->getAktiveTeilnehmer1Request($contentType);
+        $request = $this->getAktiveTeilnehmerUsingGET1Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1122,14 +1122,14 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getAktiveTeilnehmer1'
+     * Create request for operation 'getAktiveTeilnehmerUsingGET1'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAktiveTeilnehmer1Request(string $contentType = self::contentTypes['getAktiveTeilnehmer1'][0])
+    public function getAktiveTeilnehmerUsingGET1Request(string $contentType = self::contentTypes['getAktiveTeilnehmerUsingGET1'][0])
     {
 
 
@@ -1203,38 +1203,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer
+     * Operation getTeilnehmerUsingGET
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function getTeilnehmer($id, string $contentType = self::contentTypes['getTeilnehmer'][0])
+    public function getTeilnehmerUsingGET($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerWithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerWithHttpInfo
+     * Operation getTeilnehmerUsingGETWithHttpInfo
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmer'][0])
+    public function getTeilnehmerUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
-        $request = $this->getTeilnehmerRequest($id, $contentType);
+        $request = $this->getTeilnehmerUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1306,19 +1306,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmerAsync
+     * Operation getTeilnehmerUsingGETAsync
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerAsync($id, string $contentType = self::contentTypes['getTeilnehmer'][0])
+    public function getTeilnehmerUsingGETAsync($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
-        return $this->getTeilnehmerAsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1327,20 +1327,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmerAsyncWithHttpInfo
+     * Operation getTeilnehmerUsingGETAsyncWithHttpInfo
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmer'][0])
+    public function getTeilnehmerUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->getTeilnehmerRequest($id, $contentType);
+        $request = $this->getTeilnehmerUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1379,21 +1379,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmer'
+     * Create request for operation 'getTeilnehmerUsingGET'
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerRequest($id, string $contentType = self::contentTypes['getTeilnehmer'][0])
+    public function getTeilnehmerUsingGETRequest($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmer'
+                'Missing the required parameter $id when calling getTeilnehmerUsingGET'
             );
         }
 
@@ -1476,38 +1476,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer1
+     * Operation getTeilnehmerUsingGET1
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function getTeilnehmer1($personen_nr, string $contentType = self::contentTypes['getTeilnehmer1'][0])
+    public function getTeilnehmerUsingGET1($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
-        list($response) = $this->getTeilnehmer1WithHttpInfo($personen_nr, $contentType);
+        list($response) = $this->getTeilnehmerUsingGET1WithHttpInfo($personen_nr, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmer1WithHttpInfo
+     * Operation getTeilnehmerUsingGET1WithHttpInfo
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmer1WithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmer1'][0])
+    public function getTeilnehmerUsingGET1WithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
-        $request = $this->getTeilnehmer1Request($personen_nr, $contentType);
+        $request = $this->getTeilnehmerUsingGET1Request($personen_nr, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1579,19 +1579,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer1Async
+     * Operation getTeilnehmerUsingGET1Async
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer1Async($personen_nr, string $contentType = self::contentTypes['getTeilnehmer1'][0])
+    public function getTeilnehmerUsingGET1Async($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
-        return $this->getTeilnehmer1AsyncWithHttpInfo($personen_nr, $contentType)
+        return $this->getTeilnehmerUsingGET1AsyncWithHttpInfo($personen_nr, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1600,20 +1600,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer1AsyncWithHttpInfo
+     * Operation getTeilnehmerUsingGET1AsyncWithHttpInfo
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer1AsyncWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmer1'][0])
+    public function getTeilnehmerUsingGET1AsyncWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->getTeilnehmer1Request($personen_nr, $contentType);
+        $request = $this->getTeilnehmerUsingGET1Request($personen_nr, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1652,21 +1652,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmer1'
+     * Create request for operation 'getTeilnehmerUsingGET1'
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmer1Request($personen_nr, string $contentType = self::contentTypes['getTeilnehmer1'][0])
+    public function getTeilnehmerUsingGET1Request($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET1'][0])
     {
 
         // verify the required parameter 'personen_nr' is set
         if ($personen_nr === null || (is_array($personen_nr) && count($personen_nr) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $personen_nr when calling getTeilnehmer1'
+                'Missing the required parameter $personen_nr when calling getTeilnehmerUsingGET1'
             );
         }
 
@@ -1749,38 +1749,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer2
+     * Operation getTeilnehmerUsingGET2
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function getTeilnehmer2($id, string $contentType = self::contentTypes['getTeilnehmer2'][0])
+    public function getTeilnehmerUsingGET2($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET2'][0])
     {
-        list($response) = $this->getTeilnehmer2WithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerUsingGET2WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmer2WithHttpInfo
+     * Operation getTeilnehmerUsingGET2WithHttpInfo
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmer2WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmer2'][0])
+    public function getTeilnehmerUsingGET2WithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET2'][0])
     {
-        $request = $this->getTeilnehmer2Request($id, $contentType);
+        $request = $this->getTeilnehmerUsingGET2Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1852,19 +1852,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer2Async
+     * Operation getTeilnehmerUsingGET2Async
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer2Async($id, string $contentType = self::contentTypes['getTeilnehmer2'][0])
+    public function getTeilnehmerUsingGET2Async($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET2'][0])
     {
-        return $this->getTeilnehmer2AsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerUsingGET2AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1873,20 +1873,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer2AsyncWithHttpInfo
+     * Operation getTeilnehmerUsingGET2AsyncWithHttpInfo
      *
      * Ruft einen Teilnehmer ab
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmer2'][0])
+    public function getTeilnehmerUsingGET2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->getTeilnehmer2Request($id, $contentType);
+        $request = $this->getTeilnehmerUsingGET2Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1925,21 +1925,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmer2'
+     * Create request for operation 'getTeilnehmerUsingGET2'
      *
      * @param  string $id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmer2Request($id, string $contentType = self::contentTypes['getTeilnehmer2'][0])
+    public function getTeilnehmerUsingGET2Request($id, string $contentType = self::contentTypes['getTeilnehmerUsingGET2'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmer2'
+                'Missing the required parameter $id when calling getTeilnehmerUsingGET2'
             );
         }
 
@@ -2022,38 +2022,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer3
+     * Operation getTeilnehmerUsingGET3
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET3'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function getTeilnehmer3($personen_nr, string $contentType = self::contentTypes['getTeilnehmer3'][0])
+    public function getTeilnehmerUsingGET3($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET3'][0])
     {
-        list($response) = $this->getTeilnehmer3WithHttpInfo($personen_nr, $contentType);
+        list($response) = $this->getTeilnehmerUsingGET3WithHttpInfo($personen_nr, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmer3WithHttpInfo
+     * Operation getTeilnehmerUsingGET3WithHttpInfo
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET3'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmer3WithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmer3'][0])
+    public function getTeilnehmerUsingGET3WithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET3'][0])
     {
-        $request = $this->getTeilnehmer3Request($personen_nr, $contentType);
+        $request = $this->getTeilnehmerUsingGET3Request($personen_nr, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2125,19 +2125,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer3Async
+     * Operation getTeilnehmerUsingGET3Async
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer3Async($personen_nr, string $contentType = self::contentTypes['getTeilnehmer3'][0])
+    public function getTeilnehmerUsingGET3Async($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET3'][0])
     {
-        return $this->getTeilnehmer3AsyncWithHttpInfo($personen_nr, $contentType)
+        return $this->getTeilnehmerUsingGET3AsyncWithHttpInfo($personen_nr, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2146,20 +2146,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation getTeilnehmer3AsyncWithHttpInfo
+     * Operation getTeilnehmerUsingGET3AsyncWithHttpInfo
      *
      * Ruft einen Teilnehmer anhand der Personen-Nr. ab
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmer3AsyncWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmer3'][0])
+    public function getTeilnehmerUsingGET3AsyncWithHttpInfo($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET3'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->getTeilnehmer3Request($personen_nr, $contentType);
+        $request = $this->getTeilnehmerUsingGET3Request($personen_nr, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2198,21 +2198,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmer3'
+     * Create request for operation 'getTeilnehmerUsingGET3'
      *
      * @param  string $personen_nr PersonenNr. des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmer3'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerUsingGET3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmer3Request($personen_nr, string $contentType = self::contentTypes['getTeilnehmer3'][0])
+    public function getTeilnehmerUsingGET3Request($personen_nr, string $contentType = self::contentTypes['getTeilnehmerUsingGET3'][0])
     {
 
         // verify the required parameter 'personen_nr' is set
         if ($personen_nr === null || (is_array($personen_nr) && count($personen_nr) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $personen_nr when calling getTeilnehmer3'
+                'Missing the required parameter $personen_nr when calling getTeilnehmerUsingGET3'
             );
         }
 
@@ -2295,38 +2295,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmer
+     * Operation updateTeilnehmerUsingPUT
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function updateTeilnehmer($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer'][0])
+    public function updateTeilnehmerUsingPUT($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
-        list($response) = $this->updateTeilnehmerWithHttpInfo($teilnehmer, $contentType);
+        list($response) = $this->updateTeilnehmerUsingPUTWithHttpInfo($teilnehmer, $contentType);
         return $response;
     }
 
     /**
-     * Operation updateTeilnehmerWithHttpInfo
+     * Operation updateTeilnehmerUsingPUTWithHttpInfo
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTeilnehmerWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer'][0])
+    public function updateTeilnehmerUsingPUTWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
-        $request = $this->updateTeilnehmerRequest($teilnehmer, $contentType);
+        $request = $this->updateTeilnehmerUsingPUTRequest($teilnehmer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2398,19 +2398,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmerAsync
+     * Operation updateTeilnehmerUsingPUTAsync
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTeilnehmerAsync($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer'][0])
+    public function updateTeilnehmerUsingPUTAsync($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
-        return $this->updateTeilnehmerAsyncWithHttpInfo($teilnehmer, $contentType)
+        return $this->updateTeilnehmerUsingPUTAsyncWithHttpInfo($teilnehmer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2419,20 +2419,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmerAsyncWithHttpInfo
+     * Operation updateTeilnehmerUsingPUTAsyncWithHttpInfo
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTeilnehmerAsyncWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer'][0])
+    public function updateTeilnehmerUsingPUTAsyncWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->updateTeilnehmerRequest($teilnehmer, $contentType);
+        $request = $this->updateTeilnehmerUsingPUTRequest($teilnehmer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2471,21 +2471,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'updateTeilnehmer'
+     * Create request for operation 'updateTeilnehmerUsingPUT'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateTeilnehmerRequest($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer'][0])
+    public function updateTeilnehmerUsingPUTRequest($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT'][0])
     {
 
         // verify the required parameter 'teilnehmer' is set
         if ($teilnehmer === null || (is_array($teilnehmer) && count($teilnehmer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer when calling updateTeilnehmer'
+                'Missing the required parameter $teilnehmer when calling updateTeilnehmerUsingPUT'
             );
         }
 
@@ -2567,38 +2567,38 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmer1
+     * Operation updateTeilnehmerUsingPUT1
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer
      */
-    public function updateTeilnehmer1($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer1'][0])
+    public function updateTeilnehmerUsingPUT1($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT1'][0])
     {
-        list($response) = $this->updateTeilnehmer1WithHttpInfo($teilnehmer, $contentType);
+        list($response) = $this->updateTeilnehmerUsingPUT1WithHttpInfo($teilnehmer, $contentType);
         return $response;
     }
 
     /**
-     * Operation updateTeilnehmer1WithHttpInfo
+     * Operation updateTeilnehmerUsingPUT1WithHttpInfo
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTeilnehmer1WithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer1'][0])
+    public function updateTeilnehmerUsingPUT1WithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT1'][0])
     {
-        $request = $this->updateTeilnehmer1Request($teilnehmer, $contentType);
+        $request = $this->updateTeilnehmerUsingPUT1Request($teilnehmer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2670,19 +2670,19 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmer1Async
+     * Operation updateTeilnehmerUsingPUT1Async
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTeilnehmer1Async($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer1'][0])
+    public function updateTeilnehmerUsingPUT1Async($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT1'][0])
     {
-        return $this->updateTeilnehmer1AsyncWithHttpInfo($teilnehmer, $contentType)
+        return $this->updateTeilnehmerUsingPUT1AsyncWithHttpInfo($teilnehmer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2691,20 +2691,20 @@ class TeilnehmerApi
     }
 
     /**
-     * Operation updateTeilnehmer1AsyncWithHttpInfo
+     * Operation updateTeilnehmerUsingPUT1AsyncWithHttpInfo
      *
      * Modifiziert ein Teilnehmer Datensatz
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTeilnehmer1AsyncWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer1'][0])
+    public function updateTeilnehmerUsingPUT1AsyncWithHttpInfo($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer';
-        $request = $this->updateTeilnehmer1Request($teilnehmer, $contentType);
+        $request = $this->updateTeilnehmerUsingPUT1Request($teilnehmer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2743,21 +2743,21 @@ class TeilnehmerApi
     }
 
     /**
-     * Create request for operation 'updateTeilnehmer1'
+     * Create request for operation 'updateTeilnehmerUsingPUT1'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmer $teilnehmer (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmer1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTeilnehmerUsingPUT1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateTeilnehmer1Request($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmer1'][0])
+    public function updateTeilnehmerUsingPUT1Request($teilnehmer, string $contentType = self::contentTypes['updateTeilnehmerUsingPUT1'][0])
     {
 
         // verify the required parameter 'teilnehmer' is set
         if ($teilnehmer === null || (is_array($teilnehmer) && count($teilnehmer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer when calling updateTeilnehmer1'
+                'Missing the required parameter $teilnehmer when calling updateTeilnehmerUsingPUT1'
             );
         }
 

@@ -1,9 +1,10 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <plugin id="vedaimp">
    <events>
-      <event type="listen" id="Services/User" />
-      <event type="listen" id="Services/Object" />
-      <event type="listen" id="Services/Tracking" />
-      <event type="listen" id="Modules/Course" />
+      <event type="listen" id="components/ILIAS/User" />
+      <event type="listen" id="components/ILIAS/Object" />
+      <event type="listen" id="components/ILIAS/Tracking" />
+      <event type="listen" id="components/ILIAS/Course" />
+      <event type="listen" id="components/ILIAS/Certificate" />
    </events>
 </plugin>

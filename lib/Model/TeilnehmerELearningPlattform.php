@@ -64,8 +64,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => '\DateTime',
         'gueltig_bis' => '\DateTime',
         'externe_referenz_nr' => 'string',
-        'elearning_plattform_id' => 'string',
         'email' => 'string',
+        'elearning_plattform_id' => 'string',
         'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
@@ -83,8 +83,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => 'date',
         'gueltig_bis' => 'date',
         'externe_referenz_nr' => null,
-        'elearning_plattform_id' => null,
         'email' => null,
+        'elearning_plattform_id' => null,
         'links' => null
     ];
 
@@ -100,8 +100,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => false,
         'gueltig_bis' => false,
         'externe_referenz_nr' => false,
-        'elearning_plattform_id' => false,
         'email' => false,
+        'elearning_plattform_id' => false,
         'links' => false
     ];
 
@@ -197,8 +197,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => 'gueltigAb',
         'gueltig_bis' => 'gueltigBis',
         'externe_referenz_nr' => 'externeReferenzNr',
-        'elearning_plattform_id' => 'elearningPlattformId',
         'email' => 'email',
+        'elearning_plattform_id' => 'elearningPlattformId',
         'links' => 'links'
     ];
 
@@ -214,8 +214,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => 'setGueltigAb',
         'gueltig_bis' => 'setGueltigBis',
         'externe_referenz_nr' => 'setExterneReferenzNr',
-        'elearning_plattform_id' => 'setElearningPlattformId',
         'email' => 'setEmail',
+        'elearning_plattform_id' => 'setElearningPlattformId',
         'links' => 'setLinks'
     ];
 
@@ -231,8 +231,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         'gueltig_ab' => 'getGueltigAb',
         'gueltig_bis' => 'getGueltigBis',
         'externe_referenz_nr' => 'getExterneReferenzNr',
-        'elearning_plattform_id' => 'getElearningPlattformId',
         'email' => 'getEmail',
+        'elearning_plattform_id' => 'getElearningPlattformId',
         'links' => 'getLinks'
     ];
 
@@ -299,8 +299,8 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('gueltig_ab', $data ?? [], null);
         $this->setIfExists('gueltig_bis', $data ?? [], null);
         $this->setIfExists('externe_referenz_nr', $data ?? [], null);
-        $this->setIfExists('elearning_plattform_id', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('elearning_plattform_id', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
     }
 
@@ -515,33 +515,6 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets elearning_plattform_id
-     *
-     * @return string|null
-     */
-    public function getElearningPlattformId()
-    {
-        return $this->container['elearning_plattform_id'];
-    }
-
-    /**
-     * Sets elearning_plattform_id
-     *
-     * @param string|null $elearning_plattform_id elearning_plattform_id
-     *
-     * @return self
-     */
-    public function setElearningPlattformId($elearning_plattform_id)
-    {
-        if (is_null($elearning_plattform_id)) {
-            throw new \InvalidArgumentException('non-nullable elearning_plattform_id cannot be null');
-        }
-        $this->container['elearning_plattform_id'] = $elearning_plattform_id;
-
-        return $this;
-    }
-
-    /**
      * Gets email
      *
      * @return string|null
@@ -564,6 +537,33 @@ class TeilnehmerELearningPlattform implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets elearning_plattform_id
+     *
+     * @return string|null
+     */
+    public function getElearningPlattformId()
+    {
+        return $this->container['elearning_plattform_id'];
+    }
+
+    /**
+     * Sets elearning_plattform_id
+     *
+     * @param string|null $elearning_plattform_id elearning_plattform_id
+     *
+     * @return self
+     */
+    public function setElearningPlattformId($elearning_plattform_id)
+    {
+        if (is_null($elearning_plattform_id)) {
+            throw new \InvalidArgumentException('non-nullable elearning_plattform_id cannot be null');
+        }
+        $this->container['elearning_plattform_id'] = $elearning_plattform_id;
 
         return $this;
     }

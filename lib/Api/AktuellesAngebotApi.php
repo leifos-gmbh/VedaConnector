@@ -74,7 +74,7 @@ class AktuellesAngebotApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAktuellesAngebot' => [
+        'getAktuellesAngebotUsingGET' => [
             'application/json',
         ],
     ];
@@ -126,40 +126,40 @@ class AktuellesAngebotApi
     }
 
     /**
-     * Operation getAktuellesAngebot
+     * Operation getAktuellesAngebotUsingGET
      *
      * Ruft das aktuelle Angebot ab
      *
      * @param  string $teilnehmergruppekuerzel Pflicht Parameter, um zu steuern, für welche Teilnehmergruppe das aktuelle Angebot abgerufen werden sollen. Für die angegebene Teilnehmergruppe, werden alle Veranstaltungstermine und Veranstaltungsterminreihen im Rahmen des aktuellen Angebotes die für diese Teilnehmergruppe publiziert sind zurückgegeben. (required)
      * @param  string|null $plz Optionaler Parameter, der es erlaubt das Ergebnis auf einen PLZ-Bereich einzuschränken. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebot'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebotUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AktuellesAngebot
      */
-    public function getAktuellesAngebot($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebot'][0])
+    public function getAktuellesAngebotUsingGET($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebotUsingGET'][0])
     {
-        list($response) = $this->getAktuellesAngebotWithHttpInfo($teilnehmergruppekuerzel, $plz, $contentType);
+        list($response) = $this->getAktuellesAngebotUsingGETWithHttpInfo($teilnehmergruppekuerzel, $plz, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAktuellesAngebotWithHttpInfo
+     * Operation getAktuellesAngebotUsingGETWithHttpInfo
      *
      * Ruft das aktuelle Angebot ab
      *
      * @param  string $teilnehmergruppekuerzel Pflicht Parameter, um zu steuern, für welche Teilnehmergruppe das aktuelle Angebot abgerufen werden sollen. Für die angegebene Teilnehmergruppe, werden alle Veranstaltungstermine und Veranstaltungsterminreihen im Rahmen des aktuellen Angebotes die für diese Teilnehmergruppe publiziert sind zurückgegeben. (required)
      * @param  string|null $plz Optionaler Parameter, der es erlaubt das Ergebnis auf einen PLZ-Bereich einzuschränken. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebot'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebotUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AktuellesAngebot, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAktuellesAngebotWithHttpInfo($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebot'][0])
+    public function getAktuellesAngebotUsingGETWithHttpInfo($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebotUsingGET'][0])
     {
-        $request = $this->getAktuellesAngebotRequest($teilnehmergruppekuerzel, $plz, $contentType);
+        $request = $this->getAktuellesAngebotUsingGETRequest($teilnehmergruppekuerzel, $plz, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -231,20 +231,20 @@ class AktuellesAngebotApi
     }
 
     /**
-     * Operation getAktuellesAngebotAsync
+     * Operation getAktuellesAngebotUsingGETAsync
      *
      * Ruft das aktuelle Angebot ab
      *
      * @param  string $teilnehmergruppekuerzel Pflicht Parameter, um zu steuern, für welche Teilnehmergruppe das aktuelle Angebot abgerufen werden sollen. Für die angegebene Teilnehmergruppe, werden alle Veranstaltungstermine und Veranstaltungsterminreihen im Rahmen des aktuellen Angebotes die für diese Teilnehmergruppe publiziert sind zurückgegeben. (required)
      * @param  string|null $plz Optionaler Parameter, der es erlaubt das Ergebnis auf einen PLZ-Bereich einzuschränken. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebot'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebotUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktuellesAngebotAsync($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebot'][0])
+    public function getAktuellesAngebotUsingGETAsync($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebotUsingGET'][0])
     {
-        return $this->getAktuellesAngebotAsyncWithHttpInfo($teilnehmergruppekuerzel, $plz, $contentType)
+        return $this->getAktuellesAngebotUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel, $plz, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -253,21 +253,21 @@ class AktuellesAngebotApi
     }
 
     /**
-     * Operation getAktuellesAngebotAsyncWithHttpInfo
+     * Operation getAktuellesAngebotUsingGETAsyncWithHttpInfo
      *
      * Ruft das aktuelle Angebot ab
      *
      * @param  string $teilnehmergruppekuerzel Pflicht Parameter, um zu steuern, für welche Teilnehmergruppe das aktuelle Angebot abgerufen werden sollen. Für die angegebene Teilnehmergruppe, werden alle Veranstaltungstermine und Veranstaltungsterminreihen im Rahmen des aktuellen Angebotes die für diese Teilnehmergruppe publiziert sind zurückgegeben. (required)
      * @param  string|null $plz Optionaler Parameter, der es erlaubt das Ergebnis auf einen PLZ-Bereich einzuschränken. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebot'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebotUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktuellesAngebotAsyncWithHttpInfo($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebot'][0])
+    public function getAktuellesAngebotUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebotUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AktuellesAngebot';
-        $request = $this->getAktuellesAngebotRequest($teilnehmergruppekuerzel, $plz, $contentType);
+        $request = $this->getAktuellesAngebotUsingGETRequest($teilnehmergruppekuerzel, $plz, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -306,22 +306,22 @@ class AktuellesAngebotApi
     }
 
     /**
-     * Create request for operation 'getAktuellesAngebot'
+     * Create request for operation 'getAktuellesAngebotUsingGET'
      *
      * @param  string $teilnehmergruppekuerzel Pflicht Parameter, um zu steuern, für welche Teilnehmergruppe das aktuelle Angebot abgerufen werden sollen. Für die angegebene Teilnehmergruppe, werden alle Veranstaltungstermine und Veranstaltungsterminreihen im Rahmen des aktuellen Angebotes die für diese Teilnehmergruppe publiziert sind zurückgegeben. (required)
      * @param  string|null $plz Optionaler Parameter, der es erlaubt das Ergebnis auf einen PLZ-Bereich einzuschränken. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebot'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktuellesAngebotUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAktuellesAngebotRequest($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebot'][0])
+    public function getAktuellesAngebotUsingGETRequest($teilnehmergruppekuerzel, $plz = null, string $contentType = self::contentTypes['getAktuellesAngebotUsingGET'][0])
     {
 
         // verify the required parameter 'teilnehmergruppekuerzel' is set
         if ($teilnehmergruppekuerzel === null || (is_array($teilnehmergruppekuerzel) && count($teilnehmergruppekuerzel) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmergruppekuerzel when calling getAktuellesAngebot'
+                'Missing the required parameter $teilnehmergruppekuerzel when calling getAktuellesAngebotUsingGET'
             );
         }
 

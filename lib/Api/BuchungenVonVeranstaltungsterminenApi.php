@@ -74,16 +74,16 @@ class BuchungenVonVeranstaltungsterminenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'lernerfolgAufVeranstaltungsterminMelden' => [
+        'lernerfolgAufVeranstaltungsterminMeldenUsingPOST' => [
             'application/json',
         ],
-        'lernerfolgAufVeranstaltungsterminMelden1' => [
+        'lernerfolgAufVeranstaltungsterminMeldenUsingPOST1' => [
             'application/json',
         ],
-        'storniereBuchungAufVeranstaltungstermin' => [
+        'storniereBuchungAufVeranstaltungsterminUsingPOST' => [
             'application/json',
         ],
-        'storniereBuchungAufVeranstaltungstermin1' => [
+        'storniereBuchungAufVeranstaltungsterminUsingPOST1' => [
             'application/json',
         ],
     ];
@@ -135,39 +135,39 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMelden
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOST
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function lernerfolgAufVeranstaltungsterminMelden($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'][0])
     {
-        $this->lernerfolgAufVeranstaltungsterminMeldenWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMeldenWithHttpInfo
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOSTWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lernerfolgAufVeranstaltungsterminMeldenWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'][0])
     {
-        $request = $this->lernerfolgAufVeranstaltungsterminMeldenRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOSTRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -203,20 +203,20 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMeldenAsync
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOSTAsync
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufVeranstaltungsterminMeldenAsync($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOSTAsync($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'][0])
     {
-        return $this->lernerfolgAufVeranstaltungsterminMeldenAsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
+        return $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -225,21 +225,21 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMeldenAsyncWithHttpInfo
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOSTAsyncWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufVeranstaltungsterminMeldenAsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->lernerfolgAufVeranstaltungsterminMeldenRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOSTRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,29 +265,29 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Create request for operation 'lernerfolgAufVeranstaltungsterminMelden'
+     * Create request for operation 'lernerfolgAufVeranstaltungsterminMeldenUsingPOST'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lernerfolgAufVeranstaltungsterminMeldenRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOSTRequest($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufVeranstaltungsterminMelden'
+                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufVeranstaltungsterminMeldenUsingPOST'
             );
         }
 
         // verify the required parameter 'veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto' is set
         if ($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto === null || (is_array($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto) && count($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufVeranstaltungsterminMelden'
+                'Missing the required parameter $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufVeranstaltungsterminMeldenUsingPOST'
             );
         }
 
@@ -377,39 +377,39 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMelden1
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOST1
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function lernerfolgAufVeranstaltungsterminMelden1($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST1($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'][0])
     {
-        $this->lernerfolgAufVeranstaltungsterminMelden1WithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMelden1WithHttpInfo
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOST1WithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lernerfolgAufVeranstaltungsterminMelden1WithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'][0])
     {
-        $request = $this->lernerfolgAufVeranstaltungsterminMelden1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOST1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -445,20 +445,20 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMelden1Async
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOST1Async
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufVeranstaltungsterminMelden1Async($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST1Async($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'][0])
     {
-        return $this->lernerfolgAufVeranstaltungsterminMelden1AsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
+        return $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,21 +467,21 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation lernerfolgAufVeranstaltungsterminMelden1AsyncWithHttpInfo
+     * Operation lernerfolgAufVeranstaltungsterminMeldenUsingPOST1AsyncWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Veranstaltungstermins einen Lernerfolg zu melden
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufVeranstaltungsterminMelden1AsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'][0])
     {
         $returnType = '';
-        $request = $this->lernerfolgAufVeranstaltungsterminMelden1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufVeranstaltungsterminMeldenUsingPOST1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -507,29 +507,29 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Create request for operation 'lernerfolgAufVeranstaltungsterminMelden1'
+     * Create request for operation 'lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungsterminTeilnehmerbuchungLernerfolgMeldenApiDto $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lernerfolgAufVeranstaltungsterminMelden1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMelden1'][0])
+    public function lernerfolgAufVeranstaltungsterminMeldenUsingPOST1Request($teilnehmerbuchung_id, $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufVeranstaltungsterminMelden1'
+                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'
             );
         }
 
         // verify the required parameter 'veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto' is set
         if ($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto === null || (is_array($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto) && count($veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufVeranstaltungsterminMelden1'
+                'Missing the required parameter $veranstaltungstermin_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufVeranstaltungsterminMeldenUsingPOST1'
             );
         }
 
@@ -619,39 +619,39 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungstermin
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOST
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function storniereBuchungAufVeranstaltungstermin($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'][0])
     {
-        $this->storniereBuchungAufVeranstaltungsterminWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $this->storniereBuchungAufVeranstaltungsterminUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungsterminWithHttpInfo
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOSTWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storniereBuchungAufVeranstaltungsterminWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'][0])
     {
-        $request = $this->storniereBuchungAufVeranstaltungsterminRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufVeranstaltungsterminUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -687,20 +687,20 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungsterminAsync
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOSTAsync
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufVeranstaltungsterminAsync($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOSTAsync($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'][0])
     {
-        return $this->storniereBuchungAufVeranstaltungsterminAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
+        return $this->storniereBuchungAufVeranstaltungsterminUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -709,21 +709,21 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungsterminAsyncWithHttpInfo
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOSTAsyncWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufVeranstaltungsterminAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->storniereBuchungAufVeranstaltungsterminRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufVeranstaltungsterminUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -749,29 +749,29 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Create request for operation 'storniereBuchungAufVeranstaltungstermin'
+     * Create request for operation 'storniereBuchungAufVeranstaltungsterminUsingPOST'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storniereBuchungAufVeranstaltungsterminRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufVeranstaltungstermin'
+                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufVeranstaltungsterminUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_stornieren_api_dto' is set
         if ($teilnehmer_aktion_stornieren_api_dto === null || (is_array($teilnehmer_aktion_stornieren_api_dto) && count($teilnehmer_aktion_stornieren_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufVeranstaltungstermin'
+                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufVeranstaltungsterminUsingPOST'
             );
         }
 
@@ -861,39 +861,39 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungstermin1
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOST1
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function storniereBuchungAufVeranstaltungstermin1($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin1'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST1($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'][0])
     {
-        $this->storniereBuchungAufVeranstaltungstermin1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $this->storniereBuchungAufVeranstaltungsterminUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungstermin1WithHttpInfo
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOST1WithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storniereBuchungAufVeranstaltungstermin1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin1'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'][0])
     {
-        $request = $this->storniereBuchungAufVeranstaltungstermin1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufVeranstaltungsterminUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -929,20 +929,20 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungstermin1Async
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOST1Async
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufVeranstaltungstermin1Async($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin1'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST1Async($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'][0])
     {
-        return $this->storniereBuchungAufVeranstaltungstermin1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
+        return $this->storniereBuchungAufVeranstaltungsterminUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -951,21 +951,21 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Operation storniereBuchungAufVeranstaltungstermin1AsyncWithHttpInfo
+     * Operation storniereBuchungAufVeranstaltungsterminUsingPOST1AsyncWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf einen Veranstaltungstermin
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufVeranstaltungstermin1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin1'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'][0])
     {
         $returnType = '';
-        $request = $this->storniereBuchungAufVeranstaltungstermin1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufVeranstaltungsterminUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -991,29 +991,29 @@ class BuchungenVonVeranstaltungsterminenApi
     }
 
     /**
-     * Create request for operation 'storniereBuchungAufVeranstaltungstermin1'
+     * Create request for operation 'storniereBuchungAufVeranstaltungsterminUsingPOST1'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungstermin1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storniereBuchungAufVeranstaltungstermin1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungstermin1'][0])
+    public function storniereBuchungAufVeranstaltungsterminUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufVeranstaltungsterminUsingPOST1'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufVeranstaltungstermin1'
+                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufVeranstaltungsterminUsingPOST1'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_stornieren_api_dto' is set
         if ($teilnehmer_aktion_stornieren_api_dto === null || (is_array($teilnehmer_aktion_stornieren_api_dto) && count($teilnehmer_aktion_stornieren_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufVeranstaltungstermin1'
+                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufVeranstaltungsterminUsingPOST1'
             );
         }
 

@@ -58,19 +58,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $openAPITypes = [
-        'uuid_des_datensatzes' => 'string',
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => 'string',
+        'oid' => 'string',
+        'veranstaltungs_nr' => 'string',
         'veranstaltungstermin_nr' => 'string',
         'veranstaltungstyp_nr' => 'string',
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => 'string',
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => 'string',
+        'veranstaltungstyp_id' => 'string',
+        'veranstaltungsart' => 'string',
         'veranstaltungskategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungskategorie',
         'veranstaltungsunterkategorie' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungsunterkategorie',
         'kategorien' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\KategorieUndUnterkategorieApiDto[]',
-        'das_thema_des_veranstaltungstermins_' => 'string',
+        'thema' => 'string',
         'thema2' => 'string',
-        'termin_von_des_veranstaltungstermins' => '\DateTime',
-        'termin_bis_des_veranstaltungstermins' => '\DateTime',
+        'termin_von' => '\DateTime',
+        'termin_bis' => '\DateTime',
         'reg_uhrzeit_von' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\LocalTime',
         'reg_uhrzeit_bis' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\LocalTime',
         'dauer_in_tagen' => 'float',
@@ -118,9 +118,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => 'string',
         'mitzubringen_durch_teilnehmer' => 'string',
         'zielgruppen_details' => 'string',
-        'sachbearbeiter_tn' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter',
-        'uebernachtungsmaximum_vortag' => 'int',
         'uebernachtungsmaximum' => 'int',
+        'uebernachtungsmaximum_vortag' => 'int',
+        'sachbearbeiter_tn' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter',
         'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
@@ -132,19 +132,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'uuid_des_datensatzes' => 'uuid',
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => null,
+        'oid' => 'uuid',
+        'veranstaltungs_nr' => null,
         'veranstaltungstermin_nr' => null,
         'veranstaltungstyp_nr' => null,
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => null,
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => null,
+        'veranstaltungstyp_id' => null,
+        'veranstaltungsart' => null,
         'veranstaltungskategorie' => null,
         'veranstaltungsunterkategorie' => null,
         'kategorien' => null,
-        'das_thema_des_veranstaltungstermins_' => null,
+        'thema' => null,
         'thema2' => null,
-        'termin_von_des_veranstaltungstermins' => 'date-time',
-        'termin_bis_des_veranstaltungstermins' => 'date-time',
+        'termin_von' => 'date-time',
+        'termin_bis' => 'date-time',
         'reg_uhrzeit_von' => null,
         'reg_uhrzeit_bis' => null,
         'dauer_in_tagen' => null,
@@ -192,9 +192,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => null,
         'mitzubringen_durch_teilnehmer' => null,
         'zielgruppen_details' => null,
-        'sachbearbeiter_tn' => null,
-        'uebernachtungsmaximum_vortag' => null,
         'uebernachtungsmaximum' => null,
+        'uebernachtungsmaximum_vortag' => null,
+        'sachbearbeiter_tn' => null,
         'links' => null
     ];
 
@@ -204,19 +204,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'uuid_des_datensatzes' => false,
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => false,
+        'oid' => false,
+        'veranstaltungs_nr' => false,
         'veranstaltungstermin_nr' => false,
         'veranstaltungstyp_nr' => false,
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => false,
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => false,
+        'veranstaltungstyp_id' => false,
+        'veranstaltungsart' => false,
         'veranstaltungskategorie' => false,
         'veranstaltungsunterkategorie' => false,
         'kategorien' => false,
-        'das_thema_des_veranstaltungstermins_' => false,
+        'thema' => false,
         'thema2' => false,
-        'termin_von_des_veranstaltungstermins' => false,
-        'termin_bis_des_veranstaltungstermins' => false,
+        'termin_von' => false,
+        'termin_bis' => false,
         'reg_uhrzeit_von' => false,
         'reg_uhrzeit_bis' => false,
         'dauer_in_tagen' => false,
@@ -264,9 +264,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => false,
         'mitzubringen_durch_teilnehmer' => false,
         'zielgruppen_details' => false,
-        'sachbearbeiter_tn' => false,
-        'uebernachtungsmaximum_vortag' => false,
         'uebernachtungsmaximum' => false,
+        'uebernachtungsmaximum_vortag' => false,
+        'sachbearbeiter_tn' => false,
         'links' => false
     ];
 
@@ -356,19 +356,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'uuid_des_datensatzes' => 'UUID des Datensatzes',
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => 'Die Veranstaltungs-Nr. des Veranstaltungstermins.',
+        'oid' => 'oid',
+        'veranstaltungs_nr' => 'veranstaltungsNr',
         'veranstaltungstermin_nr' => 'veranstaltungsterminNr',
         'veranstaltungstyp_nr' => 'veranstaltungstypNr',
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => 'Die ID des Veranstaltungstyps des Veranstaltungstermins.',
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => 'Veranstaltungsart des Veranstaltungstermins, zulässig sind hier VIRTUELL für Virtuell und PRAESENZ für Präsenz.',
+        'veranstaltungstyp_id' => 'veranstaltungstypID',
+        'veranstaltungsart' => 'veranstaltungsart',
         'veranstaltungskategorie' => 'veranstaltungskategorie',
         'veranstaltungsunterkategorie' => 'veranstaltungsunterkategorie',
         'kategorien' => 'kategorien',
-        'das_thema_des_veranstaltungstermins_' => 'Das Thema des Veranstaltungstermins.',
+        'thema' => 'thema',
         'thema2' => 'thema2',
-        'termin_von_des_veranstaltungstermins' => '&#39;Termin von&#39; des Veranstaltungstermins',
-        'termin_bis_des_veranstaltungstermins' => '&#39;Termin bis&#39; des Veranstaltungstermins',
+        'termin_von' => 'terminVon',
+        'termin_bis' => 'terminBis',
         'reg_uhrzeit_von' => 'regUhrzeitVon',
         'reg_uhrzeit_bis' => 'regUhrzeitBis',
         'dauer_in_tagen' => 'dauerInTagen',
@@ -416,9 +416,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => 'zusatzinformationen',
         'mitzubringen_durch_teilnehmer' => 'mitzubringenDurchTeilnehmer',
         'zielgruppen_details' => 'zielgruppenDetails',
-        'sachbearbeiter_tn' => 'sachbearbeiterTn',
-        'uebernachtungsmaximum_vortag' => 'uebernachtungsmaximumVortag',
         'uebernachtungsmaximum' => 'uebernachtungsmaximum',
+        'uebernachtungsmaximum_vortag' => 'uebernachtungsmaximumVortag',
+        'sachbearbeiter_tn' => 'sachbearbeiterTn',
         'links' => 'links'
     ];
 
@@ -428,19 +428,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'uuid_des_datensatzes' => 'setUuidDesDatensatzes',
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => 'setDieVeranstaltungsNrDesVeranstaltungstermins',
+        'oid' => 'setOid',
+        'veranstaltungs_nr' => 'setVeranstaltungsNr',
         'veranstaltungstermin_nr' => 'setVeranstaltungsterminNr',
         'veranstaltungstyp_nr' => 'setVeranstaltungstypNr',
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => 'setDieIdDesVeranstaltungstypsDesVeranstaltungstermins',
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => 'setVeranstaltungsartDesVeranstaltungsterminsZulssigSindHierVirtuellFrVirtuellUndPraesenzFrPrsenz',
+        'veranstaltungstyp_id' => 'setVeranstaltungstypId',
+        'veranstaltungsart' => 'setVeranstaltungsart',
         'veranstaltungskategorie' => 'setVeranstaltungskategorie',
         'veranstaltungsunterkategorie' => 'setVeranstaltungsunterkategorie',
         'kategorien' => 'setKategorien',
-        'das_thema_des_veranstaltungstermins_' => 'setDasThemaDesVeranstaltungstermins',
+        'thema' => 'setThema',
         'thema2' => 'setThema2',
-        'termin_von_des_veranstaltungstermins' => 'setTerminVonDesVeranstaltungstermins',
-        'termin_bis_des_veranstaltungstermins' => 'setTerminBisDesVeranstaltungstermins',
+        'termin_von' => 'setTerminVon',
+        'termin_bis' => 'setTerminBis',
         'reg_uhrzeit_von' => 'setRegUhrzeitVon',
         'reg_uhrzeit_bis' => 'setRegUhrzeitBis',
         'dauer_in_tagen' => 'setDauerInTagen',
@@ -488,9 +488,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => 'setZusatzinformationen',
         'mitzubringen_durch_teilnehmer' => 'setMitzubringenDurchTeilnehmer',
         'zielgruppen_details' => 'setZielgruppenDetails',
-        'sachbearbeiter_tn' => 'setSachbearbeiterTn',
-        'uebernachtungsmaximum_vortag' => 'setUebernachtungsmaximumVortag',
         'uebernachtungsmaximum' => 'setUebernachtungsmaximum',
+        'uebernachtungsmaximum_vortag' => 'setUebernachtungsmaximumVortag',
+        'sachbearbeiter_tn' => 'setSachbearbeiterTn',
         'links' => 'setLinks'
     ];
 
@@ -500,19 +500,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'uuid_des_datensatzes' => 'getUuidDesDatensatzes',
-        'die_veranstaltungs_nr__des_veranstaltungstermins_' => 'getDieVeranstaltungsNrDesVeranstaltungstermins',
+        'oid' => 'getOid',
+        'veranstaltungs_nr' => 'getVeranstaltungsNr',
         'veranstaltungstermin_nr' => 'getVeranstaltungsterminNr',
         'veranstaltungstyp_nr' => 'getVeranstaltungstypNr',
-        'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' => 'getDieIdDesVeranstaltungstypsDesVeranstaltungstermins',
-        'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' => 'getVeranstaltungsartDesVeranstaltungsterminsZulssigSindHierVirtuellFrVirtuellUndPraesenzFrPrsenz',
+        'veranstaltungstyp_id' => 'getVeranstaltungstypId',
+        'veranstaltungsart' => 'getVeranstaltungsart',
         'veranstaltungskategorie' => 'getVeranstaltungskategorie',
         'veranstaltungsunterkategorie' => 'getVeranstaltungsunterkategorie',
         'kategorien' => 'getKategorien',
-        'das_thema_des_veranstaltungstermins_' => 'getDasThemaDesVeranstaltungstermins',
+        'thema' => 'getThema',
         'thema2' => 'getThema2',
-        'termin_von_des_veranstaltungstermins' => 'getTerminVonDesVeranstaltungstermins',
-        'termin_bis_des_veranstaltungstermins' => 'getTerminBisDesVeranstaltungstermins',
+        'termin_von' => 'getTerminVon',
+        'termin_bis' => 'getTerminBis',
         'reg_uhrzeit_von' => 'getRegUhrzeitVon',
         'reg_uhrzeit_bis' => 'getRegUhrzeitBis',
         'dauer_in_tagen' => 'getDauerInTagen',
@@ -560,9 +560,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         'zusatzinformationen' => 'getZusatzinformationen',
         'mitzubringen_durch_teilnehmer' => 'getMitzubringenDurchTeilnehmer',
         'zielgruppen_details' => 'getZielgruppenDetails',
-        'sachbearbeiter_tn' => 'getSachbearbeiterTn',
-        'uebernachtungsmaximum_vortag' => 'getUebernachtungsmaximumVortag',
         'uebernachtungsmaximum' => 'getUebernachtungsmaximum',
+        'uebernachtungsmaximum_vortag' => 'getUebernachtungsmaximumVortag',
+        'sachbearbeiter_tn' => 'getSachbearbeiterTn',
         'links' => 'getLinks'
     ];
 
@@ -623,19 +623,19 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uuid_des_datensatzes', $data ?? [], null);
-        $this->setIfExists('die_veranstaltungs_nr__des_veranstaltungstermins_', $data ?? [], null);
+        $this->setIfExists('oid', $data ?? [], null);
+        $this->setIfExists('veranstaltungs_nr', $data ?? [], null);
         $this->setIfExists('veranstaltungstermin_nr', $data ?? [], null);
         $this->setIfExists('veranstaltungstyp_nr', $data ?? [], null);
-        $this->setIfExists('die_id_des_veranstaltungstyps_des_veranstaltungstermins_', $data ?? [], null);
-        $this->setIfExists('veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_', $data ?? [], null);
+        $this->setIfExists('veranstaltungstyp_id', $data ?? [], null);
+        $this->setIfExists('veranstaltungsart', $data ?? [], null);
         $this->setIfExists('veranstaltungskategorie', $data ?? [], null);
         $this->setIfExists('veranstaltungsunterkategorie', $data ?? [], null);
         $this->setIfExists('kategorien', $data ?? [], null);
-        $this->setIfExists('das_thema_des_veranstaltungstermins_', $data ?? [], null);
+        $this->setIfExists('thema', $data ?? [], null);
         $this->setIfExists('thema2', $data ?? [], null);
-        $this->setIfExists('termin_von_des_veranstaltungstermins', $data ?? [], null);
-        $this->setIfExists('termin_bis_des_veranstaltungstermins', $data ?? [], null);
+        $this->setIfExists('termin_von', $data ?? [], null);
+        $this->setIfExists('termin_bis', $data ?? [], null);
         $this->setIfExists('reg_uhrzeit_von', $data ?? [], null);
         $this->setIfExists('reg_uhrzeit_bis', $data ?? [], null);
         $this->setIfExists('dauer_in_tagen', $data ?? [], null);
@@ -683,9 +683,9 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('zusatzinformationen', $data ?? [], null);
         $this->setIfExists('mitzubringen_durch_teilnehmer', $data ?? [], null);
         $this->setIfExists('zielgruppen_details', $data ?? [], null);
-        $this->setIfExists('sachbearbeiter_tn', $data ?? [], null);
-        $this->setIfExists('uebernachtungsmaximum_vortag', $data ?? [], null);
         $this->setIfExists('uebernachtungsmaximum', $data ?? [], null);
+        $this->setIfExists('uebernachtungsmaximum_vortag', $data ?? [], null);
+        $this->setIfExists('sachbearbeiter_tn', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
     }
 
@@ -716,26 +716,26 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid_des_datensatzes'] === null) {
-            $invalidProperties[] = "'uuid_des_datensatzes' can't be null";
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
         }
-        if ($this->container['die_veranstaltungs_nr__des_veranstaltungstermins_'] === null) {
-            $invalidProperties[] = "'die_veranstaltungs_nr__des_veranstaltungstermins_' can't be null";
+        if ($this->container['veranstaltungs_nr'] === null) {
+            $invalidProperties[] = "'veranstaltungs_nr' can't be null";
         }
-        if ($this->container['die_id_des_veranstaltungstyps_des_veranstaltungstermins_'] === null) {
-            $invalidProperties[] = "'die_id_des_veranstaltungstyps_des_veranstaltungstermins_' can't be null";
+        if ($this->container['veranstaltungstyp_id'] === null) {
+            $invalidProperties[] = "'veranstaltungstyp_id' can't be null";
         }
-        if ($this->container['veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_'] === null) {
-            $invalidProperties[] = "'veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_' can't be null";
+        if ($this->container['veranstaltungsart'] === null) {
+            $invalidProperties[] = "'veranstaltungsart' can't be null";
         }
-        if ($this->container['das_thema_des_veranstaltungstermins_'] === null) {
-            $invalidProperties[] = "'das_thema_des_veranstaltungstermins_' can't be null";
+        if ($this->container['thema'] === null) {
+            $invalidProperties[] = "'thema' can't be null";
         }
-        if ($this->container['termin_von_des_veranstaltungstermins'] === null) {
-            $invalidProperties[] = "'termin_von_des_veranstaltungstermins' can't be null";
+        if ($this->container['termin_von'] === null) {
+            $invalidProperties[] = "'termin_von' can't be null";
         }
-        if ($this->container['termin_bis_des_veranstaltungstermins'] === null) {
-            $invalidProperties[] = "'termin_bis_des_veranstaltungstermins' can't be null";
+        if ($this->container['termin_bis'] === null) {
+            $invalidProperties[] = "'termin_bis' can't be null";
         }
         return $invalidProperties;
     }
@@ -753,55 +753,55 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets uuid_des_datensatzes
+     * Gets oid
      *
      * @return string
      */
-    public function getUuidDesDatensatzes()
+    public function getOid()
     {
-        return $this->container['uuid_des_datensatzes'];
+        return $this->container['oid'];
     }
 
     /**
-     * Sets uuid_des_datensatzes
+     * Sets oid
      *
-     * @param string $uuid_des_datensatzes uuid_des_datensatzes
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
-    public function setUuidDesDatensatzes($uuid_des_datensatzes)
+    public function setOid($oid)
     {
-        if (is_null($uuid_des_datensatzes)) {
-            throw new \InvalidArgumentException('non-nullable uuid_des_datensatzes cannot be null');
+        if (is_null($oid)) {
+            throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
-        $this->container['uuid_des_datensatzes'] = $uuid_des_datensatzes;
+        $this->container['oid'] = $oid;
 
         return $this;
     }
 
     /**
-     * Gets die_veranstaltungs_nr__des_veranstaltungstermins_
+     * Gets veranstaltungs_nr
      *
      * @return string
      */
-    public function getDieVeranstaltungsNrDesVeranstaltungstermins()
+    public function getVeranstaltungsNr()
     {
-        return $this->container['die_veranstaltungs_nr__des_veranstaltungstermins_'];
+        return $this->container['veranstaltungs_nr'];
     }
 
     /**
-     * Sets die_veranstaltungs_nr__des_veranstaltungstermins_
+     * Sets veranstaltungs_nr
      *
-     * @param string $die_veranstaltungs_nr__des_veranstaltungstermins_ die_veranstaltungs_nr__des_veranstaltungstermins_
+     * @param string $veranstaltungs_nr Die Veranstaltungs-Nr. des Veranstaltungstermins.
      *
      * @return self
      */
-    public function setDieVeranstaltungsNrDesVeranstaltungstermins($die_veranstaltungs_nr__des_veranstaltungstermins_)
+    public function setVeranstaltungsNr($veranstaltungs_nr)
     {
-        if (is_null($die_veranstaltungs_nr__des_veranstaltungstermins_)) {
-            throw new \InvalidArgumentException('non-nullable die_veranstaltungs_nr__des_veranstaltungstermins_ cannot be null');
+        if (is_null($veranstaltungs_nr)) {
+            throw new \InvalidArgumentException('non-nullable veranstaltungs_nr cannot be null');
         }
-        $this->container['die_veranstaltungs_nr__des_veranstaltungstermins_'] = $die_veranstaltungs_nr__des_veranstaltungstermins_;
+        $this->container['veranstaltungs_nr'] = $veranstaltungs_nr;
 
         return $this;
     }
@@ -861,55 +861,55 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets die_id_des_veranstaltungstyps_des_veranstaltungstermins_
+     * Gets veranstaltungstyp_id
      *
      * @return string
      */
-    public function getDieIdDesVeranstaltungstypsDesVeranstaltungstermins()
+    public function getVeranstaltungstypId()
     {
-        return $this->container['die_id_des_veranstaltungstyps_des_veranstaltungstermins_'];
+        return $this->container['veranstaltungstyp_id'];
     }
 
     /**
-     * Sets die_id_des_veranstaltungstyps_des_veranstaltungstermins_
+     * Sets veranstaltungstyp_id
      *
-     * @param string $die_id_des_veranstaltungstyps_des_veranstaltungstermins_ die_id_des_veranstaltungstyps_des_veranstaltungstermins_
+     * @param string $veranstaltungstyp_id Die ID des Veranstaltungstyps des Veranstaltungstermins.
      *
      * @return self
      */
-    public function setDieIdDesVeranstaltungstypsDesVeranstaltungstermins($die_id_des_veranstaltungstyps_des_veranstaltungstermins_)
+    public function setVeranstaltungstypId($veranstaltungstyp_id)
     {
-        if (is_null($die_id_des_veranstaltungstyps_des_veranstaltungstermins_)) {
-            throw new \InvalidArgumentException('non-nullable die_id_des_veranstaltungstyps_des_veranstaltungstermins_ cannot be null');
+        if (is_null($veranstaltungstyp_id)) {
+            throw new \InvalidArgumentException('non-nullable veranstaltungstyp_id cannot be null');
         }
-        $this->container['die_id_des_veranstaltungstyps_des_veranstaltungstermins_'] = $die_id_des_veranstaltungstyps_des_veranstaltungstermins_;
+        $this->container['veranstaltungstyp_id'] = $veranstaltungstyp_id;
 
         return $this;
     }
 
     /**
-     * Gets veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_
+     * Gets veranstaltungsart
      *
      * @return string
      */
-    public function getVeranstaltungsartDesVeranstaltungsterminsZulssigSindHierVirtuellFrVirtuellUndPraesenzFrPrsenz()
+    public function getVeranstaltungsart()
     {
-        return $this->container['veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_'];
+        return $this->container['veranstaltungsart'];
     }
 
     /**
-     * Sets veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_
+     * Sets veranstaltungsart
      *
-     * @param string $veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_ veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_
+     * @param string $veranstaltungsart Veranstaltungsart des Veranstaltungstermins, zulässig sind hier VIRTUELL für Virtuell und PRAESENZ für Präsenz.
      *
      * @return self
      */
-    public function setVeranstaltungsartDesVeranstaltungsterminsZulssigSindHierVirtuellFrVirtuellUndPraesenzFrPrsenz($veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_)
+    public function setVeranstaltungsart($veranstaltungsart)
     {
-        if (is_null($veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_)) {
-            throw new \InvalidArgumentException('non-nullable veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_ cannot be null');
+        if (is_null($veranstaltungsart)) {
+            throw new \InvalidArgumentException('non-nullable veranstaltungsart cannot be null');
         }
-        $this->container['veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_'] = $veranstaltungsart_des_veranstaltungstermins_zulssig_sind_hier_virtuell_fr_virtuell_und_praesenz_fr_prsenz_;
+        $this->container['veranstaltungsart'] = $veranstaltungsart;
 
         return $this;
     }
@@ -996,28 +996,28 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets das_thema_des_veranstaltungstermins_
+     * Gets thema
      *
      * @return string
      */
-    public function getDasThemaDesVeranstaltungstermins()
+    public function getThema()
     {
-        return $this->container['das_thema_des_veranstaltungstermins_'];
+        return $this->container['thema'];
     }
 
     /**
-     * Sets das_thema_des_veranstaltungstermins_
+     * Sets thema
      *
-     * @param string $das_thema_des_veranstaltungstermins_ das_thema_des_veranstaltungstermins_
+     * @param string $thema Das Thema des Veranstaltungstermins.
      *
      * @return self
      */
-    public function setDasThemaDesVeranstaltungstermins($das_thema_des_veranstaltungstermins_)
+    public function setThema($thema)
     {
-        if (is_null($das_thema_des_veranstaltungstermins_)) {
-            throw new \InvalidArgumentException('non-nullable das_thema_des_veranstaltungstermins_ cannot be null');
+        if (is_null($thema)) {
+            throw new \InvalidArgumentException('non-nullable thema cannot be null');
         }
-        $this->container['das_thema_des_veranstaltungstermins_'] = $das_thema_des_veranstaltungstermins_;
+        $this->container['thema'] = $thema;
 
         return $this;
     }
@@ -1050,55 +1050,55 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets termin_von_des_veranstaltungstermins
+     * Gets termin_von
      *
      * @return \DateTime
      */
-    public function getTerminVonDesVeranstaltungstermins()
+    public function getTerminVon()
     {
-        return $this->container['termin_von_des_veranstaltungstermins'];
+        return $this->container['termin_von'];
     }
 
     /**
-     * Sets termin_von_des_veranstaltungstermins
+     * Sets termin_von
      *
-     * @param \DateTime $termin_von_des_veranstaltungstermins termin_von_des_veranstaltungstermins
+     * @param \DateTime $termin_von 'Termin von' des Veranstaltungstermins
      *
      * @return self
      */
-    public function setTerminVonDesVeranstaltungstermins($termin_von_des_veranstaltungstermins)
+    public function setTerminVon($termin_von)
     {
-        if (is_null($termin_von_des_veranstaltungstermins)) {
-            throw new \InvalidArgumentException('non-nullable termin_von_des_veranstaltungstermins cannot be null');
+        if (is_null($termin_von)) {
+            throw new \InvalidArgumentException('non-nullable termin_von cannot be null');
         }
-        $this->container['termin_von_des_veranstaltungstermins'] = $termin_von_des_veranstaltungstermins;
+        $this->container['termin_von'] = $termin_von;
 
         return $this;
     }
 
     /**
-     * Gets termin_bis_des_veranstaltungstermins
+     * Gets termin_bis
      *
      * @return \DateTime
      */
-    public function getTerminBisDesVeranstaltungstermins()
+    public function getTerminBis()
     {
-        return $this->container['termin_bis_des_veranstaltungstermins'];
+        return $this->container['termin_bis'];
     }
 
     /**
-     * Sets termin_bis_des_veranstaltungstermins
+     * Sets termin_bis
      *
-     * @param \DateTime $termin_bis_des_veranstaltungstermins termin_bis_des_veranstaltungstermins
+     * @param \DateTime $termin_bis 'Termin bis' des Veranstaltungstermins
      *
      * @return self
      */
-    public function setTerminBisDesVeranstaltungstermins($termin_bis_des_veranstaltungstermins)
+    public function setTerminBis($termin_bis)
     {
-        if (is_null($termin_bis_des_veranstaltungstermins)) {
-            throw new \InvalidArgumentException('non-nullable termin_bis_des_veranstaltungstermins cannot be null');
+        if (is_null($termin_bis)) {
+            throw new \InvalidArgumentException('non-nullable termin_bis cannot be null');
         }
-        $this->container['termin_bis_des_veranstaltungstermins'] = $termin_bis_des_veranstaltungstermins;
+        $this->container['termin_bis'] = $termin_bis;
 
         return $this;
     }
@@ -2373,28 +2373,28 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets sachbearbeiter_tn
+     * Gets uebernachtungsmaximum
      *
-     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null
+     * @return int|null
      */
-    public function getSachbearbeiterTn()
+    public function getUebernachtungsmaximum()
     {
-        return $this->container['sachbearbeiter_tn'];
+        return $this->container['uebernachtungsmaximum'];
     }
 
     /**
-     * Sets sachbearbeiter_tn
+     * Sets uebernachtungsmaximum
      *
-     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null $sachbearbeiter_tn sachbearbeiter_tn
+     * @param int|null $uebernachtungsmaximum uebernachtungsmaximum
      *
      * @return self
      */
-    public function setSachbearbeiterTn($sachbearbeiter_tn)
+    public function setUebernachtungsmaximum($uebernachtungsmaximum)
     {
-        if (is_null($sachbearbeiter_tn)) {
-            throw new \InvalidArgumentException('non-nullable sachbearbeiter_tn cannot be null');
+        if (is_null($uebernachtungsmaximum)) {
+            throw new \InvalidArgumentException('non-nullable uebernachtungsmaximum cannot be null');
         }
-        $this->container['sachbearbeiter_tn'] = $sachbearbeiter_tn;
+        $this->container['uebernachtungsmaximum'] = $uebernachtungsmaximum;
 
         return $this;
     }
@@ -2427,28 +2427,28 @@ class VeranstaltungsterminSIGUV implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets uebernachtungsmaximum
+     * Gets sachbearbeiter_tn
      *
-     * @return int|null
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null
      */
-    public function getUebernachtungsmaximum()
+    public function getSachbearbeiterTn()
     {
-        return $this->container['uebernachtungsmaximum'];
+        return $this->container['sachbearbeiter_tn'];
     }
 
     /**
-     * Sets uebernachtungsmaximum
+     * Sets sachbearbeiter_tn
      *
-     * @param int|null $uebernachtungsmaximum uebernachtungsmaximum
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Sachbearbeiter|null $sachbearbeiter_tn sachbearbeiter_tn
      *
      * @return self
      */
-    public function setUebernachtungsmaximum($uebernachtungsmaximum)
+    public function setSachbearbeiterTn($sachbearbeiter_tn)
     {
-        if (is_null($uebernachtungsmaximum)) {
-            throw new \InvalidArgumentException('non-nullable uebernachtungsmaximum cannot be null');
+        if (is_null($sachbearbeiter_tn)) {
+            throw new \InvalidArgumentException('non-nullable sachbearbeiter_tn cannot be null');
         }
-        $this->container['uebernachtungsmaximum'] = $uebernachtungsmaximum;
+        $this->container['sachbearbeiter_tn'] = $sachbearbeiter_tn;
 
         return $this;
     }

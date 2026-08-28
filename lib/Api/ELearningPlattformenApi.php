@@ -74,70 +74,70 @@ class ELearningPlattformenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAktiveELearningKurse' => [
+        'getAktiveELearningKurseUsingGET' => [
             'application/json',
         ],
-        'getBeendeteELearningKurse' => [
+        'getBeendeteELearningKurseUsingGET' => [
             'application/json',
         ],
-        'getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang' => [
+        'getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET' => [
             'application/json',
         ],
-        'getTeilnehmerELearningPlattform' => [
+        'getTeilnehmerELearningPlattformUsingGET' => [
             'application/json',
         ],
-        'getVonDozentenDieAktivenKurszuordnungen' => [
+        'getVonDozentenDieAktivenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'getVonDozentenDieBeendetenKurszuordnungen' => [
+        'getVonDozentenDieBeendetenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'getVonLernbegleiternDieAktivenKurszuordnungen' => [
+        'getVonLernbegleiternDieAktivenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'getVonLernbegleiternDieBeendetenKurszuordnungen' => [
+        'getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'getVonTeilnehmernDieAktivenKurszuordnungen' => [
+        'getVonTeilnehmernDieAktivenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'getVonTeilnehmernDieBeendetenKurszuordnungen' => [
+        'getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET' => [
             'application/json',
         ],
-        'hinterlegeAbschlussZertifikat' => [
+        'hinterlegeAbschlussZertifikatUsingPOST' => [
             'application/json',
         ],
-        'kursOfflineMelden' => [
+        'kursOfflineMeldenUsingPUT' => [
             'application/json',
         ],
-        'kursOnlineMelden' => [
+        'kursOnlineMeldenUsingPUT' => [
             'application/json',
         ],
-        'meldeBearbeitungsstartFuerTeilnehmerAufKurs' => [
+        'meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST' => [
             'application/json',
         ],
-        'meldeElearningaccountAlsExternExistierend' => [
+        'meldeElearningaccountAlsExternExistierendUsingPOST' => [
             'application/json',
         ],
-        'meldeElearningaccountAnlageAlsFehlgeschlagen' => [
+        'meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST' => [
             'application/json',
         ],
-        'meldeElearningkursExternExistierend' => [
+        'meldeElearningkursExternExistierendUsingPOST' => [
             'application/json',
         ],
-        'meldeElearningkursExterneAnlageAngestossen' => [
+        'meldeElearningkursExterneAnlageAngestossenUsingPOST' => [
             'application/json',
         ],
-        'meldeElearningkursExterneAnlageFehlgeschlagen' => [
+        'meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST' => [
             'application/json',
         ],
-        'meldeErstmaligErfolgreichEingeloggt' => [
+        'meldeErstmaligErfolgreichEingeloggtUsingPOST' => [
             'application/json',
         ],
-        'meldeKursabschlussMitErfolg' => [
+        'meldeKursabschlussMitErfolgUsingPOST' => [
             'application/json',
         ],
-        'meldeKursabschlussOhneErfolg' => [
+        'meldeKursabschlussOhneErfolgUsingPOST' => [
             'application/json',
         ],
     ];
@@ -189,38 +189,38 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getAktiveELearningKurse
+     * Operation getAktiveELearningKurseUsingGET
      *
      * Liefert die aktiven E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]
      */
-    public function getAktiveELearningKurse($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurse'][0])
+    public function getAktiveELearningKurseUsingGET($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
-        list($response) = $this->getAktiveELearningKurseWithHttpInfo($plattform_id, $contentType);
+        list($response) = $this->getAktiveELearningKurseUsingGETWithHttpInfo($plattform_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAktiveELearningKurseWithHttpInfo
+     * Operation getAktiveELearningKurseUsingGETWithHttpInfo
      *
      * Liefert die aktiven E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAktiveELearningKurseWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurse'][0])
+    public function getAktiveELearningKurseUsingGETWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
-        $request = $this->getAktiveELearningKurseRequest($plattform_id, $contentType);
+        $request = $this->getAktiveELearningKurseUsingGETRequest($plattform_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -292,19 +292,19 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getAktiveELearningKurseAsync
+     * Operation getAktiveELearningKurseUsingGETAsync
      *
      * Liefert die aktiven E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveELearningKurseAsync($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurse'][0])
+    public function getAktiveELearningKurseUsingGETAsync($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
-        return $this->getAktiveELearningKurseAsyncWithHttpInfo($plattform_id, $contentType)
+        return $this->getAktiveELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -313,20 +313,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getAktiveELearningKurseAsyncWithHttpInfo
+     * Operation getAktiveELearningKurseUsingGETAsyncWithHttpInfo
      *
      * Liefert die aktiven E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAktiveELearningKurseAsyncWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurse'][0])
+    public function getAktiveELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
-        $request = $this->getAktiveELearningKurseRequest($plattform_id, $contentType);
+        $request = $this->getAktiveELearningKurseUsingGETRequest($plattform_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -365,21 +365,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getAktiveELearningKurse'
+     * Create request for operation 'getAktiveELearningKurseUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAktiveELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAktiveELearningKurseRequest($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurse'][0])
+    public function getAktiveELearningKurseUsingGETRequest($plattform_id, string $contentType = self::contentTypes['getAktiveELearningKurseUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getAktiveELearningKurse'
+                'Missing the required parameter $plattform_id when calling getAktiveELearningKurseUsingGET'
             );
         }
 
@@ -462,40 +462,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getBeendeteELearningKurse
+     * Operation getBeendeteELearningKurseUsingGET
      *
      * Liefert die beendeten E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  \DateTime|null $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]
      */
-    public function getBeendeteELearningKurse($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurse'][0])
+    public function getBeendeteELearningKurseUsingGET($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
-        list($response) = $this->getBeendeteELearningKurseWithHttpInfo($plattform_id, $beendet_ab, $contentType);
+        list($response) = $this->getBeendeteELearningKurseUsingGETWithHttpInfo($plattform_id, $beendet_ab, $contentType);
         return $response;
     }
 
     /**
-     * Operation getBeendeteELearningKurseWithHttpInfo
+     * Operation getBeendeteELearningKurseUsingGETWithHttpInfo
      *
      * Liefert die beendeten E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  \DateTime|null $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBeendeteELearningKurseWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurse'][0])
+    public function getBeendeteELearningKurseUsingGETWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
-        $request = $this->getBeendeteELearningKurseRequest($plattform_id, $beendet_ab, $contentType);
+        $request = $this->getBeendeteELearningKurseUsingGETRequest($plattform_id, $beendet_ab, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -567,20 +567,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getBeendeteELearningKurseAsync
+     * Operation getBeendeteELearningKurseUsingGETAsync
      *
      * Liefert die beendeten E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  \DateTime|null $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBeendeteELearningKurseAsync($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurse'][0])
+    public function getBeendeteELearningKurseUsingGETAsync($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
-        return $this->getBeendeteELearningKurseAsyncWithHttpInfo($plattform_id, $beendet_ab, $contentType)
+        return $this->getBeendeteELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, $beendet_ab, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -589,21 +589,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getBeendeteELearningKurseAsyncWithHttpInfo
+     * Operation getBeendeteELearningKurseUsingGETAsyncWithHttpInfo
      *
      * Liefert die beendeten E-Learning-Kurse.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  \DateTime|null $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBeendeteELearningKurseAsyncWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurse'][0])
+    public function getBeendeteELearningKurseUsingGETAsyncWithHttpInfo($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Elearningkurs[]';
-        $request = $this->getBeendeteELearningKurseRequest($plattform_id, $beendet_ab, $contentType);
+        $request = $this->getBeendeteELearningKurseUsingGETRequest($plattform_id, $beendet_ab, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -642,22 +642,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getBeendeteELearningKurse'
+     * Create request for operation 'getBeendeteELearningKurseUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  \DateTime|null $beendet_ab Filtert und liefert nur Kurse, die seit dem Stichtag beendet wurden. Das Format muss wie folgt sein: yyyy-MM-dd (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurse'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBeendeteELearningKurseUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBeendeteELearningKurseRequest($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurse'][0])
+    public function getBeendeteELearningKurseUsingGETRequest($plattform_id, $beendet_ab = null, string $contentType = self::contentTypes['getBeendeteELearningKurseUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getBeendeteELearningKurse'
+                'Missing the required parameter $plattform_id when calling getBeendeteELearningKurseUsingGET'
             );
         }
 
@@ -750,40 +750,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang
+     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET
      *
      * Ruft alle Ausbildungszüge eines Ausbildungsgangs ab, die zur E-Learning-Plattform gehören
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]
      */
-    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'][0])
+    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
-        list($response) = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangWithHttpInfo($plattform_id, $ausbildungsgang_id, $contentType);
+        list($response) = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETWithHttpInfo($plattform_id, $ausbildungsgang_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangWithHttpInfo
+     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETWithHttpInfo
      *
      * Ruft alle Ausbildungszüge eines Ausbildungsgangs ab, die zur E-Learning-Plattform gehören
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'][0])
+    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
-        $request = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangRequest($plattform_id, $ausbildungsgang_id, $contentType);
+        $request = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETRequest($plattform_id, $ausbildungsgang_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -855,20 +855,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangAsync
+     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsync
      *
      * Ruft alle Ausbildungszüge eines Ausbildungsgangs ab, die zur E-Learning-Plattform gehören
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangAsync($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'][0])
+    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsync($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
-        return $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangAsyncWithHttpInfo($plattform_id, $ausbildungsgang_id, $contentType)
+        return $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsyncWithHttpInfo($plattform_id, $ausbildungsgang_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -877,21 +877,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangAsyncWithHttpInfo
+     * Operation getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Ausbildungszüge eines Ausbildungsgangs ab, die zur E-Learning-Plattform gehören
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangAsyncWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'][0])
+    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETAsyncWithHttpInfo($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Ausbildungszug[]';
-        $request = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangRequest($plattform_id, $ausbildungsgang_id, $contentType);
+        $request = $this->getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETRequest($plattform_id, $ausbildungsgang_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -930,29 +930,29 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'
+     * Create request for operation 'getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $ausbildungsgang_id ID des Ausbildungsgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangRequest($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'][0])
+    public function getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGETRequest($plattform_id, $ausbildungsgang_id, string $contentType = self::contentTypes['getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'
+                'Missing the required parameter $plattform_id when calling getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'
             );
         }
 
         // verify the required parameter 'ausbildungsgang_id' is set
         if ($ausbildungsgang_id === null || (is_array($ausbildungsgang_id) && count($ausbildungsgang_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ausbildungsgang_id when calling getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgang'
+                'Missing the required parameter $ausbildungsgang_id when calling getFreigegebeneAusbildungszuegeFuerPlattformUndAusbildungsgangUsingGET'
             );
         }
 
@@ -1044,40 +1044,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getTeilnehmerELearningPlattform
+     * Operation getTeilnehmerELearningPlattformUsingGET
      *
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  bool|null $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattform'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]
      */
-    public function getTeilnehmerELearningPlattform($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattform'][0])
+    public function getTeilnehmerELearningPlattformUsingGET($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerELearningPlattformWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        list($response) = $this->getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerELearningPlattformWithHttpInfo
+     * Operation getTeilnehmerELearningPlattformUsingGETWithHttpInfo
      *
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  bool|null $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattform'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerELearningPlattformWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattform'][0])
+    public function getTeilnehmerELearningPlattformUsingGETWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        $request = $this->getTeilnehmerELearningPlattformRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1149,20 +1149,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getTeilnehmerELearningPlattformAsync
+     * Operation getTeilnehmerELearningPlattformUsingGETAsync
      *
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  bool|null $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattform'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerELearningPlattformAsync($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattform'][0])
+    public function getTeilnehmerELearningPlattformUsingGETAsync($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
-        return $this->getTeilnehmerELearningPlattformAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType)
+        return $this->getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1171,21 +1171,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getTeilnehmerELearningPlattformAsyncWithHttpInfo
+     * Operation getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Teilnehmer einer E-Learning-Plattform ab
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  bool|null $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattform'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerELearningPlattformAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattform'][0])
+    public function getTeilnehmerELearningPlattformUsingGETAsyncWithHttpInfo($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerELearningPlattform[]';
-        $request = $this->getTeilnehmerELearningPlattformRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
+        $request = $this->getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1224,22 +1224,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerELearningPlattform'
+     * Create request for operation 'getTeilnehmerELearningPlattformUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  bool|null $nicht_extern_angelegte_teilnehmer Filtert auf nicht extern angelegte Teilnehmer. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattform'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerELearningPlattformUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerELearningPlattformRequest($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattform'][0])
+    public function getTeilnehmerELearningPlattformUsingGETRequest($plattform_id, $nicht_extern_angelegte_teilnehmer = null, string $contentType = self::contentTypes['getTeilnehmerELearningPlattformUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getTeilnehmerELearningPlattform'
+                'Missing the required parameter $plattform_id when calling getTeilnehmerELearningPlattformUsingGET'
             );
         }
 
@@ -1332,40 +1332,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieAktivenKurszuordnungen
+     * Operation getVonDozentenDieAktivenKurszuordnungenUsingGET
      *
      * Liefert die aktiven Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]
      */
-    public function getVonDozentenDieAktivenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'][0])
+    public function getVonDozentenDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonDozentenDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonDozentenDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonDozentenDieAktivenKurszuordnungenWithHttpInfo
+     * Operation getVonDozentenDieAktivenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonDozentenDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'][0])
+    public function getVonDozentenDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonDozentenDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonDozentenDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1437,20 +1437,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieAktivenKurszuordnungenAsync
+     * Operation getVonDozentenDieAktivenKurszuordnungenUsingGETAsync
      *
      * Liefert die aktiven Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonDozentenDieAktivenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'][0])
+    public function getVonDozentenDieAktivenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonDozentenDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonDozentenDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1459,21 +1459,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieAktivenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonDozentenDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonDozentenDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'][0])
+    public function getVonDozentenDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
-        $request = $this->getVonDozentenDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonDozentenDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1512,22 +1512,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonDozentenDieAktivenKurszuordnungen'
+     * Create request for operation 'getVonDozentenDieAktivenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonDozentenDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungen'][0])
+    public function getVonDozentenDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieAktivenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonDozentenDieAktivenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonDozentenDieAktivenKurszuordnungenUsingGET'
             );
         }
 
@@ -1620,40 +1620,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieBeendetenKurszuordnungen
+     * Operation getVonDozentenDieBeendetenKurszuordnungenUsingGET
      *
      * Liefert die beendeten Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]
      */
-    public function getVonDozentenDieBeendetenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'][0])
+    public function getVonDozentenDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonDozentenDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonDozentenDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonDozentenDieBeendetenKurszuordnungenWithHttpInfo
+     * Operation getVonDozentenDieBeendetenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonDozentenDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'][0])
+    public function getVonDozentenDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonDozentenDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonDozentenDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1725,20 +1725,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieBeendetenKurszuordnungenAsync
+     * Operation getVonDozentenDieBeendetenKurszuordnungenUsingGETAsync
      *
      * Liefert die beendeten Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonDozentenDieBeendetenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'][0])
+    public function getVonDozentenDieBeendetenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonDozentenDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonDozentenDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1747,21 +1747,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonDozentenDieBeendetenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonDozentenDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Dozenten
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonDozentenDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'][0])
+    public function getVonDozentenDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Dozentenkurszuordnung[]';
-        $request = $this->getVonDozentenDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonDozentenDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1800,22 +1800,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonDozentenDieBeendetenKurszuordnungen'
+     * Create request for operation 'getVonDozentenDieBeendetenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonDozentenDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungen'][0])
+    public function getVonDozentenDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonDozentenDieBeendetenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonDozentenDieBeendetenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonDozentenDieBeendetenKurszuordnungenUsingGET'
             );
         }
 
@@ -1908,40 +1908,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieAktivenKurszuordnungen
+     * Operation getVonLernbegleiternDieAktivenKurszuordnungenUsingGET
      *
      * Liefert die aktiven Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]
      */
-    public function getVonLernbegleiternDieAktivenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonLernbegleiternDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonLernbegleiternDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonLernbegleiternDieAktivenKurszuordnungenWithHttpInfo
+     * Operation getVonLernbegleiternDieAktivenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonLernbegleiternDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonLernbegleiternDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonLernbegleiternDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2013,20 +2013,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieAktivenKurszuordnungenAsync
+     * Operation getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsync
      *
      * Liefert die aktiven Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonLernbegleiternDieAktivenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonLernbegleiternDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2035,21 +2035,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieAktivenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonLernbegleiternDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
-        $request = $this->getVonLernbegleiternDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonLernbegleiternDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2088,22 +2088,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonLernbegleiternDieAktivenKurszuordnungen'
+     * Create request for operation 'getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonLernbegleiternDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonLernbegleiternDieAktivenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonLernbegleiternDieAktivenKurszuordnungenUsingGET'
             );
         }
 
@@ -2196,40 +2196,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieBeendetenKurszuordnungen
+     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET
      *
      * Liefert die beendeten Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]
      */
-    public function getVonLernbegleiternDieBeendetenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonLernbegleiternDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenWithHttpInfo
+     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonLernbegleiternDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonLernbegleiternDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2301,20 +2301,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenAsync
+     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsync
      *
      * Liefert die beendeten Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonLernbegleiternDieBeendetenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonLernbegleiternDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2323,21 +2323,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Lernbegleitern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonLernbegleiternDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Lernbegleiterkurszuordnung[]';
-        $request = $this->getVonLernbegleiternDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2376,22 +2376,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonLernbegleiternDieBeendetenKurszuordnungen'
+     * Create request for operation 'getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonLernbegleiternDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungen'][0])
+    public function getVonLernbegleiternDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonLernbegleiternDieBeendetenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonLernbegleiternDieBeendetenKurszuordnungenUsingGET'
             );
         }
 
@@ -2484,40 +2484,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieAktivenKurszuordnungen
+     * Operation getVonTeilnehmernDieAktivenKurszuordnungenUsingGET
      *
      * Liefert die aktiven Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]
      */
-    public function getVonTeilnehmernDieAktivenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonTeilnehmernDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonTeilnehmernDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonTeilnehmernDieAktivenKurszuordnungenWithHttpInfo
+     * Operation getVonTeilnehmernDieAktivenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonTeilnehmernDieAktivenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonTeilnehmernDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonTeilnehmernDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2589,20 +2589,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieAktivenKurszuordnungenAsync
+     * Operation getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsync
      *
      * Liefert die aktiven Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonTeilnehmernDieAktivenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonTeilnehmernDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2611,21 +2611,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieAktivenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die aktiven Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonTeilnehmernDieAktivenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
-        $request = $this->getVonTeilnehmernDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonTeilnehmernDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2664,22 +2664,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonTeilnehmernDieAktivenKurszuordnungen'
+     * Create request for operation 'getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonTeilnehmernDieAktivenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieAktivenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonTeilnehmernDieAktivenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonTeilnehmernDieAktivenKurszuordnungenUsingGET'
             );
         }
 
@@ -2772,40 +2772,40 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieBeendetenKurszuordnungen
+     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET
      *
      * Liefert die beendeten Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]
      */
-    public function getVonTeilnehmernDieBeendetenKurszuordnungen($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        list($response) = $this->getVonTeilnehmernDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        list($response) = $this->getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenWithHttpInfo
+     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVonTeilnehmernDieBeendetenKurszuordnungenWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        $request = $this->getVonTeilnehmernDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2877,20 +2877,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenAsync
+     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsync
      *
      * Liefert die beendeten Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonTeilnehmernDieBeendetenKurszuordnungenAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsync($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
-        return $this->getVonTeilnehmernDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2899,21 +2899,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenAsyncWithHttpInfo
+     * Operation getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo
      *
      * Liefert die beendeten Kurszuordnungen von Teilnehmern
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVonTeilnehmernDieBeendetenKurszuordnungenAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETAsyncWithHttpInfo($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Teilnehmerkurszuordnung[]';
-        $request = $this->getVonTeilnehmernDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2952,22 +2952,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'getVonTeilnehmernDieBeendetenKurszuordnungen'
+     * Create request for operation 'getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string|null $kurs_id optionale ID des Kurses (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVonTeilnehmernDieBeendetenKurszuordnungenRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungen'][0])
+    public function getVonTeilnehmernDieBeendetenKurszuordnungenUsingGETRequest($plattform_id, $kurs_id = null, string $contentType = self::contentTypes['getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling getVonTeilnehmernDieBeendetenKurszuordnungen'
+                'Missing the required parameter $plattform_id when calling getVonTeilnehmernDieBeendetenKurszuordnungenUsingGET'
             );
         }
 
@@ -3060,7 +3060,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikat
+     * Operation hinterlegeAbschlussZertifikatUsingPOST
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -3068,20 +3068,20 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto
      */
-    public function hinterlegeAbschlussZertifikat($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        list($response) = $this->hinterlegeAbschlussZertifikatWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        list($response) = $this->hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatWithHttpInfo
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -3089,15 +3089,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function hinterlegeAbschlussZertifikatWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        $request = $this->hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        $request = $this->hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3225,7 +3225,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatAsync
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTAsync
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -3233,14 +3233,14 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function hinterlegeAbschlussZertifikatAsync($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        return $this->hinterlegeAbschlussZertifikatAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType)
+        return $this->hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3249,7 +3249,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatAsyncWithHttpInfo
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -3257,15 +3257,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function hinterlegeAbschlussZertifikatAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto';
-        $request = $this->hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        $request = $this->hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3304,45 +3304,45 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'hinterlegeAbschlussZertifikat'
+     * Create request for operation 'hinterlegeAbschlussZertifikatUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $plattform_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $kurs_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $teilnehmer_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'abschluss_zertifikat_api_dto' is set
         if ($abschluss_zertifikat_api_dto === null || (is_array($abschluss_zertifikat_api_dto) && count($abschluss_zertifikat_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abschluss_zertifikat_api_dto when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $abschluss_zertifikat_api_dto when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
@@ -3448,41 +3448,41 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOfflineMelden
+     * Operation kursOfflineMeldenUsingPUT
      *
      * Meldet einen E-Learning-Kurs als \&quot;offline\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $offline_seit Das Datum, seit dem der Kurs offline ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function kursOfflineMelden($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMelden'][0])
+    public function kursOfflineMeldenUsingPUT($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMeldenUsingPUT'][0])
     {
-        $this->kursOfflineMeldenWithHttpInfo($plattform_id, $kurs_id, $offline_seit, $contentType);
+        $this->kursOfflineMeldenUsingPUTWithHttpInfo($plattform_id, $kurs_id, $offline_seit, $contentType);
     }
 
     /**
-     * Operation kursOfflineMeldenWithHttpInfo
+     * Operation kursOfflineMeldenUsingPUTWithHttpInfo
      *
      * Meldet einen E-Learning-Kurs als \&quot;offline\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $offline_seit Das Datum, seit dem der Kurs offline ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function kursOfflineMeldenWithHttpInfo($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMelden'][0])
+    public function kursOfflineMeldenUsingPUTWithHttpInfo($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMeldenUsingPUT'][0])
     {
-        $request = $this->kursOfflineMeldenRequest($plattform_id, $kurs_id, $offline_seit, $contentType);
+        $request = $this->kursOfflineMeldenUsingPUTRequest($plattform_id, $kurs_id, $offline_seit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3518,21 +3518,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOfflineMeldenAsync
+     * Operation kursOfflineMeldenUsingPUTAsync
      *
      * Meldet einen E-Learning-Kurs als \&quot;offline\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $offline_seit Das Datum, seit dem der Kurs offline ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function kursOfflineMeldenAsync($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMelden'][0])
+    public function kursOfflineMeldenUsingPUTAsync($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMeldenUsingPUT'][0])
     {
-        return $this->kursOfflineMeldenAsyncWithHttpInfo($plattform_id, $kurs_id, $offline_seit, $contentType)
+        return $this->kursOfflineMeldenUsingPUTAsyncWithHttpInfo($plattform_id, $kurs_id, $offline_seit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3541,22 +3541,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOfflineMeldenAsyncWithHttpInfo
+     * Operation kursOfflineMeldenUsingPUTAsyncWithHttpInfo
      *
      * Meldet einen E-Learning-Kurs als \&quot;offline\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $offline_seit Das Datum, seit dem der Kurs offline ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function kursOfflineMeldenAsyncWithHttpInfo($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMelden'][0])
+    public function kursOfflineMeldenUsingPUTAsyncWithHttpInfo($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMeldenUsingPUT'][0])
     {
         $returnType = '';
-        $request = $this->kursOfflineMeldenRequest($plattform_id, $kurs_id, $offline_seit, $contentType);
+        $request = $this->kursOfflineMeldenUsingPUTRequest($plattform_id, $kurs_id, $offline_seit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3582,30 +3582,30 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'kursOfflineMelden'
+     * Create request for operation 'kursOfflineMeldenUsingPUT'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $offline_seit Das Datum, seit dem der Kurs offline ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOfflineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function kursOfflineMeldenRequest($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMelden'][0])
+    public function kursOfflineMeldenUsingPUTRequest($plattform_id, $kurs_id, $offline_seit = null, string $contentType = self::contentTypes['kursOfflineMeldenUsingPUT'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling kursOfflineMelden'
+                'Missing the required parameter $plattform_id when calling kursOfflineMeldenUsingPUT'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling kursOfflineMelden'
+                'Missing the required parameter $kurs_id when calling kursOfflineMeldenUsingPUT'
             );
         }
 
@@ -3706,41 +3706,41 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOnlineMelden
+     * Operation kursOnlineMeldenUsingPUT
      *
      * Meldet einen E-Learning-Kurs als \&quot;online\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $online_seit Das Datum, seit dem der Kurs online ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function kursOnlineMelden($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMelden'][0])
+    public function kursOnlineMeldenUsingPUT($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMeldenUsingPUT'][0])
     {
-        $this->kursOnlineMeldenWithHttpInfo($plattform_id, $kurs_id, $online_seit, $contentType);
+        $this->kursOnlineMeldenUsingPUTWithHttpInfo($plattform_id, $kurs_id, $online_seit, $contentType);
     }
 
     /**
-     * Operation kursOnlineMeldenWithHttpInfo
+     * Operation kursOnlineMeldenUsingPUTWithHttpInfo
      *
      * Meldet einen E-Learning-Kurs als \&quot;online\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $online_seit Das Datum, seit dem der Kurs online ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function kursOnlineMeldenWithHttpInfo($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMelden'][0])
+    public function kursOnlineMeldenUsingPUTWithHttpInfo($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMeldenUsingPUT'][0])
     {
-        $request = $this->kursOnlineMeldenRequest($plattform_id, $kurs_id, $online_seit, $contentType);
+        $request = $this->kursOnlineMeldenUsingPUTRequest($plattform_id, $kurs_id, $online_seit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3776,21 +3776,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOnlineMeldenAsync
+     * Operation kursOnlineMeldenUsingPUTAsync
      *
      * Meldet einen E-Learning-Kurs als \&quot;online\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $online_seit Das Datum, seit dem der Kurs online ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function kursOnlineMeldenAsync($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMelden'][0])
+    public function kursOnlineMeldenUsingPUTAsync($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMeldenUsingPUT'][0])
     {
-        return $this->kursOnlineMeldenAsyncWithHttpInfo($plattform_id, $kurs_id, $online_seit, $contentType)
+        return $this->kursOnlineMeldenUsingPUTAsyncWithHttpInfo($plattform_id, $kurs_id, $online_seit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3799,22 +3799,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation kursOnlineMeldenAsyncWithHttpInfo
+     * Operation kursOnlineMeldenUsingPUTAsyncWithHttpInfo
      *
      * Meldet einen E-Learning-Kurs als \&quot;online\&quot;. Zur Verwendung der Schnittstelle wird die Tokenberechtigung \&quot;E_LEARNING_KURS_EXTERNE_ANLAGE\&quot; benötigt.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $online_seit Das Datum, seit dem der Kurs online ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function kursOnlineMeldenAsyncWithHttpInfo($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMelden'][0])
+    public function kursOnlineMeldenUsingPUTAsyncWithHttpInfo($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMeldenUsingPUT'][0])
     {
         $returnType = '';
-        $request = $this->kursOnlineMeldenRequest($plattform_id, $kurs_id, $online_seit, $contentType);
+        $request = $this->kursOnlineMeldenUsingPUTRequest($plattform_id, $kurs_id, $online_seit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3840,30 +3840,30 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'kursOnlineMelden'
+     * Create request for operation 'kursOnlineMeldenUsingPUT'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  \DateTime|null $online_seit Das Datum, seit dem der Kurs online ist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['kursOnlineMeldenUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function kursOnlineMeldenRequest($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMelden'][0])
+    public function kursOnlineMeldenUsingPUTRequest($plattform_id, $kurs_id, $online_seit = null, string $contentType = self::contentTypes['kursOnlineMeldenUsingPUT'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling kursOnlineMelden'
+                'Missing the required parameter $plattform_id when calling kursOnlineMeldenUsingPUT'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling kursOnlineMelden'
+                'Missing the required parameter $kurs_id when calling kursOnlineMeldenUsingPUT'
             );
         }
 
@@ -3964,7 +3964,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKurs
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -3972,20 +3972,20 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKurs($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        list($response) = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -3993,15 +3993,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4027,13 +4027,13 @@ class ELearningPlattformenApi
 
 
             switch($statusCode) {
-                case 201:
+                case 422:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
                         $response,
                     );
-                case 422:
+                case 201:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
@@ -4063,7 +4063,7 @@ class ELearningPlattformenApi
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -4071,7 +4071,7 @@ class ELearningPlattformenApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 422:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -4087,7 +4087,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursAsync
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsync
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -4095,14 +4095,14 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        return $this->meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4111,7 +4111,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -4119,15 +4119,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4166,38 +4166,38 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+     * Create request for operation 'meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $plattform_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $kurs_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $teilnehmer_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
@@ -4304,41 +4304,41 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAlsExternExistierend
+     * Operation meldeElearningaccountAlsExternExistierendUsingPOST
      *
      * Meldet, dass der Benutzer auf der externen E-Learning-Plattform existiert
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningaccountExterneReferenzNrApiDto|null $elearningaccount_externe_referenz_nr_api_dto elearningaccount_externe_referenz_nr_api_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningaccountAlsExternExistierend($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierend'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOST($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        $this->meldeElearningaccountAlsExternExistierendWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $this->meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
     }
 
     /**
-     * Operation meldeElearningaccountAlsExternExistierendWithHttpInfo
+     * Operation meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo
      *
      * Meldet, dass der Benutzer auf der externen E-Learning-Plattform existiert
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningaccountExterneReferenzNrApiDto|null $elearningaccount_externe_referenz_nr_api_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningaccountAlsExternExistierendWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierend'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        $request = $this->meldeElearningaccountAlsExternExistierendRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4374,21 +4374,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAlsExternExistierendAsync
+     * Operation meldeElearningaccountAlsExternExistierendUsingPOSTAsync
      *
      * Meldet, dass der Benutzer auf der externen E-Learning-Plattform existiert
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningaccountExterneReferenzNrApiDto|null $elearningaccount_externe_referenz_nr_api_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAlsExternExistierendAsync($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierend'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsync($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
-        return $this->meldeElearningaccountAlsExternExistierendAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType)
+        return $this->meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4397,22 +4397,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAlsExternExistierendAsyncWithHttpInfo
+     * Operation meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, dass der Benutzer auf der externen E-Learning-Plattform existiert
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningaccountExterneReferenzNrApiDto|null $elearningaccount_externe_referenz_nr_api_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAlsExternExistierendAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierend'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningaccountAlsExternExistierendRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4438,30 +4438,30 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeElearningaccountAlsExternExistierend'
+     * Create request for operation 'meldeElearningaccountAlsExternExistierendUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\ElearningaccountExterneReferenzNrApiDto|null $elearningaccount_externe_referenz_nr_api_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningaccountAlsExternExistierendRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierend'][0])
+    public function meldeElearningaccountAlsExternExistierendUsingPOSTRequest($plattform_id, $teilnehmer_id, $elearningaccount_externe_referenz_nr_api_dto = null, string $contentType = self::contentTypes['meldeElearningaccountAlsExternExistierendUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeElearningaccountAlsExternExistierend'
+                'Missing the required parameter $plattform_id when calling meldeElearningaccountAlsExternExistierendUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeElearningaccountAlsExternExistierend'
+                'Missing the required parameter $teilnehmer_id when calling meldeElearningaccountAlsExternExistierendUsingPOST'
             );
         }
 
@@ -4560,41 +4560,41 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAnlageAlsFehlgeschlagen
+     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST
      *
      * Meldet, dass die externe Anlage des Benutzers auf der externen E-Learning-Plattform fehlgeschlagen ist
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningaccountAnlageAlsFehlgeschlagen($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'][0])
+    public function meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'][0])
     {
-        $this->meldeElearningaccountAnlageAlsFehlgeschlagenWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
+        $this->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
     }
 
     /**
-     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenWithHttpInfo
+     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTWithHttpInfo
      *
      * Meldet, dass die externe Anlage des Benutzers auf der externen E-Learning-Plattform fehlgeschlagen ist
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningaccountAnlageAlsFehlgeschlagenWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'][0])
+    public function meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'][0])
     {
-        $request = $this->meldeElearningaccountAnlageAlsFehlgeschlagenRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4630,21 +4630,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenAsync
+     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTAsync
      *
      * Meldet, dass die externe Anlage des Benutzers auf der externen E-Learning-Plattform fehlgeschlagen ist
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAnlageAlsFehlgeschlagenAsync($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'][0])
+    public function meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTAsync($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'][0])
     {
-        return $this->meldeElearningaccountAnlageAlsFehlgeschlagenAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType)
+        return $this->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4653,22 +4653,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenAsyncWithHttpInfo
+     * Operation meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, dass die externe Anlage des Benutzers auf der externen E-Learning-Plattform fehlgeschlagen ist
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningaccountAnlageAlsFehlgeschlagenAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'][0])
+    public function meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningaccountAnlageAlsFehlgeschlagenRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4694,37 +4694,37 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeElearningaccountAnlageAlsFehlgeschlagen'
+     * Create request for operation 'meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningaccountAnlageAlsFehlgeschlagenRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagen'][0])
+    public function meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOSTRequest($plattform_id, $teilnehmer_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeElearningaccountAnlageAlsFehlgeschlagen'
+                'Missing the required parameter $plattform_id when calling meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeElearningaccountAnlageAlsFehlgeschlagen'
+                'Missing the required parameter $teilnehmer_id when calling meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'
             );
         }
 
         // verify the required parameter 'fehlermeldung_api_dto' is set
         if ($fehlermeldung_api_dto === null || (is_array($fehlermeldung_api_dto) && count($fehlermeldung_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $fehlermeldung_api_dto when calling meldeElearningaccountAnlageAlsFehlgeschlagen'
+                'Missing the required parameter $fehlermeldung_api_dto when calling meldeElearningaccountAnlageAlsFehlgeschlagenUsingPOST'
             );
         }
 
@@ -4822,39 +4822,39 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExternExistierend
+     * Operation meldeElearningkursExternExistierendUsingPOST
      *
      * Meldet und protokolliert, dass der E-Learning-Kurs extern erfolgreich angelegt wurde.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningkursExternExistierend($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierend'][0])
+    public function meldeElearningkursExternExistierendUsingPOST($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierendUsingPOST'][0])
     {
-        $this->meldeElearningkursExternExistierendWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        $this->meldeElearningkursExternExistierendUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $contentType);
     }
 
     /**
-     * Operation meldeElearningkursExternExistierendWithHttpInfo
+     * Operation meldeElearningkursExternExistierendUsingPOSTWithHttpInfo
      *
      * Meldet und protokolliert, dass der E-Learning-Kurs extern erfolgreich angelegt wurde.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningkursExternExistierendWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierend'][0])
+    public function meldeElearningkursExternExistierendUsingPOSTWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierendUsingPOST'][0])
     {
-        $request = $this->meldeElearningkursExternExistierendRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->meldeElearningkursExternExistierendUsingPOSTRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4890,20 +4890,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExternExistierendAsync
+     * Operation meldeElearningkursExternExistierendUsingPOSTAsync
      *
      * Meldet und protokolliert, dass der E-Learning-Kurs extern erfolgreich angelegt wurde.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExternExistierendAsync($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierend'][0])
+    public function meldeElearningkursExternExistierendUsingPOSTAsync($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierendUsingPOST'][0])
     {
-        return $this->meldeElearningkursExternExistierendAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->meldeElearningkursExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4912,21 +4912,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExternExistierendAsyncWithHttpInfo
+     * Operation meldeElearningkursExternExistierendUsingPOSTAsyncWithHttpInfo
      *
      * Meldet und protokolliert, dass der E-Learning-Kurs extern erfolgreich angelegt wurde.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExternExistierendAsyncWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierend'][0])
+    public function meldeElearningkursExternExistierendUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierendUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningkursExternExistierendRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->meldeElearningkursExternExistierendUsingPOSTRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4952,29 +4952,29 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeElearningkursExternExistierend'
+     * Create request for operation 'meldeElearningkursExternExistierendUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierend'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExternExistierendUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningkursExternExistierendRequest($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierend'][0])
+    public function meldeElearningkursExternExistierendUsingPOSTRequest($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExternExistierendUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeElearningkursExternExistierend'
+                'Missing the required parameter $plattform_id when calling meldeElearningkursExternExistierendUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeElearningkursExternExistierend'
+                'Missing the required parameter $kurs_id when calling meldeElearningkursExternExistierendUsingPOST'
             );
         }
 
@@ -5065,39 +5065,39 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageAngestossen
+     * Operation meldeElearningkursExterneAnlageAngestossenUsingPOST
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses in Bearbeitung ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningkursExterneAnlageAngestossen($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossen'][0])
+    public function meldeElearningkursExterneAnlageAngestossenUsingPOST($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'][0])
     {
-        $this->meldeElearningkursExterneAnlageAngestossenWithHttpInfo($plattform_id, $kurs_id, $contentType);
+        $this->meldeElearningkursExterneAnlageAngestossenUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $contentType);
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageAngestossenWithHttpInfo
+     * Operation meldeElearningkursExterneAnlageAngestossenUsingPOSTWithHttpInfo
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses in Bearbeitung ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningkursExterneAnlageAngestossenWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossen'][0])
+    public function meldeElearningkursExterneAnlageAngestossenUsingPOSTWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'][0])
     {
-        $request = $this->meldeElearningkursExterneAnlageAngestossenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->meldeElearningkursExterneAnlageAngestossenUsingPOSTRequest($plattform_id, $kurs_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5133,20 +5133,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageAngestossenAsync
+     * Operation meldeElearningkursExterneAnlageAngestossenUsingPOSTAsync
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses in Bearbeitung ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExterneAnlageAngestossenAsync($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossen'][0])
+    public function meldeElearningkursExterneAnlageAngestossenUsingPOSTAsync($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'][0])
     {
-        return $this->meldeElearningkursExterneAnlageAngestossenAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
+        return $this->meldeElearningkursExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5155,21 +5155,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageAngestossenAsyncWithHttpInfo
+     * Operation meldeElearningkursExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses in Bearbeitung ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExterneAnlageAngestossenAsyncWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossen'][0])
+    public function meldeElearningkursExterneAnlageAngestossenUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningkursExterneAnlageAngestossenRequest($plattform_id, $kurs_id, $contentType);
+        $request = $this->meldeElearningkursExterneAnlageAngestossenUsingPOSTRequest($plattform_id, $kurs_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5195,29 +5195,29 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeElearningkursExterneAnlageAngestossen'
+     * Create request for operation 'meldeElearningkursExterneAnlageAngestossenUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningkursExterneAnlageAngestossenRequest($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossen'][0])
+    public function meldeElearningkursExterneAnlageAngestossenUsingPOSTRequest($plattform_id, $kurs_id, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageAngestossenUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeElearningkursExterneAnlageAngestossen'
+                'Missing the required parameter $plattform_id when calling meldeElearningkursExterneAnlageAngestossenUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeElearningkursExterneAnlageAngestossen'
+                'Missing the required parameter $kurs_id when calling meldeElearningkursExterneAnlageAngestossenUsingPOST'
             );
         }
 
@@ -5308,41 +5308,41 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageFehlgeschlagen
+     * Operation meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses fehlgeschlagen ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeElearningkursExterneAnlageFehlgeschlagen($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'][0])
+    public function meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'][0])
     {
-        $this->meldeElearningkursExterneAnlageFehlgeschlagenWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
+        $this->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageFehlgeschlagenWithHttpInfo
+     * Operation meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTWithHttpInfo
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses fehlgeschlagen ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeElearningkursExterneAnlageFehlgeschlagenWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'][0])
+    public function meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'][0])
     {
-        $request = $this->meldeElearningkursExterneAnlageFehlgeschlagenRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5378,21 +5378,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageFehlgeschlagenAsync
+     * Operation meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTAsync
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses fehlgeschlagen ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExterneAnlageFehlgeschlagenAsync($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'][0])
+    public function meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTAsync($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'][0])
     {
-        return $this->meldeElearningkursExterneAnlageFehlgeschlagenAsyncWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType)
+        return $this->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5401,22 +5401,22 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeElearningkursExterneAnlageFehlgeschlagenAsyncWithHttpInfo
+     * Operation meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo
      *
      * Meldet und protokolliert, dass die externe Anlage des E-Learning-Kurses fehlgeschlagen ist.
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeElearningkursExterneAnlageFehlgeschlagenAsyncWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'][0])
+    public function meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeElearningkursExterneAnlageFehlgeschlagenRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
+        $request = $this->meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5442,37 +5442,37 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeElearningkursExterneAnlageFehlgeschlagen'
+     * Create request for operation 'meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des E-Learning-Kurses (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto $fehlermeldung_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeElearningkursExterneAnlageFehlgeschlagenRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagen'][0])
+    public function meldeElearningkursExterneAnlageFehlgeschlagenUsingPOSTRequest($plattform_id, $kurs_id, $fehlermeldung_api_dto, string $contentType = self::contentTypes['meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeElearningkursExterneAnlageFehlgeschlagen'
+                'Missing the required parameter $plattform_id when calling meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeElearningkursExterneAnlageFehlgeschlagen'
+                'Missing the required parameter $kurs_id when calling meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'
             );
         }
 
         // verify the required parameter 'fehlermeldung_api_dto' is set
         if ($fehlermeldung_api_dto === null || (is_array($fehlermeldung_api_dto) && count($fehlermeldung_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $fehlermeldung_api_dto when calling meldeElearningkursExterneAnlageFehlgeschlagen'
+                'Missing the required parameter $fehlermeldung_api_dto when calling meldeElearningkursExterneAnlageFehlgeschlagenUsingPOST'
             );
         }
 
@@ -5570,39 +5570,39 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeErstmaligErfolgreichEingeloggt
+     * Operation meldeErstmaligErfolgreichEingeloggtUsingPOST
      *
      * Setzt das Datum für das Ändern des initialen Passworts
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggt'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function meldeErstmaligErfolgreichEingeloggt($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggt'][0])
+    public function meldeErstmaligErfolgreichEingeloggtUsingPOST($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'][0])
     {
-        $this->meldeErstmaligErfolgreichEingeloggtWithHttpInfo($plattform_id, $teilnehmer_id, $contentType);
+        $this->meldeErstmaligErfolgreichEingeloggtUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, $contentType);
     }
 
     /**
-     * Operation meldeErstmaligErfolgreichEingeloggtWithHttpInfo
+     * Operation meldeErstmaligErfolgreichEingeloggtUsingPOSTWithHttpInfo
      *
      * Setzt das Datum für das Ändern des initialen Passworts
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggt'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeErstmaligErfolgreichEingeloggtWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggt'][0])
+    public function meldeErstmaligErfolgreichEingeloggtUsingPOSTWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'][0])
     {
-        $request = $this->meldeErstmaligErfolgreichEingeloggtRequest($plattform_id, $teilnehmer_id, $contentType);
+        $request = $this->meldeErstmaligErfolgreichEingeloggtUsingPOSTRequest($plattform_id, $teilnehmer_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5638,20 +5638,20 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeErstmaligErfolgreichEingeloggtAsync
+     * Operation meldeErstmaligErfolgreichEingeloggtUsingPOSTAsync
      *
      * Setzt das Datum für das Ändern des initialen Passworts
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggt'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeErstmaligErfolgreichEingeloggtAsync($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggt'][0])
+    public function meldeErstmaligErfolgreichEingeloggtUsingPOSTAsync($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'][0])
     {
-        return $this->meldeErstmaligErfolgreichEingeloggtAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $contentType)
+        return $this->meldeErstmaligErfolgreichEingeloggtUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5660,21 +5660,21 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeErstmaligErfolgreichEingeloggtAsyncWithHttpInfo
+     * Operation meldeErstmaligErfolgreichEingeloggtUsingPOSTAsyncWithHttpInfo
      *
      * Setzt das Datum für das Ändern des initialen Passworts
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggt'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeErstmaligErfolgreichEingeloggtAsyncWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggt'][0])
+    public function meldeErstmaligErfolgreichEingeloggtUsingPOSTAsyncWithHttpInfo($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->meldeErstmaligErfolgreichEingeloggtRequest($plattform_id, $teilnehmer_id, $contentType);
+        $request = $this->meldeErstmaligErfolgreichEingeloggtUsingPOSTRequest($plattform_id, $teilnehmer_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5700,29 +5700,29 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeErstmaligErfolgreichEingeloggt'
+     * Create request for operation 'meldeErstmaligErfolgreichEingeloggtUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggt'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeErstmaligErfolgreichEingeloggtRequest($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggt'][0])
+    public function meldeErstmaligErfolgreichEingeloggtUsingPOSTRequest($plattform_id, $teilnehmer_id, string $contentType = self::contentTypes['meldeErstmaligErfolgreichEingeloggtUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeErstmaligErfolgreichEingeloggt'
+                'Missing the required parameter $plattform_id when calling meldeErstmaligErfolgreichEingeloggtUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeErstmaligErfolgreichEingeloggt'
+                'Missing the required parameter $teilnehmer_id when calling meldeErstmaligErfolgreichEingeloggtUsingPOST'
             );
         }
 
@@ -5813,7 +5813,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolg
+     * Operation meldeKursabschlussMitErfolgUsingPOST
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -5821,20 +5821,20 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeKursabschlussMitErfolg($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        list($response) = $this->meldeKursabschlussMitErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgWithHttpInfo
+     * Operation meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -5842,15 +5842,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeKursabschlussMitErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        $request = $this->meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5936,7 +5936,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgAsync
+     * Operation meldeKursabschlussMitErfolgUsingPOSTAsync
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -5944,14 +5944,14 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussMitErfolgAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        return $this->meldeKursabschlussMitErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5960,7 +5960,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgAsyncWithHttpInfo
+     * Operation meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -5968,15 +5968,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussMitErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6015,38 +6015,38 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeKursabschlussMitErfolg'
+     * Create request for operation 'meldeKursabschlussMitErfolgUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $plattform_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $kurs_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
@@ -6153,7 +6153,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolg
+     * Operation meldeKursabschlussOhneErfolgUsingPOST
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -6161,20 +6161,20 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeKursabschlussOhneErfolg($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        list($response) = $this->meldeKursabschlussOhneErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgWithHttpInfo
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -6182,15 +6182,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeKursabschlussOhneErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        $request = $this->meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6216,13 +6216,13 @@ class ELearningPlattformenApi
 
 
             switch($statusCode) {
-                case 201:
+                case 422:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
                         $response,
                     );
-                case 422:
+                case 201:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
@@ -6252,7 +6252,7 @@ class ELearningPlattformenApi
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -6260,7 +6260,7 @@ class ELearningPlattformenApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 422:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -6276,7 +6276,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgAsync
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTAsync
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -6284,14 +6284,14 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussOhneErfolgAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        return $this->meldeKursabschlussOhneErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6300,7 +6300,7 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgAsyncWithHttpInfo
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -6308,15 +6308,15 @@ class ELearningPlattformenApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussOhneErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6355,38 +6355,38 @@ class ELearningPlattformenApi
     }
 
     /**
-     * Create request for operation 'meldeKursabschlussOhneErfolg'
+     * Create request for operation 'meldeKursabschlussOhneErfolgUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $plattform_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $kurs_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 

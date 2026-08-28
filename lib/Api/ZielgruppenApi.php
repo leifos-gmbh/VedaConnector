@@ -74,16 +74,16 @@ class ZielgruppenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getZielgruppe' => [
+        'getZielgruppeUsingGET' => [
             'application/json',
         ],
-        'getZielgruppe1' => [
+        'getZielgruppeUsingGET1' => [
             'application/json',
         ],
-        'getZielgruppen' => [
+        'getZielgruppenUsingGET' => [
             'application/json',
         ],
-        'getZielgruppen1' => [
+        'getZielgruppenUsingGET1' => [
             'application/json',
         ],
     ];
@@ -135,38 +135,38 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppe
+     * Operation getZielgruppeUsingGET
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe
      */
-    public function getZielgruppe($id, string $contentType = self::contentTypes['getZielgruppe'][0])
+    public function getZielgruppeUsingGET($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
-        list($response) = $this->getZielgruppeWithHttpInfo($id, $contentType);
+        list($response) = $this->getZielgruppeUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getZielgruppeWithHttpInfo
+     * Operation getZielgruppeUsingGETWithHttpInfo
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getZielgruppeWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppe'][0])
+    public function getZielgruppeUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
-        $request = $this->getZielgruppeRequest($id, $contentType);
+        $request = $this->getZielgruppeUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -238,19 +238,19 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppeAsync
+     * Operation getZielgruppeUsingGETAsync
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppeAsync($id, string $contentType = self::contentTypes['getZielgruppe'][0])
+    public function getZielgruppeUsingGETAsync($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
-        return $this->getZielgruppeAsyncWithHttpInfo($id, $contentType)
+        return $this->getZielgruppeUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -259,20 +259,20 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppeAsyncWithHttpInfo
+     * Operation getZielgruppeUsingGETAsyncWithHttpInfo
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppeAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppe'][0])
+    public function getZielgruppeUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe';
-        $request = $this->getZielgruppeRequest($id, $contentType);
+        $request = $this->getZielgruppeUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,21 +311,21 @@ class ZielgruppenApi
     }
 
     /**
-     * Create request for operation 'getZielgruppe'
+     * Create request for operation 'getZielgruppeUsingGET'
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getZielgruppeRequest($id, string $contentType = self::contentTypes['getZielgruppe'][0])
+    public function getZielgruppeUsingGETRequest($id, string $contentType = self::contentTypes['getZielgruppeUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getZielgruppe'
+                'Missing the required parameter $id when calling getZielgruppeUsingGET'
             );
         }
 
@@ -408,38 +408,38 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppe1
+     * Operation getZielgruppeUsingGET1
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe
      */
-    public function getZielgruppe1($id, string $contentType = self::contentTypes['getZielgruppe1'][0])
+    public function getZielgruppeUsingGET1($id, string $contentType = self::contentTypes['getZielgruppeUsingGET1'][0])
     {
-        list($response) = $this->getZielgruppe1WithHttpInfo($id, $contentType);
+        list($response) = $this->getZielgruppeUsingGET1WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getZielgruppe1WithHttpInfo
+     * Operation getZielgruppeUsingGET1WithHttpInfo
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getZielgruppe1WithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppe1'][0])
+    public function getZielgruppeUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET1'][0])
     {
-        $request = $this->getZielgruppe1Request($id, $contentType);
+        $request = $this->getZielgruppeUsingGET1Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -511,19 +511,19 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppe1Async
+     * Operation getZielgruppeUsingGET1Async
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppe1Async($id, string $contentType = self::contentTypes['getZielgruppe1'][0])
+    public function getZielgruppeUsingGET1Async($id, string $contentType = self::contentTypes['getZielgruppeUsingGET1'][0])
     {
-        return $this->getZielgruppe1AsyncWithHttpInfo($id, $contentType)
+        return $this->getZielgruppeUsingGET1AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -532,20 +532,20 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppe1AsyncWithHttpInfo
+     * Operation getZielgruppeUsingGET1AsyncWithHttpInfo
      *
      * Ruft eine Zielgruppe ab
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppe1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppe1'][0])
+    public function getZielgruppeUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getZielgruppeUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe';
-        $request = $this->getZielgruppe1Request($id, $contentType);
+        $request = $this->getZielgruppeUsingGET1Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -584,21 +584,21 @@ class ZielgruppenApi
     }
 
     /**
-     * Create request for operation 'getZielgruppe1'
+     * Create request for operation 'getZielgruppeUsingGET1'
      *
      * @param  string $id ID der Zeilgruppe (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppe1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppeUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getZielgruppe1Request($id, string $contentType = self::contentTypes['getZielgruppe1'][0])
+    public function getZielgruppeUsingGET1Request($id, string $contentType = self::contentTypes['getZielgruppeUsingGET1'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getZielgruppe1'
+                'Missing the required parameter $id when calling getZielgruppeUsingGET1'
             );
         }
 
@@ -681,36 +681,36 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppen
+     * Operation getZielgruppenUsingGET
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]
      */
-    public function getZielgruppen(string $contentType = self::contentTypes['getZielgruppen'][0])
+    public function getZielgruppenUsingGET(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
-        list($response) = $this->getZielgruppenWithHttpInfo($contentType);
+        list($response) = $this->getZielgruppenUsingGETWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getZielgruppenWithHttpInfo
+     * Operation getZielgruppenUsingGETWithHttpInfo
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getZielgruppenWithHttpInfo(string $contentType = self::contentTypes['getZielgruppen'][0])
+    public function getZielgruppenUsingGETWithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
-        $request = $this->getZielgruppenRequest($contentType);
+        $request = $this->getZielgruppenUsingGETRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -782,18 +782,18 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppenAsync
+     * Operation getZielgruppenUsingGETAsync
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppenAsync(string $contentType = self::contentTypes['getZielgruppen'][0])
+    public function getZielgruppenUsingGETAsync(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
-        return $this->getZielgruppenAsyncWithHttpInfo($contentType)
+        return $this->getZielgruppenUsingGETAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -802,19 +802,19 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppenAsyncWithHttpInfo
+     * Operation getZielgruppenUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppenAsyncWithHttpInfo(string $contentType = self::contentTypes['getZielgruppen'][0])
+    public function getZielgruppenUsingGETAsyncWithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]';
-        $request = $this->getZielgruppenRequest($contentType);
+        $request = $this->getZielgruppenUsingGETRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -853,14 +853,14 @@ class ZielgruppenApi
     }
 
     /**
-     * Create request for operation 'getZielgruppen'
+     * Create request for operation 'getZielgruppenUsingGET'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getZielgruppenRequest(string $contentType = self::contentTypes['getZielgruppen'][0])
+    public function getZielgruppenUsingGETRequest(string $contentType = self::contentTypes['getZielgruppenUsingGET'][0])
     {
 
 
@@ -934,36 +934,36 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppen1
+     * Operation getZielgruppenUsingGET1
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]
      */
-    public function getZielgruppen1(string $contentType = self::contentTypes['getZielgruppen1'][0])
+    public function getZielgruppenUsingGET1(string $contentType = self::contentTypes['getZielgruppenUsingGET1'][0])
     {
-        list($response) = $this->getZielgruppen1WithHttpInfo($contentType);
+        list($response) = $this->getZielgruppenUsingGET1WithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getZielgruppen1WithHttpInfo
+     * Operation getZielgruppenUsingGET1WithHttpInfo
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getZielgruppen1WithHttpInfo(string $contentType = self::contentTypes['getZielgruppen1'][0])
+    public function getZielgruppenUsingGET1WithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET1'][0])
     {
-        $request = $this->getZielgruppen1Request($contentType);
+        $request = $this->getZielgruppenUsingGET1Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1035,18 +1035,18 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppen1Async
+     * Operation getZielgruppenUsingGET1Async
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppen1Async(string $contentType = self::contentTypes['getZielgruppen1'][0])
+    public function getZielgruppenUsingGET1Async(string $contentType = self::contentTypes['getZielgruppenUsingGET1'][0])
     {
-        return $this->getZielgruppen1AsyncWithHttpInfo($contentType)
+        return $this->getZielgruppenUsingGET1AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1055,19 +1055,19 @@ class ZielgruppenApi
     }
 
     /**
-     * Operation getZielgruppen1AsyncWithHttpInfo
+     * Operation getZielgruppenUsingGET1AsyncWithHttpInfo
      *
      * Ruft alle Zielgruppen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getZielgruppen1AsyncWithHttpInfo(string $contentType = self::contentTypes['getZielgruppen1'][0])
+    public function getZielgruppenUsingGET1AsyncWithHttpInfo(string $contentType = self::contentTypes['getZielgruppenUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Zielgruppe[]';
-        $request = $this->getZielgruppen1Request($contentType);
+        $request = $this->getZielgruppenUsingGET1Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1106,14 +1106,14 @@ class ZielgruppenApi
     }
 
     /**
-     * Create request for operation 'getZielgruppen1'
+     * Create request for operation 'getZielgruppenUsingGET1'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getZielgruppenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getZielgruppen1Request(string $contentType = self::contentTypes['getZielgruppen1'][0])
+    public function getZielgruppenUsingGET1Request(string $contentType = self::contentTypes['getZielgruppenUsingGET1'][0])
     {
 
 

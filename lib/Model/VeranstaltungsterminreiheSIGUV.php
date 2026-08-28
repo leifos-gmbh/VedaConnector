@@ -58,7 +58,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $openAPITypes = [
-        'uuid_des_datensatzes' => 'string',
+        'oid' => 'string',
         'veranstaltungsterminreihen_nr' => 'string',
         'veranstaltungstyp_id' => 'string',
         'veranstaltungs_nr' => 'string',
@@ -114,7 +114,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'uuid_des_datensatzes' => 'uuid',
+        'oid' => 'uuid',
         'veranstaltungsterminreihen_nr' => null,
         'veranstaltungstyp_id' => null,
         'veranstaltungs_nr' => null,
@@ -168,7 +168,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'uuid_des_datensatzes' => false,
+        'oid' => false,
         'veranstaltungsterminreihen_nr' => false,
         'veranstaltungstyp_id' => false,
         'veranstaltungs_nr' => false,
@@ -302,7 +302,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'uuid_des_datensatzes' => 'UUID des Datensatzes',
+        'oid' => 'oid',
         'veranstaltungsterminreihen_nr' => 'veranstaltungsterminreihenNr',
         'veranstaltungstyp_id' => 'veranstaltungstypID',
         'veranstaltungs_nr' => 'veranstaltungsNr',
@@ -356,7 +356,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'uuid_des_datensatzes' => 'setUuidDesDatensatzes',
+        'oid' => 'setOid',
         'veranstaltungsterminreihen_nr' => 'setVeranstaltungsterminreihenNr',
         'veranstaltungstyp_id' => 'setVeranstaltungstypId',
         'veranstaltungs_nr' => 'setVeranstaltungsNr',
@@ -410,7 +410,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'uuid_des_datensatzes' => 'getUuidDesDatensatzes',
+        'oid' => 'getOid',
         'veranstaltungsterminreihen_nr' => 'getVeranstaltungsterminreihenNr',
         'veranstaltungstyp_id' => 'getVeranstaltungstypId',
         'veranstaltungs_nr' => 'getVeranstaltungsNr',
@@ -515,7 +515,7 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uuid_des_datensatzes', $data ?? [], null);
+        $this->setIfExists('oid', $data ?? [], null);
         $this->setIfExists('veranstaltungsterminreihen_nr', $data ?? [], null);
         $this->setIfExists('veranstaltungstyp_id', $data ?? [], null);
         $this->setIfExists('veranstaltungs_nr', $data ?? [], null);
@@ -590,8 +590,8 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid_des_datensatzes'] === null) {
-            $invalidProperties[] = "'uuid_des_datensatzes' can't be null";
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
         }
         return $invalidProperties;
     }
@@ -609,28 +609,28 @@ class VeranstaltungsterminreiheSIGUV implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets uuid_des_datensatzes
+     * Gets oid
      *
      * @return string
      */
-    public function getUuidDesDatensatzes()
+    public function getOid()
     {
-        return $this->container['uuid_des_datensatzes'];
+        return $this->container['oid'];
     }
 
     /**
-     * Sets uuid_des_datensatzes
+     * Sets oid
      *
-     * @param string $uuid_des_datensatzes uuid_des_datensatzes
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
-    public function setUuidDesDatensatzes($uuid_des_datensatzes)
+    public function setOid($oid)
     {
-        if (is_null($uuid_des_datensatzes)) {
-            throw new \InvalidArgumentException('non-nullable uuid_des_datensatzes cannot be null');
+        if (is_null($oid)) {
+            throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
-        $this->container['uuid_des_datensatzes'] = $uuid_des_datensatzes;
+        $this->container['oid'] = $oid;
 
         return $this;
     }

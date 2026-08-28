@@ -58,7 +58,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $openAPITypes = [
-        'uuid_des_datensatzes' => 'string',
+        'oid' => 'string',
         'termin_von' => '\DateTime',
         'termin_bis' => '\DateTime',
         'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
@@ -72,7 +72,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'uuid_des_datensatzes' => 'uuid',
+        'oid' => 'uuid',
         'termin_von' => 'date-time',
         'termin_bis' => 'date-time',
         'links' => null
@@ -84,7 +84,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'uuid_des_datensatzes' => false,
+        'oid' => false,
         'termin_von' => false,
         'termin_bis' => false,
         'links' => false
@@ -176,7 +176,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'uuid_des_datensatzes' => 'UUID des Datensatzes',
+        'oid' => 'oid',
         'termin_von' => 'terminVon',
         'termin_bis' => 'terminBis',
         'links' => 'links'
@@ -188,7 +188,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'uuid_des_datensatzes' => 'setUuidDesDatensatzes',
+        'oid' => 'setOid',
         'termin_von' => 'setTerminVon',
         'termin_bis' => 'setTerminBis',
         'links' => 'setLinks'
@@ -200,7 +200,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'uuid_des_datensatzes' => 'getUuidDesDatensatzes',
+        'oid' => 'getOid',
         'termin_von' => 'getTerminVon',
         'termin_bis' => 'getTerminBis',
         'links' => 'getLinks'
@@ -263,7 +263,7 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uuid_des_datensatzes', $data ?? [], null);
+        $this->setIfExists('oid', $data ?? [], null);
         $this->setIfExists('termin_von', $data ?? [], null);
         $this->setIfExists('termin_bis', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
@@ -296,8 +296,8 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid_des_datensatzes'] === null) {
-            $invalidProperties[] = "'uuid_des_datensatzes' can't be null";
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
         }
         if ($this->container['termin_von'] === null) {
             $invalidProperties[] = "'termin_von' can't be null";
@@ -321,28 +321,28 @@ class ElearningkursZugeordneterTerminReihe implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets uuid_des_datensatzes
+     * Gets oid
      *
      * @return string
      */
-    public function getUuidDesDatensatzes()
+    public function getOid()
     {
-        return $this->container['uuid_des_datensatzes'];
+        return $this->container['oid'];
     }
 
     /**
-     * Sets uuid_des_datensatzes
+     * Sets oid
      *
-     * @param string $uuid_des_datensatzes uuid_des_datensatzes
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
-    public function setUuidDesDatensatzes($uuid_des_datensatzes)
+    public function setOid($oid)
     {
-        if (is_null($uuid_des_datensatzes)) {
-            throw new \InvalidArgumentException('non-nullable uuid_des_datensatzes cannot be null');
+        if (is_null($oid)) {
+            throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
-        $this->container['uuid_des_datensatzes'] = $uuid_des_datensatzes;
+        $this->container['oid'] = $oid;
 
         return $this;
     }

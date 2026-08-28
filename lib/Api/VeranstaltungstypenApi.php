@@ -74,28 +74,28 @@ class VeranstaltungstypenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getAllePraesenzVirtuellVeranstaltungstypen' => [
+        'getAllePraesenzVirtuellVeranstaltungstypenUsingGET' => [
             'application/json',
         ],
-        'getAllePraesenzVirtuellVeranstaltungstypen1' => [
+        'getAllePraesenzVirtuellVeranstaltungstypenUsingGET1' => [
             'application/json',
         ],
-        'getAllePraesenzVirtuellVeranstaltungstypen2' => [
+        'getAllePraesenzVirtuellVeranstaltungstypenUsingGET2' => [
             'application/json',
         ],
-        'getPraesenzVirtuellVeranstaltungstyp' => [
+        'getPraesenzVirtuellVeranstaltungstypUsingGET' => [
             'application/json',
         ],
-        'getPraesenzVirtuellVeranstaltungstyp1' => [
+        'getPraesenzVirtuellVeranstaltungstypUsingGET1' => [
             'application/json',
         ],
-        'getPraesenzVirtuellVeranstaltungstyp2' => [
+        'getPraesenzVirtuellVeranstaltungstypUsingGET2' => [
             'application/json',
         ],
-        'getVeranstaltungstypPlzBereiche' => [
+        'getVeranstaltungstypPlzBereicheUsingGET' => [
             'application/json',
         ],
-        'getVeranstaltungsytpen' => [
+        'getVeranstaltungsytpenUsingGET' => [
             'application/json',
         ],
     ];
@@ -147,38 +147,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
-        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypenWithHttpInfo($teilnehmergruppekuerzel, $contentType);
+        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGETWithHttpInfo($teilnehmergruppekuerzel, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypenWithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGETWithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypenWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenRequest($teilnehmergruppekuerzel, $contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGETRequest($teilnehmergruppekuerzel, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -250,19 +250,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypenAsync
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsync
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypenAsync($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsync($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
-        return $this->getAllePraesenzVirtuellVeranstaltungstypenAsyncWithHttpInfo($teilnehmergruppekuerzel, $contentType)
+        return $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -271,20 +271,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypenAsyncWithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypenAsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenRequest($teilnehmergruppekuerzel, $contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGETRequest($teilnehmergruppekuerzel, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -323,15 +323,15 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypen'
+     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypenUsingGET'
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypenRequest($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGETRequest($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET'][0])
     {
 
 
@@ -415,38 +415,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen1
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET1
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen1($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
-        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypen1WithHttpInfo($teilnehmergruppekuerzel, $contentType);
+        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET1WithHttpInfo($teilnehmergruppekuerzel, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen1WithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET1WithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen1WithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1WithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypen1Request($teilnehmergruppekuerzel, $contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Request($teilnehmergruppekuerzel, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -518,19 +518,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen1Async
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Async
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen1Async($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Async($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
-        return $this->getAllePraesenzVirtuellVeranstaltungstypen1AsyncWithHttpInfo($teilnehmergruppekuerzel, $contentType)
+        return $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -539,20 +539,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen1AsyncWithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET1AsyncWithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen1AsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1AsyncWithHttpInfo($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV[]';
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypen1Request($teilnehmergruppekuerzel, $contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Request($teilnehmergruppekuerzel, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -591,15 +591,15 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypen1'
+     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'
      *
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Veranstaltungen abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenVeranstaltungen für diese Teilnehmergruppe zurückgegeben. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen1Request($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen1'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET1Request($teilnehmergruppekuerzel = null, string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET1'][0])
     {
 
 
@@ -683,36 +683,36 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen2
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET2
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen2(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET2(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'][0])
     {
-        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypen2WithHttpInfo($contentType);
+        list($response) = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET2WithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen2WithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET2WithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen2WithHttpInfo(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET2WithHttpInfo(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'][0])
     {
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypen2Request($contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET2Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -784,18 +784,18 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen2Async
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET2Async
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen2Async(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET2Async(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'][0])
     {
-        return $this->getAllePraesenzVirtuellVeranstaltungstypen2AsyncWithHttpInfo($contentType)
+        return $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET2AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -804,19 +804,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getAllePraesenzVirtuellVeranstaltungstypen2AsyncWithHttpInfo
+     * Operation getAllePraesenzVirtuellVeranstaltungstypenUsingGET2AsyncWithHttpInfo
      *
      * Ruft alle Präsenz- und Virtuell-Veranstaltungstypen ab
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen2AsyncWithHttpInfo(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET2AsyncWithHttpInfo(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
-        $request = $this->getAllePraesenzVirtuellVeranstaltungstypen2Request($contentType);
+        $request = $this->getAllePraesenzVirtuellVeranstaltungstypenUsingGET2Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -855,14 +855,14 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypen2'
+     * Create request for operation 'getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllePraesenzVirtuellVeranstaltungstypen2Request(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypen2'][0])
+    public function getAllePraesenzVirtuellVeranstaltungstypenUsingGET2Request(string $contentType = self::contentTypes['getAllePraesenzVirtuellVeranstaltungstypenUsingGET2'][0])
     {
 
 
@@ -936,38 +936,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp
      */
-    public function getPraesenzVirtuellVeranstaltungstyp($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
-        list($response) = $this->getPraesenzVirtuellVeranstaltungstypWithHttpInfo($id, $contentType);
+        list($response) = $this->getPraesenzVirtuellVeranstaltungstypUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstypWithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGETWithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPraesenzVirtuellVeranstaltungstypWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
-        $request = $this->getPraesenzVirtuellVeranstaltungstypRequest($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1039,19 +1039,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstypAsync
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGETAsync
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstypAsync($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGETAsync($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
-        return $this->getPraesenzVirtuellVeranstaltungstypAsyncWithHttpInfo($id, $contentType)
+        return $this->getPraesenzVirtuellVeranstaltungstypUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1060,20 +1060,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstypAsyncWithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGETAsyncWithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstypAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp';
-        $request = $this->getPraesenzVirtuellVeranstaltungstypRequest($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1112,21 +1112,21 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getPraesenzVirtuellVeranstaltungstyp'
+     * Create request for operation 'getPraesenzVirtuellVeranstaltungstypUsingGET'
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPraesenzVirtuellVeranstaltungstypRequest($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGETRequest($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstyp'
+                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstypUsingGET'
             );
         }
 
@@ -1209,38 +1209,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp1
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET1
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV
      */
-    public function getPraesenzVirtuellVeranstaltungstyp1($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET1($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
-        list($response) = $this->getPraesenzVirtuellVeranstaltungstyp1WithHttpInfo($id, $contentType);
+        list($response) = $this->getPraesenzVirtuellVeranstaltungstypUsingGET1WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp1WithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET1WithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPraesenzVirtuellVeranstaltungstyp1WithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET1WithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
-        $request = $this->getPraesenzVirtuellVeranstaltungstyp1Request($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGET1Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1312,19 +1312,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp1Async
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET1Async
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstyp1Async($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET1Async($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
-        return $this->getPraesenzVirtuellVeranstaltungstyp1AsyncWithHttpInfo($id, $contentType)
+        return $this->getPraesenzVirtuellVeranstaltungstypUsingGET1AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1333,20 +1333,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp1AsyncWithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET1AsyncWithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstyp1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET1AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSIGUV';
-        $request = $this->getPraesenzVirtuellVeranstaltungstyp1Request($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGET1Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1385,21 +1385,21 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getPraesenzVirtuellVeranstaltungstyp1'
+     * Create request for operation 'getPraesenzVirtuellVeranstaltungstypUsingGET1'
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPraesenzVirtuellVeranstaltungstyp1Request($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp1'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET1Request($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET1'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstyp1'
+                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstypUsingGET1'
             );
         }
 
@@ -1482,38 +1482,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp2
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET2
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp
      */
-    public function getPraesenzVirtuellVeranstaltungstyp2($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET2($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'][0])
     {
-        list($response) = $this->getPraesenzVirtuellVeranstaltungstyp2WithHttpInfo($id, $contentType);
+        list($response) = $this->getPraesenzVirtuellVeranstaltungstypUsingGET2WithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp2WithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET2WithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPraesenzVirtuellVeranstaltungstyp2WithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET2WithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'][0])
     {
-        $request = $this->getPraesenzVirtuellVeranstaltungstyp2Request($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGET2Request($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1585,19 +1585,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp2Async
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET2Async
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstyp2Async($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET2Async($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'][0])
     {
-        return $this->getPraesenzVirtuellVeranstaltungstyp2AsyncWithHttpInfo($id, $contentType)
+        return $this->getPraesenzVirtuellVeranstaltungstypUsingGET2AsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1606,20 +1606,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getPraesenzVirtuellVeranstaltungstyp2AsyncWithHttpInfo
+     * Operation getPraesenzVirtuellVeranstaltungstypUsingGET2AsyncWithHttpInfo
      *
      * Ruft einen Präsenz- und Virtuell-Veranstaltungstypen ab
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPraesenzVirtuellVeranstaltungstyp2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET2AsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp';
-        $request = $this->getPraesenzVirtuellVeranstaltungstyp2Request($id, $contentType);
+        $request = $this->getPraesenzVirtuellVeranstaltungstypUsingGET2Request($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1658,21 +1658,21 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getPraesenzVirtuellVeranstaltungstyp2'
+     * Create request for operation 'getPraesenzVirtuellVeranstaltungstypUsingGET2'
      *
      * @param  string $id ID des Veranstaltungstypen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPraesenzVirtuellVeranstaltungstyp2Request($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstyp2'][0])
+    public function getPraesenzVirtuellVeranstaltungstypUsingGET2Request($id, string $contentType = self::contentTypes['getPraesenzVirtuellVeranstaltungstypUsingGET2'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstyp2'
+                'Missing the required parameter $id when calling getPraesenzVirtuellVeranstaltungstypUsingGET2'
             );
         }
 
@@ -1755,42 +1755,42 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereiche
+     * Operation getVeranstaltungstypPlzBereicheUsingGET
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstypen ab
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstypen zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]
      */
-    public function getVeranstaltungstypPlzBereiche($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGET($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
-        list($response) = $this->getVeranstaltungstypPlzBereicheWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
+        list($response) = $this->getVeranstaltungstypPlzBereicheUsingGETWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereicheWithHttpInfo
+     * Operation getVeranstaltungstypPlzBereicheUsingGETWithHttpInfo
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstypen ab
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstypen zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungstypPlzBereicheWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGETWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
-        $request = $this->getVeranstaltungstypPlzBereicheRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
+        $request = $this->getVeranstaltungstypPlzBereicheUsingGETRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1862,21 +1862,21 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereicheAsync
+     * Operation getVeranstaltungstypPlzBereicheUsingGETAsync
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstypen ab
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstypen zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstypPlzBereicheAsync($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGETAsync($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
-        return $this->getVeranstaltungstypPlzBereicheAsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType)
+        return $this->getVeranstaltungstypPlzBereicheUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1885,22 +1885,22 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungstypPlzBereicheAsyncWithHttpInfo
+     * Operation getVeranstaltungstypPlzBereicheUsingGETAsyncWithHttpInfo
      *
      * Ruft Postleitzahl-Bereiche der Veranstaltungstypen ab
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstypen zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungstypPlzBereicheAsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGETAsyncWithHttpInfo($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\PLZBereichVeranstaltungstyp[]';
-        $request = $this->getVeranstaltungstypPlzBereicheRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
+        $request = $this->getVeranstaltungstypPlzBereicheUsingGETRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr, $veranstaltungstyp_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1939,23 +1939,23 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungstypPlzBereiche'
+     * Create request for operation 'getVeranstaltungstypPlzBereicheUsingGET'
      *
      * @param  string $teilnehmergruppekuerzel Parameter, um zu steuern, für welche Teilnehmergruppe die PLZ-Bereiche abgerufen werden sollen. Es werden nur PLZ-Bereiche der für diese Teilnehmergruppe publizierten Veranstaltungstypen zurückgegeben. (required)
      * @param  string|null $veranstaltungstyp_nr Optionaler Parameter für die Nummer des Veranstaltungstypen. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter für die ID des Veranstaltungstypen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereiche'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungstypPlzBereicheRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereiche'][0])
+    public function getVeranstaltungstypPlzBereicheUsingGETRequest($teilnehmergruppekuerzel, $veranstaltungstyp_nr = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getVeranstaltungstypPlzBereicheUsingGET'][0])
     {
 
         // verify the required parameter 'teilnehmergruppekuerzel' is set
         if ($teilnehmergruppekuerzel === null || (is_array($teilnehmergruppekuerzel) && count($teilnehmergruppekuerzel) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmergruppekuerzel when calling getVeranstaltungstypPlzBereiche'
+                'Missing the required parameter $teilnehmergruppekuerzel when calling getVeranstaltungstypPlzBereicheUsingGET'
             );
         }
 
@@ -2059,38 +2059,38 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungsytpen
+     * Operation getVeranstaltungsytpenUsingGET
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto veranstaltungstyp_suche_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]
      */
-    public function getVeranstaltungsytpen($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpen'][0])
+    public function getVeranstaltungsytpenUsingGET($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
-        list($response) = $this->getVeranstaltungsytpenWithHttpInfo($veranstaltungstyp_suche_api_dto, $contentType);
+        list($response) = $this->getVeranstaltungsytpenUsingGETWithHttpInfo($veranstaltungstyp_suche_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation getVeranstaltungsytpenWithHttpInfo
+     * Operation getVeranstaltungsytpenUsingGETWithHttpInfo
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVeranstaltungsytpenWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpen'][0])
+    public function getVeranstaltungsytpenUsingGETWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
-        $request = $this->getVeranstaltungsytpenRequest($veranstaltungstyp_suche_api_dto, $contentType);
+        $request = $this->getVeranstaltungsytpenUsingGETRequest($veranstaltungstyp_suche_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2162,19 +2162,19 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungsytpenAsync
+     * Operation getVeranstaltungsytpenUsingGETAsync
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsytpenAsync($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpen'][0])
+    public function getVeranstaltungsytpenUsingGETAsync($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
-        return $this->getVeranstaltungsytpenAsyncWithHttpInfo($veranstaltungstyp_suche_api_dto, $contentType)
+        return $this->getVeranstaltungsytpenUsingGETAsyncWithHttpInfo($veranstaltungstyp_suche_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2183,20 +2183,20 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Operation getVeranstaltungsytpenAsyncWithHttpInfo
+     * Operation getVeranstaltungsytpenUsingGETAsyncWithHttpInfo
      *
      * Ruft Veranstaltungstypen ab (Websuche)
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVeranstaltungsytpenAsyncWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpen'][0])
+    public function getVeranstaltungsytpenUsingGETAsyncWithHttpInfo($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Veranstaltungstyp[]';
-        $request = $this->getVeranstaltungsytpenRequest($veranstaltungstyp_suche_api_dto, $contentType);
+        $request = $this->getVeranstaltungsytpenUsingGETRequest($veranstaltungstyp_suche_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2235,21 +2235,21 @@ class VeranstaltungstypenApi
     }
 
     /**
-     * Create request for operation 'getVeranstaltungsytpen'
+     * Create request for operation 'getVeranstaltungsytpenUsingGET'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\VeranstaltungstypSuche $veranstaltungstyp_suche_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpen'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getVeranstaltungsytpenUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getVeranstaltungsytpenRequest($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpen'][0])
+    public function getVeranstaltungsytpenUsingGETRequest($veranstaltungstyp_suche_api_dto, string $contentType = self::contentTypes['getVeranstaltungsytpenUsingGET'][0])
     {
 
         // verify the required parameter 'veranstaltungstyp_suche_api_dto' is set
         if ($veranstaltungstyp_suche_api_dto === null || (is_array($veranstaltungstyp_suche_api_dto) && count($veranstaltungstyp_suche_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $veranstaltungstyp_suche_api_dto when calling getVeranstaltungsytpen'
+                'Missing the required parameter $veranstaltungstyp_suche_api_dto when calling getVeranstaltungsytpenUsingGET'
             );
         }
 

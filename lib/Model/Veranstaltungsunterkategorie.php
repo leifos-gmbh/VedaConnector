@@ -296,6 +296,9 @@ class Veranstaltungsunterkategorie implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -314,7 +317,7 @@ class Veranstaltungsunterkategorie implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -324,7 +327,7 @@ class Veranstaltungsunterkategorie implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID der Veranstaltungsunterkategorie
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */

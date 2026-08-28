@@ -74,16 +74,16 @@ class BuchungenVonWebBasedTrainingsApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'lernerfolgAufWebBasedTrainingMelden' => [
+        'lernerfolgAufWebBasedTrainingMeldenUsingPOST' => [
             'application/json',
         ],
-        'lernerfolgAufWebBasedTrainingMelden1' => [
+        'lernerfolgAufWebBasedTrainingMeldenUsingPOST1' => [
             'application/json',
         ],
-        'storniereBuchungAufWebBasedTraining' => [
+        'storniereBuchungAufWebBasedTrainingUsingPOST' => [
             'application/json',
         ],
-        'storniereBuchungAufWebBasedTraining1' => [
+        'storniereBuchungAufWebBasedTrainingUsingPOST1' => [
             'application/json',
         ],
     ];
@@ -135,39 +135,39 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMelden
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOST
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function lernerfolgAufWebBasedTrainingMelden($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'][0])
     {
-        $this->lernerfolgAufWebBasedTrainingMeldenWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $this->lernerfolgAufWebBasedTrainingMeldenUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMeldenWithHttpInfo
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOSTWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lernerfolgAufWebBasedTrainingMeldenWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'][0])
     {
-        $request = $this->lernerfolgAufWebBasedTrainingMeldenRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufWebBasedTrainingMeldenUsingPOSTRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -203,20 +203,20 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMeldenAsync
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOSTAsync
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufWebBasedTrainingMeldenAsync($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOSTAsync($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'][0])
     {
-        return $this->lernerfolgAufWebBasedTrainingMeldenAsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
+        return $this->lernerfolgAufWebBasedTrainingMeldenUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -225,21 +225,21 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMeldenAsyncWithHttpInfo
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOSTAsyncWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufWebBasedTrainingMeldenAsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->lernerfolgAufWebBasedTrainingMeldenRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufWebBasedTrainingMeldenUsingPOSTRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,29 +265,29 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Create request for operation 'lernerfolgAufWebBasedTrainingMelden'
+     * Create request for operation 'lernerfolgAufWebBasedTrainingMeldenUsingPOST'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lernerfolgAufWebBasedTrainingMeldenRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOSTRequest($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufWebBasedTrainingMelden'
+                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufWebBasedTrainingMeldenUsingPOST'
             );
         }
 
         // verify the required parameter 'wbt_teilnehmerbuchung_lernerfolg_melden_api_dto' is set
         if ($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto === null || (is_array($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto) && count($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufWebBasedTrainingMelden'
+                'Missing the required parameter $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufWebBasedTrainingMeldenUsingPOST'
             );
         }
 
@@ -377,39 +377,39 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMelden1
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOST1
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function lernerfolgAufWebBasedTrainingMelden1($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST1($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'][0])
     {
-        $this->lernerfolgAufWebBasedTrainingMelden1WithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $this->lernerfolgAufWebBasedTrainingMeldenUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMelden1WithHttpInfo
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOST1WithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lernerfolgAufWebBasedTrainingMelden1WithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'][0])
     {
-        $request = $this->lernerfolgAufWebBasedTrainingMelden1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufWebBasedTrainingMeldenUsingPOST1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -445,20 +445,20 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMelden1Async
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOST1Async
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufWebBasedTrainingMelden1Async($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST1Async($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'][0])
     {
-        return $this->lernerfolgAufWebBasedTrainingMelden1AsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
+        return $this->lernerfolgAufWebBasedTrainingMeldenUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,21 +467,21 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation lernerfolgAufWebBasedTrainingMelden1AsyncWithHttpInfo
+     * Operation lernerfolgAufWebBasedTrainingMeldenUsingPOST1AsyncWithHttpInfo
      *
      * Ermöglicht es, zu einer Teilnehmerbuchung eines Web Based Trainings einen Lernerfolg zu melden.
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function lernerfolgAufWebBasedTrainingMelden1AsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'][0])
     {
         $returnType = '';
-        $request = $this->lernerfolgAufWebBasedTrainingMelden1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
+        $request = $this->lernerfolgAufWebBasedTrainingMeldenUsingPOST1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -507,29 +507,29 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Create request for operation 'lernerfolgAufWebBasedTrainingMelden1'
+     * Create request for operation 'lernerfolgAufWebBasedTrainingMeldenUsingPOST1'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\WbtTeilnehmerbuchungLernerfolgMeldenApiDto $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function lernerfolgAufWebBasedTrainingMelden1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMelden1'][0])
+    public function lernerfolgAufWebBasedTrainingMeldenUsingPOST1Request($teilnehmerbuchung_id, $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto, string $contentType = self::contentTypes['lernerfolgAufWebBasedTrainingMeldenUsingPOST1'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufWebBasedTrainingMelden1'
+                'Missing the required parameter $teilnehmerbuchung_id when calling lernerfolgAufWebBasedTrainingMeldenUsingPOST1'
             );
         }
 
         // verify the required parameter 'wbt_teilnehmerbuchung_lernerfolg_melden_api_dto' is set
         if ($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto === null || (is_array($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto) && count($wbt_teilnehmerbuchung_lernerfolg_melden_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufWebBasedTrainingMelden1'
+                'Missing the required parameter $wbt_teilnehmerbuchung_lernerfolg_melden_api_dto when calling lernerfolgAufWebBasedTrainingMeldenUsingPOST1'
             );
         }
 
@@ -619,39 +619,39 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTraining
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOST
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function storniereBuchungAufWebBasedTraining($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'][0])
     {
-        $this->storniereBuchungAufWebBasedTrainingWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $this->storniereBuchungAufWebBasedTrainingUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTrainingWithHttpInfo
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOSTWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storniereBuchungAufWebBasedTrainingWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOSTWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'][0])
     {
-        $request = $this->storniereBuchungAufWebBasedTrainingRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufWebBasedTrainingUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -687,20 +687,20 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTrainingAsync
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOSTAsync
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufWebBasedTrainingAsync($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOSTAsync($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'][0])
     {
-        return $this->storniereBuchungAufWebBasedTrainingAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
+        return $this->storniereBuchungAufWebBasedTrainingUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -709,21 +709,21 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTrainingAsyncWithHttpInfo
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOSTAsyncWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufWebBasedTrainingAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOSTAsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'][0])
     {
         $returnType = '';
-        $request = $this->storniereBuchungAufWebBasedTrainingRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufWebBasedTrainingUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -749,29 +749,29 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Create request for operation 'storniereBuchungAufWebBasedTraining'
+     * Create request for operation 'storniereBuchungAufWebBasedTrainingUsingPOST'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storniereBuchungAufWebBasedTrainingRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOSTRequest($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufWebBasedTraining'
+                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufWebBasedTrainingUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_stornieren_api_dto' is set
         if ($teilnehmer_aktion_stornieren_api_dto === null || (is_array($teilnehmer_aktion_stornieren_api_dto) && count($teilnehmer_aktion_stornieren_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufWebBasedTraining'
+                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufWebBasedTrainingUsingPOST'
             );
         }
 
@@ -861,39 +861,39 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTraining1
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOST1
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function storniereBuchungAufWebBasedTraining1($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining1'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST1($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'][0])
     {
-        $this->storniereBuchungAufWebBasedTraining1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $this->storniereBuchungAufWebBasedTrainingUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTraining1WithHttpInfo
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOST1WithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storniereBuchungAufWebBasedTraining1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining1'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST1WithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'][0])
     {
-        $request = $this->storniereBuchungAufWebBasedTraining1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufWebBasedTrainingUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -929,20 +929,20 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTraining1Async
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOST1Async
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufWebBasedTraining1Async($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining1'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST1Async($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'][0])
     {
-        return $this->storniereBuchungAufWebBasedTraining1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
+        return $this->storniereBuchungAufWebBasedTrainingUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -951,21 +951,21 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Operation storniereBuchungAufWebBasedTraining1AsyncWithHttpInfo
+     * Operation storniereBuchungAufWebBasedTrainingUsingPOST1AsyncWithHttpInfo
      *
      * Storniert die Buchung eines Teilnehmers auf ein Web Based Training
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storniereBuchungAufWebBasedTraining1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining1'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST1AsyncWithHttpInfo($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'][0])
     {
         $returnType = '';
-        $request = $this->storniereBuchungAufWebBasedTraining1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
+        $request = $this->storniereBuchungAufWebBasedTrainingUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -991,29 +991,29 @@ class BuchungenVonWebBasedTrainingsApi
     }
 
     /**
-     * Create request for operation 'storniereBuchungAufWebBasedTraining1'
+     * Create request for operation 'storniereBuchungAufWebBasedTrainingUsingPOST1'
      *
      * @param  string $teilnehmerbuchung_id ID der Teilnehmerbuchung, die storniert werden soll. (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionStornierenApiDto $teilnehmer_aktion_stornieren_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTraining1'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storniereBuchungAufWebBasedTraining1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTraining1'][0])
+    public function storniereBuchungAufWebBasedTrainingUsingPOST1Request($teilnehmerbuchung_id, $teilnehmer_aktion_stornieren_api_dto, string $contentType = self::contentTypes['storniereBuchungAufWebBasedTrainingUsingPOST1'][0])
     {
 
         // verify the required parameter 'teilnehmerbuchung_id' is set
         if ($teilnehmerbuchung_id === null || (is_array($teilnehmerbuchung_id) && count($teilnehmerbuchung_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufWebBasedTraining1'
+                'Missing the required parameter $teilnehmerbuchung_id when calling storniereBuchungAufWebBasedTrainingUsingPOST1'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_stornieren_api_dto' is set
         if ($teilnehmer_aktion_stornieren_api_dto === null || (is_array($teilnehmer_aktion_stornieren_api_dto) && count($teilnehmer_aktion_stornieren_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufWebBasedTraining1'
+                'Missing the required parameter $teilnehmer_aktion_stornieren_api_dto when calling storniereBuchungAufWebBasedTrainingUsingPOST1'
             );
         }
 

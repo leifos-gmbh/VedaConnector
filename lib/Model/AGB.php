@@ -58,10 +58,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'uuid_des_datensatzes' => 'string',
-        'bezeichnung_der_agb' => 'string',
-        'kurz_bezeichnung_der_agb' => 'string',
-        'text_der_agb' => 'string',
+        'oid' => 'string',
+        'bez' => 'string',
+        'bezkurz' => 'string',
+        'text' => 'string',
         'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
@@ -73,10 +73,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'uuid_des_datensatzes' => 'uuid',
-        'bezeichnung_der_agb' => null,
-        'kurz_bezeichnung_der_agb' => null,
-        'text_der_agb' => null,
+        'oid' => 'uuid',
+        'bez' => null,
+        'bezkurz' => null,
+        'text' => null,
         'links' => null
     ];
 
@@ -86,10 +86,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'uuid_des_datensatzes' => false,
-        'bezeichnung_der_agb' => false,
-        'kurz_bezeichnung_der_agb' => false,
-        'text_der_agb' => false,
+        'oid' => false,
+        'bez' => false,
+        'bezkurz' => false,
+        'text' => false,
         'links' => false
     ];
 
@@ -179,10 +179,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'uuid_des_datensatzes' => 'UUID des Datensatzes',
-        'bezeichnung_der_agb' => 'Bezeichnung der AGB',
-        'kurz_bezeichnung_der_agb' => 'Kurz Bezeichnung der AGB',
-        'text_der_agb' => 'Text der AGB',
+        'oid' => 'oid',
+        'bez' => 'bez',
+        'bezkurz' => 'bezkurz',
+        'text' => 'text',
         'links' => 'links'
     ];
 
@@ -192,10 +192,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'uuid_des_datensatzes' => 'setUuidDesDatensatzes',
-        'bezeichnung_der_agb' => 'setBezeichnungDerAgb',
-        'kurz_bezeichnung_der_agb' => 'setKurzBezeichnungDerAgb',
-        'text_der_agb' => 'setTextDerAgb',
+        'oid' => 'setOid',
+        'bez' => 'setBez',
+        'bezkurz' => 'setBezkurz',
+        'text' => 'setText',
         'links' => 'setLinks'
     ];
 
@@ -205,10 +205,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'uuid_des_datensatzes' => 'getUuidDesDatensatzes',
-        'bezeichnung_der_agb' => 'getBezeichnungDerAgb',
-        'kurz_bezeichnung_der_agb' => 'getKurzBezeichnungDerAgb',
-        'text_der_agb' => 'getTextDerAgb',
+        'oid' => 'getOid',
+        'bez' => 'getBez',
+        'bezkurz' => 'getBezkurz',
+        'text' => 'getText',
         'links' => 'getLinks'
     ];
 
@@ -269,10 +269,10 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uuid_des_datensatzes', $data ?? [], null);
-        $this->setIfExists('bezeichnung_der_agb', $data ?? [], null);
-        $this->setIfExists('kurz_bezeichnung_der_agb', $data ?? [], null);
-        $this->setIfExists('text_der_agb', $data ?? [], null);
+        $this->setIfExists('oid', $data ?? [], null);
+        $this->setIfExists('bez', $data ?? [], null);
+        $this->setIfExists('bezkurz', $data ?? [], null);
+        $this->setIfExists('text', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
     }
 
@@ -303,8 +303,8 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid_des_datensatzes'] === null) {
-            $invalidProperties[] = "'uuid_des_datensatzes' can't be null";
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
         }
         return $invalidProperties;
     }
@@ -322,109 +322,109 @@ class AGB implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets uuid_des_datensatzes
+     * Gets oid
      *
      * @return string
      */
-    public function getUuidDesDatensatzes()
+    public function getOid()
     {
-        return $this->container['uuid_des_datensatzes'];
+        return $this->container['oid'];
     }
 
     /**
-     * Sets uuid_des_datensatzes
+     * Sets oid
      *
-     * @param string $uuid_des_datensatzes uuid_des_datensatzes
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
-    public function setUuidDesDatensatzes($uuid_des_datensatzes)
+    public function setOid($oid)
     {
-        if (is_null($uuid_des_datensatzes)) {
-            throw new \InvalidArgumentException('non-nullable uuid_des_datensatzes cannot be null');
+        if (is_null($oid)) {
+            throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
-        $this->container['uuid_des_datensatzes'] = $uuid_des_datensatzes;
+        $this->container['oid'] = $oid;
 
         return $this;
     }
 
     /**
-     * Gets bezeichnung_der_agb
+     * Gets bez
      *
      * @return string|null
      */
-    public function getBezeichnungDerAgb()
+    public function getBez()
     {
-        return $this->container['bezeichnung_der_agb'];
+        return $this->container['bez'];
     }
 
     /**
-     * Sets bezeichnung_der_agb
+     * Sets bez
      *
-     * @param string|null $bezeichnung_der_agb bezeichnung_der_agb
+     * @param string|null $bez Bezeichnung der AGB
      *
      * @return self
      */
-    public function setBezeichnungDerAgb($bezeichnung_der_agb)
+    public function setBez($bez)
     {
-        if (is_null($bezeichnung_der_agb)) {
-            throw new \InvalidArgumentException('non-nullable bezeichnung_der_agb cannot be null');
+        if (is_null($bez)) {
+            throw new \InvalidArgumentException('non-nullable bez cannot be null');
         }
-        $this->container['bezeichnung_der_agb'] = $bezeichnung_der_agb;
+        $this->container['bez'] = $bez;
 
         return $this;
     }
 
     /**
-     * Gets kurz_bezeichnung_der_agb
+     * Gets bezkurz
      *
      * @return string|null
      */
-    public function getKurzBezeichnungDerAgb()
+    public function getBezkurz()
     {
-        return $this->container['kurz_bezeichnung_der_agb'];
+        return $this->container['bezkurz'];
     }
 
     /**
-     * Sets kurz_bezeichnung_der_agb
+     * Sets bezkurz
      *
-     * @param string|null $kurz_bezeichnung_der_agb kurz_bezeichnung_der_agb
+     * @param string|null $bezkurz Kurz Bezeichnung der AGB
      *
      * @return self
      */
-    public function setKurzBezeichnungDerAgb($kurz_bezeichnung_der_agb)
+    public function setBezkurz($bezkurz)
     {
-        if (is_null($kurz_bezeichnung_der_agb)) {
-            throw new \InvalidArgumentException('non-nullable kurz_bezeichnung_der_agb cannot be null');
+        if (is_null($bezkurz)) {
+            throw new \InvalidArgumentException('non-nullable bezkurz cannot be null');
         }
-        $this->container['kurz_bezeichnung_der_agb'] = $kurz_bezeichnung_der_agb;
+        $this->container['bezkurz'] = $bezkurz;
 
         return $this;
     }
 
     /**
-     * Gets text_der_agb
+     * Gets text
      *
      * @return string|null
      */
-    public function getTextDerAgb()
+    public function getText()
     {
-        return $this->container['text_der_agb'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets text_der_agb
+     * Sets text
      *
-     * @param string|null $text_der_agb text_der_agb
+     * @param string|null $text Text der AGB
      *
      * @return self
      */
-    public function setTextDerAgb($text_der_agb)
+    public function setText($text)
     {
-        if (is_null($text_der_agb)) {
-            throw new \InvalidArgumentException('non-nullable text_der_agb cannot be null');
+        if (is_null($text)) {
+            throw new \InvalidArgumentException('non-nullable text cannot be null');
         }
-        $this->container['text_der_agb'] = $text_der_agb;
+        $this->container['text'] = $text;
 
         return $this;
     }

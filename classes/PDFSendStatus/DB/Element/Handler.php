@@ -50,7 +50,7 @@ class Handler implements HandlerInterface
         return $this->course_oid;
     }
 
-    public function withCourseId(
+    public function withCourseOId(
         string $course_id
     ): HandlerInterface {
         $clone = clone $this;

@@ -58,7 +58,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $openAPITypes = [
-        'uuid_des_datensatzes' => 'string',
+        'oid' => 'string',
         'mitgliedsnummer' => 'string',
         'unternehmensnummer' => 'string',
         'organisationsname1' => 'string',
@@ -109,7 +109,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'uuid_des_datensatzes' => 'uuid',
+        'oid' => 'uuid',
         'mitgliedsnummer' => null,
         'unternehmensnummer' => null,
         'organisationsname1' => null,
@@ -158,7 +158,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'uuid_des_datensatzes' => false,
+        'oid' => false,
         'mitgliedsnummer' => false,
         'unternehmensnummer' => false,
         'organisationsname1' => false,
@@ -287,7 +287,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'uuid_des_datensatzes' => 'UUID des Datensatzes',
+        'oid' => 'oid',
         'mitgliedsnummer' => 'mitgliedsnummer',
         'unternehmensnummer' => 'unternehmensnummer',
         'organisationsname1' => 'organisationsname1',
@@ -336,7 +336,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'uuid_des_datensatzes' => 'setUuidDesDatensatzes',
+        'oid' => 'setOid',
         'mitgliedsnummer' => 'setMitgliedsnummer',
         'unternehmensnummer' => 'setUnternehmensnummer',
         'organisationsname1' => 'setOrganisationsname1',
@@ -385,7 +385,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'uuid_des_datensatzes' => 'getUuidDesDatensatzes',
+        'oid' => 'getOid',
         'mitgliedsnummer' => 'getMitgliedsnummer',
         'unternehmensnummer' => 'getUnternehmensnummer',
         'organisationsname1' => 'getOrganisationsname1',
@@ -550,7 +550,7 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uuid_des_datensatzes', $data ?? [], null);
+        $this->setIfExists('oid', $data ?? [], null);
         $this->setIfExists('mitgliedsnummer', $data ?? [], null);
         $this->setIfExists('unternehmensnummer', $data ?? [], null);
         $this->setIfExists('organisationsname1', $data ?? [], null);
@@ -620,8 +620,8 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['uuid_des_datensatzes'] === null) {
-            $invalidProperties[] = "'uuid_des_datensatzes' can't be null";
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
         }
         $allowedValues = $this->getOrganisationsartAllowableValues();
         if (!is_null($this->container['organisationsart']) && !in_array($this->container['organisationsart'], $allowedValues, true)) {
@@ -684,28 +684,28 @@ class Mitgliedsunternehmen implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets uuid_des_datensatzes
+     * Gets oid
      *
      * @return string
      */
-    public function getUuidDesDatensatzes()
+    public function getOid()
     {
-        return $this->container['uuid_des_datensatzes'];
+        return $this->container['oid'];
     }
 
     /**
-     * Sets uuid_des_datensatzes
+     * Sets oid
      *
-     * @param string $uuid_des_datensatzes uuid_des_datensatzes
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
-    public function setUuidDesDatensatzes($uuid_des_datensatzes)
+    public function setOid($oid)
     {
-        if (is_null($uuid_des_datensatzes)) {
-            throw new \InvalidArgumentException('non-nullable uuid_des_datensatzes cannot be null');
+        if (is_null($oid)) {
+            throw new \InvalidArgumentException('non-nullable oid cannot be null');
         }
-        $this->container['uuid_des_datensatzes'] = $uuid_des_datensatzes;
+        $this->container['oid'] = $oid;
 
         return $this;
     }

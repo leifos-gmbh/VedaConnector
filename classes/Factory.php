@@ -221,7 +221,8 @@ class Factory implements FactoryInterface
             $this->mdClaiming()->db(),
             $this->udf()->db(),
             $this->utils(),
-            $this->exception()
+            $this->exception(),
+            $this->pdfSendStatus()
         );
     }
 
@@ -263,6 +264,7 @@ class Factory implements FactoryInterface
     public function pdfSendStatus(): PDFSendStatusFactoryInterface
     {
         return new PDFSendStatusFactory(
+            $this->lang,
             $this->db,
             $this->user,
             $this->data_factory,

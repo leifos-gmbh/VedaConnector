@@ -59,11 +59,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'chronology' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Chronology',
+        'millis_of_second' => 'int',
+        'millis_of_day' => 'int',
         'second_of_minute' => 'int',
         'hour_of_day' => 'int',
         'minute_of_hour' => 'int',
-        'millis_of_day' => 'int',
-        'millis_of_second' => 'int',
         'fields' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DateTimeField[]',
         'values' => 'int[]',
         'field_types' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DateTimeFieldType[]'
@@ -78,11 +78,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $openAPIFormats = [
         'chronology' => null,
+        'millis_of_second' => 'int32',
+        'millis_of_day' => 'int32',
         'second_of_minute' => 'int32',
         'hour_of_day' => 'int32',
         'minute_of_hour' => 'int32',
-        'millis_of_day' => 'int32',
-        'millis_of_second' => 'int32',
         'fields' => null,
         'values' => 'int32',
         'field_types' => null
@@ -95,11 +95,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'chronology' => false,
+        'millis_of_second' => false,
+        'millis_of_day' => false,
         'second_of_minute' => false,
         'hour_of_day' => false,
         'minute_of_hour' => false,
-        'millis_of_day' => false,
-        'millis_of_second' => false,
         'fields' => false,
         'values' => false,
         'field_types' => false
@@ -192,11 +192,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'chronology' => 'chronology',
+        'millis_of_second' => 'millisOfSecond',
+        'millis_of_day' => 'millisOfDay',
         'second_of_minute' => 'secondOfMinute',
         'hour_of_day' => 'hourOfDay',
         'minute_of_hour' => 'minuteOfHour',
-        'millis_of_day' => 'millisOfDay',
-        'millis_of_second' => 'millisOfSecond',
         'fields' => 'fields',
         'values' => 'values',
         'field_types' => 'fieldTypes'
@@ -209,11 +209,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'chronology' => 'setChronology',
+        'millis_of_second' => 'setMillisOfSecond',
+        'millis_of_day' => 'setMillisOfDay',
         'second_of_minute' => 'setSecondOfMinute',
         'hour_of_day' => 'setHourOfDay',
         'minute_of_hour' => 'setMinuteOfHour',
-        'millis_of_day' => 'setMillisOfDay',
-        'millis_of_second' => 'setMillisOfSecond',
         'fields' => 'setFields',
         'values' => 'setValues',
         'field_types' => 'setFieldTypes'
@@ -226,11 +226,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'chronology' => 'getChronology',
+        'millis_of_second' => 'getMillisOfSecond',
+        'millis_of_day' => 'getMillisOfDay',
         'second_of_minute' => 'getSecondOfMinute',
         'hour_of_day' => 'getHourOfDay',
         'minute_of_hour' => 'getMinuteOfHour',
-        'millis_of_day' => 'getMillisOfDay',
-        'millis_of_second' => 'getMillisOfSecond',
         'fields' => 'getFields',
         'values' => 'getValues',
         'field_types' => 'getFieldTypes'
@@ -294,11 +294,11 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('chronology', $data ?? [], null);
+        $this->setIfExists('millis_of_second', $data ?? [], null);
+        $this->setIfExists('millis_of_day', $data ?? [], null);
         $this->setIfExists('second_of_minute', $data ?? [], null);
         $this->setIfExists('hour_of_day', $data ?? [], null);
         $this->setIfExists('minute_of_hour', $data ?? [], null);
-        $this->setIfExists('millis_of_day', $data ?? [], null);
-        $this->setIfExists('millis_of_second', $data ?? [], null);
         $this->setIfExists('fields', $data ?? [], null);
         $this->setIfExists('values', $data ?? [], null);
         $this->setIfExists('field_types', $data ?? [], null);
@@ -369,6 +369,60 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable chronology cannot be null');
         }
         $this->container['chronology'] = $chronology;
+
+        return $this;
+    }
+
+    /**
+     * Gets millis_of_second
+     *
+     * @return int|null
+     */
+    public function getMillisOfSecond()
+    {
+        return $this->container['millis_of_second'];
+    }
+
+    /**
+     * Sets millis_of_second
+     *
+     * @param int|null $millis_of_second millis_of_second
+     *
+     * @return self
+     */
+    public function setMillisOfSecond($millis_of_second)
+    {
+        if (is_null($millis_of_second)) {
+            throw new \InvalidArgumentException('non-nullable millis_of_second cannot be null');
+        }
+        $this->container['millis_of_second'] = $millis_of_second;
+
+        return $this;
+    }
+
+    /**
+     * Gets millis_of_day
+     *
+     * @return int|null
+     */
+    public function getMillisOfDay()
+    {
+        return $this->container['millis_of_day'];
+    }
+
+    /**
+     * Sets millis_of_day
+     *
+     * @param int|null $millis_of_day millis_of_day
+     *
+     * @return self
+     */
+    public function setMillisOfDay($millis_of_day)
+    {
+        if (is_null($millis_of_day)) {
+            throw new \InvalidArgumentException('non-nullable millis_of_day cannot be null');
+        }
+        $this->container['millis_of_day'] = $millis_of_day;
 
         return $this;
     }
@@ -450,60 +504,6 @@ class LocalTime implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable minute_of_hour cannot be null');
         }
         $this->container['minute_of_hour'] = $minute_of_hour;
-
-        return $this;
-    }
-
-    /**
-     * Gets millis_of_day
-     *
-     * @return int|null
-     */
-    public function getMillisOfDay()
-    {
-        return $this->container['millis_of_day'];
-    }
-
-    /**
-     * Sets millis_of_day
-     *
-     * @param int|null $millis_of_day millis_of_day
-     *
-     * @return self
-     */
-    public function setMillisOfDay($millis_of_day)
-    {
-        if (is_null($millis_of_day)) {
-            throw new \InvalidArgumentException('non-nullable millis_of_day cannot be null');
-        }
-        $this->container['millis_of_day'] = $millis_of_day;
-
-        return $this;
-    }
-
-    /**
-     * Gets millis_of_second
-     *
-     * @return int|null
-     */
-    public function getMillisOfSecond()
-    {
-        return $this->container['millis_of_second'];
-    }
-
-    /**
-     * Sets millis_of_second
-     *
-     * @param int|null $millis_of_second millis_of_second
-     *
-     * @return self
-     */
-    public function setMillisOfSecond($millis_of_second)
-    {
-        if (is_null($millis_of_second)) {
-            throw new \InvalidArgumentException('non-nullable millis_of_second cannot be null');
-        }
-        $this->container['millis_of_second'] = $millis_of_second;
 
         return $this;
     }

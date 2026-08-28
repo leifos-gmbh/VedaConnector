@@ -7,6 +7,7 @@ namespace Leifos\VedaConnector\Api\ELearningPlattform;
 use Exception;
 use ilLogLevel;
 use Leifos\VedaConnector\GeneratedOpenApi\Api\ELearningPlattformenApi;
+use Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto;
 use Leifos\VedaConnector\GeneratedOpenApi\Model\FehlermeldungApiDto;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseCompanionsInterface;
 use Leifos\VedaConnector\I\Api\ELearningPlattform\Collections\CourseMembersInterface;
@@ -275,6 +276,30 @@ class Handler implements HandlerInterface
             return true;
         } catch (Exception $e) {
             $this->handleException('meldeKursabschlussOhneErfolgUsingPOST', $e);
+            return false;
+        }
+    }
+
+    public function sendCertificate(
+        string $crs_oid,
+        string $usr_oid,
+        string $certificate_file_name,
+        string $certificate_file_content
+    ) : bool {
+        try {
+            $certificate = new AbschlussZertifikatApiDto([
+                'file_name' => $certificate_file_name,
+                'base64_content' => base64_encode($certificate_file_content)
+            ]);
+            $this->api->hinterlegeAbschlussZertifikatUsingPOST(
+                $this->plattform_id,
+                $crs_oid,
+                $usr_oid,
+                $certificate
+            );
+            return true;
+        } catch (Exception $e) {
+            $this->handleException('hinterlegeAbschlussZertifikatUsingPOST', $e);
             return false;
         }
     }

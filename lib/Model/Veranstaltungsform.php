@@ -296,6 +296,9 @@ class Veranstaltungsform implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -314,7 +317,7 @@ class Veranstaltungsform implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -324,7 +327,7 @@ class Veranstaltungsform implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID der Veranstaltungsform
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */

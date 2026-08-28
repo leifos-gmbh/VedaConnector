@@ -16,7 +16,7 @@ interface HandlerInterface
 
     public function getCourseOId(): string;
 
-    public function withCourseId(
+    public function withCourseOId(
         string $course_id
     ): HandlerInterface;
 

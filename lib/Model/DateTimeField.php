@@ -57,15 +57,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
+        'range_duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField',
+        'leap_duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField',
         'name' => 'string',
         'type' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DateTimeFieldType',
         'supported' => 'bool',
         'lenient' => 'bool',
-        'range_duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField',
-        'leap_duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField',
-        'duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField',
         'minimum_value' => 'int',
-        'maximum_value' => 'int'
+        'maximum_value' => 'int',
+        'duration_field' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField'
     ];
 
     /**
@@ -76,15 +76,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
+        'range_duration_field' => null,
+        'leap_duration_field' => null,
         'name' => null,
         'type' => null,
         'supported' => null,
         'lenient' => null,
-        'range_duration_field' => null,
-        'leap_duration_field' => null,
-        'duration_field' => null,
         'minimum_value' => 'int32',
-        'maximum_value' => 'int32'
+        'maximum_value' => 'int32',
+        'duration_field' => null
     ];
 
     /**
@@ -93,15 +93,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var boolean[]
      */
     protected static array $openAPINullables = [
+        'range_duration_field' => false,
+        'leap_duration_field' => false,
         'name' => false,
         'type' => false,
         'supported' => false,
         'lenient' => false,
-        'range_duration_field' => false,
-        'leap_duration_field' => false,
-        'duration_field' => false,
         'minimum_value' => false,
-        'maximum_value' => false
+        'maximum_value' => false,
+        'duration_field' => false
     ];
 
     /**
@@ -190,15 +190,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'range_duration_field' => 'rangeDurationField',
+        'leap_duration_field' => 'leapDurationField',
         'name' => 'name',
         'type' => 'type',
         'supported' => 'supported',
         'lenient' => 'lenient',
-        'range_duration_field' => 'rangeDurationField',
-        'leap_duration_field' => 'leapDurationField',
-        'duration_field' => 'durationField',
         'minimum_value' => 'minimumValue',
-        'maximum_value' => 'maximumValue'
+        'maximum_value' => 'maximumValue',
+        'duration_field' => 'durationField'
     ];
 
     /**
@@ -207,15 +207,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'range_duration_field' => 'setRangeDurationField',
+        'leap_duration_field' => 'setLeapDurationField',
         'name' => 'setName',
         'type' => 'setType',
         'supported' => 'setSupported',
         'lenient' => 'setLenient',
-        'range_duration_field' => 'setRangeDurationField',
-        'leap_duration_field' => 'setLeapDurationField',
-        'duration_field' => 'setDurationField',
         'minimum_value' => 'setMinimumValue',
-        'maximum_value' => 'setMaximumValue'
+        'maximum_value' => 'setMaximumValue',
+        'duration_field' => 'setDurationField'
     ];
 
     /**
@@ -224,15 +224,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'range_duration_field' => 'getRangeDurationField',
+        'leap_duration_field' => 'getLeapDurationField',
         'name' => 'getName',
         'type' => 'getType',
         'supported' => 'getSupported',
         'lenient' => 'getLenient',
-        'range_duration_field' => 'getRangeDurationField',
-        'leap_duration_field' => 'getLeapDurationField',
-        'duration_field' => 'getDurationField',
         'minimum_value' => 'getMinimumValue',
-        'maximum_value' => 'getMaximumValue'
+        'maximum_value' => 'getMaximumValue',
+        'duration_field' => 'getDurationField'
     ];
 
     /**
@@ -292,15 +292,15 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('range_duration_field', $data ?? [], null);
+        $this->setIfExists('leap_duration_field', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('supported', $data ?? [], null);
         $this->setIfExists('lenient', $data ?? [], null);
-        $this->setIfExists('range_duration_field', $data ?? [], null);
-        $this->setIfExists('leap_duration_field', $data ?? [], null);
-        $this->setIfExists('duration_field', $data ?? [], null);
         $this->setIfExists('minimum_value', $data ?? [], null);
         $this->setIfExists('maximum_value', $data ?? [], null);
+        $this->setIfExists('duration_field', $data ?? [], null);
     }
 
     /**
@@ -344,6 +344,60 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets range_duration_field
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
+     */
+    public function getRangeDurationField()
+    {
+        return $this->container['range_duration_field'];
+    }
+
+    /**
+     * Sets range_duration_field
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $range_duration_field range_duration_field
+     *
+     * @return self
+     */
+    public function setRangeDurationField($range_duration_field)
+    {
+        if (is_null($range_duration_field)) {
+            throw new \InvalidArgumentException('non-nullable range_duration_field cannot be null');
+        }
+        $this->container['range_duration_field'] = $range_duration_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets leap_duration_field
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
+     */
+    public function getLeapDurationField()
+    {
+        return $this->container['leap_duration_field'];
+    }
+
+    /**
+     * Sets leap_duration_field
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $leap_duration_field leap_duration_field
+     *
+     * @return self
+     */
+    public function setLeapDurationField($leap_duration_field)
+    {
+        if (is_null($leap_duration_field)) {
+            throw new \InvalidArgumentException('non-nullable leap_duration_field cannot be null');
+        }
+        $this->container['leap_duration_field'] = $leap_duration_field;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -454,87 +508,6 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets range_duration_field
-     *
-     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
-     */
-    public function getRangeDurationField()
-    {
-        return $this->container['range_duration_field'];
-    }
-
-    /**
-     * Sets range_duration_field
-     *
-     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $range_duration_field range_duration_field
-     *
-     * @return self
-     */
-    public function setRangeDurationField($range_duration_field)
-    {
-        if (is_null($range_duration_field)) {
-            throw new \InvalidArgumentException('non-nullable range_duration_field cannot be null');
-        }
-        $this->container['range_duration_field'] = $range_duration_field;
-
-        return $this;
-    }
-
-    /**
-     * Gets leap_duration_field
-     *
-     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
-     */
-    public function getLeapDurationField()
-    {
-        return $this->container['leap_duration_field'];
-    }
-
-    /**
-     * Sets leap_duration_field
-     *
-     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $leap_duration_field leap_duration_field
-     *
-     * @return self
-     */
-    public function setLeapDurationField($leap_duration_field)
-    {
-        if (is_null($leap_duration_field)) {
-            throw new \InvalidArgumentException('non-nullable leap_duration_field cannot be null');
-        }
-        $this->container['leap_duration_field'] = $leap_duration_field;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration_field
-     *
-     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
-     */
-    public function getDurationField()
-    {
-        return $this->container['duration_field'];
-    }
-
-    /**
-     * Sets duration_field
-     *
-     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $duration_field duration_field
-     *
-     * @return self
-     */
-    public function setDurationField($duration_field)
-    {
-        if (is_null($duration_field)) {
-            throw new \InvalidArgumentException('non-nullable duration_field cannot be null');
-        }
-        $this->container['duration_field'] = $duration_field;
-
-        return $this;
-    }
-
-    /**
      * Gets minimum_value
      *
      * @return int|null
@@ -584,6 +557,33 @@ class DateTimeField implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable maximum_value cannot be null');
         }
         $this->container['maximum_value'] = $maximum_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets duration_field
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null
+     */
+    public function getDurationField()
+    {
+        return $this->container['duration_field'];
+    }
+
+    /**
+     * Sets duration_field
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\DurationField|null $duration_field duration_field
+     *
+     * @return self
+     */
+    public function setDurationField($duration_field)
+    {
+        if (is_null($duration_field)) {
+            throw new \InvalidArgumentException('non-nullable duration_field cannot be null');
+        }
+        $this->container['duration_field'] = $duration_field;
 
         return $this;
     }

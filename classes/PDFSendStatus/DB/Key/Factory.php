@@ -10,7 +10,7 @@ use Leifos\VedaConnector\I\PDFSendStatus\DB\Key\FactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Key\HandlerInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Key\MappingInterface;
 
-class Factory implements FactoryInterface
+readonly class Factory implements FactoryInterface
 {
     public function __construct(
         protected ilDBInterface $db

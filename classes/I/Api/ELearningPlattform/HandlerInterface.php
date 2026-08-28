@@ -72,6 +72,13 @@ interface HandlerInterface
         string $usr_oid
     ) : bool;
 
+    public function sendCertificate(
+        string $crs_oid,
+        string $usr_oid,
+        string $certificate_file_name,
+        string $certificate_file_content
+    ) : bool;
+
     public function sendFirstLoginSuccess(
         string $usr_oid
     ) : bool;

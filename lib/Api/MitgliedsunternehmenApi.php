@@ -74,22 +74,22 @@ class MitgliedsunternehmenApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer' => [
+        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET' => [
             'application/json',
         ],
-        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer' => [
+        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET' => [
             'application/json',
         ],
-        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz' => [
+        'existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET' => [
             'application/json',
         ],
-        'getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz' => [
+        'getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET' => [
             'application/json',
         ],
-        'getMitgliedsunternehmenByBetriebsstaettennummer' => [
+        'getMitgliedsunternehmenByBetriebsstaettennummerUsingGET' => [
             'application/json',
         ],
-        'getMitgliedsunternehmenByMitgliedsnummer' => [
+        'getMitgliedsunternehmenByMitgliedsnummerUsingGET' => [
             'application/json',
         ],
     ];
@@ -141,38 +141,38 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Betriebsstättennummer existiert
      *
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'][0])
     {
-        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerWithHttpInfo($betriebsstaettennummer, $contentType);
+        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETWithHttpInfo($betriebsstaettennummer, $contentType);
         return $response;
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETWithHttpInfo
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Betriebsstättennummer existiert
      *
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'][0])
     {
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerRequest($betriebsstaettennummer, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -244,19 +244,19 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerAsync
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETAsync
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Betriebsstättennummer existiert
      *
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerAsync($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETAsync($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'][0])
     {
-        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerAsyncWithHttpInfo($betriebsstaettennummer, $contentType)
+        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETAsyncWithHttpInfo($betriebsstaettennummer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -265,20 +265,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerAsyncWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETAsyncWithHttpInfo
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Betriebsstättennummer existiert
      *
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerAsyncWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETAsyncWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'][0])
     {
         $returnType = 'array<string,bool>';
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerRequest($betriebsstaettennummer, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -317,21 +317,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'
+     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'
      *
      * @param  string $betriebsstaettennummer 12-stellige Betriebsstättennummer des Mitgliedsunternehmens. Diese entspricht der bisherigen Mitgliedsnummer, inklusive dem 4-stelligen Betriebsstättenanteil. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerRequest($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'][0])
     {
 
         // verify the required parameter 'betriebsstaettennummer' is set
         if ($betriebsstaettennummer === null || (is_array($betriebsstaettennummer) && count($betriebsstaettennummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $betriebsstaettennummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummer'
+                'Missing the required parameter $betriebsstaettennummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerBetriebsstaettennummerUsingGET'
             );
         }
 
@@ -414,38 +414,38 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Mitgliedsnummer existiert
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'][0])
     {
-        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerWithHttpInfo($mitgliedsnummer, $contentType);
+        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETWithHttpInfo($mitgliedsnummer, $contentType);
         return $response;
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETWithHttpInfo
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Mitgliedsnummer existiert
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'][0])
     {
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerRequest($mitgliedsnummer, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETRequest($mitgliedsnummer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -517,19 +517,19 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerAsync
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETAsync
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Mitgliedsnummer existiert
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerAsync($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETAsync($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'][0])
     {
-        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerAsyncWithHttpInfo($mitgliedsnummer, $contentType)
+        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETAsyncWithHttpInfo($mitgliedsnummer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -538,20 +538,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerAsyncWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETAsyncWithHttpInfo
      *
      * Ermittelt, ob ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Mitgliedsnummer existiert
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerAsyncWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETAsyncWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'][0])
     {
         $returnType = 'array<string,bool>';
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerRequest($mitgliedsnummer, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETRequest($mitgliedsnummer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -590,21 +590,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'
+     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerRequest($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGETRequest($mitgliedsnummer, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'][0])
     {
 
         // verify the required parameter 'mitgliedsnummer' is set
         if ($mitgliedsnummer === null || (is_array($mitgliedsnummer) && count($mitgliedsnummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $mitgliedsnummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummer'
+                'Missing the required parameter $mitgliedsnummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerMitgliedsnummerUsingGET'
             );
         }
 
@@ -687,40 +687,40 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET
      *
      * Ermittelt, ob mindestens ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Unternehmensnummer existiert
      *
      * @param  string $unternehmensnummer Unternehmensnummer des Mitgliedsunternehmens (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array<string,bool>
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'][0])
     {
-        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzWithHttpInfo($unternehmensnummer, $plz, $contentType);
+        list($response) = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETWithHttpInfo($unternehmensnummer, $plz, $contentType);
         return $response;
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETWithHttpInfo
      *
      * Ermittelt, ob mindestens ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Unternehmensnummer existiert
      *
      * @param  string $unternehmensnummer Unternehmensnummer des Mitgliedsunternehmens (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of array<string,bool>, HTTP status code, HTTP response headers (array of strings)
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'][0])
     {
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -792,20 +792,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzAsync
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETAsync
      *
      * Ermittelt, ob mindestens ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Unternehmensnummer existiert
      *
      * @param  string $unternehmensnummer Unternehmensnummer des Mitgliedsunternehmens (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzAsync($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETAsync($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'][0])
     {
-        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzAsyncWithHttpInfo($unternehmensnummer, $plz, $contentType)
+        return $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo($unternehmensnummer, $plz, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -814,21 +814,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzAsyncWithHttpInfo
+     * Operation existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo
      *
      * Ermittelt, ob mindestens ein anmeldeaktives Mitgliedsunternehmen mit der angegebenen Unternehmensnummer existiert
      *
      * @param  string $unternehmensnummer Unternehmensnummer des Mitgliedsunternehmens (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzAsyncWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'][0])
     {
         $returnType = 'array<string,bool>';
-        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz, $contentType);
+        $request = $this->existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -867,22 +867,22 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'
+     * Create request for operation 'existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'
      *
      * @param  string $unternehmensnummer Unternehmensnummer des Mitgliedsunternehmens (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'][0])
+    public function existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'][0])
     {
 
         // verify the required parameter 'unternehmensnummer' is set
         if ($unternehmensnummer === null || (is_array($unternehmensnummer) && count($unternehmensnummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $unternehmensnummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlz'
+                'Missing the required parameter $unternehmensnummer when calling existiertEinAnmeldeAktivesMitgliedsunternehmenPerUnternehmensnummerUndPlzUsingGET'
             );
         }
 
@@ -976,40 +976,40 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz
+     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET
      *
      * Ruft entsprechende Mitgliedsunternehmen ab.
      *
      * @param  string $unternehmensnummer Unternehmensnummer der Mitgliedsunternehmen (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]
      */
-    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'][0])
+    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
-        list($response) = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzWithHttpInfo($unternehmensnummer, $plz, $contentType);
+        list($response) = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETWithHttpInfo($unternehmensnummer, $plz, $contentType);
         return $response;
     }
 
     /**
-     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzWithHttpInfo
+     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETWithHttpInfo
      *
      * Ruft entsprechende Mitgliedsunternehmen ab.
      *
      * @param  string $unternehmensnummer Unternehmensnummer der Mitgliedsunternehmen (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'][0])
+    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
-        $request = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz, $contentType);
+        $request = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1081,20 +1081,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzAsync
+     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsync
      *
      * Ruft entsprechende Mitgliedsunternehmen ab.
      *
      * @param  string $unternehmensnummer Unternehmensnummer der Mitgliedsunternehmen (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzAsync($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'][0])
+    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsync($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
-        return $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzAsyncWithHttpInfo($unternehmensnummer, $plz, $contentType)
+        return $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo($unternehmensnummer, $plz, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1103,21 +1103,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzAsyncWithHttpInfo
+     * Operation getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo
      *
      * Ruft entsprechende Mitgliedsunternehmen ab.
      *
      * @param  string $unternehmensnummer Unternehmensnummer der Mitgliedsunternehmen (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzAsyncWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'][0])
+    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETAsyncWithHttpInfo($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
-        $request = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz, $contentType);
+        $request = $this->getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1156,22 +1156,22 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'
+     * Create request for operation 'getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'
      *
      * @param  string $unternehmensnummer Unternehmensnummer der Mitgliedsunternehmen (required)
      * @param  string|null $plz Optional die PLZ zur weiteren Einschränkung der zurück zuliefernden Mitgliedsunternehmen. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzRequest($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'][0])
+    public function getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGETRequest($unternehmensnummer, $plz = null, string $contentType = self::contentTypes['getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'][0])
     {
 
         // verify the required parameter 'unternehmensnummer' is set
         if ($unternehmensnummer === null || (is_array($unternehmensnummer) && count($unternehmensnummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $unternehmensnummer when calling getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlz'
+                'Missing the required parameter $unternehmensnummer when calling getAlleMitgliedsunternehmenZurUnternehmensnummerUndPlzUsingGET'
             );
         }
 
@@ -1265,38 +1265,38 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByBetriebsstaettennummer
+     * Operation getMitgliedsunternehmenByBetriebsstaettennummerUsingGET
      *
      * Ruft ein Mitgliedsunternehmen (Betriebsstätte) ab.
      *
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen
      */
-    public function getMitgliedsunternehmenByBetriebsstaettennummer($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'][0])
+    public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGET($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
-        list($response) = $this->getMitgliedsunternehmenByBetriebsstaettennummerWithHttpInfo($betriebsstaettennummer, $contentType);
+        list($response) = $this->getMitgliedsunternehmenByBetriebsstaettennummerUsingGETWithHttpInfo($betriebsstaettennummer, $contentType);
         return $response;
     }
 
     /**
-     * Operation getMitgliedsunternehmenByBetriebsstaettennummerWithHttpInfo
+     * Operation getMitgliedsunternehmenByBetriebsstaettennummerUsingGETWithHttpInfo
      *
      * Ruft ein Mitgliedsunternehmen (Betriebsstätte) ab.
      *
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMitgliedsunternehmenByBetriebsstaettennummerWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'][0])
+    public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
-        $request = $this->getMitgliedsunternehmenByBetriebsstaettennummerRequest($betriebsstaettennummer, $contentType);
+        $request = $this->getMitgliedsunternehmenByBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1368,19 +1368,19 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByBetriebsstaettennummerAsync
+     * Operation getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsync
      *
      * Ruft ein Mitgliedsunternehmen (Betriebsstätte) ab.
      *
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMitgliedsunternehmenByBetriebsstaettennummerAsync($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'][0])
+    public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsync($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
-        return $this->getMitgliedsunternehmenByBetriebsstaettennummerAsyncWithHttpInfo($betriebsstaettennummer, $contentType)
+        return $this->getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsyncWithHttpInfo($betriebsstaettennummer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1389,20 +1389,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByBetriebsstaettennummerAsyncWithHttpInfo
+     * Operation getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsyncWithHttpInfo
      *
      * Ruft ein Mitgliedsunternehmen (Betriebsstätte) ab.
      *
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMitgliedsunternehmenByBetriebsstaettennummerAsyncWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'][0])
+    public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETAsyncWithHttpInfo($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen';
-        $request = $this->getMitgliedsunternehmenByBetriebsstaettennummerRequest($betriebsstaettennummer, $contentType);
+        $request = $this->getMitgliedsunternehmenByBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1441,21 +1441,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'getMitgliedsunternehmenByBetriebsstaettennummer'
+     * Create request for operation 'getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'
      *
      * @param  string $betriebsstaettennummer Betriebsstättennummer der Betriebsstätte (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMitgliedsunternehmenByBetriebsstaettennummerRequest($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummer'][0])
+    public function getMitgliedsunternehmenByBetriebsstaettennummerUsingGETRequest($betriebsstaettennummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'][0])
     {
 
         // verify the required parameter 'betriebsstaettennummer' is set
         if ($betriebsstaettennummer === null || (is_array($betriebsstaettennummer) && count($betriebsstaettennummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $betriebsstaettennummer when calling getMitgliedsunternehmenByBetriebsstaettennummer'
+                'Missing the required parameter $betriebsstaettennummer when calling getMitgliedsunternehmenByBetriebsstaettennummerUsingGET'
             );
         }
 
@@ -1538,38 +1538,38 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByMitgliedsnummer
+     * Operation getMitgliedsunternehmenByMitgliedsnummerUsingGET
      *
      * Ruft alle Mitgliedsunternehmen mit der gleichen Mitgliedsnummer (8-stellig ohne Betriebsstättenanteil) ab
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]
      */
-    public function getMitgliedsunternehmenByMitgliedsnummer($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'][0])
+    public function getMitgliedsunternehmenByMitgliedsnummerUsingGET($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
-        list($response) = $this->getMitgliedsunternehmenByMitgliedsnummerWithHttpInfo($mitgliedsnummer, $contentType);
+        list($response) = $this->getMitgliedsunternehmenByMitgliedsnummerUsingGETWithHttpInfo($mitgliedsnummer, $contentType);
         return $response;
     }
 
     /**
-     * Operation getMitgliedsunternehmenByMitgliedsnummerWithHttpInfo
+     * Operation getMitgliedsunternehmenByMitgliedsnummerUsingGETWithHttpInfo
      *
      * Ruft alle Mitgliedsunternehmen mit der gleichen Mitgliedsnummer (8-stellig ohne Betriebsstättenanteil) ab
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMitgliedsunternehmenByMitgliedsnummerWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'][0])
+    public function getMitgliedsunternehmenByMitgliedsnummerUsingGETWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
-        $request = $this->getMitgliedsunternehmenByMitgliedsnummerRequest($mitgliedsnummer, $contentType);
+        $request = $this->getMitgliedsunternehmenByMitgliedsnummerUsingGETRequest($mitgliedsnummer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1641,19 +1641,19 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByMitgliedsnummerAsync
+     * Operation getMitgliedsunternehmenByMitgliedsnummerUsingGETAsync
      *
      * Ruft alle Mitgliedsunternehmen mit der gleichen Mitgliedsnummer (8-stellig ohne Betriebsstättenanteil) ab
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMitgliedsunternehmenByMitgliedsnummerAsync($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'][0])
+    public function getMitgliedsunternehmenByMitgliedsnummerUsingGETAsync($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
-        return $this->getMitgliedsunternehmenByMitgliedsnummerAsyncWithHttpInfo($mitgliedsnummer, $contentType)
+        return $this->getMitgliedsunternehmenByMitgliedsnummerUsingGETAsyncWithHttpInfo($mitgliedsnummer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1662,20 +1662,20 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Operation getMitgliedsunternehmenByMitgliedsnummerAsyncWithHttpInfo
+     * Operation getMitgliedsunternehmenByMitgliedsnummerUsingGETAsyncWithHttpInfo
      *
      * Ruft alle Mitgliedsunternehmen mit der gleichen Mitgliedsnummer (8-stellig ohne Betriebsstättenanteil) ab
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMitgliedsunternehmenByMitgliedsnummerAsyncWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'][0])
+    public function getMitgliedsunternehmenByMitgliedsnummerUsingGETAsyncWithHttpInfo($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Mitgliedsunternehmen[]';
-        $request = $this->getMitgliedsunternehmenByMitgliedsnummerRequest($mitgliedsnummer, $contentType);
+        $request = $this->getMitgliedsunternehmenByMitgliedsnummerUsingGETRequest($mitgliedsnummer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1714,21 +1714,21 @@ class MitgliedsunternehmenApi
     }
 
     /**
-     * Create request for operation 'getMitgliedsunternehmenByMitgliedsnummer'
+     * Create request for operation 'getMitgliedsunternehmenByMitgliedsnummerUsingGET'
      *
      * @param  string $mitgliedsnummer Mitgliedsnummer des Mitgliedsunternehmens ohne Betriebsstättenanteil (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMitgliedsunternehmenByMitgliedsnummerRequest($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummer'][0])
+    public function getMitgliedsunternehmenByMitgliedsnummerUsingGETRequest($mitgliedsnummer, string $contentType = self::contentTypes['getMitgliedsunternehmenByMitgliedsnummerUsingGET'][0])
     {
 
         // verify the required parameter 'mitgliedsnummer' is set
         if ($mitgliedsnummer === null || (is_array($mitgliedsnummer) && count($mitgliedsnummer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $mitgliedsnummer when calling getMitgliedsunternehmenByMitgliedsnummer'
+                'Missing the required parameter $mitgliedsnummer when calling getMitgliedsunternehmenByMitgliedsnummerUsingGET'
             );
         }
 

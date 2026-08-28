@@ -289,6 +289,9 @@ class Veranstaltungskategorie implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -307,7 +310,7 @@ class Veranstaltungskategorie implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -317,7 +320,7 @@ class Veranstaltungskategorie implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID der Veranstaltungskategorie
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */

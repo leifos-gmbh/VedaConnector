@@ -74,16 +74,16 @@ class KursbearbeitungApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'hinterlegeAbschlussZertifikat' => [
+        'hinterlegeAbschlussZertifikatUsingPOST' => [
             'application/json',
         ],
-        'meldeBearbeitungsstartFuerTeilnehmerAufKurs' => [
+        'meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST' => [
             'application/json',
         ],
-        'meldeKursabschlussMitErfolg' => [
+        'meldeKursabschlussMitErfolgUsingPOST' => [
             'application/json',
         ],
-        'meldeKursabschlussOhneErfolg' => [
+        'meldeKursabschlussOhneErfolgUsingPOST' => [
             'application/json',
         ],
     ];
@@ -135,7 +135,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikat
+     * Operation hinterlegeAbschlussZertifikatUsingPOST
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -143,20 +143,20 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto
      */
-    public function hinterlegeAbschlussZertifikat($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        list($response) = $this->hinterlegeAbschlussZertifikatWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        list($response) = $this->hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatWithHttpInfo
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -164,15 +164,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function hinterlegeAbschlussZertifikatWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        $request = $this->hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        $request = $this->hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -300,7 +300,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatAsync
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTAsync
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -308,14 +308,14 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function hinterlegeAbschlussZertifikatAsync($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
-        return $this->hinterlegeAbschlussZertifikatAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType)
+        return $this->hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -324,7 +324,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation hinterlegeAbschlussZertifikatAsyncWithHttpInfo
+     * Operation hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo
      *
      * Hinterlegt das Zertifikat an der entsprechenden Teilnehmerbuchung
      *
@@ -332,15 +332,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function hinterlegeAbschlussZertifikatAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatErgebnisApiDto';
-        $request = $this->hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
+        $request = $this->hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -379,45 +379,45 @@ class KursbearbeitungApi
     }
 
     /**
-     * Create request for operation 'hinterlegeAbschlussZertifikat'
+     * Create request for operation 'hinterlegeAbschlussZertifikatUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\AbschlussZertifikatApiDto $abschluss_zertifikat_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikat'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function hinterlegeAbschlussZertifikatRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikat'][0])
+    public function hinterlegeAbschlussZertifikatUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $abschluss_zertifikat_api_dto, string $contentType = self::contentTypes['hinterlegeAbschlussZertifikatUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $plattform_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $kurs_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $teilnehmer_id when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
         // verify the required parameter 'abschluss_zertifikat_api_dto' is set
         if ($abschluss_zertifikat_api_dto === null || (is_array($abschluss_zertifikat_api_dto) && count($abschluss_zertifikat_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abschluss_zertifikat_api_dto when calling hinterlegeAbschlussZertifikat'
+                'Missing the required parameter $abschluss_zertifikat_api_dto when calling hinterlegeAbschlussZertifikatUsingPOST'
             );
         }
 
@@ -523,7 +523,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKurs
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -531,20 +531,20 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKurs($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        list($response) = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -552,15 +552,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -586,13 +586,13 @@ class KursbearbeitungApi
 
 
             switch($statusCode) {
-                case 201:
+                case 422:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
                         $response,
                     );
-                case 422:
+                case 201:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
@@ -622,7 +622,7 @@ class KursbearbeitungApi
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -630,7 +630,7 @@ class KursbearbeitungApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 422:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -646,7 +646,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursAsync
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsync
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -654,14 +654,14 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
-        return $this->meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -670,7 +670,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo
+     * Operation meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Bearbeitungsstart eines Teilnehmers auf einem Kurs.
      *
@@ -678,15 +678,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -725,38 +725,38 @@ class KursbearbeitungApi
     }
 
     /**
-     * Create request for operation 'meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+     * Create request for operation 'meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeBearbeitungsstartFuerTeilnehmerAufKursRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKurs'][0])
+    public function meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $plattform_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $kurs_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKurs'
+                'Missing the required parameter $teilnehmer_id when calling meldeBearbeitungsstartFuerTeilnehmerAufKursUsingPOST'
             );
         }
 
@@ -863,7 +863,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolg
+     * Operation meldeKursabschlussMitErfolgUsingPOST
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -871,20 +871,20 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeKursabschlussMitErfolg($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        list($response) = $this->meldeKursabschlussMitErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgWithHttpInfo
+     * Operation meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -892,15 +892,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeKursabschlussMitErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        $request = $this->meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -986,7 +986,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgAsync
+     * Operation meldeKursabschlussMitErfolgUsingPOSTAsync
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -994,14 +994,14 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussMitErfolgAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
-        return $this->meldeKursabschlussMitErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1010,7 +1010,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussMitErfolgAsyncWithHttpInfo
+     * Operation meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -1018,15 +1018,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussMitErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1065,38 +1065,38 @@ class KursbearbeitungApi
     }
 
     /**
-     * Create request for operation 'meldeKursabschlussMitErfolg'
+     * Create request for operation 'meldeKursabschlussMitErfolgUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeKursabschlussMitErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolg'][0])
+    public function meldeKursabschlussMitErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussMitErfolgUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $plattform_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $kurs_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussMitErfolg'
+                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussMitErfolgUsingPOST'
             );
         }
 
@@ -1203,7 +1203,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolg
+     * Operation meldeKursabschlussOhneErfolgUsingPOST
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -1211,20 +1211,20 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto
      */
-    public function meldeKursabschlussOhneErfolg($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOST($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        list($response) = $this->meldeKursabschlussOhneErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        list($response) = $this->meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgWithHttpInfo
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -1232,15 +1232,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto|\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function meldeKursabschlussOhneErfolgWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        $request = $this->meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1266,13 +1266,13 @@ class KursbearbeitungApi
 
 
             switch($statusCode) {
-                case 201:
+                case 422:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
                         $response,
                     );
-                case 422:
+                case 201:
                     return $this->handleResponseWithDataType(
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
                         $request,
@@ -1302,7 +1302,7 @@ class KursbearbeitungApi
             );
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -1310,7 +1310,7 @@ class KursbearbeitungApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 422:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto',
@@ -1326,7 +1326,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgAsync
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTAsync
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -1334,14 +1334,14 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussOhneErfolgAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTAsync($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
-        return $this->meldeKursabschlussOhneErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
+        return $this->meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1350,7 +1350,7 @@ class KursbearbeitungApi
     }
 
     /**
-     * Operation meldeKursabschlussOhneErfolgAsyncWithHttpInfo
+     * Operation meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo
      *
      * Meldet, den Kursabschluss eines Teilnehmers.
      *
@@ -1358,15 +1358,15 @@ class KursbearbeitungApi
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function meldeKursabschlussOhneErfolgAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTAsyncWithHttpInfo($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungRetValsApiDto';
-        $request = $this->meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
+        $request = $this->meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1405,38 +1405,38 @@ class KursbearbeitungApi
     }
 
     /**
-     * Create request for operation 'meldeKursabschlussOhneErfolg'
+     * Create request for operation 'meldeKursabschlussOhneErfolgUsingPOST'
      *
      * @param  string $plattform_id ID der E-Learning-Plattform (required)
      * @param  string $kurs_id ID des Kurses (required)
      * @param  string $teilnehmer_id ID des Teilnehmers (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\KursbearbeitungDto|null $kursbearbeitung_dto (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolg'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function meldeKursabschlussOhneErfolgRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolg'][0])
+    public function meldeKursabschlussOhneErfolgUsingPOSTRequest($plattform_id, $kurs_id, $teilnehmer_id, $kursbearbeitung_dto = null, string $contentType = self::contentTypes['meldeKursabschlussOhneErfolgUsingPOST'][0])
     {
 
         // verify the required parameter 'plattform_id' is set
         if ($plattform_id === null || (is_array($plattform_id) && count($plattform_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $plattform_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $plattform_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'kurs_id' is set
         if ($kurs_id === null || (is_array($kurs_id) && count($kurs_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $kurs_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $kurs_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_id' is set
         if ($teilnehmer_id === null || (is_array($teilnehmer_id) && count($teilnehmer_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussOhneErfolg'
+                'Missing the required parameter $teilnehmer_id when calling meldeKursabschlussOhneErfolgUsingPOST'
             );
         }
 

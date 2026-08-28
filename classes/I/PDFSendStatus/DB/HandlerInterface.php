@@ -14,6 +14,8 @@ interface HandlerInterface
     public const FIELD_NAME_SEQ_ID = "seq_id";
     public const FIELD_NAME_COURSE_OID = "crs_oid";
     public const FIELD_NAME_PARTICIPANT_OID = "participant_oid";
+    public const FIELD_NAME_COURSE_ID = "course_id";
+    public const FIELD_NAME_PARTICIPANT_ID = "participant_id";
     public const FIELD_NAME_STATUS_PASSED = "status_passed";
     public const FIELD_NAME_TIMESTAMP_PASSED = "timestamp_passed";
     public const FIELD_NAME_STATUS_SEND = "status_send";

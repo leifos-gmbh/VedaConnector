@@ -66,7 +66,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => 'string',
         'zahlungsziel' => 'int',
         'zahlungsweise' => 'string',
-        'anzahl_raten' => 'int'
+        'anzahl_raten' => 'int',
+        'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => null,
         'zahlungsziel' => null,
         'zahlungsweise' => null,
-        'anzahl_raten' => null
+        'anzahl_raten' => null,
+        'links' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => false,
         'zahlungsziel' => false,
         'zahlungsweise' => false,
-        'anzahl_raten' => false
+        'anzahl_raten' => false,
+        'links' => false
     ];
 
     /**
@@ -199,7 +202,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => 'rechnungstext',
         'zahlungsziel' => 'zahlungsziel',
         'zahlungsweise' => 'zahlungsweise',
-        'anzahl_raten' => 'anzahlRaten'
+        'anzahl_raten' => 'anzahlRaten',
+        'links' => 'links'
     ];
 
     /**
@@ -216,7 +220,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => 'setRechnungstext',
         'zahlungsziel' => 'setZahlungsziel',
         'zahlungsweise' => 'setZahlungsweise',
-        'anzahl_raten' => 'setAnzahlRaten'
+        'anzahl_raten' => 'setAnzahlRaten',
+        'links' => 'setLinks'
     ];
 
     /**
@@ -233,7 +238,8 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rechnungstext' => 'getRechnungstext',
         'zahlungsziel' => 'getZahlungsziel',
         'zahlungsweise' => 'getZahlungsweise',
-        'anzahl_raten' => 'getAnzahlRaten'
+        'anzahl_raten' => 'getAnzahlRaten',
+        'links' => 'getLinks'
     ];
 
     /**
@@ -315,6 +321,7 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('zahlungsziel', $data ?? [], null);
         $this->setIfExists('zahlungsweise', $data ?? [], null);
         $this->setIfExists('anzahl_raten', $data ?? [], null);
+        $this->setIfExists('links', $data ?? [], null);
     }
 
     /**
@@ -344,6 +351,9 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['oid'] === null) {
+            $invalidProperties[] = "'oid' can't be null";
+        }
         $allowedValues = $this->getZahlungsweiseAllowableValues();
         if (!is_null($this->container['zahlungsweise']) && !in_array($this->container['zahlungsweise'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -371,7 +381,7 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets oid
      *
-     * @return string|null
+     * @return string
      */
     public function getOid()
     {
@@ -381,7 +391,7 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets oid
      *
-     * @param string|null $oid Eindeutige ID der Zahlungsbedingung
+     * @param string $oid UUID des Datensatzes
      *
      * @return self
      */
@@ -617,6 +627,33 @@ class Zahlungsbedingung implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable anzahl_raten cannot be null');
         }
         $this->container['anzahl_raten'] = $anzahl_raten;
+
+        return $this;
+    }
+
+    /**
+     * Gets links
+     *
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /**
+     * Sets links
+     *
+     * @param \Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]|null $links links
+     *
+     * @return self
+     */
+    public function setLinks($links)
+    {
+        if (is_null($links)) {
+            throw new \InvalidArgumentException('non-nullable links cannot be null');
+        }
+        $this->container['links'] = $links;
 
         return $this;
     }

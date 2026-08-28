@@ -74,22 +74,22 @@ class FernlehrgngeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'createFernlehrgang' => [
+        'createFernlehrgangBuchungUsingPOST' => [
             'application/json',
         ],
-        'createFernlehrgangBuchung' => [
+        'createFernlehrgangUsingPOST' => [
             'application/json',
         ],
-        'getFernlehrgaenge' => [
+        'getFernlehrgaengeUsingGET' => [
             'application/json',
         ],
-        'getFernlehrgang' => [
+        'getFernlehrgangUsingGET' => [
             'application/json',
         ],
-        'getTeilnehmerbuchungenZuFernlehrgang' => [
+        'getTeilnehmerbuchungenZuFernlehrgangUsingGET' => [
             'application/json',
         ],
-        'updateFernlehrgang' => [
+        'updateFernlehrgangUsingPUT' => [
             'application/json',
         ],
     ];
@@ -141,312 +141,40 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation createFernlehrgang
-     *
-     * Legt einen Fernlehrgang an
-     *
-     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training create_web_based_training (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgang'] to see the possible values for this operation
-     *
-     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang
-     */
-    public function createFernlehrgang($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgang'][0])
-    {
-        list($response) = $this->createFernlehrgangWithHttpInfo($create_web_based_training, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation createFernlehrgangWithHttpInfo
-     *
-     * Legt einen Fernlehrgang an
-     *
-     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgang'] to see the possible values for this operation
-     *
-     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createFernlehrgangWithHttpInfo($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgang'][0])
-    {
-        $request = $this->createFernlehrgangRequest($create_web_based_training, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createFernlehrgangAsync
-     *
-     * Legt einen Fernlehrgang an
-     *
-     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgang'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createFernlehrgangAsync($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgang'][0])
-    {
-        return $this->createFernlehrgangAsyncWithHttpInfo($create_web_based_training, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createFernlehrgangAsyncWithHttpInfo
-     *
-     * Legt einen Fernlehrgang an
-     *
-     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgang'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createFernlehrgangAsyncWithHttpInfo($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgang'][0])
-    {
-        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang';
-        $request = $this->createFernlehrgangRequest($create_web_based_training, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createFernlehrgang'
-     *
-     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgang'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function createFernlehrgangRequest($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgang'][0])
-    {
-
-        // verify the required parameter 'create_web_based_training' is set
-        if ($create_web_based_training === null || (is_array($create_web_based_training) && count($create_web_based_training) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $create_web_based_training when calling createFernlehrgang'
-            );
-        }
-
-
-        $resourcePath = '/v2/fernlehrgaenge';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['*/*', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($create_web_based_training)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_web_based_training));
-            } else {
-                $httpBody = $create_web_based_training;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('x-jwp-apiaccesstoken');
-        if ($apiKey !== null) {
-            $headers['x-jwp-apiaccesstoken'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation createFernlehrgangBuchung
+     * Operation createFernlehrgangBuchungUsingPOST
      *
      * Ermöglicht es, einen Teilnehmer auf einen Fernlehrgang zu buchen
      *
      * @param  string $flg_id ID des Fernlehrgangs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto
      */
-    public function createFernlehrgangBuchung($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchung'][0])
+    public function createFernlehrgangBuchungUsingPOST($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchungUsingPOST'][0])
     {
-        list($response) = $this->createFernlehrgangBuchungWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        list($response) = $this->createFernlehrgangBuchungUsingPOSTWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
         return $response;
     }
 
     /**
-     * Operation createFernlehrgangBuchungWithHttpInfo
+     * Operation createFernlehrgangBuchungUsingPOSTWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Fernlehrgang zu buchen
      *
      * @param  string $flg_id ID des Fernlehrgangs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFernlehrgangBuchungWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchung'][0])
+    public function createFernlehrgangBuchungUsingPOSTWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchungUsingPOST'][0])
     {
-        $request = $this->createFernlehrgangBuchungRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createFernlehrgangBuchungUsingPOSTRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -518,20 +246,20 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation createFernlehrgangBuchungAsync
+     * Operation createFernlehrgangBuchungUsingPOSTAsync
      *
      * Ermöglicht es, einen Teilnehmer auf einen Fernlehrgang zu buchen
      *
      * @param  string $flg_id ID des Fernlehrgangs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFernlehrgangBuchungAsync($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchung'][0])
+    public function createFernlehrgangBuchungUsingPOSTAsync($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchungUsingPOST'][0])
     {
-        return $this->createFernlehrgangBuchungAsyncWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
+        return $this->createFernlehrgangBuchungUsingPOSTAsyncWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -540,21 +268,21 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation createFernlehrgangBuchungAsyncWithHttpInfo
+     * Operation createFernlehrgangBuchungUsingPOSTAsyncWithHttpInfo
      *
      * Ermöglicht es, einen Teilnehmer auf einen Fernlehrgang zu buchen
      *
      * @param  string $flg_id ID des Fernlehrgangs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFernlehrgangBuchungAsyncWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchung'][0])
+    public function createFernlehrgangBuchungUsingPOSTAsyncWithHttpInfo($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchungUsingPOST'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungApiDto';
-        $request = $this->createFernlehrgangBuchungRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
+        $request = $this->createFernlehrgangBuchungUsingPOSTRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -593,29 +321,29 @@ class FernlehrgngeApi
     }
 
     /**
-     * Create request for operation 'createFernlehrgangBuchung'
+     * Create request for operation 'createFernlehrgangBuchungUsingPOST'
      *
      * @param  string $flg_id ID des Fernlehrgangs (required)
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerAktionBuchenApiDto $teilnehmer_aktion_buchen_api_dto (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchung'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangBuchungUsingPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createFernlehrgangBuchungRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchung'][0])
+    public function createFernlehrgangBuchungUsingPOSTRequest($flg_id, $teilnehmer_aktion_buchen_api_dto, string $contentType = self::contentTypes['createFernlehrgangBuchungUsingPOST'][0])
     {
 
         // verify the required parameter 'flg_id' is set
         if ($flg_id === null || (is_array($flg_id) && count($flg_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flg_id when calling createFernlehrgangBuchung'
+                'Missing the required parameter $flg_id when calling createFernlehrgangBuchungUsingPOST'
             );
         }
 
         // verify the required parameter 'teilnehmer_aktion_buchen_api_dto' is set
         if ($teilnehmer_aktion_buchen_api_dto === null || (is_array($teilnehmer_aktion_buchen_api_dto) && count($teilnehmer_aktion_buchen_api_dto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createFernlehrgangBuchung'
+                'Missing the required parameter $teilnehmer_aktion_buchen_api_dto when calling createFernlehrgangBuchungUsingPOST'
             );
         }
 
@@ -705,42 +433,314 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgaenge
+     * Operation createFernlehrgangUsingPOST
+     *
+     * Legt einen Fernlehrgang an
+     *
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training create_web_based_training (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangUsingPOST'] to see the possible values for this operation
+     *
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang
+     */
+    public function createFernlehrgangUsingPOST($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgangUsingPOST'][0])
+    {
+        list($response) = $this->createFernlehrgangUsingPOSTWithHttpInfo($create_web_based_training, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createFernlehrgangUsingPOSTWithHttpInfo
+     *
+     * Legt einen Fernlehrgang an
+     *
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangUsingPOST'] to see the possible values for this operation
+     *
+     * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createFernlehrgangUsingPOSTWithHttpInfo($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgangUsingPOST'][0])
+    {
+        $request = $this->createFernlehrgangUsingPOSTRequest($create_web_based_training, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createFernlehrgangUsingPOSTAsync
+     *
+     * Legt einen Fernlehrgang an
+     *
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangUsingPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createFernlehrgangUsingPOSTAsync($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgangUsingPOST'][0])
+    {
+        return $this->createFernlehrgangUsingPOSTAsyncWithHttpInfo($create_web_based_training, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createFernlehrgangUsingPOSTAsyncWithHttpInfo
+     *
+     * Legt einen Fernlehrgang an
+     *
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangUsingPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createFernlehrgangUsingPOSTAsyncWithHttpInfo($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgangUsingPOST'][0])
+    {
+        $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang';
+        $request = $this->createFernlehrgangUsingPOSTRequest($create_web_based_training, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createFernlehrgangUsingPOST'
+     *
+     * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\CreateWebBasedTraining $create_web_based_training (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFernlehrgangUsingPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createFernlehrgangUsingPOSTRequest($create_web_based_training, string $contentType = self::contentTypes['createFernlehrgangUsingPOST'][0])
+    {
+
+        // verify the required parameter 'create_web_based_training' is set
+        if ($create_web_based_training === null || (is_array($create_web_based_training) && count($create_web_based_training) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_web_based_training when calling createFernlehrgangUsingPOST'
+            );
+        }
+
+
+        $resourcePath = '/v2/fernlehrgaenge';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['*/*', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_web_based_training)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_web_based_training));
+            } else {
+                $httpBody = $create_web_based_training;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-jwp-apiaccesstoken');
+        if ($apiKey !== null) {
+            $headers['x-jwp-apiaccesstoken'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFernlehrgaengeUsingGET
      *
      * Ruft Fernlehrgänge ab.
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Fernlehrgänge geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Fernlehrgänge abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenFernlehrgänge für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaenge'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaengeUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang[]
      */
-    public function getFernlehrgaenge($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaenge'][0])
+    public function getFernlehrgaengeUsingGET($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaengeUsingGET'][0])
     {
-        list($response) = $this->getFernlehrgaengeWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        list($response) = $this->getFernlehrgaengeUsingGETWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getFernlehrgaengeWithHttpInfo
+     * Operation getFernlehrgaengeUsingGETWithHttpInfo
      *
      * Ruft Fernlehrgänge ab.
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Fernlehrgänge geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Fernlehrgänge abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenFernlehrgänge für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaenge'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaengeUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFernlehrgaengeWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaenge'][0])
+    public function getFernlehrgaengeUsingGETWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaengeUsingGET'][0])
     {
-        $request = $this->getFernlehrgaengeRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        $request = $this->getFernlehrgaengeUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -812,21 +812,21 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgaengeAsync
+     * Operation getFernlehrgaengeUsingGETAsync
      *
      * Ruft Fernlehrgänge ab.
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Fernlehrgänge geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Fernlehrgänge abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenFernlehrgänge für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaenge'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaengeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFernlehrgaengeAsync($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaenge'][0])
+    public function getFernlehrgaengeUsingGETAsync($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaengeUsingGET'][0])
     {
-        return $this->getFernlehrgaengeAsyncWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType)
+        return $this->getFernlehrgaengeUsingGETAsyncWithHttpInfo($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -835,22 +835,22 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgaengeAsyncWithHttpInfo
+     * Operation getFernlehrgaengeUsingGETAsyncWithHttpInfo
      *
      * Ruft Fernlehrgänge ab.
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Fernlehrgänge geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Fernlehrgänge abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenFernlehrgänge für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaenge'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaengeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFernlehrgaengeAsyncWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaenge'][0])
+    public function getFernlehrgaengeUsingGETAsyncWithHttpInfo($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaengeUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang[]';
-        $request = $this->getFernlehrgaengeRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
+        $request = $this->getFernlehrgaengeUsingGETRequest($modifiziert_ab, $teilnehmergruppekuerzel, $veranstaltungstyp_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -889,17 +889,17 @@ class FernlehrgngeApi
     }
 
     /**
-     * Create request for operation 'getFernlehrgaenge'
+     * Create request for operation 'getFernlehrgaengeUsingGET'
      *
      * @param  \DateTime|null $modifiziert_ab Änderungs- bzw. Einfügezeitpunkt, ab dem die Fernlehrgänge geliefert werden sollen. Das Format muss wie folgt sein: yyyy-MM-ddTHH:mm:ss.sss (optional)
      * @param  string|null $teilnehmergruppekuerzel Optionaler Parameter, um zu steuern, für welche Teilnehmergruppe die Fernlehrgänge abgerufen werden sollen. Ist eine Teilnehmergruppe angegeben, so werden alle publiziertenFernlehrgänge für diese Teilnehmergruppe zurückgegeben. (optional)
      * @param  string|null $veranstaltungstyp_id Optionaler Parameter, mit dem die abgerufenen Fernlehrgänge auf den angegebenen Veranstaltungstypen eingeschränkt werden können. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaenge'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgaengeUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getFernlehrgaengeRequest($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaenge'][0])
+    public function getFernlehrgaengeUsingGETRequest($modifiziert_ab = null, $teilnehmergruppekuerzel = null, $veranstaltungstyp_id = null, string $contentType = self::contentTypes['getFernlehrgaengeUsingGET'][0])
     {
 
 
@@ -1003,38 +1003,38 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgang
+     * Operation getFernlehrgangUsingGET
      *
      * Ruft einen Fernlehrgang ab
      *
      * @param  string $id ID des Fernlehrgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang
      */
-    public function getFernlehrgang($id, string $contentType = self::contentTypes['getFernlehrgang'][0])
+    public function getFernlehrgangUsingGET($id, string $contentType = self::contentTypes['getFernlehrgangUsingGET'][0])
     {
-        list($response) = $this->getFernlehrgangWithHttpInfo($id, $contentType);
+        list($response) = $this->getFernlehrgangUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getFernlehrgangWithHttpInfo
+     * Operation getFernlehrgangUsingGETWithHttpInfo
      *
      * Ruft einen Fernlehrgang ab
      *
      * @param  string $id ID des Fernlehrgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFernlehrgangWithHttpInfo($id, string $contentType = self::contentTypes['getFernlehrgang'][0])
+    public function getFernlehrgangUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getFernlehrgangUsingGET'][0])
     {
-        $request = $this->getFernlehrgangRequest($id, $contentType);
+        $request = $this->getFernlehrgangUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1106,19 +1106,19 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgangAsync
+     * Operation getFernlehrgangUsingGETAsync
      *
      * Ruft einen Fernlehrgang ab
      *
      * @param  string $id ID des Fernlehrgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFernlehrgangAsync($id, string $contentType = self::contentTypes['getFernlehrgang'][0])
+    public function getFernlehrgangUsingGETAsync($id, string $contentType = self::contentTypes['getFernlehrgangUsingGET'][0])
     {
-        return $this->getFernlehrgangAsyncWithHttpInfo($id, $contentType)
+        return $this->getFernlehrgangUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1127,20 +1127,20 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getFernlehrgangAsyncWithHttpInfo
+     * Operation getFernlehrgangUsingGETAsyncWithHttpInfo
      *
      * Ruft einen Fernlehrgang ab
      *
      * @param  string $id ID des Fernlehrgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFernlehrgangAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getFernlehrgang'][0])
+    public function getFernlehrgangUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getFernlehrgangUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang';
-        $request = $this->getFernlehrgangRequest($id, $contentType);
+        $request = $this->getFernlehrgangUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1179,21 +1179,21 @@ class FernlehrgngeApi
     }
 
     /**
-     * Create request for operation 'getFernlehrgang'
+     * Create request for operation 'getFernlehrgangUsingGET'
      *
      * @param  string $id ID des Fernlehrgangs (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getFernlehrgangRequest($id, string $contentType = self::contentTypes['getFernlehrgang'][0])
+    public function getFernlehrgangUsingGETRequest($id, string $contentType = self::contentTypes['getFernlehrgangUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getFernlehrgang'
+                'Missing the required parameter $id when calling getFernlehrgangUsingGET'
             );
         }
 
@@ -1276,38 +1276,38 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuFernlehrgang
+     * Operation getTeilnehmerbuchungenZuFernlehrgangUsingGET
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für für einen Fernlehrgang abzurufen.
      *
      * @param  string $id ID des Fernlehrgangs, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]
      */
-    public function getTeilnehmerbuchungenZuFernlehrgang($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'][0])
+    public function getTeilnehmerbuchungenZuFernlehrgangUsingGET($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'][0])
     {
-        list($response) = $this->getTeilnehmerbuchungenZuFernlehrgangWithHttpInfo($id, $contentType);
+        list($response) = $this->getTeilnehmerbuchungenZuFernlehrgangUsingGETWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuFernlehrgangWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuFernlehrgangUsingGETWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für für einen Fernlehrgang abzurufen.
      *
      * @param  string $id ID des Fernlehrgangs, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeilnehmerbuchungenZuFernlehrgangWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'][0])
+    public function getTeilnehmerbuchungenZuFernlehrgangUsingGETWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'][0])
     {
-        $request = $this->getTeilnehmerbuchungenZuFernlehrgangRequest($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuFernlehrgangUsingGETRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1379,19 +1379,19 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuFernlehrgangAsync
+     * Operation getTeilnehmerbuchungenZuFernlehrgangUsingGETAsync
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für für einen Fernlehrgang abzurufen.
      *
      * @param  string $id ID des Fernlehrgangs, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuFernlehrgangAsync($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'][0])
+    public function getTeilnehmerbuchungenZuFernlehrgangUsingGETAsync($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'][0])
     {
-        return $this->getTeilnehmerbuchungenZuFernlehrgangAsyncWithHttpInfo($id, $contentType)
+        return $this->getTeilnehmerbuchungenZuFernlehrgangUsingGETAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1400,20 +1400,20 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation getTeilnehmerbuchungenZuFernlehrgangAsyncWithHttpInfo
+     * Operation getTeilnehmerbuchungenZuFernlehrgangUsingGETAsyncWithHttpInfo
      *
      * Ermöglicht es, Teilnehmerbuchungen die den Status \&quot;Angemeldet\&quot;, \&quot;Eingeladen\&quot; oder \&quot;Bestätigt\&quot; gesetzt haben für für einen Fernlehrgang abzurufen.
      *
      * @param  string $id ID des Fernlehrgangs, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeilnehmerbuchungenZuFernlehrgangAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'][0])
+    public function getTeilnehmerbuchungenZuFernlehrgangUsingGETAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\TeilnehmerbuchungAbrufenApiDto[]';
-        $request = $this->getTeilnehmerbuchungenZuFernlehrgangRequest($id, $contentType);
+        $request = $this->getTeilnehmerbuchungenZuFernlehrgangUsingGETRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1452,21 +1452,21 @@ class FernlehrgngeApi
     }
 
     /**
-     * Create request for operation 'getTeilnehmerbuchungenZuFernlehrgang'
+     * Create request for operation 'getTeilnehmerbuchungenZuFernlehrgangUsingGET'
      *
      * @param  string $id ID des Fernlehrgangs, zu dem die Teilnehmerbuchungen geladen werden sollen (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTeilnehmerbuchungenZuFernlehrgangRequest($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgang'][0])
+    public function getTeilnehmerbuchungenZuFernlehrgangUsingGETRequest($id, string $contentType = self::contentTypes['getTeilnehmerbuchungenZuFernlehrgangUsingGET'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuFernlehrgang'
+                'Missing the required parameter $id when calling getTeilnehmerbuchungenZuFernlehrgangUsingGET'
             );
         }
 
@@ -1549,38 +1549,38 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation updateFernlehrgang
+     * Operation updateFernlehrgangUsingPUT
      *
      * Modifiziert einen bestehenden Fernlehrgang
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang $fernlehrgang fernlehrgang (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgangUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang
      */
-    public function updateFernlehrgang($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgang'][0])
+    public function updateFernlehrgangUsingPUT($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgangUsingPUT'][0])
     {
-        list($response) = $this->updateFernlehrgangWithHttpInfo($fernlehrgang, $contentType);
+        list($response) = $this->updateFernlehrgangUsingPUTWithHttpInfo($fernlehrgang, $contentType);
         return $response;
     }
 
     /**
-     * Operation updateFernlehrgangWithHttpInfo
+     * Operation updateFernlehrgangUsingPUTWithHttpInfo
      *
      * Modifiziert einen bestehenden Fernlehrgang
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang $fernlehrgang (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgangUsingPUT'] to see the possible values for this operation
      *
      * @throws \Leifos\VedaConnector\GeneratedOpenApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateFernlehrgangWithHttpInfo($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgang'][0])
+    public function updateFernlehrgangUsingPUTWithHttpInfo($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgangUsingPUT'][0])
     {
-        $request = $this->updateFernlehrgangRequest($fernlehrgang, $contentType);
+        $request = $this->updateFernlehrgangUsingPUTRequest($fernlehrgang, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1652,19 +1652,19 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation updateFernlehrgangAsync
+     * Operation updateFernlehrgangUsingPUTAsync
      *
      * Modifiziert einen bestehenden Fernlehrgang
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang $fernlehrgang (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgangUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateFernlehrgangAsync($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgang'][0])
+    public function updateFernlehrgangUsingPUTAsync($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgangUsingPUT'][0])
     {
-        return $this->updateFernlehrgangAsyncWithHttpInfo($fernlehrgang, $contentType)
+        return $this->updateFernlehrgangUsingPUTAsyncWithHttpInfo($fernlehrgang, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1673,20 +1673,20 @@ class FernlehrgngeApi
     }
 
     /**
-     * Operation updateFernlehrgangAsyncWithHttpInfo
+     * Operation updateFernlehrgangUsingPUTAsyncWithHttpInfo
      *
      * Modifiziert einen bestehenden Fernlehrgang
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang $fernlehrgang (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgangUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateFernlehrgangAsyncWithHttpInfo($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgang'][0])
+    public function updateFernlehrgangUsingPUTAsyncWithHttpInfo($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgangUsingPUT'][0])
     {
         $returnType = '\Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang';
-        $request = $this->updateFernlehrgangRequest($fernlehrgang, $contentType);
+        $request = $this->updateFernlehrgangUsingPUTRequest($fernlehrgang, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1725,21 +1725,21 @@ class FernlehrgngeApi
     }
 
     /**
-     * Create request for operation 'updateFernlehrgang'
+     * Create request for operation 'updateFernlehrgangUsingPUT'
      *
      * @param  \Leifos\VedaConnector\GeneratedOpenApi\Model\Fernlehrgang $fernlehrgang (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgang'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFernlehrgangUsingPUT'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateFernlehrgangRequest($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgang'][0])
+    public function updateFernlehrgangUsingPUTRequest($fernlehrgang, string $contentType = self::contentTypes['updateFernlehrgangUsingPUT'][0])
     {
 
         // verify the required parameter 'fernlehrgang' is set
         if ($fernlehrgang === null || (is_array($fernlehrgang) && count($fernlehrgang) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $fernlehrgang when calling updateFernlehrgang'
+                'Missing the required parameter $fernlehrgang when calling updateFernlehrgangUsingPUT'
             );
         }
 

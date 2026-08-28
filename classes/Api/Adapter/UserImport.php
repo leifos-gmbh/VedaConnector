@@ -223,7 +223,7 @@ class UserImport implements UserImportInterface
             $this->writer->xmlElement('Firstname', [], $participant_container->getTeilnehmer()->getVorname());
             $this->writer->xmlElement('Lastname', [], $participant_container->getTeilnehmer()->getNachname());
 
-            $this->parseOrganisationInfo($participant_container->getTeilnehmer()->getGeschaeftlichOrganisationId());
+            $this->parseOrganisationInfo($participant_container->getTeilnehmer()->getGetgeschaeftlichOrganisationId());
 
             $this->writer->xmlEndTag('User');
 
