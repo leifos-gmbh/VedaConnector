@@ -64,7 +64,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => 'string',
         'geschlecht' => 'string',
         'geburtsdatum' => '\DateTime',
-        'getgeschaeftlich_organisation_id' => 'string',
+        'geschaeftlich_organisation_id' => 'string',
         'geschaeftliche_e_mail_adresse' => 'string',
         'aktiv' => 'bool',
         'links' => '\Leifos\VedaConnector\GeneratedOpenApi\Model\Link[]'
@@ -84,7 +84,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => null,
         'geschlecht' => null,
         'geburtsdatum' => 'date',
-        'getgeschaeftlich_organisation_id' => 'uuid',
+        'geschaeftlich_organisation_id' => 'uuid',
         'geschaeftliche_e_mail_adresse' => null,
         'aktiv' => null,
         'links' => null
@@ -102,7 +102,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => false,
         'geschlecht' => false,
         'geburtsdatum' => false,
-        'getgeschaeftlich_organisation_id' => false,
+        'geschaeftlich_organisation_id' => false,
         'geschaeftliche_e_mail_adresse' => false,
         'aktiv' => false,
         'links' => false
@@ -200,7 +200,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => 'nachname',
         'geschlecht' => 'geschlecht',
         'geburtsdatum' => 'geburtsdatum',
-        'getgeschaeftlich_organisation_id' => 'getgeschaeftlichOrganisationID',
+        'geschaeftlich_organisation_id' => 'geschaeftlichOrganisationID',
         'geschaeftliche_e_mail_adresse' => 'geschaeftlicheEMailAdresse',
         'aktiv' => 'aktiv',
         'links' => 'links'
@@ -218,7 +218,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => 'setNachname',
         'geschlecht' => 'setGeschlecht',
         'geburtsdatum' => 'setGeburtsdatum',
-        'getgeschaeftlich_organisation_id' => 'setGetgeschaeftlichOrganisationId',
+        'geschaeftlich_organisation_id' => 'setGeschaeftlichOrganisationId',
         'geschaeftliche_e_mail_adresse' => 'setGeschaeftlicheEMailAdresse',
         'aktiv' => 'setAktiv',
         'links' => 'setLinks'
@@ -236,7 +236,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nachname' => 'getNachname',
         'geschlecht' => 'getGeschlecht',
         'geburtsdatum' => 'getGeburtsdatum',
-        'getgeschaeftlich_organisation_id' => 'getGetgeschaeftlichOrganisationId',
+        'geschaeftlich_organisation_id' => 'getGeschaeftlichOrganisationId',
         'geschaeftliche_e_mail_adresse' => 'getGeschaeftlicheEMailAdresse',
         'aktiv' => 'getAktiv',
         'links' => 'getLinks'
@@ -318,7 +318,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('nachname', $data ?? [], null);
         $this->setIfExists('geschlecht', $data ?? [], null);
         $this->setIfExists('geburtsdatum', $data ?? [], null);
-        $this->setIfExists('getgeschaeftlich_organisation_id', $data ?? [], null);
+        $this->setIfExists('geschaeftlich_organisation_id', $data ?? [], null);
         $this->setIfExists('geschaeftliche_e_mail_adresse', $data ?? [], null);
         $this->setIfExists('aktiv', $data ?? [], null);
         $this->setIfExists('links', $data ?? [], null);
@@ -554,28 +554,28 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets getgeschaeftlich_organisation_id
+     * Gets geschaeftlich_organisation_id
      *
      * @return string|null
      */
-    public function getGetgeschaeftlichOrganisationId()
+    public function getGeschaeftlichOrganisationId()
     {
-        return $this->container['getgeschaeftlich_organisation_id'];
+        return $this->container['geschaeftlich_organisation_id'];
     }
 
     /**
-     * Sets getgeschaeftlich_organisation_id
+     * Sets geschaeftlich_organisation_id
      *
-     * @param string|null $getgeschaeftlich_organisation_id getgeschaeftlich_organisation_id
+     * @param string|null $geschaeftlich_organisation_id geschaeftlich_organisation_id
      *
      * @return self
      */
-    public function setGetgeschaeftlichOrganisationId($getgeschaeftlich_organisation_id)
+    public function setGeschaeftlichOrganisationId($geschaeftlich_organisation_id)
     {
-        if (is_null($getgeschaeftlich_organisation_id)) {
-            throw new \InvalidArgumentException('non-nullable getgeschaeftlich_organisation_id cannot be null');
+        if (is_null($geschaeftlich_organisation_id)) {
+            throw new \InvalidArgumentException('non-nullable geschaeftlich_organisation_id cannot be null');
         }
-        $this->container['getgeschaeftlich_organisation_id'] = $getgeschaeftlich_organisation_id;
+        $this->container['geschaeftlich_organisation_id'] = $geschaeftlich_organisation_id;
 
         return $this;
     }
