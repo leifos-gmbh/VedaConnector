@@ -7,19 +7,19 @@ namespace Leifos\VedaConnector\Exception;
 use ilException;
 use Leifos\VedaConnector\I\Exception\FactoryInterface;
 use Leifos\VedaConnector\I\Exception\Message;
-use Leifos\VedaConnector\I\PluginInterface;
+use Leifos\VedaConnector\I\Lang\HandlerInterface as LangInterface;
 
 class Factory implements FactoryInterface
 {
     public function __construct(
-        protected PluginInterface $plugin
+        protected LangInterface $lang
     ) {
     }
 
     protected function translateMessage(
         Message $message
     ) : string {
-        return $message == Message::NULL ? '' : $this->plugin->txt($message->value);
+        return $message == Message::NULL ? '' : $this->lang->pluginTxt($message->value);
     }
 
     public function claimingMissing(

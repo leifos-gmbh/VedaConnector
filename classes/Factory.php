@@ -6,6 +6,10 @@ namespace Leifos\VedaConnector;
 
 use ilComponentFactory;
 use ilDBInterface;
+use ILIAS\Data\Factory as DataFactory;
+use ILIAS\DI\UIServices as UIServices;
+use ILIAS\HTTP\Services as HTTPServices;
+use ilLanguage;
 use ilLogger;
 use ilMailMimeSenderFactory;
 use ilObjectDefinition;
@@ -26,9 +30,11 @@ use Leifos\VedaConnector\I\FactoryInterface;
 use Leifos\VedaConnector\I\IdValidatorInterface;
 use Leifos\VedaConnector\I\ImporterInterface;
 use Leifos\VedaConnector\I\InputFields\FactoryInterface as InputFieldsFactoryInterface;
+use Leifos\VedaConnector\I\Lang\FactoryInterface as LangFactoryInterface;
 use Leifos\VedaConnector\I\Logger\FactoryInterface as LoggerFactoryInterface;
 use Leifos\VedaConnector\I\Mail\FactoryInterface as MailFactoryInterface;
 use Leifos\VedaConnector\I\MDClaiming\FactoryInterface as MDClaimingFactoryInterface;
+use Leifos\VedaConnector\I\PDFSendStatus\FactoryInterface as PDFSendStatusFactoryInterface;
 use Leifos\VedaConnector\I\PluginInterface;
 use Leifos\VedaConnector\I\Settings\FactoryInterface as SettingsFactoryInterface;
 use Leifos\VedaConnector\I\TrainingProgramModules\FactoryInterface as TrainingProgramModulesFactoryInterface;
@@ -36,9 +42,11 @@ use Leifos\VedaConnector\I\UDF\FactoryInterface as UDFFactoryInterface;
 use Leifos\VedaConnector\I\UserStatus\FactoryInterface as UserFactoryInterface;
 use Leifos\VedaConnector\I\Utils\FactoryInterface as UtilsFactoryInterface;
 use Leifos\VedaConnector\InputFields\Factory as InputFieldsFactory;
+use Leifos\VedaConnector\Lang\Factory as LangFactory;
 use Leifos\VedaConnector\Logger\Factory as LoggerFactory;
 use Leifos\VedaConnector\Mail\Factory as MailFactory;
 use Leifos\VedaConnector\MDClaiming\Factory as MDClaimingFactory;
+use Leifos\VedaConnector\PDFSendStatus\Factory as PDFSendStatusFactory;
 use Leifos\VedaConnector\Settings\Factory as SettingsFactory;
 use Leifos\VedaConnector\TrainingProgramModules\Factory as TrainingProgramModulesFactory;
 use Leifos\VedaConnector\UDF\Factory as UDFFactory;
@@ -62,6 +70,10 @@ class Factory implements FactoryInterface
     protected ilObjectDefinition $object_definition;
     protected ilRbacAdmin $rbac_admin;
     protected ilRbacReview $rbac_review;
+    protected ilLanguage $lang;
+    protected HTTPServices $http_services;
+    protected UIServices $ui_services;
+    protected DataFactory $data_factory;
 
     public function __construct()
     {
@@ -75,6 +87,10 @@ class Factory implements FactoryInterface
         $this->object_definition = $DIC['objDefinition'];
         $this->rbac_admin = $DIC->rbac()->admin();
         $this->rbac_review = $DIC->rbac()->review();
+        $this->lang = $DIC->language();
+        $this->http_services = $DIC->http();
+        $this->ui_services = $DIC->ui();
+        $this->data_factory = new DataFactory();
     }
 
     public static function getInstance(): FactoryInterface
@@ -96,7 +112,6 @@ class Factory implements FactoryInterface
             Factory::$importer = new Importer(
                 $this->logger()->handler(),
                 $this->settings()->handler(),
-                $this->plugin(),
                 $this->api()->handler(),
                 $this->exception()
             );
@@ -122,19 +137,21 @@ class Factory implements FactoryInterface
     public function userStatus(): UserFactoryInterface
     {
         return new UserFactory(
+            $this->plugin()->getDirectory(),
             $this->db,
             $this->logger(),
-            $this->plugin()
+            $this->lang()
         );
     }
 
     public function coursStatus(): CourseFactoryInterface
     {
         return new CourseFactory(
+            $this->plugin()->getDirectory(),
             $this->db,
             $this->logger(),
-            $this->plugin(),
-            $this->repository_tree
+            $this->repository_tree,
+            $this->lang()
         );
     }
 
@@ -153,7 +170,8 @@ class Factory implements FactoryInterface
             Factory::$validator_instances[$reference_id] = new IdValidator(
                 $reference_id,
                 $this->repository_tree,
-                $this->plugin(),
+                $this->plugin()->getTemplate('tpl.validation_error.html'),
+                $this->lang()->handler(),
                 $this->mdClaiming()->db()->handler(),
                 $this->logger()->handler(),
                 $this->api()->handler()
@@ -175,7 +193,7 @@ class Factory implements FactoryInterface
     public function inputFields(): InputFieldsFactoryInterface
     {
         return new InputFieldsFactory(
-            $this->plugin()
+            $this->lang()
         );
     }
 
@@ -203,7 +221,8 @@ class Factory implements FactoryInterface
             $this->mdClaiming()->db(),
             $this->udf()->db(),
             $this->utils(),
-            $this->exception()
+            $this->exception(),
+            $this->pdfSendStatus()
         );
     }
 
@@ -238,7 +257,29 @@ class Factory implements FactoryInterface
     public function exception(): ExceptionFactoryInterface
     {
         return new ExceptionFactory(
-            $this->plugin()
+            $this->lang()->handler()
+        );
+    }
+
+    public function pdfSendStatus(): PDFSendStatusFactoryInterface
+    {
+        return new PDFSendStatusFactory(
+            $this->lang,
+            $this->db,
+            $this->user,
+            $this->data_factory,
+            $this->ui_services,
+            $this->lang(),
+            $this->http_services,
+            $this->logger()
+        );
+    }
+
+    public function lang(): LangFactoryInterface
+    {
+        return new LangFactory(
+            $this->plugin(),
+            $this->lang
         );
     }
 }

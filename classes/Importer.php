@@ -7,7 +7,6 @@ declare(strict_types=1);
 namespace Leifos\VedaConnector;
 
 use ilLogLevel;
-use ilVedaConnectorPlugin;
 use Leifos\VedaConnector\I\Api\HandlerInterface as ApiInterface;
 use Leifos\VedaConnector\I\Exception\FactoryInterface as ExceptionFactoryInterface;
 use Leifos\VedaConnector\I\Exception\Message;
@@ -21,7 +20,6 @@ class Importer implements ImporterInterface
     public function __construct(
         protected LoggerHandlerInterface $logger,
         protected SettingsInterface $settings,
-        protected ilVedaConnectorPlugin $plugin,
         protected ApiInterface $api,
         protected ExceptionFactoryInterface $exception_factory
     ) {

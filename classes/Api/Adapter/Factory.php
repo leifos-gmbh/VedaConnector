@@ -21,13 +21,13 @@ use Leifos\VedaConnector\I\Api\TrainingProgram\FactoryInterface as ApiTrainingPr
 use Leifos\VedaConnector\I\Api\TrainingProgramModules\FactoryInterface as ApiTrainingProgramModulesFactoryInterface;
 use Leifos\VedaConnector\I\Builder\FactoryInterface as BuilderFactoryInterface;
 use Leifos\VedaConnector\I\CourseStatus\DB\FactoryInterface as CourseStatusDBFactoryInterface;
+use Leifos\VedaConnector\I\Exception\FactoryInterface as ExcepionFactoryInterface;
 use Leifos\VedaConnector\I\Logger\FactoryInterface as LoggerFactoryInterface;
 use Leifos\VedaConnector\I\MDClaiming\DB\FactoryInterface as MDClaimingDBFactoryInterface;
 use Leifos\VedaConnector\I\Settings\FactoryInterface as SettingsFactoryInterface;
 use Leifos\VedaConnector\I\UDF\DB\FactoryInterface as UDFDBFactoryInterface;
 use Leifos\VedaConnector\I\UserStatus\DB\FactoryInterface as UserStatusDBFactoryInterface;
 use Leifos\VedaConnector\I\Utils\FactoryInterface as UtilsFactoryInterface;
-use Leifos\VedaConnector\I\Exception\FactoryInterface as ExcepionFactoryInterface;
 
 class Factory implements FactoryInterface
 {

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Leifos\VedaConnector\I\Api;
 
+use ilUserCertificate;
+
 interface HandlerInterface
 {
     public function handleAfterCloningDependenciesSIFAEvent(
@@ -34,6 +36,10 @@ interface HandlerInterface
         int $obj_id,
         int $usr_id,
         int $status
+    ) : void;
+
+    public function handleCertificateIssuedEvent(
+        ilUserCertificate $certificate
     ) : void;
 
     public function handlePasswordChanged(

@@ -88,3 +88,12 @@ credentials_soap_user_info#:#Bitte geben Sie den Anmeldenamen eines ILIAS-Kontos
 credentials_soap_pass#:#Soap-Passwort
 connection_success_soap#:#Die Verbindung zum ILIAS Webservice konnten erfolgreich erstellt werden.
 connection_failure_soap#:#Fehler beim Verbinden zum ILIAS-Webservice. Bitte prüfen Die die Verbindungsdaten.
+subtab_pdfsend_status#:#Übertragung
+tr_crs_oid#:#Kurs OId
+tr_participant_oid#:#Teilnehmerin Oid
+tr_passed_status#:#Bestanden Status
+tr_passed_date#:#Bestanden am
+tr_send_status#:#Übertragungsstatus
+tr_send_date#:#Übertragen am
+tr_error_code#:#Fehlercode
+send_status_table_name#:#Übertragungsstatus

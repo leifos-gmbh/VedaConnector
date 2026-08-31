@@ -12,6 +12,7 @@ use Leifos\VedaConnector\I\Logger\HandlerInterface as LoggerInterface;
 use Leifos\VedaConnector\I\Mail\DB\Element\CollectionInterface as MailDBElementCollectionInterface;
 use Leifos\VedaConnector\I\Mail\DB\Element\FactoryInterface as MailDBElementFactoryInterface;
 use Leifos\VedaConnector\I\Mail\DB\Element\HandlerInterface as MailDBElementInterface;
+use Leifos\VedaConnector\I\Mail\DB\Element\Type;
 use Leifos\VedaConnector\I\Mail\DB\HandlerInterface as MailDBInterface;
 use Leifos\VedaConnector\I\Mail\DB\Element\Type;
 
