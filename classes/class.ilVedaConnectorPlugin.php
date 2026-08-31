@@ -134,9 +134,10 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
             $a_component == self::CERTIFICATE_SERVICE &&
             $a_event == self::EVENT_CERTIFICATE_ISSUED
         ) {
-            $api->handleCertificateIssuedEvent(
-                $a_parameter['certificate']
-            );
+            # WIP
+            #$api->handleCertificateIssuedEvent(
+            #    $a_parameter['certificate']
+            #);
         }
         if (
             $a_component == self::OBJECT_SERVICE
