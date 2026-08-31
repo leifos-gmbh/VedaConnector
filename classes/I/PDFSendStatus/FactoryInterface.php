@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Leifos\VedaConnector\I\PDFSendStatus;
 
+use Leifos\VedaConnector\I\PDFSendStatus\Certificate\FactoryInterface as CertificateFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\FactoryInterface as DBFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\Table\FactoryInterface as TableFactoryInterface;
-use Leifos\VedaConnector\I\PDFSendStatus\Certificate\FactoryInterface as CertificateFactoryInterface;
 
 interface FactoryInterface
 {

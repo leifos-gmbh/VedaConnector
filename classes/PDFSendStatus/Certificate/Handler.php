@@ -7,7 +7,6 @@ use ilCertificateActiveValidator;
 use ilCertificatePdfAction;
 use ilCertificatePdfFileNameFactory;
 use ilCertificateUtilHelper;
-use ILIAS\Data\LanguageTag\Standard;
 use ilLanguage;
 use ilPdfGenerator;
 use ilUserCertificateRepository;

@@ -13,10 +13,10 @@ use ilObjUser;
 use Leifos\VedaConnector\I\Lang\FactoryInterface as LangFactoryInterface;
 use Leifos\VedaConnector\I\Logger\FactoryInterface as LoggerFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\Certificate\FactoryInterface as CertificateFactoryInterface;
-use Leifos\VedaConnector\PDFSendStatus\Certificate\Factory as CertificateFactory;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\FactoryInterface as DBFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\FactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\Table\FactoryInterface as TableFactoryInterface;
+use Leifos\VedaConnector\PDFSendStatus\Certificate\Factory as CertificateFactory;
 use Leifos\VedaConnector\PDFSendStatus\DB\Factory as DBFactory;
 use Leifos\VedaConnector\PDFSendStatus\Table\Factory as PDFSendStatusTableFactory;
 
