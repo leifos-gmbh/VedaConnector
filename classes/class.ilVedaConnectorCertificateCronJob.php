@@ -21,10 +21,13 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
     public const JOB_ID = 'vedaimp_cert';
 
     protected VedaFactoryInterface $veda_factory;
+    protected ilCronManager $cron_manager;
 
     public function __construct()
     {
+        global $DIC;
         $this->veda_factory = VedaFactory::getInstance();
+        $this->cron_manager = $DIC->cron()->manager();
     }
 
     public function getId(): string
@@ -71,11 +74,28 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
         $pdf_send_db_key_factory = $this->veda_factory->pdfSendStatus()->db()->key();
         $not_send_key = $pdf_send_db_key_factory->handler()->withSendStatuses(SendStatus::NOT_SEND);
         $not_send_statuses = $pdf_send_status_db->getByKey($not_send_key);
+        $ping_counter = 0;
+        $send_counter = 0;
+        $logger->debug(sprintf('Start sending certificate data of %s certificates', $not_send_statuses->count()));
         foreach ($not_send_statuses as $pdf_send_status) {
-            $user_id = $pdf_send_status->getParticipantId();
-            $crs_id = $pdf_send_status->getCourseId();
+            if ($ping_counter++ > 30) {
+                $ping_counter = 0;
+                $this->cron_manager->ping(self::JOB_ID);
+            }
+            $certificate_id = -1;
             try {
-                $certificate_id = $certificate_handler->getCertificateId($user_id, $crs_id);
+                $certificate_id = $certificate_handler->getCertificateId(
+                    $pdf_send_status->getParticipantId(),
+                    $pdf_send_status->getCourseId()
+                );
+            } catch (Exception $e) {
+                $logger->debug(sprintf('FAILED: Handling of certificate issued event, certificate id not found with error message: %s', $e->getMessage()));
+                $pdf_send_status = $pdf_send_status
+                    ->withErrorCode(ErrorCode::CERTIFICATE_ID_NOT_FOUND)
+                    ->withSendStatus(SendStatus::NOT_SEND);
+                continue;
+            }
+            try {
                 $certificate_file_name = $certificate_handler->createCertificateFileName($certificate_id);
                 $certificate_content = $certificate_handler->createCertificateContent($certificate_id);
             } catch (Exception $e) {
@@ -87,7 +107,7 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
                 $result = new ilCronJobResult();
                 $result->setStatus(ilCronJobResult::STATUS_CRASHED);
                 $result->setMessage($e->getMessage());
-                $this->veda_factory->logger()->handler()->warning('Certificate send failed with message: ' . $e->getMessage());
+                $this->veda_factory->logger()->handler()->warning(sprintf('Certificate send failed with message: %s', $e->getMessage()));
                 return $result;
             }
             $success = $elearning_plattform_api->sendCertificate(
@@ -102,11 +122,13 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
                     ->withSendStatus(SendStatus::SEND)
                     ->withSendDate(new \DateTimeImmutable());
                 $pdf_send_status_db->updateByElement($pdf_send_status);
+                $send_counter++;
             }
             if (!$success) {
                 $logger->debug('FAILED: Handling of certificate issued event, certificate could not be send.');
                 $pdf_send_status = $pdf_send_status
-                    ->withErrorCode(ErrorCode::COULD_NOT_BE_SEND);
+                    ->withErrorCode(ErrorCode::COULD_NOT_BE_SEND)
+                    ->withSendStatus(SendStatus::NOT_SEND);
                 $pdf_send_status_db->updateByElement($pdf_send_status);
                 $result = new ilCronJobResult();
                 $result->setStatus(ilCronJobResult::STATUS_CRASHED);
@@ -115,6 +137,7 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
                 return $result;
             }
         }
+        $logger->debug(sprintf('SUMMARY: Send/Generated %s certificates', $send_counter));
         $result = new ilCronJobResult();
         $result->setStatus(ilCronJobResult::STATUS_OK);
         return $result;

@@ -12,4 +12,5 @@ enum ErrorCode : int
     case VEDA_OBJECTS_NOT_FOUND = 4;
     case COULD_NOT_BE_SEND = 5;
     case CONTENT_COULD_NOT_BE_CREATED = 6;
+    case CERTIFICATE_ID_NOT_FOUND = 7;
 }

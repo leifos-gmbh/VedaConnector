@@ -75,35 +75,35 @@ class Handler implements HandlerInterface
     public function getWhereClause(): string
     {
         $where = "";
-        if (isset($this->db_sequence_ids)) {
+        if (isset($this->db_sequence_ids) && count($this->db_sequence_ids) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_SEQ_ID, $this->db_sequence_ids, false, ilDBConstants::T_INTEGER);
         }
-        if (isset($this->course_ids)) {
+        if (isset($this->course_ids) && count($this->course_ids) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_COURSE_ID, $this->course_ids, false, ilDBConstants::T_INTEGER);
         }
-        if (isset($this->participant_ids)) {
+        if (isset($this->participant_ids) && count($this->participant_ids) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_PARTICIPANT_ID, $this->participant_ids, false, ilDBConstants::T_INTEGER);
         }
-        if (isset($this->participant_oids)) {
+        if (isset($this->participant_oids) && count($this->participant_oids) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_PARTICIPANT_OID, $this->participant_oids, false, ilDBConstants::T_TEXT);
         }
-        if (isset($this->course_oids)) {
+        if (isset($this->course_oids) && count($this->course_oids) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_COURSE_OID, $this->course_oids, false, ilDBConstants::T_TEXT);
         }
-        if (isset($this->send_statuses)) {
+        if (isset($this->send_statuses) && count($this->send_statuses) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_STATUS_SEND, $this->send_statuses, false, ilDBConstants::T_INTEGER);
         }
-        if (isset($this->passed_statuses)) {
+        if (isset($this->passed_statuses) && count($this->passed_statuses) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_STATUS_PASSED, $this->passed_statuses, false, ilDBConstants::T_INTEGER);
         }
-        if (isset($this->error_codes)) {
+        if (isset($this->error_codes) && count($this->error_codes) > 0) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_ERROR_CODE, $this->error_codes, false, ilDBConstants::T_INTEGER);
         }
