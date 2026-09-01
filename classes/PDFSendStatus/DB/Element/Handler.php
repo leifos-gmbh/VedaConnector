@@ -13,7 +13,7 @@ use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus;
 class Handler implements HandlerInterface
 {
     protected int $course_id;
-    private int $participant_id;
+    protected int $participant_id;
     protected int $db_sequence_id;
     protected string $course_oid;
     protected string $participant_oid;
@@ -25,6 +25,8 @@ class Handler implements HandlerInterface
 
     public function __construct()
     {
+        $this->course_id = -1;
+        $this->participant_id = -1;
         $this->course_oid = "";
         $this->participant_oid = "";
         $this->passed_status = PassedStatus::NULL;

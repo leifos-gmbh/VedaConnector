@@ -625,7 +625,7 @@ if (!$ilDB->tableExists('cron_crnhk_vedaimp_snd')) {
 }
 ?>
 
-<#16>
+<#17>
 <?php
 if ($ilDB->tableExists('cron_crnhk_vedaimp_snd')) {
     $ilDB->addTableColumn('cron_crnhk_vedaimp_snd', 'crs_id', [
@@ -633,7 +633,7 @@ if ($ilDB->tableExists('cron_crnhk_vedaimp_snd')) {
             'length'	=> 8,
             'notnull'	=> true
     ]);
-    $ilDB->addTableColumn('cron_crnhk_vedaimp_snd', 'crs_id', [
+    $ilDB->addTableColumn('cron_crnhk_vedaimp_snd', 'participant_id', [
             'type'		=> ilDBConstants::T_INTEGER,
             'length'	=> 8,
             'notnull'	=> true

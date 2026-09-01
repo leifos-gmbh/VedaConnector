@@ -677,12 +677,11 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $this->setSubTabs();
         $this->il_tabs->activateTab(self::TAB_IMPORT);
         $this->il_tabs->activateSubTab(self::SUBTAB_PDFSEND_STATUS);
-        global $DIC;
+        #global $DIC;
         $this->tpl->setContent(
             $this->veda_factory->pdfSendStatus()->table()->handler()->getHTML()
-            . $DIC->ui()->renderer()->render($DIC->ui()->factory()->button()->standard("addTestRecord", $this->ctrl->getLinkTarget($this, 'addTestRecord')))
+            #. $DIC->ui()->renderer()->render($DIC->ui()->factory()->button()->standard("addTestRecord", $this->ctrl->getLinkTarget($this, 'addTestRecord')))
         );
-
     }
 
     protected function setSubTabs(): void
@@ -714,13 +713,14 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
         $element = $this->veda_factory->pdfSendStatus()->db()->handler()->createElement()
             ->withCourseOId(bin2hex(random_bytes(10)))
             ->withParticipantOId(bin2hex(random_bytes(10)))
+            ->withCourseId(random_int(0, 100))
+            ->withParticipantId(random_int(0, 100))
             ->withSendStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus::from(random_int(0, 1)))
             ->withPassedStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\PassedStatus::from(random_int(0, 1)))
             ->withPassedDate((new DateTimeImmutable())->add(new DateInterval('P' . random_int(0, 300) . 'D')))
             ->withSendDate((new DateTimeImmutable())->add(new DateInterval('P' . random_int(0, 300) . 'D')))
             ->withErrorCode(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\ErrorCode::NULL);
         $this->veda_factory->pdfSendStatus()->db()->handler()->updateByElement($element);
-        $this->veda_factory->logger()->handler()->debug("AAAAAAAAAAAAAAAA");
         $this->ctrl->redirect($this, 'pdfSendStatus');
     }
 
