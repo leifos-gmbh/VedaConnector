@@ -82,6 +82,8 @@ tbl_mail_targets_info#:#Specify mail addresses separated by commas.
 import_type_all#:#User Accounts (All)
 import_type_incremental#:#User Accounts (Only New)
 cron_job_fast_info#:#Updates users - only new ones for whom no ILIAS account has been created - and memberships of SiFA and Standard courses. Can be run at short intervals, e.g., every 15 minutes.
+cron_job_cert_info#:#Send certificates issued to users in Veda courses.
+cron_job_cert_info_connection_error#:#Connection error. An error occurred while connecting to the Veda interface.
 credential_section_soap#:#ILIAS Connection Data - Soap
 credentials_soap_user#:#Soap User
 credentials_soap_user_info#:#Please enter the username of an ILIAS account that should be used to establish the connection to the ILIAS web service. The account should be assigned to the global administrator role.

@@ -14,16 +14,28 @@ interface HandlerInterface
         int $db_sequence_id
     ): HandlerInterface;
 
+    public function getCourseId(): int;
+
+    public function withCourseId(
+        int $course_id
+    ): HandlerInterface;
+
+    public function getParticipantId(): int;
+
+    public function withParticipantId(
+        int $participant_id
+    ): HandlerInterface;
+
     public function getCourseOId(): string;
 
     public function withCourseOId(
-        string $course_id
+        string $course_oid
     ): HandlerInterface;
 
     public function getParticipantOId(): string;
 
-    public function withParticipantId(
-        string $participant_id
+    public function withParticipantOId(
+        string $participant_oid
     ): HandlerInterface;
 
     public function getPassedStatus(): PassedStatus;

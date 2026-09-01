@@ -12,6 +12,8 @@ use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus;
 
 class Handler implements HandlerInterface
 {
+    protected int $course_id;
+    private int $participant_id;
     protected int $db_sequence_id;
     protected string $course_oid;
     protected string $participant_oid;
@@ -51,10 +53,10 @@ class Handler implements HandlerInterface
     }
 
     public function withCourseOId(
-        string $course_id
+        string $course_oid
     ): HandlerInterface {
         $clone = clone $this;
-        $clone->course_oid = $course_id;
+        $clone->course_oid = $course_oid;
         return $clone;
     }
 
@@ -63,11 +65,11 @@ class Handler implements HandlerInterface
         return $this->participant_oid;
     }
 
-    public function withParticipantId(
-        string $participant_id
+    public function withParticipantOId(
+        string $participant_oid
     ): HandlerInterface {
         $clone = clone $this;
-        $clone->participant_oid = $participant_id;
+        $clone->participant_oid = $participant_oid;
         return $clone;
     }
 
@@ -133,6 +135,32 @@ class Handler implements HandlerInterface
     ): HandlerInterface {
         $clone = clone $this;
         $clone->send_date = $send_date;
+        return $clone;
+    }
+
+    public function getCourseId(): int
+    {
+        return $this->course_id;
+    }
+
+    public function withCourseId(
+        int $course_id
+    ): HandlerInterface {
+        $clone = clone $this;
+        $clone->course_id = $course_id;
+        return $clone;
+    }
+
+    public function getParticipantId(): int
+    {
+        return $this->participant_id;
+    }
+
+    public function withParticipantId(
+        int $participant_id
+    ): HandlerInterface {
+        $clone = clone $this;
+        $clone->participant_id = $participant_id;
         return $clone;
     }
 }

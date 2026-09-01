@@ -1,0 +1,124 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Leifos\VedaConnector;
+
+use ilCronJob;
+use ilCronJobResult;
+use ILIAS\Cron\Schedule\CronJobScheduleType;
+use ILIAS\DI\Exceptions\Exception;
+use Leifos\VedaConnector\I\FactoryInterface as VedaFactoryInterface;
+use Leifos\VedaConnector\Factory as VedaFactory;
+use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\ErrorCode;
+use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus;
+use Leifos\VedaConnector\I\PluginInterface;
+use Leifos\VedaConnector\I\Settings\Name;
+
+/**
+ * @ilCtrl_isCalledBy ilVedaConnectorCertificateCronJob: ilObjComponentSettingsGUI
+ */
+class ilVedaConnectorCertificateCronJob extends ilCronJob
+{
+    protected const CRONJOB_ID_SUFFIX = '_cert';
+
+    protected VedaFactoryInterface $veda_factory;
+
+    public function __construct()
+    {
+        $this->veda_factory = VedaFactory::getInstance();
+    }
+
+    public function getId(): string
+    {
+        return $this->veda_factory->plugin()->getId()  . self::CRONJOB_ID_SUFFIX;
+    }
+
+    public function getTitle(): string
+    {
+        return PluginInterface::PNAME;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->veda_factory->plugin()->txt('cron_job_cert_info');
+    }
+
+    public function hasAutoActivation(): bool
+    {
+        return false;
+    }
+
+    public function hasFlexibleSchedule(): bool
+    {
+        return true;
+    }
+
+    public function getDefaultScheduleType(): CronJobScheduleType
+    {
+        return CronJobScheduleType::SCHEDULE_TYPE_IN_MINUTES;;
+    }
+
+    public function getDefaultScheduleValue(): ?int
+    {
+        return $this->veda_factory->settings()->handler()->readAsInt(Name::CRON_INTERVAL);
+    }
+
+    public function run(): ilCronJobResult
+    {
+        $logger = $this->veda_factory->logger()->handler();
+        $elearning_plattform_api = $this->veda_factory->api()->eLearningPlattform()->handler();
+        $certificate_handler = $this->veda_factory->pdfSendStatus()->certificate()->handler();
+        $pdf_send_status_db = $this->veda_factory->pdfSendStatus()->db()->handler();
+        $pdf_send_db_key_factory = $this->veda_factory->pdfSendStatus()->db()->key();
+        $not_send_key = $pdf_send_db_key_factory->handler()->withSendStatuses(SendStatus::NOT_SEND);
+        $not_send_statuses = $pdf_send_status_db->getByKey($not_send_key);
+        foreach ($not_send_statuses as $pdf_send_status) {
+            $user_id = $pdf_send_status->getParticipantId();
+            $crs_id = $pdf_send_status->getCourseId();
+            try {
+                $certificate_id = $certificate_handler->getCertificateId($user_id, $crs_id);
+                $certificate_file_name = $certificate_handler->createCertificateFileName($certificate_id);
+                $certificate_content = $certificate_handler->createCertificateContent($certificate_id);
+            } catch (Exception $e) {
+                $logger->debug('FAILED: Handling of certificate issued event, certificate content or name could not be created.');
+                $pdf_send_status = $pdf_send_status
+                    ->withErrorCode(ErrorCode::CONTENT_COULD_NOT_BE_CREATED)
+                    ->withSendStatus(SendStatus::NOT_SEND);
+                $pdf_send_status_db->updateByElement($pdf_send_status);
+                $result = new ilCronJobResult();
+                $result->setStatus(ilCronJobResult::STATUS_CRASHED);
+                $result->setMessage($e->getMessage());
+                $this->veda_factory->logger()->handler()->warning('Certificate send failed with message: ' . $e->getMessage());
+                return $result;
+            }
+            $success = $elearning_plattform_api->sendCertificate(
+                $pdf_send_status->getCourseOId(),
+                $pdf_send_status->getParticipantOId(),
+                $certificate_file_name,
+                $certificate_content
+            );
+            if ($success) {
+                $logger->debug('SUCCESS: Handling of certificate issued event.');
+                $pdf_send_status = $pdf_send_status
+                    ->withSendStatus(SendStatus::SEND)
+                    ->withSendDate(new \DateTimeImmutable());
+                $pdf_send_status_db->updateByElement($pdf_send_status);
+            }
+            if (!$success) {
+                $logger->debug('FAILED: Handling of certificate issued event, certificate could not be send.');
+                $pdf_send_status = $pdf_send_status
+                    ->withErrorCode(ErrorCode::COULD_NOT_BE_SEND);
+                $pdf_send_status_db->updateByElement($pdf_send_status);
+                $result = new ilCronJobResult();
+                $result->setStatus(ilCronJobResult::STATUS_CRASHED);
+                $result->setMessage($this->veda_factory->plugin()->txt('cron_job_cert_info_connection_error'));
+                $this->veda_factory->logger()->handler()->warning('Certificate send failed.');
+                return $result;
+            }
+        }
+        $result = new ilCronJobResult();
+        $result->setStatus(ilCronJobResult::STATUS_OK);
+        return $result;
+    }
+}

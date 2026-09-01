@@ -47,10 +47,12 @@ readonly class Handler implements HandlerInterface
             $element = $this->element_factory->handler()
                 ->withDBSequenceId((int) ($row['seq_id'] ?? -1))
                 ->withCourseOId((string) ($row['crs_oid'] ?? ""))
-                ->withParticipantId((string) ($row['participant_oid'] ?? ""))
+                ->withParticipantOId((string) ($row['participant_oid'] ?? ""))
                 ->withSendStatus(SendStatus::from((int) ($row['status_send'] ?? SendStatus::NULL)))
                 ->withPassedStatus(PassedStatus::from((int) ($row['status_passed'] ?? PassedStatus::NULL)))
-                ->withErrorCode(ErrorCode::from((int) ($row['error_code'] ?? ErrorCode::NULL)));
+                ->withErrorCode(ErrorCode::from((int) ($row['error_code'] ?? ErrorCode::NULL)))
+                ->withCourseId((int) ($row['course_id'] ?? -1))
+                ->withParticipantId((int) ($row['participant_id'] ?? -1));
             $passed_date = $row['timestamp_passed'] ?? null;
             $send_data = $row['timestamp_send'] ?? null;
             if (!is_null($passed_date)) {
@@ -80,7 +82,7 @@ readonly class Handler implements HandlerInterface
     public function updateByElement(
         ElementInterface $element
     ): void {
-        $query = sprintf("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s)",
+        $query = sprintf("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s), %s=VALUES(%s)",
             $this->db->quoteIdentifier(HandlerInterface::TABLE_NAME),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_SEQ_ID),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_COURSE_OID),
@@ -90,6 +92,8 @@ readonly class Handler implements HandlerInterface
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_STATUS_SEND),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_TIMESTAMP_SEND),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_ERROR_CODE),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_COURSE_ID),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_PARTICIPANT_ID),
             $this->db->quote($element->getDBSequenceId(), ilDBConstants::T_INTEGER),
             $this->db->quote($element->getCourseOId(), ilDBConstants::T_TEXT),
             $this->db->quote($element->getParticipantOId(), ilDBConstants::T_TEXT),
@@ -98,6 +102,8 @@ readonly class Handler implements HandlerInterface
             $this->db->quote($element->getSendStatus()->value, ilDBConstants::T_INTEGER),
             $this->db->quote(is_null($element->getSendDate()) ? null : $element->getSendDate()->format("Y-m-d H:i:s"), ilDBConstants::T_TIMESTAMP),
             $this->db->quote($element->getErrorCode()->value, ilDBConstants::T_INTEGER),
+            $this->db->quote($element->getCourseId(), ilDBConstants::T_INTEGER),
+            $this->db->quote($element->getParticipantId(), ilDBConstants::T_INTEGER),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_SEQ_ID),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_SEQ_ID),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_COURSE_OID),
@@ -113,7 +119,11 @@ readonly class Handler implements HandlerInterface
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_TIMESTAMP_SEND),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_TIMESTAMP_SEND),
             $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_ERROR_CODE),
-            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_ERROR_CODE)
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_ERROR_CODE),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_COURSE_ID),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_COURSE_ID),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_PARTICIPANT_ID),
+            $this->db->quoteIdentifier(HandlerInterface::FIELD_NAME_PARTICIPANT_ID)
         );
         $this->logger->debug("PDFSend updateByElement(): " . $query);
         $this->db->manipulate($query);

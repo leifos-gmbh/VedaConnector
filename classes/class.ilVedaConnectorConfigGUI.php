@@ -713,7 +713,7 @@ class ilVedaConnectorConfigGUI extends ilPluginConfigGUI
     {
         $element = $this->veda_factory->pdfSendStatus()->db()->handler()->createElement()
             ->withCourseOId(bin2hex(random_bytes(10)))
-            ->withParticipantId(bin2hex(random_bytes(10)))
+            ->withParticipantOId(bin2hex(random_bytes(10)))
             ->withSendStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus::from(random_int(0, 1)))
             ->withPassedStatus(\Leifos\VedaConnector\I\PDFSendStatus\DB\Element\PassedStatus::from(random_int(0, 1)))
             ->withPassedDate((new DateTimeImmutable())->add(new DateInterval('P' . random_int(0, 300) . 'D')))

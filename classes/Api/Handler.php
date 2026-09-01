@@ -247,49 +247,13 @@ readonly class Handler implements HandlerInterface
         $passed_date = $passed_date->setTimestamp($certificate->getAcquiredTimestamp());
         $pdf_send_status = $this->pdf_send_status_factory->db()->handler()->createElement()
             ->withSendStatus(SendStatus::NOT_SEND)
-            ->withErrorCode(ErrorCode::NULL)
+            ->withErrorCode(ErrorCode::NO_ERROR)
             ->withPassedDate($passed_date)
             ->withPassedStatus(PassedStatus::PASSED)
-            ->withParticipantId($veda_crs->getOid())
+            ->withParticipantOId($veda_crs->getOid())
             ->withCourseOId($veda_usr->getOid());
 
         $this->pdf_send_status_factory->db()->handler()->updateByElement($pdf_send_status);
-
-        $certificate_handler = $this->pdf_send_status_factory->certificate()->handler();
-
-        try {
-            $certificate_file_name = $certificate_handler->createCertificateFileName($certificate->getId());
-            $certificate_content = $certificate_handler->createCertificateContent($certificate->getId());
-        } catch (Exception $e) {
-            $this->logger->debug('FAILED: Handling of certificate issued event, certificate content or name could not be created.');
-            $pdf_send_status = $pdf_send_status
-                ->withErrorCode(ErrorCode::CONTENT_COULD_NOT_BE_CREATED)
-                ->withSendStatus(SendStatus::NOT_SEND);
-            $this->pdf_send_status_factory->db()->handler()->updateByElement($pdf_send_status);
-            return;
-        }
-
-        $success = $this->elearning_plattform_api->sendCertificate(
-            $veda_crs->getOid(),
-            $veda_usr->getOid(),
-            $certificate_file_name,
-            $certificate_content
-        );
-
-        if ($success) {
-            $this->logger->debug('SUCCESS: Handling of certificate issued event.');
-            $pdf_send_status = $pdf_send_status
-                ->withSendStatus(SendStatus::SEND)
-                ->withSendDate(new \DateTimeImmutable());
-            $this->pdf_send_status_factory->db()->handler()->updateByElement($pdf_send_status);
-        }
-        if (!$success) {
-            $this->logger->debug('FAILED: Handling of certificate issued event, certificate could not be send.');
-            $pdf_send_status = $pdf_send_status
-                ->withErrorCode(ErrorCode::COULD_NOT_BE_SEND)
-                ->withSendStatus(SendStatus::NOT_SEND);
-            $this->pdf_send_status_factory->db()->handler()->updateByElement($pdf_send_status);
-        }
     }
 
     public function handlePasswordChanged(int $usr_id) : void

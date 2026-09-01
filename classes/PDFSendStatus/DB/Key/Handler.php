@@ -39,6 +39,16 @@ class Handler implements HandlerInterface
     protected array $error_codes;
 
     /**
+     * @var int[]
+     */
+    protected array $course_ids;
+
+    /**
+     * @var int[]
+     */
+    protected array $participant_ids;
+
+    /**
      * @var string[]
      */
     protected array $course_oids;
@@ -68,6 +78,14 @@ class Handler implements HandlerInterface
         if (isset($this->db_sequence_ids)) {
             $where .= strlen($where) > 0 ? " AND " : "";
             $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_SEQ_ID, $this->db_sequence_ids, false, ilDBConstants::T_INTEGER);
+        }
+        if (isset($this->course_ids)) {
+            $where .= strlen($where) > 0 ? " AND " : "";
+            $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_COURSE_ID, $this->course_ids, false, ilDBConstants::T_INTEGER);
+        }
+        if (isset($this->participant_ids)) {
+            $where .= strlen($where) > 0 ? " AND " : "";
+            $where .= $this->db->in(PDFSendDBInterface::FIELD_NAME_PARTICIPANT_ID, $this->participant_ids, false, ilDBConstants::T_INTEGER);
         }
         if (isset($this->participant_oids)) {
             $where .= strlen($where) > 0 ? " AND " : "";
@@ -264,6 +282,22 @@ class Handler implements HandlerInterface
     ): HandlerInterface {
         $clone = clone $this;
         $clone->passed_date_lower_limit = $date;
+        return $clone;
+    }
+
+    public function withCourseIds(
+        int ...$course_ids
+    ): HandlerInterface {
+        $clone = clone $this;
+        $clone->course_ids = $course_ids;
+        return $clone;
+    }
+
+    public function withParticipantIds(
+        int ...$participant_ids
+    ): HandlerInterface {
+        $clone = clone $this;
+        $clone->participant_ids = $participant_ids;
         return $clone;
     }
 }
