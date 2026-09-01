@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Leifos\VedaConnector;
-
 use ilCronJob;
 use ilCronJobResult;
 use ILIAS\Cron\Schedule\CronJobScheduleType;
@@ -20,7 +18,7 @@ use Leifos\VedaConnector\I\Settings\Name;
  */
 class ilVedaConnectorCertificateCronJob extends ilCronJob
 {
-    protected const CRONJOB_ID_SUFFIX = '_cert';
+    public const JOB_ID = 'vedaimp_cert';
 
     protected VedaFactoryInterface $veda_factory;
 
@@ -31,7 +29,7 @@ class ilVedaConnectorCertificateCronJob extends ilCronJob
 
     public function getId(): string
     {
-        return $this->veda_factory->plugin()->getId()  . self::CRONJOB_ID_SUFFIX;
+        return self::JOB_ID;
     }
 
     public function getTitle(): string
