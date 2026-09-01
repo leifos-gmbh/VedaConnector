@@ -251,7 +251,9 @@ readonly class Handler implements HandlerInterface
             ->withPassedDate($passed_date)
             ->withPassedStatus(PassedStatus::PASSED)
             ->withParticipantOId($veda_crs->getOid())
-            ->withCourseOId($veda_usr->getOid());
+            ->withCourseOId($veda_usr->getOid())
+            ->withCourseId($certificate->getObjId())
+            ->withParticipantId($certificate->getUserId());
 
         $this->pdf_send_status_factory->db()->handler()->updateByElement($pdf_send_status);
     }
