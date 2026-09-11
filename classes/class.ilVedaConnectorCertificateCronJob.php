@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-use ilCronJob;
-use ilCronJobResult;
 use ILIAS\Cron\Schedule\CronJobScheduleType;
 use ILIAS\DI\Exceptions\Exception;
-use Leifos\VedaConnector\I\FactoryInterface as VedaFactoryInterface;
 use Leifos\VedaConnector\Factory as VedaFactory;
+use Leifos\VedaConnector\I\FactoryInterface as VedaFactoryInterface;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\ErrorCode;
 use Leifos\VedaConnector\I\PDFSendStatus\DB\Element\SendStatus;
 use Leifos\VedaConnector\I\PluginInterface;

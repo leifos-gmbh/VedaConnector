@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Leifos\VedaConnector\Api;
 
-use ILIAS\DI\Exceptions\Exception;
 use ilLogLevel;
 use ilLPStatus;
 use ilObjCourse;
