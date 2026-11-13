@@ -30,7 +30,7 @@ class Handler implements CourseDBElementInterface
 
     public function getOid() : string
     {
-        return $this->oid;
+        return $this->oid ?? '';
     }
 
     public function getType() : Type
@@ -40,27 +40,27 @@ class Handler implements CourseDBElementInterface
 
     public function getPermanentSwitchRole() : int
     {
-        return $this->switch_permanent_role;
+        return $this->switch_permanent_role ?? 0;
     }
 
     public function getTemporarySwitchRole() : int
     {
-        return $this->switch_temporary_role;
+        return $this->switch_temporary_role ?? 0;
     }
 
     public function getCreationStatus() : Status
     {
-        return $this->status_created;
+        return $this->status_created ?? Status::NONE;
     }
 
     public function getObjId() : int
     {
-        return $this->obj_id;
+        return $this->obj_id ?? 0;
     }
 
     public function getDocumentSuccess() : bool
     {
-        return $this->document_success;
+        return $this->document_success ?? false;
     }
 
     public function toString() : string
