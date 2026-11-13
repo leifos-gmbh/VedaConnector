@@ -15,7 +15,7 @@ use Leifos\VedaConnector\I\Settings\Name;
  */
 class ilVedaConnectorFastCronJob extends ilCronJob
 {
-    protected const CRONJOB_ID_POSTFIX = '_fast';
+    public const JOB_ID = 'vedaimp_fast';
     protected VedaFactoryInterface $veda_factory;
 
     public function __construct()
@@ -25,7 +25,7 @@ class ilVedaConnectorFastCronJob extends ilCronJob
 
     public function getId() : string
     {
-        return $this->veda_factory->plugin()->getId()  . self::CRONJOB_ID_POSTFIX;
+        return self::JOB_ID;
     }
 
     public function getTitle() : string

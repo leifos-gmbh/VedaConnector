@@ -24,6 +24,19 @@ readonly class Handler implements HandlerInterface
     ) {
     }
 
+    public function getCertificateId(
+        int $user_id,
+        int $crs_id
+    ): int {
+        try {
+            $certificate = $this->user_certificate_repo->fetchActiveCertificate($user_id, $crs_id);
+            return $certificate->getId();
+        } catch (Exception $e) {
+            $this->logger->error('getCertificateId failed with message: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
     public function createCertificateFileName(
         int $certificate_id
     ): string {

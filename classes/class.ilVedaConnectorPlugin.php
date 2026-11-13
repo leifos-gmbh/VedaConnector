@@ -59,17 +59,18 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
     {
         return [
             new ilVedaConnectorFastCronJob(),
-            new ilVedaConnectorCronJob()
+            new ilVedaConnectorCronJob(),
+            new ilVedaConnectorCertificateCronJob()
         ];
     }
 
     public function getCronJobInstance(string $jobId) : ilCronJob
     {
-        if (strcmp($jobId, ilVedaConnectorPlugin::getInstance()->getId()) == 0) {
-            return new ilVedaConnectorCronJob();
-        } else {
-            return new ilVedaConnectorFastCronJob();
-        }
+        return match ($jobId) {
+            ilVedaConnectorFastCronJob::JOB_ID => new ilVedaConnectorFastCronJob(),
+            ilVedaConnectorCertificateCronJob::JOB_ID => new ilVedaConnectorCertificateCronJob(),
+            default => new ilVedaConnectorCronJob()
+        };
     }
 
     public static function handleEvent(string $a_component, string $a_event, array $a_parameter): void
@@ -134,10 +135,9 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
             $a_component == self::CERTIFICATE_SERVICE &&
             $a_event == self::EVENT_CERTIFICATE_ISSUED
         ) {
-            # WIP
-            #$api->handleCertificateIssuedEvent(
-            #    $a_parameter['certificate']
-            #);
+            $api->handleCertificateIssuedEvent(
+                $a_parameter['certificate']
+            );
         }
         if (
             $a_component == self::OBJECT_SERVICE

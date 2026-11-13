@@ -44,6 +44,14 @@ interface HandlerInterface
         ErrorCode ...$error_code
     ): HandlerInterface;
 
+    public function withCourseIds(
+        int ...$course_ids
+    ): HandlerInterface;
+
+    public function withParticipantIds(
+        int ...$participant_ids
+    ): HandlerInterface;
+
     public function withCourseOIds(
         string ...$course_oids
     ): HandlerInterface;
