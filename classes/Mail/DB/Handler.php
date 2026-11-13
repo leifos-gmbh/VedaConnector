@@ -32,7 +32,7 @@ class Handler implements MailDBInterface
         $elements = [];
         while ($row = $this->db->fetchAssoc($results)) {
             $elements[] = $this->mail_db_element_factory->handler((int) $row['id'])
-                ->withType(Type::from($row['type']))
+                ->withType(Type::from((int) $row['type']))
                 ->withMessage($row['msg'])
                 ->withLastModified(new DateTimeImmutable($row['modified'], new DateTimeZone('Utc')));
         }

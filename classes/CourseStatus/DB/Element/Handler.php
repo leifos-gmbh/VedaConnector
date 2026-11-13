@@ -35,7 +35,7 @@ class Handler implements CourseDBElementInterface
 
     public function getType() : Type
     {
-        return $this->type;
+        return $this->type ?? Type::NONE;
     }
 
     public function getPermanentSwitchRole() : int
