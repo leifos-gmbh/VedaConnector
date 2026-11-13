@@ -134,8 +134,8 @@ class Handler implements CourseDBInterface
     ): CourseDBElementCollectionInterface {
         $this->logger->debug('Looking up all courses.');
         $query = 'select * from ' . self::TABLE_NAME . ' where'
-            . ' type = ' . $this->db->quote($type, ilDBConstants::T_INTEGER)
-            . ' and status_created = ' . $this->db->quote($status, ilDBConstants::T_INTEGER);
+            . ' type = ' . $this->db->quote($type->value, ilDBConstants::T_INTEGER)
+            . ' and status_created = ' . $this->db->quote($status->value, ilDBConstants::T_INTEGER);
         $this->logger->debug($query);
         $res = $this->db->query($query);
         $elements = [];
