@@ -189,6 +189,9 @@ class MemberStandardImport implements MemberStandardImportInterface
     protected function ensureCourseExists(int $obj_id) : bool
     {
         $refs = ilObject::_getAllReferences($obj_id);
+        if (count($refs) === 0) {
+            return false;
+        }
         $ref_id = end($refs);
         try {
             $course = ilObjectFactory::getInstanceByRefId($ref_id, false);
