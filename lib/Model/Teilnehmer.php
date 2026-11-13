@@ -512,6 +512,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable geschlecht cannot be null');
         }
         $allowedValues = $this->getGeschlechtAllowableValues();
+        /*
         if (!in_array($geschlecht, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
@@ -521,6 +522,7 @@ class Teilnehmer implements ModelInterface, ArrayAccess, \JsonSerializable
                 )
             );
         }
+        */
         $this->container['geschlecht'] = $geschlecht;
 
         return $this;

@@ -156,7 +156,6 @@ class CourseImport implements CourseImportInterface
 
         $copy_writer->xmlEndTag('Settings');
 
-        include_once './webservice/soap/classes/class.ilCopyWizardSettingsXMLParser.php';
         $xml_parser = new ilCopyWizardSettingsXMLParser($copy_writer->xmlDumpMem(false));
         try {
             $xml_parser->startParsing();
