@@ -8,7 +8,7 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
 {
     protected const COURSE_SERVICE = 'components/ILIAS/Course';
     protected const USER_SERVICE = 'components/ILIAS/User';
-    protected const OBJECT_SERVICE = 'components/ILIAS/Object';
+    protected const OBJECT_SERVICE = 'components/ILIAS/ILIASObject';
     protected const TRACKING_SERVICE = 'components/ILIAS/Tracking';
     protected const CERTIFICATE_SERVICE = 'components/ILIAS/Certificate';
     protected const EVENT_UPDATE_PASSWORD = 'passwordChanged';
