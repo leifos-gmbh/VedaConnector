@@ -101,7 +101,7 @@ class ilVedaConnectorPlugin extends ilCronHookPlugin implements ilAppEventListen
                 (int) $a_parameter['copy_id']
             );
             $api->handleAfterCloningStandardEvent(
-                (int) ['source_id'],
+                (int) $a_parameter['source_id'],
                 (int) $a_parameter['target_id'],
                 (int) $a_parameter['copy_id']
             );
